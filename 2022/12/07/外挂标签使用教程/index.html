@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>外挂标签语法 | Chemtrails Home</title><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言外挂标签引入 本文参考：Butterfly主题美化日记 | Akilarの糖果屋 hexo自带的markdown渲染插件hexo-renderer-marked与外挂标签语法的兼容性较差，将其替换成hexo-renderer-kramed 123npm install hexo-butterfly-tag-plugins-plus --savenpm uninstall hexo-render">
+<meta property="og:type" content="article">
+<meta property="og:title" content="外挂标签语法">
+<meta property="og:url" content="https://ch3mtr4ils.cn/2022/12/07/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Chemtrails Home">
+<meta property="og:description" content="前言外挂标签引入 本文参考：Butterfly主题美化日记 | Akilarの糖果屋 hexo自带的markdown渲染插件hexo-renderer-marked与外挂标签语法的兼容性较差，将其替换成hexo-renderer-kramed 123npm install hexo-butterfly-tag-plugins-plus --savenpm uninstall hexo-render">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ch3mtr4ils.cn/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/tag.png">
+<meta property="article:published_time" content="2022-12-07T06:21:40.000Z">
+<meta property="article:modified_time" content="2022-12-07T07:09:36.278Z">
+<meta property="article:author" content="Chemtrails">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="butterfly">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ch3mtr4ils.cn/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/tag.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://ch3mtr4ils.cn/2022/12/07/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '外挂标签语法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-07 15:09:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><link rel="stylesheet" href="/css/twikoo.css"><link rel="stylesheet" href="/css/ok.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/twikoo_beautify.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tit.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Chemtrails Home</a></span><div id="he-plugin-simple"></div><div id="none_space"></div><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">外挂标签语法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-07T06:21:40.000Z" title="发表于 2022-12-07 14:21:40">2022-12-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-07T07:09:36.278Z" title="更新于 2022-12-07 15:09:36">2022-12-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/">网站开发</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">879</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="外挂标签语法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>外挂标签引入</strong></p>
+<p>本文参考：<a target="_blank" rel="noopener" href="https://akilar.top/posts/615e2dec/">Butterfly主题美化日记 | Akilarの糖果屋</a></p>
+<p>hexo自带的markdown渲染插件<code>hexo-renderer-marked</code>与外挂标签语法的兼容性较差，将其替换成<code>hexo-renderer-kramed</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-butterfly-tag-plugins-plus --save</span><br><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+
+<p>在主题_config.yml中添加如下代码：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tag-plugins-plus</span></span><br><span class="line"><span class="comment"># see https://akilar.top/posts/615e2dec/</span></span><br><span class="line"><span class="attr">tag_plugins:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># 开关</span></span><br><span class="line">  <span class="attr">priority:</span> <span class="number">5</span> <span class="comment">#过滤器优先权</span></span><br><span class="line">  <span class="attr">issues:</span> <span class="literal">false</span> <span class="comment">#issues标签依赖注入开关</span></span><br><span class="line">  <span class="attr">link:</span></span><br><span class="line">    <span class="attr">placeholder:</span> <span class="string">/img/link.png</span> <span class="comment">#link_card标签默认的图标图片</span></span><br><span class="line">  <span class="attr">CDN:</span></span><br><span class="line">    <span class="attr">anima:</span> <span class="string">https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css</span> <span class="comment">#动画标签anima的依赖</span></span><br><span class="line">    <span class="attr">jquery:</span> <span class="string">https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js</span> <span class="comment">#issues标签依赖</span></span><br><span class="line">    <span class="attr">issues:</span> <span class="string">https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js</span> <span class="comment">#issues标签依赖</span></span><br><span class="line">    <span class="attr">iconfont:</span> <span class="string">//at.alicdn.com/t/font_2032782_8d5kxvn09md.js</span> <span class="comment">#参看https://akilar.top/posts/d2ebecef/</span></span><br><span class="line">    <span class="attr">carousel:</span> <span class="string">https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js</span></span><br><span class="line">    <span class="attr">tag_plugins_css:</span> <span class="string">https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">语法：&#123;% span 样式参数(参数以空格划分), 文本内容 %&#125;</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 带 &#123;% u 下划线 %&#125; 的文本</span><br><span class="line"><span class="bullet">2.</span> 带 &#123;% emp 着重号 %&#125; 的文本</span><br><span class="line"><span class="bullet">3.</span> 带 &#123;% wavy 波浪线 %&#125; 的文本</span><br><span class="line"><span class="bullet">4.</span> 带 &#123;% del 删除线 %&#125; 的文本</span><br><span class="line"><span class="bullet">5.</span> 键盘样式的文本 &#123;% kbd Ctrl %&#125; + &#123;% kbd C %&#125;</span><br><span class="line"><span class="bullet">6.</span> 密码样式的文本：&#123;% psw flag&#123;I<span class="emphasis">_love_</span>CTF&#125; %&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>带 <u>下划线</u> 的文本</p>
+</li>
+<li><p>带 <emp>着重号</emp> 的文本</p>
+</li>
+<li><p>带 <wavy>波浪线</wavy> 的文本</p>
+</li>
+<li><p>带 <del>删除线</del> 的文本</p>
+</li>
+<li><p>键盘样式的文本 <kbd>Ctrl</kbd> + <kbd>C</kbd></p>
+</li>
+<li><p>密码样式的文本：<psw>flag{I_love_CTF}</psw></p>
+</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">语法：&#123;% p 样式参数(参数以空格划分), 文本内容 %&#125;</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line"><span class="code">    字体: logo, code</span></span><br><span class="line"><span class="code">    颜色: red,yellow,green,cyan,blue,gray</span></span><br><span class="line"><span class="code">    大小: small, h4, h3, h2, h1, large, huge, ultra</span></span><br><span class="line"><span class="code">    对齐方向: left, center, right</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="bullet">-</span> 彩色文字</span><br><span class="line">在一段话中方便插入各种颜色的标签，包括：&#123;% span red, 红色 %&#125;、&#123;% span yellow, 黄色 %&#125;、&#123;% span green, 绿色 %&#125;、&#123;% span cyan, 青色 %&#125;、&#123;% span blue, 蓝色 %&#125;、&#123;% span gray, 灰色 %&#125;。</span><br><span class="line"><span class="bullet">-</span> 超大号文字</span><br><span class="line">文档「开始」页面中的标题部分就是超大号文字。</span><br><span class="line">&#123;% span center logo large, 我是居中的大文字 %&#125;</span><br><span class="line">&#123;% span center small, 我是居中的小文字 %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>彩色文字<br>在一段话中方便插入各种颜色的标签，包括：<span class="p red">红色</span>、<span class="p yellow">黄色</span>、<span class="p green">绿色</span>、<span class="p cyan">青色</span>、<span class="p blue">蓝色</span>、<span class="p gray">灰色</span>。</p>
+<p>超大号文字<br>文档「开始」页面中的标题部分就是超大号文字。</p>
+<span class="p center logo large">我是居中的大文字</span>
+<span class="p center small">我是居中的小文字</span>
+
+<h1 id="折叠框"><a href="#折叠框" class="headerlink" title="折叠框"></a>折叠框</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">&#123;% folding 参数（可选）, 标题 %&#125;</span><br><span class="line">内容</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line"><span class="code">    颜色：blue, cyan, green, yellow, red</span></span><br><span class="line"><span class="code">    状态：状态填写 open 代表默认打开。</span></span><br><span class="line"><span class="code"></span></span><br><span class="line">&#123;% folding 查看图片测试 %&#125;</span><br><span class="line"></span><br><span class="line">![](<span class="link">https://patchwiki.biligame.com/images/pcr/b/bb/onl77ubvkxtpfjbql65x7q33txaqdgz.png</span>)</span><br><span class="line"></span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% folding cyan open, 查看默认打开的折叠框 %&#125;</span><br><span class="line"></span><br><span class="line">这是一个默认打开的折叠框。</span><br><span class="line"></span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% folding green, 查看代码测试 %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% folding yellow, 查看列表测试 %&#125;</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> haha</span><br><span class="line"><span class="bullet">-</span> hehe</span><br><span class="line"></span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% folding red, 查看嵌套测试 %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% folding blue, 查看嵌套测试2 %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% folding 查看嵌套测试3 %&#125;</span><br><span class="line"></span><br><span class="line">hahaha <span class="language-xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#x27;https://patchwiki.biligame.com/images/pcr/b/bb/onl77ubvkxtpfjbql65x7q33txaqdgz.png&#x27;</span> <span class="attr">style</span>=<span class="string">&#x27;height:24px&#x27;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% endfolding %&#125;</span><br></pre></td></tr></table></figure>
+
+<details class="folding-tag"><summary> 查看图片测试 </summary>
+              <div class="content">
+              <p><img src="https://patchwiki.biligame.com/images/pcr/b/bb/onl77ubvkxtpfjbql65x7q33txaqdgz.png"></p>
+              </div>
+            </details>
+
+<details class="folding-tag" cyan open><summary> 查看默认打开的折叠框 </summary>
+              <div class="content">
+              <p>这是一个默认打开的折叠框。</p>
+              </div>
+            </details>
+
+<details class="folding-tag" green><summary> 查看代码测试 </summary>
+              <div class="content">
+              <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helloworld</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<details class="folding-tag" yellow><summary> 查看列表测试 </summary>
+              <div class="content">
+              <ul><li>haha</li><li>hehe</li></ul>
+              </div>
+            </details>
+
+<details class="folding-tag" red><summary> 查看嵌套测试 </summary>
+              <div class="content">
+              <details class="folding-tag" blue><summary> 查看嵌套测试2 </summary>              <div class="content">              <details class="folding-tag"><summary> 查看嵌套测试3 </summary>              <div class="content">              <p>hahaha <span><img src="https://patchwiki.biligame.com/images/pcr/b/bb/onl77ubvkxtpfjbql65x7q33txaqdgz.png" style="height:24px"></span></p>              </div>            </details>              </div>            </details>
+              </div>
+            </details>
+
+<h1 id="引用标签"><a href="#引用标签" class="headerlink" title="引用标签"></a>引用标签</h1></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo</a><a class="post-meta__tags" href="/tags/butterfly/">butterfly</a></div><div class="post_share"><div class="social-share" data-image="https://ch3mtr4ils.cn/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/tag.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/12/06/hexo%E9%AD%94%E6%94%B9%E8%AE%B0%E5%BD%95/"><img class="next-cover" src="https://ch3mtr4ils.cn/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/hexo1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">hexo魔改记录</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/12/06/hexo%E9%AD%94%E6%94%B9%E8%AE%B0%E5%BD%95/" title="hexo魔改记录"><img class="cover" src="https://ch3mtr4ils.cn/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/hexo1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-06</div><div class="title">hexo魔改记录</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/tit.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Chemtrails</div><div class="author-info__description">保持努力！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Ch3mtr4ils"><i class="fab fa-github"></i><span>这里是我的github账号！</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Ch3mtr4ils" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2775750552@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">文本样式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%98%E5%8F%A0%E6%A1%86"><span class="toc-number">3.</span> <span class="toc-text">折叠框</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">4.</span> <span class="toc-text">引用标签</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/07/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="外挂标签语法"><img src="https://ch3mtr4ils.cn/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/tag.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="外挂标签语法"/></a><div class="content"><a class="title" href="/2022/12/07/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="外挂标签语法">外挂标签语法</a><time datetime="2022-12-07T06:21:40.000Z" title="发表于 2022-12-07 14:21:40">2022-12-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/06/hexo%E9%AD%94%E6%94%B9%E8%AE%B0%E5%BD%95/" title="hexo魔改记录"><img src="https://ch3mtr4ils.cn/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/hexo1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo魔改记录"/></a><div class="content"><a class="title" href="/2022/12/06/hexo%E9%AD%94%E6%94%B9%E8%AE%B0%E5%BD%95/" title="hexo魔改记录">hexo魔改记录</a><time datetime="2022-12-06T06:45:48.000Z" title="发表于 2022-12-06 14:45:48">2022-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/03/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" title="RSA学习笔记（四）"><img src="https://ch3mtr4ils.cn/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RSA学习笔记（四）"/></a><div class="content"><a class="title" href="/2022/12/03/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" title="RSA学习笔记（四）">RSA学习笔记（四）</a><time datetime="2022-12-03T10:48:17.000Z" title="发表于 2022-12-03 18:48:17">2022-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/28/pwn%E5%9F%BA%E7%A1%80%E5%92%8C%E6%A0%88%E6%BA%A2%E5%87%BA/" title="pwn基础和栈溢出"><img src="https://ch3mtr4ils.cn/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/pwn1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pwn基础和栈溢出"/></a><div class="content"><a class="title" href="/2022/11/28/pwn%E5%9F%BA%E7%A1%80%E5%92%8C%E6%A0%88%E6%BA%A2%E5%87%BA/" title="pwn基础和栈溢出">pwn基础和栈溢出</a><time datetime="2022-11-28T08:07:48.000Z" title="发表于 2022-11-28 16:07:48">2022-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/27/ctfshow%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" title="ctfshow做题记录"><img src="https://ch3mtr4ils.cn/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/ctfshow.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ctfshow做题记录"/></a><div class="content"><a class="title" href="/2022/11/27/ctfshow%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" title="ctfshow做题记录">ctfshow做题记录</a><time datetime="2022-11-27T11:51:37.000Z" title="发表于 2022-11-27 19:51:37">2022-11-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By Chemtrails</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.ch3mtr4ils.cn/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.ch3mtr4ils.cn/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="/js/weather.js"></script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script id="canvas_nest" defer="defer" color="230,230,250" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
