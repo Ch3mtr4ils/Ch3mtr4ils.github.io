@@ -147,7 +147,7 @@ li.card-archive-list-item {
 }
 
 #aside-content > .card-widget.card-info {
-  background: linear-gradient(-45deg, var(--anzhiyu-main), #ffecd2, #fcb69f);
+  background: linear-gradient(-45deg, #ffecd2, #fcb69f);
   background-size: 400%;
   box-shadow: var(--anzhiyu-shadow-black);
   animation: gradient 15s ease infinite;
@@ -165,3 +165,4 @@ li.card-archive-list-item {
   max-width: 1450px;
   width: 100%;
 }
+
