@@ -35,16 +35,6 @@ h1.post-title {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/*鼠标*/
-body {
-    cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),
-        default;
-}
-a,
-img {
-    cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur),
-        default;
-}
 
 
 /*夜间模式伪类遮罩层透明*/
@@ -222,12 +212,6 @@ i.fas.fa-chevron-down {
 /* 博主昵称颜色 */
 .author-info__name {
     color: #ff7242;
-}
-
-/* 鼠标图标 */
-
-body {
-    cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/Jkll8I.png), auto;
 }
 
 
