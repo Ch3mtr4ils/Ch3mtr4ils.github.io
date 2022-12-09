@@ -6990,7 +6990,7 @@ blockquote.pullquote.right {
   
   .cursor {
     position: absolute;
-    background: #2128bd;
+    background: #3b70fc;
     width: 20px;
     height: 20px;
     margin: -10px 0 0 -10px;
@@ -7003,7 +7003,7 @@ blockquote.pullquote.right {
   
   ::selection {
     color: #fff;
-    background: #2128bd;
+    background: #3b70fc;
   }
 .site-card-group .site-card .info {
     margin-top: 0;
