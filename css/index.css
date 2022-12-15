@@ -6973,7 +6973,7 @@ blockquote.pullquote.right {
     color: var(--anzhiyu-white);
   }
   
-  .hello-about h1 {
+  .hello-about h0 {
     font-size: 200px;
     color: #000;
     margin: 0;
