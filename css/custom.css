@@ -282,6 +282,7 @@ a:hover {
   --anzhiyu-secondbg: #f1f3f8;
   --anzhiyu-shadow-nav: 0 5px 12px -5px rgba(102, 68, 68, 0.05);
   --anzhiyu-card-bg: #fff;
+  --anzhiyu-0card-bg: #fff;
   --anzhiyu-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0);
   --anzhiyu-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0);
   --anzhiyu-card-border: #e3e8f7;
@@ -313,6 +314,7 @@ a:hover {
   --anzhiyu-secondbg: #30343f;
   --anzhiyu-shadow-nav: 0 5px 20px 0px rgba(28, 28, 28, 0.4);
   --anzhiyu-card-bg: #1d1b26;
+  --anzhiyu-0card-bg: #1d1b26;
   --anzhiyu-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0);
   --anzhiyu-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0);
   --anzhiyu-card-border: #42444a;
