@@ -43,13 +43,13 @@ h1.post-title {
 }
 
 #footer-wrap {
-    padding-top: 12px;
-    height: 90px;
+    padding-top: 10px;
+    height: 85px;
     box-shadow: var(--card-box-shadow);
     border-radius: 18px 18px 0 0;
     color: var(--font-color);
     position: relative;
-    text-align: center
+    text-align:center;
 }
 
 #footer-wrap a {
@@ -66,8 +66,8 @@ h1.post-title {
 /* 滚动条 */
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {

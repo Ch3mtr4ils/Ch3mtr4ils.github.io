@@ -164,6 +164,21 @@ li.card-archive-list-item {
   width: 100%;
 }
 
-html {
-  zoom: 1.1;
+
+#post{
+  line-height: 1.4;
+  font-family: "微软雅黑";
+}
+
+.mathjax-overflow{
+  font-size:smaller;
+  overflow-x: hidden;
+}
+
+.layout{
+  margin-top: 0px;
+}
+
+.toc-content{
+  line-height: 1.4;
 }
