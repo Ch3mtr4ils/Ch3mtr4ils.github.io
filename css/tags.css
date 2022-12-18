@@ -164,3 +164,6 @@ li.card-archive-list-item {
   width: 100%;
 }
 
+html {
+  zoom: 1.1;
+}
