@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>密码学的数学基础（一） | Chemtrails Home - 保持努力！</title><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="本篇主要介绍密码学中有关初等数论的内容  推荐视频：Alice-Bob密码学的数学基础 Bilibili  整除理论整除我们假设a,b∈Z，如果存在q∈Z，使得a&#x3D;qb，所以称b整除a，记为：b|a 或者称b是a的因子，a是b的倍数，a被b整除。 b∤a表示b不能整除a，a不能被b整除。 一些性质①b|0 ②1|a ③0|a等价于a&#x3D;0 ④b|a等价于b|-a等价于-b|a 运">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>密码学的数学基础（一） | Chemtrails Home - 保持努力！</title><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="本篇主要介绍密码学中有关初等数论的内容  推荐视频：Alice-Bob密码学的数学基础 Bilibili  整除理论整除我们假设$a,b∈Z$，如果存在$q∈Z$，使得$a&#x3D;qb$，所以称b整除a。 记为：$b|a$ 或者称b是a的因子，a是b的倍数，a被b整除。 b∤a表示b不能整除a，a不能被b整除。 一些性质①$b|0$ ②$1|a$ ③$0|a\iff a&#x3D;0$ ④$b">
 <meta property="og:type" content="article">
 <meta property="og:title" content="密码学的数学基础（一）">
 <meta property="og:url" content="https://ch3mtr4ils.cn/2022/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Chemtrails Home - 保持努力！">
-<meta property="og:description" content="本篇主要介绍密码学中有关初等数论的内容  推荐视频：Alice-Bob密码学的数学基础 Bilibili  整除理论整除我们假设a,b∈Z，如果存在q∈Z，使得a&#x3D;qb，所以称b整除a，记为：b|a 或者称b是a的因子，a是b的倍数，a被b整除。 b∤a表示b不能整除a，a不能被b整除。 一些性质①b|0 ②1|a ③0|a等价于a&#x3D;0 ④b|a等价于b|-a等价于-b|a 运">
+<meta property="og:description" content="本篇主要介绍密码学中有关初等数论的内容  推荐视频：Alice-Bob密码学的数学基础 Bilibili  整除理论整除我们假设$a,b∈Z$，如果存在$q∈Z$，使得$a&#x3D;qb$，所以称b整除a。 记为：$b|a$ 或者称b是a的因子，a是b的倍数，a被b整除。 b∤a表示b不能整除a，a不能被b整除。 一些性质①$b|0$ ②$1|a$ ③$0|a\iff a&#x3D;0$ ④$b">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/12/14/h8LT9OjIGekn64f.png">
 <meta property="article:published_time" content="2022-12-12T13:14:21.000Z">
-<meta property="article:modified_time" content="2022-12-19T12:16:59.287Z">
+<meta property="article:modified_time" content="2022-12-19T13:24:46.701Z">
 <meta property="article:author" content="Chemtrails">
 <meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-12-19 20:16:59'
+  postUpdate: '2022-12-19 21:24:46'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,10 +142,10 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><link rel="stylesheet" href="/css/shubiao.css"><link rel="stylesheet" href="/css/tags.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/twikoo.css"><link rel="stylesheet" href="/css/ok.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/twikoo_beautify.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><link rel="stylesheet" href="/css/shubiao.css"><link rel="stylesheet" href="/css/tags.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/twikoo.css"><link rel="stylesheet" href="/css/ok.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/twikoo_beautify.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+<link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")
@@ -161,29 +161,30 @@ window.addEventListener('load',()=> { preloader.endLoading() })
 if (true) {
   document.addEventListener('pjax:send', () => { preloader.initLoading() })
   document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tit.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Chemtrails</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">密码学的数学基础（一）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-12T13:14:21.000Z" title="发表于 2022-12-12 21:14:21">2022-12-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-19T12:16:59.287Z" title="更新于 2022-12-19 20:16:59">2022-12-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>27分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="密码学的数学基础（一）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><em>本篇主要介绍密码学中有关<strong>初等数论</strong>的内容</em></p>
+}</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tit.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Chemtrails</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">密码学的数学基础（一）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-12T13:14:21.000Z" title="发表于 2022-12-12 21:14:21">2022-12-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-19T13:24:46.701Z" title="更新于 2022-12-19 21:24:46">2022-12-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>27分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="密码学的数学基础（一）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><em>本篇主要介绍密码学中有关<strong>初等数论</strong>的内容</em></p>
 <blockquote>
 <p>推荐视频：<a target="_blank" rel="noopener" href="https://space.bilibili.com/552018206/channel/collectiondetail?sid=436262">Alice-Bob密码学的数学基础 Bilibili</a></p>
 </blockquote>
-<h1 id="整除理论"><a href="#整除理论" class="headerlink" title="整除理论"></a>整除理论</h1><h2 id="整除"><a href="#整除" class="headerlink" title="整除"></a>整除</h2><p>我们假设a,b∈Z，如果存在q∈Z，使得a&#x3D;qb，所以称<strong>b整除a</strong>，记为：b|a</p>
+<h1 id="整除理论"><a href="#整除理论" class="headerlink" title="整除理论"></a>整除理论</h1><h2 id="整除"><a href="#整除" class="headerlink" title="整除"></a>整除</h2><p>我们假设$a,b∈Z$，如果存在$q∈Z$，使得$a&#x3D;qb$，所以称<strong>b整除a</strong>。</p>
+<p>记为：$b|a$</p>
 <p>或者称b是a的因子，a是b的倍数，a被b整除。</p>
 <p>b∤a表示b不能整除a，a不能被b整除。</p>
-<h3 id="一些性质"><a href="#一些性质" class="headerlink" title="一些性质"></a><strong>一些性质</strong></h3><p>①b|0</p>
-<p>②1|a</p>
-<p>③0|a等价于a&#x3D;0</p>
-<p>④b|a等价于b|-a等价于-b|a</p>
-<h3 id="运算规律"><a href="#运算规律" class="headerlink" title="运算规律"></a>运算规律</h3><p>自反性：a|a</p>
-<p>传递性：b|a且a|c，得到b|c</p>
-<p>相乘性：b|a，得到bc|ac</p>
-<p>消去性：bc|ac且c≠0，得到b|a</p>
-<p>线性性：b|a且b|c，对于所有s,t∈Z，都有b|(sa±tc)</p>
+<h3 id="一些性质"><a href="#一些性质" class="headerlink" title="一些性质"></a><strong>一些性质</strong></h3><p>①$b|0$</p>
+<p>②$1|a$</p>
+<p>③$0|a\iff a&#x3D;0$</p>
+<p>④$b|a\iff b|-a\iff -b|a$</p>
+<h3 id="运算规律"><a href="#运算规律" class="headerlink" title="运算规律"></a>运算规律</h3><p>自反性：$a|a$</p>
+<p>传递性：$b|a$且$a|c$，得到$b|c$</p>
+<p>相乘性：$b|a$，得到$bc|ac$</p>
+<p>消去性：$bc|ac,c≠0$，得到$b|a$</p>
+<p>线性性：$b|a$且$b|c$，得到$\forall s,t∈Z，b|(sa±tc)$</p>
 <blockquote>
 <p>证明：</p>
-<p>因为b|a且b|c，存在q1,q2∈Z，得到a&#x3D;q1b,c&#x3D;q2b，对于s,t∈Z，得到sa&#x3D;sq1b且tc&#x3D;tq2b，得到sa±tc&#x3D;sq1b±tq2b&#x3D;b(sq1±tq2)</p>
-<p>得到b|(sa±tc)</p>
+<p>因为$b|a且b|c$，存在$q_1,q_2∈Z$，得到$a&#x3D;q_1b,c&#x3D;q_2b$，对于$s,t∈Z$，得到$sa&#x3D;sq_1b$且$tc&#x3D;tq_2b$，得到$sa±tc&#x3D;sq_1b±tq_2b&#x3D;b(sq_1±tq_2)$</p>
+<p>得到$b|(sa±tc)$</p>
 </blockquote>
-<p>比较性：如果a,b∈N，且b|a，得到b≤a</p>
-<h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><p>设a,b∈Z，当且仅当a&#x3D;±b时有b|a且a|b，特别的，a|1时当且仅当a&#x3D;±1。</p>
+<p>比较性：如果$a,b∈N，b|a$，得到$b≤a$</p>
+<h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><p>设$a,b∈Z$，当且仅当$a&#x3D;±b$时有$b|a$且$a|b$，特别的，$a|1$时当且仅当$a&#x3D;±1$。</p>
 <h3 id="简单证明题"><a href="#简单证明题" class="headerlink" title="简单证明题"></a>简单证明题</h3><p>证明一个自然数，各位的数相加和如果能被3整除，这个自然数也能被3整除：</p>
 <p>转化为数学语言：<br>$$<br>a&#x3D;a_0+10a_1+…+10^ka_k\ ,\ a_0,…,a_k\in{0,1,…,9}<br>$$</p>
 <p>$$<br>b&#x3D;a_1+a_2+…+a_k<br>$$</p>
@@ -196,45 +197,45 @@ if (true) {
 <p>得到3|a。</p>
 <h2 id="素数"><a href="#素数" class="headerlink" title="素数"></a>素数</h2><p>对于大于等于2的<strong>正整数n</strong>，除了1和n以外，没有其他正整数整除n，这个n称作素数，否则叫做合数。</p>
 <p>1既不是素数也不是合数。</p>
-<p>n为合数，n&#x3D;ab，1&lt;a&lt;n,1&lt;b&lt;n。</p>
+<p>n为合数，$n&#x3D;ab，1&lt;a&lt;n,1&lt;b&lt;n$。</p>
 <p>任何大于1的整数必有素因子，任何合数都有一个不超过根号n的素因子。</p>
-<p>判断n是否为素数：如果所有素数p≤根号n都不能整除n，得到n为素数。</p>
-<h3 id="算数基本定理"><a href="#算数基本定理" class="headerlink" title="算数基本定理"></a>算数基本定理</h3><p>n为非零整数，有：<br>$$<br>n&#x3D;±p_1^{e_1}…p_r^{e_r}<br>$$<br>其中：p1,…,pr为互不相同的素数，e1,…,er为正整数。</p>
+<p>判断n是否为素数：如果所有素数$p≤\sqrt{n}$都不能整除n，得到n为素数。</p>
+<h3 id="算数基本定理"><a href="#算数基本定理" class="headerlink" title="算数基本定理"></a>算数基本定理</h3><p>n为非零整数，有：<br>$$<br>n&#x3D;±p_1^{e_1}…p_r^{e_r}<br>$$<br>其中：$p_1,…,p_r$为互不相同的素数，$e_1,…,e_r$为正整数。</p>
 <blockquote>
 <p>证明<strong>欧几里得定理</strong>：素数有无穷多个：</p>
-<p>先假设素数为有限个，p1,…,pk。</p>
-<p>设M&#x3D;p1p2…pk，N&#x3D;M+1</p>
+<p>先假设素数为有限个，$p_1,…,p_k$。</p>
+<p>设$M&#x3D;p_1p_2…p_k，N&#x3D;M+1$</p>
 <p>根据算数基本原理，N可以表示成一系列素数乘积的形式。</p>
-<p>存在一个素数p使得p|N。</p>
-<p>且p≠p1,…,pk，（若p属于这些素数，p|M，得到p|(N-M)，即p|1，不可能）</p>
+<p>存在一个素数p使得$p|N$。</p>
+<p>且$p≠p_1,…,p_k$，（若p属于这些素数，$p|M$，得到$p|(N-M)$，即$p|1$，不可能）</p>
 <p>所以p不在已知的有限素数中，矛盾。</p>
 </blockquote>
-<h2 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h2><p><strong>a mod b</strong>：设a,b∈Z，b&gt;0，如果q,r∈Z满足a&#x3D;qb+r,0≤r&lt;b，则定义：$a \bmod b &#x3D;r$</p>
+<h2 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h2><p><strong>a mod b</strong>：设$a,b∈Z，b&gt;0$，如果$q,r∈Z$满足$a&#x3D;qb+r,0≤r&lt;b$，则定义：$a \bmod b &#x3D;r$</p>
 <p>a是被除数，b相当于除数，q是商，r是余数。</p>
 <p>在编程语言里，模运算是 <strong>%</strong></p>
 <h3 id="模运算性质"><a href="#模运算性质" class="headerlink" title="模运算性质"></a>模运算性质</h3><p>$$<br>b\ |\ a \iff a\bmod b&#x3D;0<br>$$</p>
 <p>$$<br>(a+b)\bmod n&#x3D;(a \bmod n +b\bmod n)\bmod n<br>$$</p>
 <p>$$<br>(a-b)\bmod n&#x3D;(a \bmod n-b \bmod n)\bmod n<br>$$</p>
 <p>$$<br>(a×b)\bmod n &#x3D;(a \bmod n \ ×\ b\bmod n)\bmod n<br>$$</p>
-<h2 id="最大公约数"><a href="#最大公约数" class="headerlink" title="最大公约数"></a>最大公约数</h2><p>设a,b∈Z，如果d∈Z且d|a,d|b，称d为a和b的公因子（公约数）。</p>
-<p>如果d≥0且a和b的所有公因子都整除d，d为a和b的最大公约数：d&#x3D;gcd(a,b)</p>
+<h2 id="最大公约数"><a href="#最大公约数" class="headerlink" title="最大公约数"></a>最大公约数</h2><p>设$a,b∈Z$，如果$d∈Z，d|a,d|b$，称d为a和b的公因子（公约数）。</p>
+<p>如果d≥0且a和b的所有公因子都整除d，d为a和b的最大公约数：$d&#x3D;gcd(a,b)$</p>
 <p>公因子可以是任意整数，最大公约数不能为负数。</p>
-<p>特别的，gcd(0,0)&#x3D;0</p>
-<h3 id="互素"><a href="#互素" class="headerlink" title="互素"></a>互素</h3><p>设a,b∈Z，若gcd(a,b)&#x3D;1，称a和b互素，a和b的公因子只有±1。</p>
+<p>特别的，$gcd(0,0)&#x3D;0$</p>
+<h3 id="互素"><a href="#互素" class="headerlink" title="互素"></a>互素</h3><p>设$a,b∈Z$，若$gcd(a,b)&#x3D;1$，称a和b互素，a和b的公因子只有±1。</p>
 <h3 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h3><p>欧几里得算法又叫<strong>辗转相除法</strong>，用于计算最大公约数。</p>
-<p>假设a≥b≥0，b&#x3D;0时，gcd(a,0)&#x3D;a</p>
-<p>b&gt;0时，gcd(a,b)&#x3D;gcd(b,r)&#x3D;gcd(r1,r2)&#x3D;….&#x3D;gcd(t,0)&#x3D;t</p>
+<p>假设$a≥b≥0，b&#x3D;0$时，$gcd(a,0)&#x3D;a$</p>
+<p>$b&gt;0$时，$gcd(a,b)&#x3D;gcd(b,r)&#x3D;gcd(r1,r2)&#x3D;….&#x3D;gcd(t,0)&#x3D;t$</p>
 <h3 id="最大公约数表示定理"><a href="#最大公约数表示定理" class="headerlink" title="最大公约数表示定理"></a>最大公约数表示定理</h3><blockquote>
 <p>这个定理又叫裴蜀定理</p>
 </blockquote>
-<p>设a,b∈Z，d&#x3D;gcd(a,b)，得到存在唯一s,t∈Z，使得as+bt&#x3D;d</p>
-<p>如果gcd(a,b)&#x3D;1，得到有：<br>$$<br>gcd(a,b)&#x3D;1\iff as+bt&#x3D;1<br>$$<br>推论：<br>$$<br>d丨v\iff as+bt&#x3D;v<br>$$<br><strong>扩展欧几里得算法</strong>：又叫广义欧几里得算法，即为求as+bt&#x3D;gcd(a,b)中的s和t。</p>
-<h2 id="最小公倍数"><a href="#最小公倍数" class="headerlink" title="最小公倍数"></a>最小公倍数</h2><p>设a,b∈Z，如果m∈Z分别是a和b的倍数，则m成为a和b的公倍数。</p>
-<p>a和b的最小公倍数：lcm(a,b)，当a和b有一个为0时，lcm(a,b)&#x3D;0</p>
+<p>设$a,b∈Z，d&#x3D;gcd(a,b)$，得到存在唯一$s,t∈Z$，使得$as+bt&#x3D;d$</p>
+<p>如果$gcd(a,b)&#x3D;1$，得到有：<br>$$<br>gcd(a,b)&#x3D;1\iff as+bt&#x3D;1<br>$$<br>推论：<br>$$<br>d丨v\iff as+bt&#x3D;v<br>$$<br><strong>扩展欧几里得算法</strong>：又叫广义欧几里得算法，即为求$as+bt&#x3D;gcd(a,b)$中的s和t。</p>
+<h2 id="最小公倍数"><a href="#最小公倍数" class="headerlink" title="最小公倍数"></a>最小公倍数</h2><p>设$a,b∈Z$，如果$m∈Z$分别是a和b的倍数，则m成为a和b的公倍数。</p>
+<p>a和b的最小公倍数：$lcm(a,b)$，当a和b有一个为0时，$lcm(a,b)&#x3D;0$</p>
 <p><strong>如果a和b是互素的正整数，那么lcm(a,b)&#x3D;ab</strong></p>
 <p><strong>转换关系</strong>：<br>$$<br>lcm(a,b)&#x3D;\frac{ab}{gcd(a,b)}<br>$$<br><strong>迭代法</strong>求最小公倍数：</p>
 <p>a和b反复加自己，每次迭代都是让小的加自己，直到两个数相等，得到最小公倍数。</p>
-<h1 id="同余理论"><a href="#同余理论" class="headerlink" title="同余理论"></a>同余理论</h1><h2 id="同余"><a href="#同余" class="headerlink" title="同余"></a>同余</h2><p>n为正整数，a和b分别模n，如果得到相同的余数，就说a和b在模n下满足同余关系，n是<strong>模数</strong>（modulus）：<br>$$<br>a\equiv b \ (\bmod n )<br>$$<br><strong>定义</strong>：如果a,b,n∈Z，n&gt;0，如果n|(a-b)，称a和b在模n下同余，记作a≡b (mod n)。</p>
+<h1 id="同余理论"><a href="#同余理论" class="headerlink" title="同余理论"></a>同余理论</h1><h2 id="同余"><a href="#同余" class="headerlink" title="同余"></a>同余</h2><p>n为正整数，a和b分别模n，如果得到相同的余数，就说a和b在模n下满足同余关系，n是<strong>模数</strong>（modulus）：<br>$$<br>a\equiv b \ (\bmod n )<br>$$<br><strong>定义</strong>：如果$a,b,n∈Z，n&gt;0$，如果$n|(a-b)$，称a和b在模n下同余，记作$a≡b (\bmod n)$。</p>
 <p><strong>性质</strong>：<br>$$<br>a\equiv b \ (\bmod n ) \iff a&#x3D;qn+b,\exists  q\in Z<br>$$</p>
 <p>$$<br>自反性：a\equiv a\ (\bmod n),a\in Z<br>$$</p>
 <p>$$<br>对称性：a\equiv b\ (\bmod n)\iff b\equiv a\ (\bmod n)<br>$$</p>
@@ -242,7 +243,7 @@ if (true) {
 <h2 id="乘法逆元"><a href="#乘法逆元" class="headerlink" title="乘法逆元"></a>乘法逆元</h2><p>之前我们学过倒数：两个数乘积为1，就称两个数互为倒数。</p>
 <p> 引入乘法逆元：</p>
 <p>​	因为我们有：<br>$$<br>2×3\bmod 5 &#x3D;1<br>$$<br>在这里，因为在模5下，3×2&#x3D;1，也可以理解为<strong>3和2在模5下互为”倒数”<strong>，不过这里不叫倒数，而叫</strong>乘法逆元</strong>，进而我们可以做如下变换：<br>$$<br>(7×2^{-1})\bmod 5&#x3D;(7×3)\bmod 5&#x3D;1<br>$$<br>这里的$(7×2^{-1}) \bmod 5$就可以理解为<strong>7乘以”2的乘法逆元”模5</strong>。</p>
-<p><strong>乘法逆元(modular inverse)定义</strong>：a∈Z，n∈N，如果az≡1 (mod n)，我们把z叫做模n下a的乘法逆元。记作$a^{-1}&#x3D;z$，模n下的乘法逆元只考虑小于n的。</p>
+<p><strong>乘法逆元(modular inverse)定义</strong>：$a∈Z，n∈N$，如果$az≡1 (\bmod n)$，我们把z叫做模n下a的乘法逆元。记作$a^{-1}&#x3D;z$，模n下的乘法逆元只考虑小于n的。</p>
 <p>逆元是相互的，$z^{-1}&#x3D;(a^{-1})^{-1}&#x3D;a^{(-1)×(-1)}&#x3D;a$</p>
 <p>逆元有唯一性，a在模n下的乘法逆元是唯一的。</p>
 <p><strong>乘法逆元存在法则</strong>：$gcd(a,n)&#x3D;1\iff$模n下，a有乘法逆元。</p>
@@ -250,8 +251,8 @@ if (true) {
 <p>如何证明存在法则？</p>
 <p>设$gcd(a,n)&#x3D;d(d&gt;1)$</p>
 <p>假设$a^{-1}&#x3D;b$，得到$ab\equiv 1 (\bmod n)$，有$ab&#x3D;qn+1$，$ab-qn&#x3D;1$</p>
-<p>因为d|a，d|n</p>
-<p>所以得到d|1，矛盾，假设不成立。</p>
+<p>因为$d|a，d|n$</p>
+<p>所以得到$d|1$，矛盾，假设不成立。</p>
 </blockquote>
 <p>求乘法逆元算法：</p>
 <p>​		<strong>扩展欧几里得算法</strong>：$gcd(a,n)&#x3D;1\ ,\ as+tn&#x3D;1$，等式两边同时模n，得到$as\equiv 1 (\bmod n)$，即模n下a的逆元就是s。</p>
@@ -287,7 +288,7 @@ if (true) {
 <p>能得到：<br>$$<br>\begin{cases}x\equiv a_1\ (\bmod n_1)\\…\\x\equiv a_m\ (\bmod n_m)\end{cases}<br>$$<br>而且，此方程必有解，设解为$x&#x3D;a\in Z$，并且对任意$a’\in Z$，都有</p>
 <p>$a’$为方程组的解$\iff a\equiv a’\ (\bmod N)$</p>
 <p>这就是<strong>中国剩余定理</strong>，又叫孙子定理。</p>
-<p>求解公式为：<br>$$<br>a&#x3D;\sum_{i&#x3D;1}^mn_i^<em>n_i^{</em>-1}a_i<br>$$<br>其中，$n_i^*&#x3D;\frac{N}{n_i}$。</p>
+<p>求解公式为：<br>$$<br>a&#x3D;\sum_{i&#x3D;1}^mn_i^*n_i^{*-1}a_i<br>$$<br>其中，$n_i^*&#x3D;\frac{N}{n_i}$。</p>
 <p>在$[0,N]$以内，模N有唯一解，得到$a \bmod n$。</p>
 <p>在这篇文章里对中国剩余定理有更详细的介绍：<a href="https://ch3mtr4ils.cn/2022/11/22/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">RSA学习笔记（三）</a></p>
 <h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>定义所有正整数$n\in N$，根据欧拉函数：<br>$$<br>\phi (n)&#x3D;|Z^*_n|\ ,\ 规定\phi (1)&#x3D;1<br>$$</p>
@@ -311,10 +312,10 @@ if (true) {
 <p>②$a^i\equiv a^j (\bmod n)\iff i\equiv j (\bmod k)$</p>
 <h3 id="欧拉定理-1"><a href="#欧拉定理-1" class="headerlink" title="欧拉定理"></a>欧拉定理</h3><p>设$a\in {Z_n}^*$，得到：<br>$$<br>a^{\phi(n)}\equiv1\ (\bmod n)<br>$$<br>且$k|\phi(n)$，k是a在模n下的阶。</p>
 <h3 id="欧拉定理证明"><a href="#欧拉定理证明" class="headerlink" title="欧拉定理证明"></a>欧拉定理证明</h3><blockquote>
-<p>不相同，每个整数乘a后仍然各不相同，乘以a在模n下整数仍然在集合内。</p>
+<p>${Z_n}^*$里的整数彼此不相同，每个整数乘a后仍然各不相同，乘以a在模n下整数仍然在集合内。</p>
 <p>乘以a之前和之后在模n下所得集合不变，仍为${Z_n}^*$</p>
 </blockquote>
-<p>根据引文的原理，我们有：<br>$$<br>\prod_{b\in Z^*<em>n}b\equiv\prod</em>{b\in Z^*<em>n}(ab)\equiv a^{\phi(n)}\prod</em>{b\in Z^*_n}b (\bmod n)<br>$$<br>进而得证欧拉定理。</p>
+<p>根据引文的原理，我们有：<br>$$<br>\prod_{b\in Z^*_n}b\equiv\prod_{b\in Z^*_n}(ab)\equiv a^{\phi(n)}\prod_{b\in Z^*_n}b (\bmod n)<br>$$<br>简单约分一下，进而得证欧拉定理。</p>
 <p><strong>定理</strong>：</p>
 <p>设$a\in Z_n^*,m\in Z$，a在模n下的乘法阶为k，得到$a^m(m\in Z)$在模n下乘法阶为$k’&#x3D;\frac{k}{gcd(m,k)}$</p>
 <h3 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h3><p>根据欧拉定理简单变形得到（p为素数）：<br>$$<br>a^p\equiv a\ (\bmod p)<br>$$</p>
@@ -616,7 +617,23 @@ document.addEventListener('pjax:error', (e) => {
   if (e.request.status === 404) {
     pjax.loadUrl('/404.html')
   }
-})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '0.5s');
+    arr[i].setAttribute('data-wow-delay', '0');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax>
   function butterfly_swiper_injector_config(){
     var parent_div_git = document.getElementById('recent-posts');
     var item_html = '<div class="recent-post-item swiper_container_card" style="height: auto;width: 100%"><div id="random"><div id="random-banner"><canvas id="peoplecanvas"></canvas></div><a id="random-hover" style="width:100%;height:auto;" href="javascript:toRandomPost()" rel="external nofollow noreferrer" one-link-mark="yes"><i class="fa fa-paper-plane" style="margin-left:10px"></i><div style="margin-left:10px">随便逛逛<i class="fa-solid fa-arrow-right" style="margin-left:10px"></i></div></a></div><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/12/03/RSA学习笔记（四）/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/12/08/RPMrQAmLftZbTzI.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-12-03</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/12/03/RSA学习笔记（四）/&quot;);" href="javascript:void(0);" alt="">RSA学习笔记（四）</a><div class="blog-slider__text">介绍几种较难的RSA攻击</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/12/03/RSA学习笔记（四）/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/12/09/misc入门——图片分析/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/12/09/M52hVHKlOU7erdA.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-12-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/12/09/misc入门——图片分析/&quot;);" href="javascript:void(0);" alt="">misc入门——图片分析</a><div class="blog-slider__text">misc图片分析</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/12/09/misc入门——图片分析/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/12/06/hexo魔改记录/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/12/08/fcGV4dKqFC9yn3s.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-12-06</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/12/06/hexo魔改记录/&quot;);" href="javascript:void(0);" alt="">hexo魔改记录</a><div class="blog-slider__text">记录自己hexo的魔改记录</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/12/06/hexo魔改记录/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/11/28/pwn基础和栈溢出/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/12/08/mPGN6Vjf5rlynJS.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-28</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/11/28/pwn基础和栈溢出/&quot;);" href="javascript:void(0);" alt="">pwn基础和栈溢出</a><div class="blog-slider__text">pwn菜鸟的自我挣扎QAQ</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/11/28/pwn基础和栈溢出/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/12/07/外挂标签语法/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/12/08/hTdCng1U95L3HpS.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-12-07</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/12/07/外挂标签语法/&quot;);" href="javascript:void(0);" alt="">外挂标签语法</a><div class="blog-slider__text">介绍有关外挂标签的引入</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/12/07/外挂标签语法/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
@@ -640,23 +657,7 @@ document.addEventListener('pjax:error', (e) => {
   else if (epage === cpage){
     butterfly_swiper_injector_config();
   }
-  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
-for(var i = 0;i<arr.length;i++){
-    arr[i].classList.add('wow');
-    arr[i].classList.add('animate__zoomIn');
-    arr[i].setAttribute('data-wow-duration', '0.5s');
-    arr[i].setAttribute('data-wow-delay', '0');
-    arr[i].setAttribute('data-wow-offset', '100');
-    arr[i].setAttribute('data-wow-iteration', '1');
-  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
-for(var i = 0;i<arr.length;i++){
-    arr[i].classList.add('wow');
-    arr[i].classList.add('animate__zoomIn');
-    arr[i].setAttribute('data-wow-duration', '');
-    arr[i].setAttribute('data-wow-delay', '');
-    arr[i].setAttribute('data-wow-offset', '');
-    arr[i].setAttribute('data-wow-iteration', '');
-  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><script data-pjax src="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><script data-pjax src="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
   function gitcalendar_injector_config(){
       var parent_div_git = document.getElementById('recent-posts');
       var item_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
