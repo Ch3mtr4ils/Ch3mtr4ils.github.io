@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3838841 */
+  src: url('//at.alicdn.com/t/c/font_3838841_bf9gbx7yvuv.woff2?t=1671968533207') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3838841_bf9gbx7yvuv.woff?t=1671968533207') format('woff'),
+       url('//at.alicdn.com/t/c/font_3838841_bf9gbx7yvuv.ttf?t=1671968533207') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xinxi:before {
+  content: "\e641";
+  font-size: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.icon-biaoqian:before {
+  content: "\e604";
+  font-size: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.icon-QQ:before {
+  content: "\e882";
+  font-size: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.icon-lianjie:before {
+  content: "\e603";
+  font-size: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.icon-aixin:before {
+  content: "\e85c";
+  font-size: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.icon-wenjianjia_kai:before {
+  content: "\e65c";
+  font-size: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.icon-github:before {
+  content: "\ecb5";
+  font-size: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.icon-shizhong:before {
+  content: "\e7d1";
+  font-size: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
