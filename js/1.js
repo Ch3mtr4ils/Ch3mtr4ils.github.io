@@ -97,7 +97,7 @@ $.ajax({
                         case "江苏省":
                             switch (ipLoacation.result.ad_info.city) {
                                 case "南京市":
-                                    posdesc = "欢迎来自安徽省南京市的小伙伴。";
+                                    posdesc = "欢迎来自江苏省南京市的小伙伴。";
                                     break;
                                 case "苏州市":
                                     posdesc = "上有天堂，下有苏杭。";
