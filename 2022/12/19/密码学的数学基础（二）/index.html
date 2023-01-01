@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>密码学的数学基础（二） | Chemtrails Home - 保持努力！</title><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="本篇主要介绍密码学中有关抽象代数的内容 群论代数结构设$G$为非空集合，后跟一个二元运算。  二元运算需要两个运算数，比如加减乘除需要两个运算数，它们就是二元运算。   (G,*)把一个集合和指定的一个或者多个运算组合到一起所形成的结构，如果满足封闭性，就能成为一个代数结构。  什么是封闭性？ 我们对于$\forall a,b\in G$，对其进行运算，所得结果跑不出这个集合，仍然为集合里的元素，">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>密码学的数学基础（二） | Chemtrails Home - 保持努力！</title><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="本篇主要介绍密码学中有关抽象代数的内容 群论代数结构设$G$为非空集合，后跟一个二元运算。  二元运算需要两个运算数，比如加减乘除需要两个运算数，它们就是二元运算。  $$(G,*)$$ 把一个集合和指定的一个或者多个运算组合到一起所形成的结构，如果满足封闭性，就能成为一个代数结构。  什么是封闭性？ 我们对于$\forall a,b\in G$，对其进行运算，所得结果跑不出这个集合，仍然为集合里">
 <meta property="og:type" content="article">
 <meta property="og:title" content="密码学的数学基础（二）">
 <meta property="og:url" content="https://ch3mtr4ils.cn/2022/12/19/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="Chemtrails Home - 保持努力！">
-<meta property="og:description" content="本篇主要介绍密码学中有关抽象代数的内容 群论代数结构设$G$为非空集合，后跟一个二元运算。  二元运算需要两个运算数，比如加减乘除需要两个运算数，它们就是二元运算。   (G,*)把一个集合和指定的一个或者多个运算组合到一起所形成的结构，如果满足封闭性，就能成为一个代数结构。  什么是封闭性？ 我们对于$\forall a,b\in G$，对其进行运算，所得结果跑不出这个集合，仍然为集合里的元素，">
+<meta property="og:description" content="本篇主要介绍密码学中有关抽象代数的内容 群论代数结构设$G$为非空集合，后跟一个二元运算。  二元运算需要两个运算数，比如加减乘除需要两个运算数，它们就是二元运算。  $$(G,*)$$ 把一个集合和指定的一个或者多个运算组合到一起所形成的结构，如果满足封闭性，就能成为一个代数结构。  什么是封闭性？ 我们对于$\forall a,b\in G$，对其进行运算，所得结果跑不出这个集合，仍然为集合里">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/12/19/aD5ckeFVEquYM42.png">
 <meta property="article:published_time" content="2022-12-19T12:17:21.000Z">
-<meta property="article:modified_time" content="2022-12-23T15:39:07.263Z">
+<meta property="article:modified_time" content="2023-01-01T03:42:41.158Z">
 <meta property="article:author" content="Chemtrails">
 <meta property="article:tag" content="抽象代数">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-12-23 23:39:07'
+  postUpdate: '2023-01-01 11:42:41'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,10 +142,10 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><link rel="stylesheet" href="/css/shubiao.css"><link rel="stylesheet" href="/css/tags.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/font.css"><link rel="stylesheet" href="/css/twikoo.css"><link rel="stylesheet" href="/css/ok.css"><link rel="stylesheet" href="/css/essay_page/home_essay_bar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/twikoo_beautify.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><link rel="stylesheet" href="/css/shubiao.css"><link rel="stylesheet" href="/css/tags.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/font.css"><link rel="stylesheet" href="/css/twikoo.css"><link rel="stylesheet" href="/css/ok.css"><link rel="stylesheet" href="/css/essay_page/home_essay_bar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/twikoo_beautify.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+<link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")
@@ -161,13 +161,13 @@ window.addEventListener('load',()=> { preloader.endLoading() })
 if (true) {
   document.addEventListener('pjax:send', () => { preloader.initLoading() })
   document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tit.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/essay/"><i class="fa-fw fas fa-music"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Chemtrails</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/essay/"><i class="fa-fw fas fa-music"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">密码学的数学基础（二）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-19T12:17:21.000Z" title="发表于 2022-12-19 20:17:21">2022-12-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-23T15:39:07.263Z" title="更新于 2022-12-23 23:39:07">2022-12-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Crypto/">Crypto</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="密码学的数学基础（二）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><em>本篇主要介绍密码学中有关<strong>抽象代数</strong>的内容</em></p>
+}</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tit.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/essay/"><i class="fa-fw fas fa-music"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Chemtrails</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/essay/"><i class="fa-fw fas fa-music"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">密码学的数学基础（二）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-19T12:17:21.000Z" title="发表于 2022-12-19 20:17:21">2022-12-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-01T03:42:41.158Z" title="更新于 2023-01-01 11:42:41">2023-01-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Crypto/">Crypto</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="密码学的数学基础（二）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><em>本篇主要介绍密码学中有关<strong>抽象代数</strong>的内容</em></p>
 <h1 id="群论"><a href="#群论" class="headerlink" title="群论"></a>群论</h1><h2 id="代数结构"><a href="#代数结构" class="headerlink" title="代数结构"></a>代数结构</h2><p>设$G$为<strong>非空集合</strong>，后跟一个<strong>二元</strong>运算。</p>
 <blockquote>
 <p>二元运算需要两个运算数，比如加减乘除需要两个运算数，它们就是二元运算。</p>
 </blockquote>
-<script type="math/tex; mode=display">
-(G,*)</script><p>把一个集合和指定的一个或者多个运算组合到一起所形成的结构，如果满足封闭性，就能成为一个<strong>代数结构</strong>。</p>
+<p>$$<br>(G,*)<br>$$</p>
+<p>把一个集合和指定的一个或者多个运算组合到一起所形成的结构，如果满足封闭性，就能成为一个<strong>代数结构</strong>。</p>
 <blockquote>
 <p>什么是封闭性？</p>
 <p>我们对于$\forall a,b\in G$，对其进行运算，所得结果跑不出这个集合，仍然为集合里的元素，即为：</p>
@@ -176,12 +176,12 @@ if (true) {
 </blockquote>
 <h2 id="群（group）"><a href="#群（group）" class="headerlink" title="群（group）"></a>群（group）</h2><p>定义$(G,*)$为一个群，那么它满足以下四条性质：</p>
 <p>①封闭性：$\forall a,b\in G,a*b\in G$</p>
-<p>②结合律：$\forall a,b,c\in G,a*b*c=(a*b)*c$，揭示了元素运算顺序不影响最终结果。</p>
-<p>③有单位元（幺元）：$\exists e\in G,\forall a\in G,a*e=e*a=a$，群里的单位元为唯一的。例如加法里的0，乘法里的1。</p>
+<p>②结合律：$\forall a,b,c\in G,a*b*c&#x3D;(a*b)*c$，揭示了元素运算顺序不影响最终结果。</p>
+<p>③有单位元（幺元）：$\exists e\in G,\forall a\in G,a*e&#x3D;e*a&#x3D;a$，群里的单位元为唯一的。例如加法里的0，乘法里的1。</p>
 <blockquote>
 <p>如果$e$只能位于运算符号的一边而不能满足交换律，则不能称作单位元，根据$e$的位置成为左单位元和右单位元。</p>
 </blockquote>
-<p>④逆元：$\forall a\in G,\exists b\in G,a*b=b*a=e$，$a$的逆元记为$a^{-1}$，单位元以自身为逆元，每个元素只有唯一的逆元。</p>
+<p>④逆元：$\forall a\in G,\exists b\in G,a*b&#x3D;b*a&#x3D;e$，$a$的逆元记为$a^{-1}$，单位元以自身为逆元，每个元素只有唯一的逆元。</p>
 <blockquote>
 <p>$(Z,+)$为一个群，满足封闭性和结合律，单位元为0，逆元为相反数。</p>
 <p>$(Q,×)$不是一个群，尽管满足封闭性和结合律，单位元为1，逆元是有理数的倒数，但是0没有倒数（逆元），不满足要求。如果在Q中排除0，这就是一个群。</p>
@@ -193,51 +193,49 @@ if (true) {
 <p><strong>有限群</strong>：G为有限集合，如$(Z^*_p,×)$，称$G$的元素个数叫做$G$的阶，记作$|G|$</p>
 <p><strong>无限群</strong>：G为无限集合，如$(Z,+)$，$G$的阶叫做无限阶。</p>
 <p><strong>平凡群</strong>：群里只有一个元素，这个唯一元素就是单位元。</p>
-<h3 id="群的性质"><a href="#群的性质" class="headerlink" title="群的性质"></a>群的性质</h3><p>①<strong>消去律</strong>：$a*b=a*c\Rightarrow b=c$</p>
-<p>②方程$a*x=b$，有唯一解$x\in G$，解为$x=a^{-1}*b$</p>
-<p>③$(a*b)^{-1}=b^{-1}*a^{-1}$</p>
-<p>④$(a^{-1})^{-1}=a$</p>
+<h3 id="群的性质"><a href="#群的性质" class="headerlink" title="群的性质"></a>群的性质</h3><p>①<strong>消去律</strong>：$a*b&#x3D;a*c\Rightarrow b&#x3D;c$</p>
+<p>②方程$a*x&#x3D;b$，有唯一解$x\in G$，解为$x&#x3D;a^{-1}*b$</p>
+<p>③$(a*b)^{-1}&#x3D;b^{-1}*a^{-1}$</p>
+<p>④$(a^{-1})^{-1}&#x3D;a$</p>
 <blockquote>
-<p>证明③和④很简单，我们可以在③中把$a*b$看做一个元素，$b^{-1}*a^{-1}$当做另一个元素，等式成立就是相当于两个元素互为逆元，证明两个元素相乘是否等于$e$就行，第④个也是一样的道理：$a^{-1}*a=e$</p>
+<p>证明③和④很简单，我们可以在③中把$a*b$看做一个元素，$b^{-1}*a^{-1}$当做另一个元素，等式成立就是相当于两个元素互为逆元，证明两个元素相乘是否等于$e$就行，第④个也是一样的道理：$a^{-1}*a&#x3D;e$</p>
 </blockquote>
 <h3 id="阿贝尔群"><a href="#阿贝尔群" class="headerlink" title="阿贝尔群"></a>阿贝尔群</h3><p>阿贝尔群又称作<strong>交换群</strong>。</p>
-<p>如果对于群$G$中的任何元素$a,b\in G$，都有$a*b=b*a$，称$G$为阿贝尔群。</p>
+<p>如果对于群$G$中的任何元素$a,b\in G$，都有$a*b&#x3D;b*a$，称$G$为阿贝尔群。</p>
 <p>简单来说，一个阿贝尔群要满足结合律、交换律、单位元、逆元、封闭性五个性质。</p>
-<p>证明群$G$是阿贝尔群，也就是证明群$G$满足交换律，可以使用此关系来判断:$\forall a,b\in G,(a*b)^2=a^2*b^2$</p>
-<h3 id="群的简记符号"><a href="#群的简记符号" class="headerlink" title="群的简记符号"></a>群的简记符号</h3><p>$a^t :  a*a*…*a$，$a$是群的元素，$t$是整数（不要理解为$a$和$t$的运算）</p>
-<p>$a_{-t} : (a^{-1})^t=a^{-1}*a^{-1}*…*a^{-1}$</p>
+<p>证明群$G$是阿贝尔群，也就是证明群$G$满足交换律，可以使用此关系来判断:$\forall a,b\in G,(a*b)^2&#x3D;a^2*b^2$</p>
+<h3 id="群的简记符号"><a href="#群的简记符号" class="headerlink" title="群的简记符号"></a>群的简记符号</h3><p>$a^t\ :\  a*a*…*a$，$a$是群的元素，$t$是整数（不要理解为$a$和$t$的运算）</p>
+<p>$a_{-t}\ :\ (a^{-1})^t&#x3D;a^{-1}*a^{-1}*…*a^{-1}$</p>
 <p>得到结论：</p>
-<p>$(a^t)^m=a^{tm}$</p>
-<p>$a^t*a^m=a^{t+m}$</p>
-<p>$(a^{-1})^t=(a^t)^{-1}$</p>
-<p>当$G$为阿贝尔群，$\forall a,b\in G$，有$(a*b)^t=a^t*b^t$</p>
+<p>$(a^t)^m&#x3D;a^{tm}$</p>
+<p>$a^t*a^m&#x3D;a^{t+m}$</p>
+<p>$(a^{-1})^t&#x3D;(a^t)^{-1}$</p>
+<p>当$G$为阿贝尔群，$\forall a,b\in G$，有$(a*b)^t&#x3D;a^t*b^t$</p>
 <h2 id="子群"><a href="#子群" class="headerlink" title="子群"></a>子群</h2><p>设$(G,*)$是一个群，$H$是$G$的非空子集，如果$(H,*)$是一个群，称$(H,*)$是$(G,*)$的子群。</p>
-<p>$G$的平凡子群：$(\{e\},*)$、$(G,*)$，</p>
+<p>$G$的平凡子群：$({e},*)$、$(G,*)$，</p>
 <p>$G$除了平凡子群，其他子群都为非平凡子群，又叫做真子群。</p>
 <p>如果$H$是$G$的子群，$e\in G$是单位元，那么$e$也是子群$H$的单位元，也就是说<strong>群的单位元也是其子群的单位元</strong>。</p>
 <p>如果$H$是$G$的子群，$a\in H$，得到$a^{-1}\in H$，也就是说<strong>元素在子群中，它的逆元也一定在子群中</strong>。</p>
 <h3 id="判断子群"><a href="#判断子群" class="headerlink" title="判断子群"></a>判断子群</h3><p>方法一：如果$H$是$G$的非空子集，根据群的封闭性，对于任意$a,b\in H$，都有$a*b^{-1}\in H$，那么$H$就是$G$的子群。</p>
 <p>方法二：如果$H$是$G$的非空子集，如果$H$为有限集，而且$G$的运算$*$在$H$上满足封闭性，得到$H$就是$G$的子群。</p>
 <p>简单来说，$H$<strong>是有限集而且封闭，便是子群</strong>。</p>
-<h3 id="如何构造子群"><a href="#如何构造子群" class="headerlink" title="如何构造子群"></a>如何构造子群</h3><p>对于阿贝尔群$G,m\in Z$，得到子群：$G^m=\\{a^m|a\in G\\}$</p>
+<h3 id="如何构造子群"><a href="#如何构造子群" class="headerlink" title="如何构造子群"></a>如何构造子群</h3><p>对于阿贝尔群$G,m\in Z$，得到子群：$G^m&#x3D;\{a^m|a\in G\}$</p>
 <blockquote>
 <p>证明：</p>
 <p>$a,b\in G\Rightarrow a^m,b^m\in G^m$</p>
-<p>根据之前判断子群的方法，我们只要证明$a^m*(b^m)^{-1}$仍是子集里的元素就行，进行运算：</p>
-<script type="math/tex; mode=display">
-a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
+<p>根据之前判断子群的方法，我们只要证明$a^m*(b^m)^{-1}$仍是子集里的元素就行，进行运算：<br>$$<br>a^m*(b^m)^{-1}&#x3D;a^m*(b^{-1})^m&#x3D;(a*b^{-1})^m\in G^m<br>$$</p>
+</blockquote>
 <p>如：$(Z^*_p)^2$是$Z^*_p$的子群，$(Z^*_n)^m$是$Z^*_n$的子群（m次剩余）。</p>
-<p>对于群$(Z,+)$，可以得到其中一个子群$mZ=\\{mz|z\in Z\\}$</p>
-<p>对于群$(Z_n,+)$，可以得到其中一个子群$mZ_n=\\{mz\bmod n|z\in Z_n\\}$</p>
+<p>对于群$(Z,+)$，可以得到其中一个子群$mZ&#x3D;\{mz|z\in Z\}$</p>
+<p>对于群$(Z_n,+)$，可以得到其中一个子群$mZ_n&#x3D;\{mz\bmod n|z\in Z_n\}$</p>
 <p>下面列举一个简单的例子：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
 <th>$Z_{15}$</th>
 <th>0</th>
 <th>1</th>
-<th style="text-align:center">2</th>
+<th align="center">2</th>
 <th>3</th>
 <th>4</th>
 <th>5</th>
@@ -252,12 +250,11 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <th>14</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>$2Z_{15}$</td>
 <td>0</td>
 <td>2</td>
-<td style="text-align:center">4</td>
+<td align="center">4</td>
 <td>6</td>
 <td>8</td>
 <td>10</td>
@@ -275,7 +272,7 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <td>$3Z_{15}$</td>
 <td>0</td>
 <td>3</td>
-<td style="text-align:center">6</td>
+<td align="center">6</td>
 <td>9</td>
 <td>12</td>
 <td>0</td>
@@ -293,7 +290,7 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <td>$4Z_{15}$</td>
 <td>0</td>
 <td>4</td>
-<td style="text-align:center">8</td>
+<td align="center">8</td>
 <td>12</td>
 <td>1</td>
 <td>5</td>
@@ -311,7 +308,7 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <td>$5Z_{15}$</td>
 <td>0</td>
 <td>5</td>
-<td style="text-align:center">10</td>
+<td align="center">10</td>
 <td>0</td>
 <td>5</td>
 <td>10</td>
@@ -329,7 +326,7 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <td>$6Z_{15}$</td>
 <td>0</td>
 <td>6</td>
-<td style="text-align:center">12</td>
+<td align="center">12</td>
 <td>3</td>
 <td>9</td>
 <td>0</td>
@@ -343,29 +340,25 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <td>3</td>
 <td>9</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>介绍另一种构造方法：</p>
-<p>对于阿贝尔群$G,m\in Z$，得到子群：$G\\{m\\}=\\{a\in G|a^m=e\\}$</p>
+<p>对于阿贝尔群$G,m\in Z$，得到子群：$G\{m\}&#x3D;\{a\in G|a^m&#x3D;e\}$</p>
 <blockquote>
-<p>证明：如果$a,b\in G$而且$a^m=b^m=e$，则$a,b\in G\\{m\\}$</p>
-<p>同理，根据之前判断子群的方法：</p>
-<script type="math/tex; mode=display">
-(a^m*b^{-1})^{m}=e\in G \{m\}</script></blockquote>
-<p>例如对于$(Z_n,+)$，使用这种构造方法我们得到$Z_n\\{m\\}=\\{z\in Z_n|mz\equiv 0 (\bmod n)\\}$，哪些元素会在子群里呢？</p>
-<p>满足式子$mz\equiv 0 (\bmod n)\Rightarrow z\equiv 0(\bmod \frac n d)$，这里不确定m和n是否互素，需要对模数进行运算，$d=gcd(m,n)$</p>
-<p>换个写法又能得到$Z_n\\{m\\}=\\{0,\frac n d,\frac {2n}d,\frac {3n}d,…,\frac {(d-1)n}d\\}=\frac n dZ_n$</p>
-<p>由于子群里的元素都乘$d$之后又是$n$的倍数，又可以写成$Z_n\\{m\\}=Z_n\\{d\\}$</p>
+<p>证明：如果$a,b\in G$而且$a^m&#x3D;b^m&#x3D;e$，则$a,b\in G\{m\}$</p>
+<p>同理，根据之前判断子群的方法：<br>$$<br>(a^m*b^{-1})^{m}&#x3D;e\in G {m}<br>$$</p>
+</blockquote>
+<p>例如对于$(Z_n,+)$，使用这种构造方法我们得到$Z_n\{m\}&#x3D;\{z\in Z_n|mz\equiv 0 (\bmod n)\}$，哪些元素会在子群里呢？</p>
+<p>满足式子$mz\equiv 0 (\bmod n)\Rightarrow z\equiv 0(\bmod \frac n d)$，这里不确定m和n是否互素，需要对模数进行运算，$d&#x3D;gcd(m,n)$</p>
+<p>换个写法又能得到$Z_n\{m\}&#x3D;\{0,\frac n d,\frac {2n}d,\frac {3n}d,…,\frac {(d-1)n}d\}&#x3D;\frac n dZ_n$</p>
+<p>由于子群里的元素都乘$d$之后又是$n$的倍数，又可以写成$Z_n\{m\}&#x3D;Z_n\{d\}$</p>
 <p>我们可以使用之前$Z_{15}$的数表来具体分析一下：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
 <th>$Z_{15}$</th>
 <th>0</th>
 <th>1</th>
-<th style="text-align:center">2</th>
+<th align="center">2</th>
 <th>3</th>
 <th>4</th>
 <th>5</th>
@@ -380,12 +373,11 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <th>14</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>$6Z_{15}$</td>
 <td><span class='p red'>0</span></td>
 <td>6</td>
-<td style="text-align:center">12</td>
+<td align="center">12</td>
 <td>3</td>
 <td>9</td>
 <td><span class='p red'>0</span></td>
@@ -399,19 +391,16 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <td>3</td>
 <td>9</td>
 </tr>
-</tbody>
-</table>
-</div>
-<p>可以拿$m=6$来看，把等于0的挑出来，分别对应原来的$0,5,10$，这三个数构成$Z_{15}$的子集$Z_{15}\\{6\\}$</p>
-<p>又根据刚刚的分析，$gcd(6,15)=3,Z_{15}\\{6\\}=Z_{15}\\{3\\}$</p>
-<div class="table-container">
+</tbody></table>
+<p>可以拿$m&#x3D;6$来看，把等于0的挑出来，分别对应原来的$0,5,10$，这三个数构成$Z_{15}$的子集$Z_{15}\{6\}$</p>
+<p>又根据刚刚的分析，$gcd(6,15)&#x3D;3,Z_{15}\{6\}&#x3D;Z_{15}\{3\}$</p>
 <table>
 <thead>
 <tr>
 <th>$Z_{15}$</th>
 <th>0</th>
 <th>1</th>
-<th style="text-align:center">2</th>
+<th align="center">2</th>
 <th>3</th>
 <th>4</th>
 <th>5</th>
@@ -426,12 +415,11 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <th>14</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>$3Z_{15}$</td>
 <td><span class='p red'>0</span></td>
 <td>3</td>
-<td style="text-align:center">6</td>
+<td align="center">6</td>
 <td>9</td>
 <td>12</td>
 <td><span class='p red'>0</span></td>
@@ -445,19 +433,16 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <td>9</td>
 <td>12</td>
 </tr>
-</tbody>
-</table>
-</div>
-<p>可见，对于子集$Z_{15}\\{3\\}$，是和$Z_{15}\\{6\\}$子集完全一样的，都包含$0,5,10$三个元素。</p>
-<p>而且，我们知道$Z_n\\{m\\}=\frac n dZ_n,\frac n d=\frac 3{15}=5$，所以以上的子集满足$Z_{15}\\{3\\}=Z_{15}\\{6\\}=5Z_{15}$，也就是说$5Z_{15}$中也只有三个元素$0,5,10$：</p>
-<div class="table-container">
+</tbody></table>
+<p>可见，对于子集$Z_{15}\{3\}$，是和$Z_{15}\{6\}$子集完全一样的，都包含$0,5,10$三个元素。</p>
+<p>而且，我们知道$Z_n\{m\}&#x3D;\frac n dZ_n,\frac n d&#x3D;\frac 3{15}&#x3D;5$，所以以上的子集满足$Z_{15}\{3\}&#x3D;Z_{15}\{6\}&#x3D;5Z_{15}$，也就是说$5Z_{15}$中也只有三个元素$0,5,10$：</p>
 <table>
 <thead>
 <tr>
 <th>$5Z_{15}$</th>
 <th>0</th>
 <th>5</th>
-<th style="text-align:center">10</th>
+<th align="center">10</th>
 <th>0</th>
 <th>5</th>
 <th>10</th>
@@ -472,39 +457,34 @@ a^m*(b^m)^{-1}=a^m*(b^{-1})^m=(a*b^{-1})^m\in G^m</script></blockquote>
 <th>10</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
 </table>
-</div>
 <h3 id="整数群的子群"><a href="#整数群的子群" class="headerlink" title="整数群的子群"></a>整数群的子群</h3><blockquote>
 <p>这里的$Z$是$(Z,+)$，$Z_n$是$(Z_n,+)$。</p>
 </blockquote>
-<p><strong>定理1</strong>：$H$是$Z$的子群，则存在唯一的非负整数m，使得$H=mZ$，$mZ=\\{mz|z\in Z\\}$</p>
+<p><strong>定理1</strong>：$H$是$Z$的子群，则存在唯一的非负整数m，使得$H&#x3D;mZ$，$mZ&#x3D;\{mz|z\in Z\}$</p>
 <p>换句话说，判断$H$是不是$Z$的子群是很容易的，只要看看能不能找到一个非负整数构成这种倍数形式的集合，如果找不到这个非负整数，那么一定不是$Z$的子群。</p>
 <blockquote>
-<p>证明存在性：如果$H=\\{0\\},m=0$，定理成立，如果$H$里还存在非零整数，那么一定会有正整数（$Z$群逆元为相反数，一正一负），我们可以假设$m\in H$是$H$里最小的正整数，也就是证明$H=mZ$就可以了。</p>
-<p>我们可以假设$m\in H$是$H$里最小的正整数，$a\in H$是$H$的任意整数，写成$a=qm+r,0≤r&lt;m$（q可以理解成q个m相加），得到$r=a-qm\in H$，如果$r≠0，r$是$H$里小于$m$的正整数，矛盾，所以$r=0$，得到$a=qm$，$H$的所有元素都是$m$的倍数，也就是说$H$的元素都在$mZ$里，有$H\subseteq mZ$</p>
-<p>同时，因为$m\in H$，根据群的封闭性，$m$的倍数都属于$H$，$mZ$的集合里由于都是$m$的倍数，所以$mZ\subseteq H$，综合得到$H=mZ$</p>
+<p>证明存在性：如果$H&#x3D;\{0\},m&#x3D;0$，定理成立，如果$H$里还存在非零整数，那么一定会有正整数（$Z$群逆元为相反数，一正一负），我们可以假设$m\in H$是$H$里最小的正整数，也就是证明$H&#x3D;mZ$就可以了。</p>
+<p>我们可以假设$m\in H$是$H$里最小的正整数，$a\in H$是$H$的任意整数，写成$a&#x3D;qm+r,0≤r&lt;m$（q可以理解成q个m相加），得到$r&#x3D;a-qm\in H$，如果$r≠0，r$是$H$里小于$m$的正整数，矛盾，所以$r&#x3D;0$，得到$a&#x3D;qm$，$H$的所有元素都是$m$的倍数，也就是说$H$的元素都在$mZ$里，有$H\subseteq mZ$</p>
+<p>同时，因为$m\in H$，根据群的封闭性，$m$的倍数都属于$H$，$mZ$的集合里由于都是$m$的倍数，所以$mZ\subseteq H$，综合得到$H&#x3D;mZ$</p>
 <p>所以，整数群的子群都具有形如$mZ$的形式。</p>
-<p>证明唯一性：假设存在非负整数$x$，使得$mZ=xZ$，因为$x\in xZ$，得到$x\in mZ，m|x$，同理$x|m$，由整除知识可得$m=±x$，因为是非负整数，$m=x$，得到唯一性。</p>
+</blockquote>
+<blockquote>
+<p>证明唯一性：假设存在非负整数$x$，使得$mZ&#x3D;xZ$，因为$x\in xZ$，得到$x\in mZ，m|x$，同理$x|m$，由整除知识可得$m&#x3D;±x$，因为是非负整数，$m&#x3D;x$，得到唯一性。</p>
 </blockquote>
 <p><strong>定理2</strong>：$m_1,m_2$是非负整数，$m_2|m_1\iff m_1Z\subseteq m_2Z$</p>
-<p>例如取3和9，易知$3Z=\\{0,±3,±6,±9,…\\},9Z=\\{0,±9,…\\}$，可得$9Z\subseteq 3Z$</p>
-<p><strong>定理3</strong>：$H$是$Z_n$的子群，存在$n$的唯一正因子$m$，使得$H=mZ_n$，$m_1,m_2$是$n$的正因子，$m_2|m_1\iff m_1Z_n\subseteq m_2Z_n$</p>
-<h3 id="子群构造子群"><a href="#子群构造子群" class="headerlink" title="子群构造子群"></a>子群构造子群</h3><p><strong>定理1</strong>：$H_1,H_2$是阿贝尔群$G$的子群，那么$H=H_1H_2$也是G的子群。</p>
-<script type="math/tex; mode=display">
-H=H_1H_2=\\{a_1*a_2|a_1\in H_1,a_2\in H_2\\}</script><blockquote>
+<p>例如取3和9，易知$3Z&#x3D;\{0,±3,±6,±9,…\},9Z&#x3D;\{0,±9,…\}$，可得$9Z\subseteq 3Z$</p>
+<p><strong>定理3</strong>：$H$是$Z_n$的子群，存在$n$的唯一正因子$m$，使得$H&#x3D;mZ_n$，$m_1,m_2$是$n$的正因子，$m_2|m_1\iff m_1Z_n\subseteq m_2Z_n$</p>
+<h3 id="子群构造子群"><a href="#子群构造子群" class="headerlink" title="子群构造子群"></a>子群构造子群</h3><p><strong>定理1</strong>：$H_1,H_2$是阿贝尔群$G$的子群，那么$H&#x3D;H_1H_2$也是G的子群。<br>$$<br>H&#x3D;H_1H_2&#x3D;\{a_1*a_2|a_1\in H_1,a_2\in H_2\}<br>$$</p>
+<blockquote>
 <p>证明可以分别设两个群的$a,b$，然后根据$a*b^{-1}\in H$可以证明（由于证明需要使用交换律，所以这里限制只能为阿贝尔群）。</p>
 </blockquote>
-<p>注意：通常下$H_1H_1≠2H_1$，例如$Z+Z=Z=\\{0,±1,±2,…\\}$，但是$2Z=\\{0,±2,±4,…\\}$</p>
+<p>注意：通常下$H_1H_1≠2H_1$，例如$Z+Z&#x3D;Z&#x3D;\{0,±1,±2,…\}$，但是$2Z&#x3D;\{0,±2,±4,…\}$</p>
 <blockquote>
-<p>扩展：$H_1,H_2,…,H_n$是阿贝尔群$G$的子群，那么$H=H_1H_2…H_n$也是G的子群。</p>
-<p>$H_1H_2…H_n=\\{a_1*…*a_n|a_1\in H_1,…,a_n\in H_n\\}$</p>
+<p>扩展：$H_1,H_2,…,H_n$是阿贝尔群$G$的子群，那么$H&#x3D;H_1H_2…H_n$也是G的子群。</p>
+<p>$H_1H_2…H_n&#x3D;\{a_1*…*a_n|a_1\in H_1,…,a_n\in H_n\}$</p>
 </blockquote>
-<p><strong>定理2</strong>：$H=H_1\cap H_2=\\{a|a\in H_1,a\in H_2\\}$</p>
+<p><strong>定理2</strong>：$H&#x3D;H_1\cap H_2&#x3D;\{a|a\in H_1,a\in H_2\}$</p>
 <p>简单来说就是，<strong>子群的交集是子群</strong>。</p>
 <blockquote>
 <p>简单证明：</p>
@@ -514,41 +494,39 @@ H=H_1H_2=\\{a_1*a_2|a_1\in H_1,a_2\in H_2\\}</script><blockquote>
 <p>得到$a*b^{-1}\in H$，由于证明没有用到交换律， 所以是否是阿贝尔群都能用。</p>
 </blockquote>
 <p>根据这种构造法则，经过简单拓展可以知道如果$H_1,…,H_n$是群$G$的子群，那么$H_1\cap …\cap H_n$也是$G$的子群。</p>
-<p><strong>子群的并集未必是子群。</strong>比如$2Z,3Z$两个群的并集里，$5=2+3\notin 2Z\cup 3Z$，封闭性不成立。</p>
+<p><strong>子群的并集未必是子群。</strong>比如$2Z,3Z$两个群的并集里，$5&#x3D;2+3\notin 2Z\cup 3Z$，封闭性不成立。</p>
 <p><strong>定理3</strong>：$H_1,H_2$是群$G$的非平凡子群，那么$G≠H_1\cup H_2$</p>
 <h2 id="陪集"><a href="#陪集" class="headerlink" title="陪集"></a>陪集</h2><p>如果$H$是群$G$的子群，$a\in G$：</p>
-<p>$aH=\\{a*h|h\in H\\}$是$H$关于$a$在$G$中的左陪集。</p>
-<p>$Ha=\\{h*a|h\in H\\}$是$H$关于$a$在$G$中的右陪集。</p>
-<p>如果$aH=Ha$，那么称其为$H$关于$a$在$G$中的<strong>陪集</strong>，这个$a$成为<strong>代表元</strong>。</p>
+<p>$aH&#x3D;\{a*h|h\in H\}$是$H$关于$a$在$G$中的左陪集。</p>
+<p>$Ha&#x3D;\{h*a|h\in H\}$是$H$关于$a$在$G$中的右陪集。</p>
+<p>如果$aH&#x3D;Ha$，那么称其为$H$关于$a$在$G$中的<strong>陪集</strong>，这个$a$成为<strong>代表元</strong>。</p>
 <p>陪集的符号表示可以为$[a]_H$，其研究目的是以子群$H$为基准去观察群里每个元素和$H$之间的关系。</p>
-<p>例如：对于加法群$Z$的子群$3Z=\\{0,±3,±6,…\\}$，所构造的子群可以写成以下形式：</p>
-<p>$[0]_{3Z}=\\{0,0±3,0±6,…\\}=3Z$</p>
-<p>$[1]_{3Z}=\\{1,1±3,1±6,…\\}$</p>
-<p>$[2]_{3Z}=\\{2,2±3,2±6,…\\}$</p>
+<p>例如：对于加法群$Z$的子群$3Z&#x3D;\{0,±3,±6,…\}$，所构造的子群可以写成以下形式：</p>
+<p>$[0]_{3Z}&#x3D;\{0,0±3,0±6,…\}&#x3D;3Z$</p>
+<p>$[1]_{3Z}&#x3D;\{1,1±3,1±6,…\}$</p>
+<p>$[2]_{3Z}&#x3D;\{2,2±3,2±6,…\}$</p>
 <p>…</p>
 <p>我们可以发现，每个整数只存在于唯一的陪集中，这种陪集的实质就是对整数群的划分，在这里，加法群的陪集的构造依据就是<strong>整数与3的倍数之间的距离</strong>。$[0]_{3Z}$与3的倍数距离为0，也就是子群本身，$[1]_{3Z}$与3的倍数距离为1，$[2]_{3Z}$和与3的倍数距离为2。</p>
 <h3 id="陪集的性质"><a href="#陪集的性质" class="headerlink" title="陪集的性质"></a>陪集的性质</h3><p>①$a\in [a]_H$</p>
 <blockquote>
-<p>这是因为子群里肯定存在单位元，$a*e=a$，所以$a$必定存在于陪集中。</p>
+<p>这是因为子群里肯定存在单位元，$a*e&#x3D;a$，所以$a$必定存在于陪集中。</p>
 </blockquote>
-<p>②$[e]_H=H$（$[e]_H$称作<strong>平凡陪集</strong>，其他陪集称作非平凡陪集）</p>
+<p>②$[e]_H&#x3D;H$（$[e]_H$称作<strong>平凡陪集</strong>，其他陪集称作非平凡陪集）</p>
 <p>子群本身就是一个陪集，也就是所谓的平凡陪集，单位元只存在于子群这个陪集里。</p>
 <blockquote>
 <p>单位元和子群中任意元素运算都等于元素本身。</p>
 </blockquote>
-<p>同时，得知用子群构造的所有陪集里必然包含其本身，而且用子群里的元素构造的陪集也必然是这个子群本身，反之，如果一个陪集等于子群，那么这个陪集的代表元必然是子群的元素（封闭性），推广得到：</p>
-<script type="math/tex; mode=display">
-a\in H\iff [a]_H=H</script><p>③$[a]_H=[b]_H\iff a^{-1}*b\in H(b^{-1}*a\in H)$</p>
+<p>同时，得知用子群构造的所有陪集里必然包含其本身，而且用子群里的元素构造的陪集也必然是这个子群本身，反之，如果一个陪集等于子群，那么这个陪集的代表元必然是子群的元素（封闭性），推广得到：<br>$$<br>a\in H\iff [a]_H&#x3D;H<br>$$<br>③$[a]_H&#x3D;[b]_H\iff a^{-1}*b\in H(b^{-1}*a\in H)$</p>
 <blockquote>
 <p>简单证明：</p>
-<p>在两个陪集中，根据相等我们可以知道$b$必然等于$a$构造的陪集中的某个元素，可以得到$b=a*h$，整理一下可以得到$a^{-1}*b=h$，因为$h$是$H$的元素，所以有$a^{-1}*b\in H$</p>
+<p>在两个陪集中，根据相等我们可以知道$b$必然等于$a$构造的陪集中的某个元素，可以得到$b&#x3D;a*h$，整理一下可以得到$a^{-1}*b&#x3D;h$，因为$h$是$H$的元素，所以有$a^{-1}*b\in H$</p>
 <p>用$a^{-1}*b\in H$按照这个上面的思路也可以反向得到两个陪集相等的结论。</p>
 </blockquote>
 <h3 id="拉格朗日定理（群论）"><a href="#拉格朗日定理（群论）" class="headerlink" title="拉格朗日定理（群论）"></a>拉格朗日定理（群论）</h3><blockquote>
 <p>本节中对于群的阶指的是群中元素的个数，用$|H|$表示。</p>
 </blockquote>
 <p>$a\equiv b(\bmod H)$：$a$和$b$在同一个由$H$构造的陪集里，进一步得到两种可能性：</p>
-<p>$a,b$在相同陪集$\iff a\equiv b (\bmod H)\iff b=a*h,\exists h \in H\iff b\in [a]_H\iff [b]_H=[a]_H$</p>
+<p>$a,b$在相同陪集$\iff a\equiv b (\bmod H)\iff b&#x3D;a*h,\exists h \in H\iff b\in [a]_H\iff [b]_H&#x3D;[a]_H$</p>
 <p>所以，对于$[a]_H$，指代着这几层含义：</p>
 <p>①以$a$为代表元的陪集。</p>
 <p>②$a$和$H$构造的陪集。</p>
@@ -562,43 +540,41 @@ a\in H\iff [a]_H=H</script><p>③$[a]_H=[b]_H\iff a^{-1}*b\in H(b^{-1}*a\in H)$<
 <p><strong>性质</strong>：任何两个陪集$[a]_H,[b]_H$之间存在双射，同一个子群构造的所有陪集$[a]_H$和子群$H$大小是相等的。</p>
 <p><strong>拉格朗日定理</strong>：$G$是有限群，$H$是$G$的任何子群，那么$\vert H \vert|\vert G \vert$</p>
 <blockquote>
-<p>例如$|G|=15$，那么子群只可能含有1,3,5或15个元素。</p>
+<p>例如$|G|&#x3D;15$，那么子群只可能含有1,3,5或15个元素。</p>
 </blockquote>
-<p>设$H$构成的陪集为$[a_1]_H,…,[a_n]_H$，根据上面的性质，这些陪集（相当于等价类）对$G$进行了划分，这些陪集的并集恰好是整个群$G$，我们可以得到：</p>
-<script type="math/tex; mode=display">
-|G|=\sum^n\_{i=1}|[a\_i]\_H|=\sum^n\_{i=1}|H|=n|H|</script><p>可见，群$G$的大小就是$H$的倍数，<strong>子群的阶就是群的阶的因子</strong>，上面的$n$就是这个子群能产生的陪集的个数。</p>
-<p>比如说对于加法群$Z_6=\\{0,1,2,3,4,5\\}$，设一个子群为$3Z_6=3×\\{0,1,2,3,4,5\\}=\\{0,3\\}$（别忘了进行模运算）</p>
+<p>设$H$构成的陪集为$[a_1]_H,…,[a_n]_H$，根据上面的性质，这些陪集（相当于等价类）对$G$进行了划分，这些陪集的并集恰好是整个群$G$，我们可以得到：<br>$$<br>|G|&#x3D;\sum^n_{i&#x3D;1}|[a_i]<em>H|&#x3D;\sum^n</em>{i&#x3D;1}|H|&#x3D;n|H|<br>$$<br>可见，群$G$的大小就是$H$的倍数，<strong>子群的阶就是群的阶的因子</strong>，上面的$n$就是这个子群能产生的陪集的个数。</p>
+<p>比如说对于加法群$Z_6&#x3D;\{0,1,2,3,4,5\}$，设一个子群为$3Z_6&#x3D;3×\{0,1,2,3,4,5\}&#x3D;\{0,3\}$（别忘了进行模运算）</p>
 <p>根据子群形成了三个陪集，这三个陪集，就是对群$Z_6$的划分：</p>
-<p>$[0]_{3Z_6}=[3]_{3Z_6}=\\{0,3\\}$</p>
-<p>$[1]_{3Z_6}=[4]_{3Z_6}=\\{1,4\\}$</p>
-<p>$[2]_{3Z_6}=[5]_{3Z_6}=\\{2,5\\}$</p>
+<p>$[0]_{3Z_6}&#x3D;[3]_{3Z_6}&#x3D;\{0,3\}$</p>
+<p>$[1]_{3Z_6}&#x3D;[4]_{3Z_6}&#x3D;\{1,4\}$</p>
+<p>$[2]_{3Z_6}&#x3D;[5]_{3Z_6}&#x3D;\{2,5\}$</p>
 <p>每个陪集包含两个整数，正好等于子群元素个数，群的阶为6，子群的阶2，刚好成倍数关系，商为3，正好等于陪集的个数。</p>
-<h3 id="商群"><a href="#商群" class="headerlink" title="商群"></a>商群</h3><p>设$N$为群$G$的子群，如果对于$\forall a\in G$都有$aN=Na$，那么称$N$为$G$的<strong>正规子群</strong>。</p>
-<p>利用正规子群和群的元素，我们构造陪集，将这些陪集集中起来，定义集合$G/N=\\{[a]_N|a\in G\\}$，这个集合的元素也是一些集合，就是用正规子群构造的陪集。</p>
-<p>定义二元运算$[a]_N*[b]_N=[a*b]_N,a,b\in G$，得到群$(G/N,*)$，这个群是群$G$在模$N$下的商群。</p>
+<h3 id="商群"><a href="#商群" class="headerlink" title="商群"></a>商群</h3><p>设$N$为群$G$的子群，如果对于$\forall a\in G$都有$aN&#x3D;Na$，那么称$N$为$G$的<strong>正规子群</strong>。</p>
+<p>利用正规子群和群的元素，我们构造陪集，将这些陪集集中起来，定义集合$G&#x2F;N&#x3D;\{[a]_N|a\in G\}$，这个集合的元素也是一些集合，就是用正规子群构造的陪集。</p>
+<p>定义二元运算$[a]_N*[b]_N&#x3D;[a*b]_N,a,b\in G$，得到群$(G&#x2F;N,*)$，这个群是群$G$在模$N$下的商群。</p>
 <blockquote>
 <p>对于上面的二元运算，可以先计算$a*b$，根据封闭性得知运算结果也是群内的元素，然后用这个结果和$N$取陪集。</p>
 </blockquote>
-<p>我们定义$[G:N]$为商群$G/N$的阶。</p>
-<p><strong>定理1</strong>：$G$为有限群，$N$为群$G$的正规子群，有$[G:N]=\frac{|G|}{|N|}$</p>
+<p>我们定义$[G:N]$为商群$G&#x2F;N$的阶。</p>
+<p><strong>定理1</strong>：$G$为有限群，$N$为群$G$的正规子群，有$[G:N]&#x3D;\frac{|G|}{|N|}$</p>
 <p>这里的$[G:N]$其实就是前面拉格朗日定理里面公式的$n$。</p>
-<p><strong>定理2</strong>：$G$为有限群，$N$为群$G$的正规子群，$K$为$N$的正规子群，那么$[G:K]=[G:N][N:K]$</p>
+<p><strong>定理2</strong>：$G$为有限群，$N$为群$G$的正规子群，$K$为$N$的正规子群，那么$[G:K]&#x3D;[G:N][N:K]$</p>
 <p><strong>对于阿贝尔群</strong>：</p>
-<p>如果$N$为阿贝尔群$G$的子群，对于$\forall a\in G$，有$aH=Ha=[a]_H$</p>
+<p>如果$N$为阿贝尔群$G$的子群，对于$\forall a\in G$，有$aH&#x3D;Ha&#x3D;[a]_H$</p>
 <p>针对阿贝尔群有几个性质：</p>
 <p>阿贝尔群的子群都为正规子群；阿贝尔群的任意子群都可以构造商群；阿贝尔群的子群构造的商群也是阿贝尔群。</p>
 <blockquote>
-<p>对于整数群$Z=\\{0,±1,±2,…\\}$</p>
-<p>有子群$nZ=\\{0,±n,±2n,…\\}$</p>
-<p>商群$Z/nZ:$</p>
-<p>$[0]_{nZ}=\\{0,±n,±2n,…\\}=[0]$</p>
-<p>$[1]_{nZ}=\\{1,1±n,1±2n,…\\}=[1]$</p>
-<p>$[2]_{nZ}=\\{2,2±n,2±2n,…\\}=[2]$</p>
+<p>对于整数群$Z&#x3D;\{0,±1,±2,…\}$</p>
+<p>有子群$nZ&#x3D;\{0,±n,±2n,…\}$</p>
+<p>商群$Z&#x2F;nZ:$</p>
+<p>$[0]_{nZ}&#x3D;\{0,±n,±2n,…\}&#x3D;[0]$</p>
+<p>$[1]_{nZ}&#x3D;\{1,1±n,1±2n,…\}&#x3D;[1]$</p>
+<p>$[2]_{nZ}&#x3D;\{2,2±n,2±2n,…\}&#x3D;[2]$</p>
 <p>…</p>
-<p>$[n-1]_{nZ}=\\{n-1,(n-1)±n,(n-1)±2n,…\\}=[n-1]$</p>
-<p>商群里有$n$个不同的陪集，同时，我们可以发现这个商群实际上就是模$n$下剩余类的的集合：$Z/nZ=\\{[0],[1],…,[n-1]\\}=Z_n$，这个剩余类集合和商群实际上是一个东西，只不过产生的角度不同。</p>
+<p>$[n-1]_{nZ}&#x3D;\{n-1,(n-1)±n,(n-1)±2n,…\}&#x3D;[n-1]$</p>
+<p>商群里有$n$个不同的陪集，同时，我们可以发现这个商群实际上就是模$n$下剩余类的的集合：$Z&#x2F;nZ&#x3D;\{[0],[1],…,[n-1]\}&#x3D;Z_n$，这个剩余类集合和商群实际上是一个东西，只不过产生的角度不同。</p>
 </blockquote>
-</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/">抽象代数</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/24/StegSolve%E4%BD%BF%E7%94%A8%E5%92%8CLSB%E9%9A%90%E5%86%99/"><img class="prev-cover" src="https://s2.loli.net/2022/12/24/O5pbX1mtWVA8vew.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">StegSolve使用和LSB隐写</div></div></a></div><div class="next-post pull-right"><a href="/2022/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/"><img class="next-cover" src="https://s2.loli.net/2022/12/14/h8LT9OjIGekn64f.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">密码学的数学基础（一）</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/tit.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Chemtrails</div><div class="author-info__description">保持努力！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" href="https://ch3mtr4ils.cn/about/"><i class="fas fa-heart"></i><span>点这里进一步了解！</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Ch3mtr4ils" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=2775750552&amp;website=www.oicqzone.com" target="_blank" title="Email"><i class="fas fa-user"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BE%A4%E8%AE%BA"><span class="toc-text">群论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84"><span class="toc-text">代数结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%A4%EF%BC%88group%EF%BC%89"><span class="toc-text">群（group）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">群的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BF%E8%B4%9D%E5%B0%94%E7%BE%A4"><span class="toc-text">阿贝尔群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E7%9A%84%E7%AE%80%E8%AE%B0%E7%AC%A6%E5%8F%B7"><span class="toc-text">群的简记符号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E7%BE%A4"><span class="toc-text">子群</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%AD%90%E7%BE%A4"><span class="toc-text">判断子群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%9E%84%E9%80%A0%E5%AD%90%E7%BE%A4"><span class="toc-text">如何构造子群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E7%BE%A4%E7%9A%84%E5%AD%90%E7%BE%A4"><span class="toc-text">整数群的子群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%BE%A4%E6%9E%84%E9%80%A0%E5%AD%90%E7%BE%A4"><span class="toc-text">子群构造子群</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%AA%E9%9B%86"><span class="toc-text">陪集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%AA%E9%9B%86%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">陪集的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%AE%9A%E7%90%86%EF%BC%88%E7%BE%A4%E8%AE%BA%EF%BC%89"><span class="toc-text">拉格朗日定理（群论）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%95%86%E7%BE%A4"><span class="toc-text">商群</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/29/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="RSA学习笔记"><img src="https://s2.loli.net/2022/12/29/3bxISilKj1aPFsc.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RSA学习笔记"/></a><div class="content"><a class="title" href="/2022/12/29/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="RSA学习笔记">RSA学习笔记</a><time datetime="2022-12-29T03:31:50.000Z" title="发表于 2022-12-29 11:31:50">2022-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/27/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" title="RSA学习笔记（五）"><img src="https://s2.loli.net/2022/12/27/2jLsqWdrEC9SvIQ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RSA学习笔记（五）"/></a><div class="content"><a class="title" href="/2022/12/27/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" title="RSA学习笔记（五）">RSA学习笔记（五）</a><time datetime="2022-12-27T05:24:44.000Z" title="发表于 2022-12-27 13:24:44">2022-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/26/%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A0%81/" title="仿射密码"><img src="https://s2.loli.net/2022/12/26/GoxsIjByAb7aVXM.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="仿射密码"/></a><div class="content"><a class="title" href="/2022/12/26/%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A0%81/" title="仿射密码">仿射密码</a><time datetime="2022-12-26T05:16:49.000Z" title="发表于 2022-12-26 13:16:49">2022-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/24/StegSolve%E4%BD%BF%E7%94%A8%E5%92%8CLSB%E9%9A%90%E5%86%99/" title="StegSolve使用和LSB隐写"><img src="https://s2.loli.net/2022/12/24/O5pbX1mtWVA8vew.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="StegSolve使用和LSB隐写"/></a><div class="content"><a class="title" href="/2022/12/24/StegSolve%E4%BD%BF%E7%94%A8%E5%92%8CLSB%E9%9A%90%E5%86%99/" title="StegSolve使用和LSB隐写">StegSolve使用和LSB隐写</a><time datetime="2022-12-24T12:31:49.000Z" title="发表于 2022-12-24 20:31:49">2022-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/19/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" title="密码学的数学基础（二）"><img src="https://s2.loli.net/2022/12/19/aD5ckeFVEquYM42.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学的数学基础（二）"/></a><div class="content"><a class="title" href="/2022/12/19/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" title="密码学的数学基础（二）">密码学的数学基础（二）</a><time datetime="2022-12-19T12:17:21.000Z" title="发表于 2022-12-19 20:17:21">2022-12-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> Chemtrails</div><div class="footer_custom_text">欢迎来到 Chemtrails Home！</div><div class="content"> <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:var(--anzhiyu-fontcolor)" target="_blank">鲁ICP备2022041228号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:btf.scrollToDest(0, 500);"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:toRandomPost()"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a></div></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()">播放音乐</div><meting-js id="7800132795" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/">抽象代数</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/24/StegSolve%E4%BD%BF%E7%94%A8%E5%92%8CLSB%E9%9A%90%E5%86%99/"><img class="prev-cover" src="https://s2.loli.net/2022/12/24/O5pbX1mtWVA8vew.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">StegSolve使用和LSB隐写</div></div></a></div><div class="next-post pull-right"><a href="/2022/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/"><img class="next-cover" src="https://s2.loli.net/2022/12/14/h8LT9OjIGekn64f.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">密码学的数学基础（一）</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/tit.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Chemtrails</div><div class="author-info__description">保持努力！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" href="https://ch3mtr4ils.cn/about/"><i class="fas fa-heart"></i><span>点这里进一步了解！</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Ch3mtr4ils" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=2775750552&amp;website=www.oicqzone.com" target="_blank" title="Email"><i class="fas fa-user"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BE%A4%E8%AE%BA"><span class="toc-text">群论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84"><span class="toc-text">代数结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%A4%EF%BC%88group%EF%BC%89"><span class="toc-text">群（group）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">群的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BF%E8%B4%9D%E5%B0%94%E7%BE%A4"><span class="toc-text">阿贝尔群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E7%9A%84%E7%AE%80%E8%AE%B0%E7%AC%A6%E5%8F%B7"><span class="toc-text">群的简记符号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E7%BE%A4"><span class="toc-text">子群</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%AD%90%E7%BE%A4"><span class="toc-text">判断子群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%9E%84%E9%80%A0%E5%AD%90%E7%BE%A4"><span class="toc-text">如何构造子群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E7%BE%A4%E7%9A%84%E5%AD%90%E7%BE%A4"><span class="toc-text">整数群的子群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%BE%A4%E6%9E%84%E9%80%A0%E5%AD%90%E7%BE%A4"><span class="toc-text">子群构造子群</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%AA%E9%9B%86"><span class="toc-text">陪集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%AA%E9%9B%86%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">陪集的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%AE%9A%E7%90%86%EF%BC%88%E7%BE%A4%E8%AE%BA%EF%BC%89"><span class="toc-text">拉格朗日定理（群论）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%95%86%E7%BE%A4"><span class="toc-text">商群</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/29/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="RSA学习笔记"><img src="https://s2.loli.net/2022/12/29/3bxISilKj1aPFsc.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RSA学习笔记"/></a><div class="content"><a class="title" href="/2022/12/29/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="RSA学习笔记">RSA学习笔记</a><time datetime="2022-12-29T03:31:50.000Z" title="发表于 2022-12-29 11:31:50">2022-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/27/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" title="RSA学习笔记（五）"><img src="https://s2.loli.net/2022/12/27/2jLsqWdrEC9SvIQ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RSA学习笔记（五）"/></a><div class="content"><a class="title" href="/2022/12/27/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" title="RSA学习笔记（五）">RSA学习笔记（五）</a><time datetime="2022-12-27T05:24:44.000Z" title="发表于 2022-12-27 13:24:44">2022-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/26/%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A0%81/" title="仿射密码"><img src="https://s2.loli.net/2022/12/26/GoxsIjByAb7aVXM.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="仿射密码"/></a><div class="content"><a class="title" href="/2022/12/26/%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A0%81/" title="仿射密码">仿射密码</a><time datetime="2022-12-26T05:16:49.000Z" title="发表于 2022-12-26 13:16:49">2022-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/24/StegSolve%E4%BD%BF%E7%94%A8%E5%92%8CLSB%E9%9A%90%E5%86%99/" title="StegSolve使用和LSB隐写"><img src="https://s2.loli.net/2022/12/24/O5pbX1mtWVA8vew.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="StegSolve使用和LSB隐写"/></a><div class="content"><a class="title" href="/2022/12/24/StegSolve%E4%BD%BF%E7%94%A8%E5%92%8CLSB%E9%9A%90%E5%86%99/" title="StegSolve使用和LSB隐写">StegSolve使用和LSB隐写</a><time datetime="2022-12-24T12:31:49.000Z" title="发表于 2022-12-24 20:31:49">2022-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/19/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" title="密码学的数学基础（二）"><img src="https://s2.loli.net/2022/12/19/aD5ckeFVEquYM42.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学的数学基础（二）"/></a><div class="content"><a class="title" href="/2022/12/19/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" title="密码学的数学基础（二）">密码学的数学基础（二）</a><time datetime="2022-12-19T12:17:21.000Z" title="发表于 2022-12-19 20:17:21">2022-12-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023  <i id="heartbeat" class="fa fas fa-heartbeat"></i> Chemtrails</div><div class="footer_custom_text">欢迎来到 Chemtrails Home！</div><div class="content"> <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:var(--anzhiyu-fontcolor)" target="_blank">鲁ICP备2022041228号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:btf.scrollToDest(0, 500);"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:toRandomPost()"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a></div></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()">播放音乐</div><meting-js id="7800132795" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [ ['$','$'], ["\\(","\\)"]],
@@ -789,7 +765,7 @@ document.addEventListener('pjax:error', (e) => {
   else if (epage === cpage){
     butterfly_swiper_injector_config();
   }
-  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
 for(var i = 0;i<arr.length;i++){
     arr[i].classList.add('wow');
     arr[i].classList.add('animate__zoomIn');
@@ -805,7 +781,7 @@ for(var i = 0;i<arr.length;i++){
     arr[i].setAttribute('data-wow-delay', '');
     arr[i].setAttribute('data-wow-offset', '');
     arr[i].setAttribute('data-wow-iteration', '');
-  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax src="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><script data-pjax src="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
   function gitcalendar_injector_config(){
       var parent_div_git = document.getElementById('recent-posts');
       var item_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
