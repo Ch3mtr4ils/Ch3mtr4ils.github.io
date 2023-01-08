@@ -186,13 +186,13 @@ $.ajax({
             //判断时间
             let timeChange;
             let date = new Date();
-            if (date.getHours()>= 5 && date.getHours() < 11) timeChange = "<span>上午好</span>，一日之计在于晨";
-            else if (date.getHours()>= 1 && date.getHours() < 13) timeChange = "<span>中午好</span>，该吃个午饭了";
-            else if (date.getHours() >= 13 && date.getHours() < 15) timeChange = "<span>下午好</span>，懒懒地睡个午觉吧！";
+            if (date.getHours()>= 5 && date.getHours() < 11) timeChange = "<span>上午好</span>，一日之计在于晨。";
+            else if (date.getHours()>= 1 && date.getHours() < 13) timeChange = "<span>中午好</span>，该吃午饭了。";
+            else if (date.getHours() >= 13 && date.getHours() < 15) timeChange = "<span>下午好</span>，睡个午觉吧！";
             else if (date.getHours() >= 15 && date.getHours() < 16) timeChange = "<span>三点几啦</span>，饮茶先啦！";
             else if (date.getHours() >= 16 && date.getHours() < 19) timeChange = "<span>夕阳无限好！</span>";
             else if (date.getHours() >= 19 && date.getHours() < 24) timeChange = "<span>晚上好</span>，夜生活嗨起来！";
-            else timeChange = "夜深了，早点休息，少熬夜";
+            else timeChange = "夜深了，早点休息，少熬夜！(¦3[▓▓] 晚安~";
         
             document.getElementsByClassName("announcement_content")[0].innerHTML =
                 `(๑╹◡╹)ﾉ"""欢迎来自<span>${pos}</span>的小伙伴，${timeChange}<br>
