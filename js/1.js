@@ -32,7 +32,7 @@ $.ajax({
         
         function showWelcome() {
         
-            let dist = getDistance(118, 35, ipLoacation.result.location.lng, ipLoacation.result.location.lat);
+            let dist = getDistance(118.4130555, 35.0877777, ipLoacation.result.location.lng, ipLoacation.result.location.lat);
         
             let pos = ipLoacation.result.ad_info.nation;
             let posdesc;
