@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>密码学的数学基础（一） | Chemtrails Home - 保持努力！</title><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="本篇主要介绍密码学中有关初等数论的内容  推荐视频：Alice-Bob密码学的数学基础 Bilibili  整除理论整除我们假设$a,b∈Z$，如果存在$q∈Z$，使得$a&#x3D;qb$，所以称b整除a。 记为：$b|a$ 或者称b是a的因子，a是b的倍数，a被b整除。 b∤a表示b不能整除a，a不能被b整除。 一些性质①$b|0$ ②$1|a$ ③$0|a\iff a&#x3D;0$ ④$b">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>密码学的数学基础（一） | Chemtrails Home - 保持努力！</title><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="本篇主要介绍密码学中有关初等数论的内容  推荐视频：Alice-Bob密码学的数学基础 Bilibili  整除理论整除我们假设$a,b∈Z$，如果存在$q∈Z$，使得$a&#x3D;qb$，所以称b整除a。 记为：$b|a$ 或者称b是a的因子，a是b的倍数，a被b整除。 b∤a表示b不能整除a，a不能被b整除。 一些性质①$b|0$ ②$1|a$ ③$0|a\iff a&#x3D;0$ ④$b|a\iff b|-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="密码学的数学基础（一）">
 <meta property="og:url" content="https://ch3mtr4ils.cn/2022/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Chemtrails Home - 保持努力！">
-<meta property="og:description" content="本篇主要介绍密码学中有关初等数论的内容  推荐视频：Alice-Bob密码学的数学基础 Bilibili  整除理论整除我们假设$a,b∈Z$，如果存在$q∈Z$，使得$a&#x3D;qb$，所以称b整除a。 记为：$b|a$ 或者称b是a的因子，a是b的倍数，a被b整除。 b∤a表示b不能整除a，a不能被b整除。 一些性质①$b|0$ ②$1|a$ ③$0|a\iff a&#x3D;0$ ④$b">
+<meta property="og:description" content="本篇主要介绍密码学中有关初等数论的内容  推荐视频：Alice-Bob密码学的数学基础 Bilibili  整除理论整除我们假设$a,b∈Z$，如果存在$q∈Z$，使得$a&#x3D;qb$，所以称b整除a。 记为：$b|a$ 或者称b是a的因子，a是b的倍数，a被b整除。 b∤a表示b不能整除a，a不能被b整除。 一些性质①$b|0$ ②$1|a$ ③$0|a\iff a&#x3D;0$ ④$b|a\iff b|-">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/12/14/h8LT9OjIGekn64f.png">
 <meta property="article:published_time" content="2022-12-12T13:14:21.000Z">
@@ -145,7 +145,7 @@
     })(window)</script><link rel="stylesheet" href="/css/mycss.css"><link rel="stylesheet" href="/css/shubiao.css"><link rel="stylesheet" href="/css/tags.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/font.css"><link rel="stylesheet" href="/css/twikoo.css"><link rel="stylesheet" href="/css/ok.css"><link rel="stylesheet" href="/css/essay_page/home_essay_bar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/twikoo_beautify.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")
@@ -161,17 +161,17 @@ window.addEventListener('load',()=> { preloader.endLoading() })
 if (true) {
   document.addEventListener('pjax:send', () => { preloader.initLoading() })
   document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tit.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/essay/"><i class="fa-fw fas fa-music"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Chemtrails</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/essay/"><i class="fa-fw fas fa-music"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">密码学的数学基础（一）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-12T13:14:21.000Z" title="发表于 2022-12-12 21:14:21">2022-12-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-03T07:09:08.798Z" title="更新于 2023-01-03 15:09:08">2023-01-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Crypto/">Crypto</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>28分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="密码学的数学基础（一）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><em>本篇主要介绍密码学中有关<strong>初等数论</strong>的内容</em></p>
+}</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tit.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/essay/"><i class="fa-fw fas fa-music"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Chemtrails</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/essay/"><i class="fa-fw fas fa-music"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">密码学的数学基础（一）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-12T13:14:21.000Z" title="发表于 2022-12-12 21:14:21">2022-12-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-03T07:09:08.798Z" title="更新于 2023-01-03 15:09:08">2023-01-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Crypto/">Crypto</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>25分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="密码学的数学基础（一）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><em>本篇主要介绍密码学中有关<strong>初等数论</strong>的内容</em></p>
 <blockquote>
 <p>推荐视频：<a target="_blank" rel="noopener" href="https://space.bilibili.com/552018206/channel/collectiondetail?sid=436262">Alice-Bob密码学的数学基础 Bilibili</a></p>
 </blockquote>
-<h1 id="整除理论"><a href="#整除理论" class="headerlink" title="整除理论"></a>整除理论</h1><h2 id="整除"><a href="#整除" class="headerlink" title="整除"></a>整除</h2><p>我们假设$a,b∈Z$，如果存在$q∈Z$，使得$a&#x3D;qb$，所以称<strong>b整除a</strong>。</p>
+<h1 id="整除理论"><a href="#整除理论" class="headerlink" title="整除理论"></a>整除理论</h1><h2 id="整除"><a href="#整除" class="headerlink" title="整除"></a>整除</h2><p>我们假设$a,b∈Z$，如果存在$q∈Z$，使得$a=qb$，所以称<strong>b整除a</strong>。</p>
 <p>记为：$b|a$</p>
 <p>或者称b是a的因子，a是b的倍数，a被b整除。</p>
 <p>b∤a表示b不能整除a，a不能被b整除。</p>
 <h3 id="一些性质"><a href="#一些性质" class="headerlink" title="一些性质"></a><strong>一些性质</strong></h3><p>①$b|0$</p>
 <p>②$1|a$</p>
-<p>③$0|a\iff a&#x3D;0$</p>
+<p>③$0|a\iff a=0$</p>
 <p>④$b|a\iff b|-a\iff -b|a$</p>
 <h3 id="运算规律"><a href="#运算规律" class="headerlink" title="运算规律"></a>运算规律</h3><p>自反性：$a|a$</p>
 <p>传递性：$b|a$且$a|c$，得到$b|c$</p>
@@ -180,123 +180,143 @@ if (true) {
 <p>线性性：$b|a$且$b|c$，得到$\forall s,t∈Z，b|(sa±tc)$</p>
 <blockquote>
 <p>证明：</p>
-<p>因为$b|a且b|c$，存在$q_1,q_2∈Z$，得到$a&#x3D;q_1b,c&#x3D;q_2b$，对于$s,t∈Z$，得到$sa&#x3D;sq_1b$且$tc&#x3D;tq_2b$，得到$sa±tc&#x3D;sq_1b±tq_2b&#x3D;b(sq_1±tq_2)$</p>
+<p>因为$b|a且b|c$，存在$q_1,q_2∈Z$，得到$a=q_1b,c=q_2b$，对于$s,t∈Z$，得到$sa=sq_1b$且$tc=tq_2b$，得到$sa±tc=sq_1b±tq_2b=b(sq_1±tq_2)$</p>
 <p>得到$b|(sa±tc)$</p>
 </blockquote>
 <p>比较性：如果$a,b∈N，b|a$，得到$b≤a$</p>
-<h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><p>设$a,b∈Z$，当且仅当$a&#x3D;±b$时有$b|a$且$a|b$，特别的，$a|1$时当且仅当$a&#x3D;±1$。</p>
+<h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><p>设$a,b∈Z$，当且仅当$a=±b$时有$b|a$且$a|b$，特别的，$a|1$时当且仅当$a=±1$。</p>
 <h3 id="简单证明题"><a href="#简单证明题" class="headerlink" title="简单证明题"></a>简单证明题</h3><p>证明一个自然数，各位的数相加和如果能被3整除，这个自然数也能被3整除：</p>
-<p>转化为数学语言：<br>$$<br>a&#x3D;a_0+10a_1+…+10^ka_k\ ,\ a_0,…,a_k\in{0,1,…,9}<br>$$</p>
-<p>$$<br>b&#x3D;a_1+a_2+…+a_k<br>$$</p>
-<p>即证明如果3|b，得到3|a</p>
-<p>证明：q∈Z，得到b&#x3D;3q，对a进行变形，使其表示为含有3为因子的式子：<br>$$<br>a&#x3D;a_0+10a_1+…+10^ka_k<br>$$</p>
-<p>$$<br>&#x3D;(a_0+a_1+…+a_k)+(9a_1+99a_2+…99…9a_k)<br>$$</p>
-<p>$$<br>&#x3D;b+9(a_1+…+99…9a_k)<br>$$</p>
-<p>$$<br>&#x3D;3q+3(3a_1+33a_2+…+33…3a_k)<br>$$</p>
-<p>$$<br>&#x3D;3(q+3a_1+33a_2+…+33…3a+k)<br>$$</p>
-<p>得到3|a。</p>
+<p>转化为数学语言：</p>
+<script type="math/tex; mode=display">
+a=a_0+10a_1+...+10^ka_k\ ,\ a_0,...,a_k\in\{0,1,...,9\}</script><script type="math/tex; mode=display">
+b=a_1+a_2+...+a_k</script><p>即证明如果3|b，得到3|a</p>
+<p>证明：q∈Z，得到b=3q，对a进行变形，使其表示为含有3为因子的式子：</p>
+<script type="math/tex; mode=display">
+a=a_0+10a_1+...+10^ka_k</script><script type="math/tex; mode=display">
+=(a_0+a_1+...+a_k)+(9a_1+99a_2+...99...9a_k)</script><script type="math/tex; mode=display">
+=b+9(a_1+...+99...9a_k)</script><script type="math/tex; mode=display">
+=3q+3(3a_1+33a_2+...+33...3a_k)</script><script type="math/tex; mode=display">
+=3(q+3a_1+33a_2+...+33...3a+k)</script><p>得到3|a。</p>
 <h2 id="素数"><a href="#素数" class="headerlink" title="素数"></a>素数</h2><p>对于大于等于2的<strong>正整数n</strong>，除了1和n以外，没有其他正整数整除n，这个n称作素数，否则叫做合数。</p>
 <p>1既不是素数也不是合数。</p>
-<p>n为合数，$n&#x3D;ab，1&lt;a&lt;n,1&lt;b&lt;n$。</p>
+<p>n为合数，$n=ab，1&lt;a&lt;n,1&lt;b&lt;n$。</p>
 <p>任何大于1的整数必有素因子，任何合数都有一个不超过根号n的素因子。</p>
 <p>判断n是否为素数：如果所有素数$p≤\sqrt{n}$都不能整除n，得到n为素数。</p>
-<h3 id="算数基本定理"><a href="#算数基本定理" class="headerlink" title="算数基本定理"></a>算数基本定理</h3><p>n为非零整数，有：<br>$$<br>n&#x3D;±p_1^{e_1}…p_r^{e_r}<br>$$<br>其中：$p_1,…,p_r$为互不相同的素数，$e_1,…,e_r$为正整数。</p>
+<h3 id="算数基本定理"><a href="#算数基本定理" class="headerlink" title="算数基本定理"></a>算数基本定理</h3><p>n为非零整数，有：</p>
+<script type="math/tex; mode=display">
+n=±p_1^{e_1}...p_r^{e_r}</script><p>其中：$p_1,…,p_r$为互不相同的素数，$e_1,…,e_r$为正整数。</p>
 <blockquote>
 <p>证明<strong>欧几里得定理</strong>：素数有无穷多个：</p>
 <p>先假设素数为有限个，$p_1,…,p_k$。</p>
-<p>设$M&#x3D;p_1p_2…p_k，N&#x3D;M+1$</p>
+<p>设$M=p_1p_2…p_k，N=M+1$</p>
 <p>根据算数基本原理，N可以表示成一系列素数乘积的形式。</p>
 <p>存在一个素数p使得$p|N$。</p>
 <p>且$p≠p_1,…,p_k$，（若p属于这些素数，$p|M$，得到$p|(N-M)$，即$p|1$，不可能）</p>
 <p>所以p不在已知的有限素数中，矛盾。</p>
 </blockquote>
-<h2 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h2><p><strong>a mod b</strong>：设$a,b∈Z，b&gt;0$，如果$q,r∈Z$满足$a&#x3D;qb+r,0≤r&lt;b$，则定义：$a \bmod b &#x3D;r$</p>
+<h2 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h2><p><strong>a mod b</strong>：设$a,b∈Z，b&gt;0$，如果$q,r∈Z$满足$a=qb+r,0≤r&lt;b$，则定义：$a \bmod b =r$</p>
 <p>a是被除数，b相当于除数，q是商，r是余数。</p>
 <p>在编程语言里，模运算是 <strong>%</strong></p>
-<h3 id="模运算性质"><a href="#模运算性质" class="headerlink" title="模运算性质"></a>模运算性质</h3><p>$$<br>b\ |\ a \iff a\bmod b&#x3D;0<br>$$</p>
-<p>$$<br>(a+b)\bmod n&#x3D;(a \bmod n +b\bmod n)\bmod n<br>$$</p>
-<p>$$<br>(a-b)\bmod n&#x3D;(a \bmod n-b \bmod n)\bmod n<br>$$</p>
-<p>$$<br>(a×b)\bmod n &#x3D;(a \bmod n \ ×\ b\bmod n)\bmod n<br>$$</p>
-<h2 id="最大公约数"><a href="#最大公约数" class="headerlink" title="最大公约数"></a>最大公约数</h2><p>设$a,b∈Z$，如果$d∈Z，d|a,d|b$，称d为a和b的公因子（公约数）。</p>
-<p>如果d≥0且a和b的所有公因子都整除d，d为a和b的最大公约数：$d&#x3D;gcd(a,b)$</p>
+<h3 id="模运算性质"><a href="#模运算性质" class="headerlink" title="模运算性质"></a>模运算性质</h3><script type="math/tex; mode=display">
+b\ |\ a \iff a\bmod b=0</script><script type="math/tex; mode=display">
+(a+b)\bmod n=(a \bmod n +b\bmod n)\bmod n</script><script type="math/tex; mode=display">
+(a-b)\bmod n=(a \bmod n-b \bmod n)\bmod n</script><script type="math/tex; mode=display">
+(a×b)\bmod n =(a \bmod n \ ×\ b\bmod n)\bmod n</script><h2 id="最大公约数"><a href="#最大公约数" class="headerlink" title="最大公约数"></a>最大公约数</h2><p>设$a,b∈Z$，如果$d∈Z，d|a,d|b$，称d为a和b的公因子（公约数）。</p>
+<p>如果d≥0且a和b的所有公因子都整除d，d为a和b的最大公约数：$d=gcd(a,b)$</p>
 <p>公因子可以是任意整数，最大公约数不能为负数。</p>
-<p>特别的，$gcd(0,0)&#x3D;0$</p>
-<h3 id="互素"><a href="#互素" class="headerlink" title="互素"></a>互素</h3><p>设$a,b∈Z$，若$gcd(a,b)&#x3D;1$，称a和b互素，a和b的公因子只有±1。</p>
+<p>特别的，$gcd(0,0)=0$</p>
+<h3 id="互素"><a href="#互素" class="headerlink" title="互素"></a>互素</h3><p>设$a,b∈Z$，若$gcd(a,b)=1$，称a和b互素，a和b的公因子只有±1。</p>
 <h3 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h3><p>欧几里得算法又叫<strong>辗转相除法</strong>，用于计算最大公约数。</p>
-<p>假设$a≥b≥0，b&#x3D;0$时，$gcd(a,0)&#x3D;a$</p>
-<p>$b&gt;0$时，$gcd(a,b)&#x3D;gcd(b,r)&#x3D;gcd(r1,r2)&#x3D;….&#x3D;gcd(t,0)&#x3D;t$</p>
+<p>假设$a≥b≥0，b=0$时，$gcd(a,0)=a$</p>
+<p>$b&gt;0$时，$gcd(a,b)=gcd(b,r)=gcd(r1,r2)=….=gcd(t,0)=t$</p>
 <h3 id="最大公约数表示定理"><a href="#最大公约数表示定理" class="headerlink" title="最大公约数表示定理"></a>最大公约数表示定理</h3><blockquote>
 <p>这个定理又叫裴蜀定理</p>
 </blockquote>
-<p>设$a,b∈Z，d&#x3D;gcd(a,b)$，得到存在唯一$s,t∈Z$，使得$as+bt&#x3D;d$</p>
-<p>如果$gcd(a,b)&#x3D;1$，得到有：<br>$$<br>gcd(a,b)&#x3D;1\iff as+bt&#x3D;1<br>$$<br>推论：<br>$$<br>d丨v\iff as+bt&#x3D;v<br>$$</p>
-<h3 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h3><p>又叫广义欧几里得算法，即为求$as+bt&#x3D;gcd(a,b)$中的s和t，算法主要分为四步：</p>
+<p>设$a,b∈Z，d=gcd(a,b)$，得到存在唯一$s,t∈Z$，使得$as+bt=d$</p>
+<p>如果$gcd(a,b)=1$，得到有：</p>
+<script type="math/tex; mode=display">
+gcd(a,b)=1\iff as+bt=1</script><p>推论：</p>
+<script type="math/tex; mode=display">
+d丨v\iff as+bt=v</script><h3 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h3><p>又叫广义欧几里得算法，即为求$as+bt=gcd(a,b)$中的s和t，算法主要分为四步：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center"></th>
+<th style="text-align:center"></th>
 <th>步骤</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1</td>
-<td>定义 $s_1 &#x3D; 1, s_1 &#x3D; 0, t_2 &#x3D; 0, t_2 &#x3D; 1$</td>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td>定义 $s_1 = 1, s_1 = 0, t_2 = 0, t_2 = 1$</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td>如果$b&#x3D;0$，直接跳到第四步；若 $b ≠ 0$，用$ b $除以$ a $得到余数$ r$</td>
+<td style="text-align:center">2</td>
+<td>如果$b=0$，直接跳到第四步；若 $b ≠ 0$，用$ b $除以$ a $得到余数$ r$</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td>用$ b $代替$ a$, 用$ r $代替$b$， 令$s_1, t_1, s_2, t_2 &#x3D; s_2, t_2, s_1 - q·s_2, t_1 - q·t_2$，回到第二步直到出现$b&#x3D;0$</td>
+<td style="text-align:center">3</td>
+<td>用$ b $代替$ a$, 用$ r $代替$b$， 令$s_1, t_1, s_2, t_2 = s_2, t_2, s_1 - q·s_2, t_1 - q·t_2$，回到第二步直到出现$b=0$</td>
 </tr>
 <tr>
-<td align="center">4</td>
+<td style="text-align:center">4</td>
 <td>$a $的值就是最大公约数$gcd(a,b)$，$s_1 $和$ t_1 $的值就是所求$s,t$</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>在python里面实现扩展欧几里得算法：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">gcdext</span>(<span class="params">a,b</span>):</span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">0</span> <span class="keyword">and</span> b == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        s1,t1,s2,t2=<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> b:</span><br><span class="line">            q,r=a//b,a%b</span><br><span class="line">            a,b=b,r</span><br><span class="line">            s1,t1,s2,t2=s2,t2,s1-q*s2,t1-q*t2</span><br><span class="line">        <span class="keyword">if</span> a&gt;<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> (a,s1,t1)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> (-a,-s1,-t1)</span><br></pre></td></tr></table></figure>
-
 <h2 id="最小公倍数"><a href="#最小公倍数" class="headerlink" title="最小公倍数"></a>最小公倍数</h2><p>设$a,b∈Z$，如果$m∈Z$分别是a和b的倍数，则m成为a和b的公倍数。</p>
-<p>a和b的最小公倍数：$lcm(a,b)$，当a和b有一个为0时，$lcm(a,b)&#x3D;0$</p>
-<p><strong>如果a和b是互素的正整数，那么lcm(a,b)&#x3D;ab</strong></p>
-<p><strong>转换关系</strong>：<br>$$<br>lcm(a,b)&#x3D;\frac{ab}{gcd(a,b)}<br>$$<br><strong>迭代法</strong>求最小公倍数：</p>
+<p>a和b的最小公倍数：$lcm(a,b)$，当a和b有一个为0时，$lcm(a,b)=0$</p>
+<p><strong>如果a和b是互素的正整数，那么lcm(a,b)=ab</strong></p>
+<p><strong>转换关系</strong>：</p>
+<script type="math/tex; mode=display">
+lcm(a,b)=\frac{ab}{gcd(a,b)}</script><p><strong>迭代法</strong>求最小公倍数：</p>
 <p>a和b反复加自己，每次迭代都是让小的加自己，直到两个数相等，得到最小公倍数。</p>
-<h1 id="同余理论"><a href="#同余理论" class="headerlink" title="同余理论"></a>同余理论</h1><h2 id="同余"><a href="#同余" class="headerlink" title="同余"></a>同余</h2><p>n为正整数，a和b分别模n，如果得到相同的余数，就说a和b在模n下满足同余关系，n是<strong>模数</strong>（modulus）：<br>$$<br>a\equiv b \ (\bmod n )<br>$$<br><strong>定义</strong>：如果$a,b,n∈Z，n&gt;0$，如果$n|(a-b)$，称a和b在模n下同余，记作$a≡b (\bmod n)$。</p>
-<p><strong>性质</strong>：<br>$$<br>a\equiv b \ (\bmod n ) \iff a&#x3D;qn+b,\exists  q\in Z<br>$$</p>
-<p>$$<br>自反性：a\equiv a\ (\bmod n),a\in Z<br>$$</p>
-<p>$$<br>对称性：a\equiv b\ (\bmod n)\iff b\equiv a\ (\bmod n)<br>$$</p>
-<p>$$<br>传递性：a\equiv b\ (\bmod n),b\equiv c\ (\bmod n)\Rightarrow a\equiv c\ (\bmod n)<br>$$</p>
-<h2 id="乘法逆元"><a href="#乘法逆元" class="headerlink" title="乘法逆元"></a>乘法逆元</h2><p>之前我们学过倒数：两个数乘积为1，就称两个数互为倒数。</p>
+<h1 id="同余理论"><a href="#同余理论" class="headerlink" title="同余理论"></a>同余理论</h1><h2 id="同余"><a href="#同余" class="headerlink" title="同余"></a>同余</h2><p>n为正整数，a和b分别模n，如果得到相同的余数，就说a和b在模n下满足同余关系，n是<strong>模数</strong>（modulus）：</p>
+<script type="math/tex; mode=display">
+a\equiv b \ (\bmod n )</script><p><strong>定义</strong>：如果$a,b,n∈Z，n&gt;0$，如果$n|(a-b)$，称a和b在模n下同余，记作$a≡b (\bmod n)$。</p>
+<p><strong>性质</strong>：</p>
+<script type="math/tex; mode=display">
+a\equiv b \ (\bmod n ) \iff a=qn+b,\exists  q\in Z</script><script type="math/tex; mode=display">
+自反性：a\equiv a\ (\bmod n),a\in Z</script><script type="math/tex; mode=display">
+对称性：a\equiv b\ (\bmod n)\iff b\equiv a\ (\bmod n)</script><script type="math/tex; mode=display">
+传递性：a\equiv b\ (\bmod n),b\equiv c\ (\bmod n)\Rightarrow a\equiv c\ (\bmod n)</script><h2 id="乘法逆元"><a href="#乘法逆元" class="headerlink" title="乘法逆元"></a>乘法逆元</h2><p>之前我们学过倒数：两个数乘积为1，就称两个数互为倒数。</p>
 <p> 引入乘法逆元：</p>
-<p>​	因为我们有：<br>$$<br>2×3\bmod 5 &#x3D;1<br>$$<br>在这里，因为在模5下，3×2&#x3D;1，也可以理解为<strong>3和2在模5下互为”倒数”<strong>，不过这里不叫倒数，而叫</strong>乘法逆元</strong>，进而我们可以做如下变换：<br>$$<br>(7×2^{-1})\bmod 5&#x3D;(7×3)\bmod 5&#x3D;1<br>$$<br>这里的$(7×2^{-1}) \bmod 5$就可以理解为<strong>7乘以”2的乘法逆元”模5</strong>。</p>
-<p><strong>乘法逆元(modular inverse)定义</strong>：$a∈Z，n∈N$，如果$az≡1 (\bmod n)$，我们把z叫做模n下a的乘法逆元。记作$a^{-1}&#x3D;z$，模n下的乘法逆元只考虑小于n的。</p>
-<p>逆元是相互的，$z^{-1}&#x3D;(a^{-1})^{-1}&#x3D;a^{(-1)×(-1)}&#x3D;a$</p>
+<p>​    因为我们有：</p>
+<script type="math/tex; mode=display">
+2×3\bmod 5 =1</script><p>在这里，因为在模5下，3×2=1，也可以理解为<strong>3和2在模5下互为”倒数”</strong>，不过这里不叫倒数，而叫<strong>乘法逆元</strong>，进而我们可以做如下变换：</p>
+<script type="math/tex; mode=display">
+(7×2^{-1})\bmod 5=(7×3)\bmod 5=1</script><p>这里的$(7×2^{-1}) \bmod 5$就可以理解为<strong>7乘以”2的乘法逆元”模5</strong>。</p>
+<p><strong>乘法逆元(modular inverse)定义</strong>：$a∈Z，n∈N$，如果$az≡1 (\bmod n)$，我们把z叫做模n下a的乘法逆元。记作$a^{-1}=z$，模n下的乘法逆元只考虑小于n的。</p>
+<p>逆元是相互的，$z^{-1}=(a^{-1})^{-1}=a^{(-1)×(-1)}=a$</p>
 <p>逆元有唯一性，a在模n下的乘法逆元是唯一的。</p>
-<p><strong>乘法逆元存在法则</strong>：$gcd(a,n)&#x3D;1\iff$模n下，a有乘法逆元。</p>
+<p><strong>乘法逆元存在法则</strong>：$gcd(a,n)=1\iff$模n下，a有乘法逆元。</p>
 <blockquote>
 <p>如何证明存在法则？</p>
-<p>设$gcd(a,n)&#x3D;d(d&gt;1)$</p>
-<p>假设$a^{-1}&#x3D;b$，得到$ab\equiv 1 (\bmod n)$，有$ab&#x3D;qn+1$，$ab-qn&#x3D;1$</p>
+<p>设$gcd(a,n)=d(d&gt;1)$</p>
+<p>假设$a^{-1}=b$，得到$ab\equiv 1 (\bmod n)$，有$ab=qn+1$，$ab-qn=1$</p>
 <p>因为$d|a，d|n$</p>
 <p>所以得到$d|1$，矛盾，假设不成立。</p>
 </blockquote>
 <p>求乘法逆元算法：</p>
-<p>​		<strong>扩展欧几里得算法</strong>：$gcd(a,n)&#x3D;1\ ,\ as+tn&#x3D;1$，等式两边同时模n，得到$as\equiv 1 (\bmod n)$，即模n下a的逆元就是s。</p>
-<h2 id="一次同余方程"><a href="#一次同余方程" class="headerlink" title="一次同余方程"></a>一次同余方程</h2><h3 id="消去律"><a href="#消去律" class="headerlink" title="消去律"></a>消去律</h3><p>如果$a,n\in Z,n&gt;0$，如果$gcd(a,n)&#x3D;d$,得到：<br>$$<br>az\equiv az’\ (\bmod n)\Rightarrow z\equiv z’\ (\bmod \frac{n}{d})<br>$$</p>
-<blockquote>
-<p>求解一次同余方程：$105x-62\equiv 1\ (\bmod 6)$</p>
-<p>可以先把62移过去：$105x\equiv 63\ (\bmod 6)$</p>
-<p>$gcd(105,63)&#x3D;21\ ,\ gcd(21,6)&#x3D;3$然后使用消去律:$\frac{105x}{21}\equiv \frac{63}{21}(\bmod \frac{6}{3})$</p>
-<p>最后得到$5x\equiv 3\ (\bmod 2)\Rightarrow x\equiv 3×5^{-1}\ (\bmod 2)$</p>
+<p>​        <strong>扩展欧几里得算法</strong>：$gcd(a,n)=1 , as+tn=1$，等式两边同时模n，得到$as\equiv 1 (\bmod n)$，即模n下a的逆元就是s。</p>
+<h2 id="一次同余方程"><a href="#一次同余方程" class="headerlink" title="一次同余方程"></a>一次同余方程</h2><h3 id="消去律"><a href="#消去律" class="headerlink" title="消去律"></a>消去律</h3><p>如果$a,n\in Z,n&gt;0$，如果$gcd(a,n)=d$,得到：</p>
+<script type="math/tex; mode=display">
+az\equiv az'\ (\bmod n)\Rightarrow z\equiv z'\ (\bmod \frac{n}{d})</script><blockquote>
+<p>求解一次同余方程：$105x-62\equiv 1 (\bmod 6)$</p>
+<p>可以先把62移过去：$105x\equiv 63 (\bmod 6)$</p>
+<p>$gcd(105,63)=21 , gcd(21,6)=3$然后使用消去律:$\frac{105x}{21}\equiv \frac{63}{21}(\bmod \frac{6}{3})$</p>
+<p>最后得到$5x\equiv 3 (\bmod 2)\Rightarrow x\equiv 3×5^{-1} (\bmod 2)$</p>
 <p>又求得5在模2下的逆元为1。</p>
-<p>得到$x\equiv 1\ (\bmod 2)$</p>
-<p>这里，x的解应该是一个解集：$\{…,-3,-1,-1,3,5,7,…\}$</p>
+<p>得到$x\equiv 1 (\bmod 2)$</p>
+<p>这里，x的解应该是一个解集：$\\{…,-3,-1,-1,3,5,7,…\\}$</p>
 </blockquote>
 <p>一次同余方程有解的条件：</p>
-<p>如果$gcd(a,n)&#x3D;d$，得到$ax\equiv b\ (\bmod n)$有解$\iff d|b$</p>
-<p>如果$gcd(a,n)&#x3D;1$，同余方程有唯一解。</p>
+<p>如果$gcd(a,n)=d$，得到$ax\equiv b (\bmod n)$有解$\iff d|b$</p>
+<p>如果$gcd(a,n)=1$，同余方程有唯一解。</p>
 <h2 id="剩余类"><a href="#剩余类" class="headerlink" title="剩余类"></a>剩余类</h2><p>模n下：</p>
 <p>余数为0：{…,0,…}</p>
 <p>余数为1：{…,1,…}</p>
@@ -304,30 +324,37 @@ if (true) {
 <p>余数为n-1：{…,n-1,…}</p>
 <p>以上子集被称为<strong>剩余类</strong>，模n下含有整数a的剩余类记为$[a]_n$，简记为$[a]$</p>
 <p>如模3的3个剩余类：</p>
-<p>[0]&#x3D;{…,-3,0,3,…},[1]&#x3D;{…,-2,1,4,…},[2]&#x3D;{…,-1,2,5,…}</p>
+<p>[0]={…,-3,0,3,…},[1]={…,-2,1,4,…},[2]={…,-1,2,5,…}</p>
 <p>剩余类的每个整数都叫做这个剩余类的<strong>代表元</strong>。</p>
-<p><strong>剩余类集合</strong>：$Z_n&#x3D;\{[0],[1],[2],…,[n-1]\}$，比如$Z_5&#x3D;\{[0],[1],[2],[3],[4]\}$</p>
+<p><strong>剩余类集合</strong>：$Z_n=\\\{[0],[1],[2],…,[n-1]\\\}$，比如$Z_5=\\\{[0],[1],[2],[3],[4]\\\}$</p>
 <blockquote>
 <p>一些运算：</p>
-<p>$[a]+[b]&#x3D;[a+b]$,$[a]×[b]&#x3D;[a×b]\ (a,b\in Z)$，最后需要再模n。</p>
+<p>$[a]+[b]=[a+b]$,$[a]×[b]=[a×b] (a,b\in Z)$，最后需要再模n。</p>
 </blockquote>
-<p>设$u,v\in Z_n$,如果$uv&#x3D;[1]$,得到uv互为乘法逆元。</p>
-<p>定义集合${Z_n}^*&#x3D;${$Z_n$中有乘法逆元的剩余类}</p>
-<h2 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h2><p><strong>一次同余方程组</strong>：设两两互素的模数$n_1,…,n_m\in N$，以及任何整数$a_1,…,a_m\in Z$，设$N&#x3D;\sideset{}{}\prod^m_{i&#x3D;1}n_i$</p>
-<p>能得到：<br>$$<br>\begin{cases}x\equiv a_1\ (\bmod n_1)\\…\\x\equiv a_m\ (\bmod n_m)\end{cases}<br>$$<br>而且，此方程必有解，设解为$x&#x3D;a\in Z$，并且对任意$a’\in Z$，都有</p>
-<p>$a’$为方程组的解$\iff a\equiv a’\ (\bmod N)$</p>
+<p>设$u,v\in Z_n$,如果$uv=[1]$,得到uv互为乘法逆元。</p>
+<p>定义集合${Z_n}^*=${$Z_n$中有乘法逆元的剩余类}</p>
+<h2 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h2><p><strong>一次同余方程组</strong>：设两两互素的模数$n_1,…,n_m\in N$，以及任何整数$a_1,…,a_m\in Z$，设$N=\sideset{}{}\prod^m_{i=1}n_i$</p>
+<p>能得到：</p>
+<script type="math/tex; mode=display">
+\begin{cases}x\equiv a_1\ (\bmod n_1)\\\\...\\\\x\equiv a_m\ (\bmod n_m)\end{cases}</script><p>而且，此方程必有解，设解为$x=a\in Z$，并且对任意$a’\in Z$，都有</p>
+<p>$a’$为方程组的解$\iff a\equiv a’ (\bmod N)$</p>
 <p>这就是<strong>中国剩余定理</strong>，又叫孙子定理。</p>
-<p>求解公式为：<br>$$<br>a&#x3D;\sum_{i&#x3D;1}^mN_iN_i^{-1}a_i<br>$$<br>其中，$N_i&#x3D;\frac{N}{n_i}，N_i^{-1}$是$N_i$在模$n_i$的乘法逆元。</p>
+<p>求解公式为：</p>
+<script type="math/tex; mode=display">
+a=\sum_{i=1}^mN_iN_i^{-1}a_i</script><p>其中，$N_i=\frac{N}{n_i}，N_i^{-1}$是$N_i$在模$n_i$的乘法逆元。</p>
 <p>在$[0,N]$以内，模N有唯一解，得到$a \bmod n$。</p>
-<p>在这篇文章里对中国剩余定理有更详细的介绍：<a href="https://ch3mtr4ils.cn/2022/11/22/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">RSA学习笔记（三）</a></p>
-<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>定义所有正整数$n\in N$，根据欧拉函数：<br>$$<br>\phi (n)&#x3D;|Z^*_n|\ ,\ 规定\phi (1)&#x3D;1<br>$$</p>
-<blockquote>
+<p>在这篇文章里对中国剩余定理有更详细的介绍：<a href="https://ch3mtr4ils.cn/2022/11/22/RSA学习笔记（三）/">RSA学习笔记（三）</a></p>
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>定义所有正整数$n\in N$，根据欧拉函数：</p>
+<script type="math/tex; mode=display">
+\phi (n)=|Z^*_n|\ ,\ 规定\phi (1)=1</script><blockquote>
 <p>$|{Z_n}^*|$表示集合里元素的个数</p>
 </blockquote>
 <p>欧拉函数是求在$[0,n-1]$之间有多少正整数和n互素。</p>
 <p><strong>有关性质</strong>：</p>
-<p>①设两两互素的正整数$n_1,…,n_m\in N$，设$N&#x3D;\sideset{}{}\prod^m_{i&#x3D;1}n_i$：<br>$$<br>\phi(n)&#x3D;\sideset{}{}\prod^m_{i&#x3D;1}\phi(n_i)<br>$$<br>②p为素数：$\phi(p^k)&#x3D;p^{k-1}\phi(p)$</p>
-<p>③$\phi(p)&#x3D;p-1$</p>
+<p>①设两两互素的正整数$n_1,…,n_m\in N$，设$N=\sideset{}{}\prod^m_{i=1}n_i$：</p>
+<script type="math/tex; mode=display">
+\phi(n)=\sideset{}{}\prod^m_{i=1}\phi(n_i)</script><p>②p为素数：$\phi(p^k)=p^{k-1}\phi(p)$</p>
+<p>③$\phi(p)=p-1$</p>
 <h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><h3 id="乘法阶"><a href="#乘法阶" class="headerlink" title="乘法阶"></a>乘法阶</h3><p>设$a\in {Z_n}^*$，使得$a^k\equiv 1 (\bmod n)$的最小正整数k称作a在模n下的乘法阶，无歧义时可以说是a的阶。</p>
 <p>设$a\in {Z_n}^*$的乘法阶为k，得到以下整数在模n下彼此不同：$a^0,a^1,a^2,…,a^{k-1}$</p>
 <blockquote>
@@ -339,144 +366,206 @@ if (true) {
 <p><strong>性质</strong>：</p>
 <p>①$a^i\equiv 1(\bmod n)\iff k|i$</p>
 <p>②$a^i\equiv a^j (\bmod n)\iff i\equiv j (\bmod k)$</p>
-<h3 id="欧拉定理-1"><a href="#欧拉定理-1" class="headerlink" title="欧拉定理"></a>欧拉定理</h3><p>设$a\in {Z_n}^*$，得到：<br>$$<br>a^{\phi(n)}\equiv1\ (\bmod n)<br>$$<br>且$k|\phi(n)$，k是a在模n下的阶。</p>
+<h3 id="欧拉定理-1"><a href="#欧拉定理-1" class="headerlink" title="欧拉定理"></a>欧拉定理</h3><p>设$a\in {Z_n}^*$，得到：</p>
+<script type="math/tex; mode=display">
+a^{\phi(n)}\equiv1\ (\bmod n)</script><p>且$k|\phi(n)$，k是a在模n下的阶。</p>
 <blockquote>
 <p>${Z_n}^*$里的整数彼此不相同，每个整数乘a后仍然各不相同，乘以a在模n下整数仍然在集合内。</p>
 <p>乘以a之前和之后在模n下所得集合不变，仍为${Z_n}^*$</p>
 </blockquote>
 <p><strong>定理</strong>：</p>
-<p>设$a\in Z_n^*,m\in Z$，a在模n下的乘法阶为k，得到$a^m(m\in Z)$在模n下乘法阶为$k’&#x3D;\frac{k}{gcd(m,k)}$</p>
-<h3 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h3><p>根据欧拉定理简单变形得到（p为素数）：<br>$$<br>a^p\equiv a\ (\bmod p)<br>$$</p>
-<h2 id="二次剩余"><a href="#二次剩余" class="headerlink" title="二次剩余"></a>二次剩余</h2><p>设${a\in Z_n}^*$，如果$b^2\equiv a (\bmod n),b\in Z$，则称a为模n下的二次剩余，并称b为a在模n下的平方根。</p>
-<p>反之，称a为二次非剩余：<br>$$<br>a\in Z_p^*&#x2F;(Z_p^*)^2<br>$$<br><strong>二次剩余集合</strong>：<br>$$<br>(Z^*_n)^2&#x3D;\{b^2\bmod n|b\in Z^*_n\}<br>$$<br>得到：a是模n下的二次剩余$\iff a\in(Z^*_n)^2$</p>
+<p>设$a\in Z_n^*,m\in Z$，a在模n下的乘法阶为k，得到$a^m(m\in Z)$在模n下乘法阶为$k’=\frac{k}{gcd(m,k)}$</p>
+<h3 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h3><p>根据欧拉定理简单变形得到（p为素数）：</p>
+<script type="math/tex; mode=display">
+a^p\equiv a\ (\bmod p)</script><h2 id="二次剩余"><a href="#二次剩余" class="headerlink" title="二次剩余"></a>二次剩余</h2><p>设${a\in Z_n}^*$，如果$b^2\equiv a (\bmod n),b\in Z$，则称a为模n下的二次剩余，并称b为a在模n下的平方根。</p>
+<p>反之，称a为二次非剩余：</p>
+<script type="math/tex; mode=display">
+a\in Z_p^*/(Z_p^*)^2</script><p><strong>二次剩余集合</strong>：</p>
+<script type="math/tex; mode=display">
+(Z^*_n)^2=\\{b^2\bmod n|b\in Z^*_n\\}</script><p>得到：a是模n下的二次剩余$\iff a\in(Z^*_n)^2$</p>
 <h3 id="模p二次剩余"><a href="#模p二次剩余" class="headerlink" title="模p二次剩余"></a>模p二次剩余</h3><blockquote>
 <p>从这里开始，没有特殊说明，$Z_n,{Z_n}^*$整数进行乘法默认模n</p>
 </blockquote>
-<p>在模n下，如果p为不为2的素数（奇素数）：<br>$$<br>b^2&#x3D;1\iff b&#x3D;±1,b\in Z_p<br>$$<br>得到：$b^2&#x3D;c^2\iff b&#x3D;±c(b,c\in {Z_p}^*)$</p>
-<p>以上性质告诉我们：如果$a&#x3D;b^2$，得到a恰有两个根：$±b$</p>
-<p>每个二次剩余对应${Z_p}^*$的两个整数，二次剩余数量恰好是原来的一半，另一半为二次非剩余：<br>$$<br>|(Z^*_p)^2|&#x3D;\frac{p-1}{2}<br>$$<br><strong>给定a，如何判断a是不是二次剩余？</strong></p>
+<p>在模n下，如果p为不为2的素数（奇素数）：</p>
+<script type="math/tex; mode=display">
+b^2=1\iff b=±1,b\in Z_p</script><p>得到：$b^2=c^2\iff b=±c(b,c\in {Z_p}^*)$</p>
+<p>以上性质告诉我们：如果$a=b^2$，得到a恰有两个根：$±b$</p>
+<p>每个二次剩余对应${Z_p}^*$的两个整数，二次剩余数量恰好是原来的一半，另一半为二次非剩余：</p>
+<script type="math/tex; mode=display">
+|(Z^*_p)^2|=\frac{p-1}{2}</script><p><strong>给定a，如何判断a是不是二次剩余？</strong></p>
 <p>可以使用<strong>欧拉准则</strong>：</p>
 <p>如果p为奇素数，$a\in {Z_p}^*$</p>
-<p>①$a^{\frac{p-1}{2}}&#x3D;±1$（用欧拉定理可证明）</p>
-<p>②为二次剩余：$a\in (Z^*_p)^2\Rightarrow a^{\frac{p-1}{2}}&#x3D;1$</p>
+<p>①$a^{\frac{p-1}{2}}=±1$（用欧拉定理可证明）</p>
+<p>②为二次剩余：$a\in (Z^*_p)^2\Rightarrow a^{\frac{p-1}{2}}=1$</p>
 <blockquote>
-<p>$$<br>a^{\frac{p-1}{2}}&#x3D;b^{p-1}&#x3D;b^{\phi(p)}&#x3D;1<br>$$</p>
-</blockquote>
-<p>③为二次非剩余：$a\notin (Z^*_p)^2\Rightarrow a^{\frac{p-1}{2}}&#x3D;-1$</p>
+<script type="math/tex; mode=display">
+a^{\frac{p-1}{2}}=b^{p-1}=b^{\phi(p)}=1</script></blockquote>
+<p>③为二次非剩余：$a\notin (Z^*_p)^2\Rightarrow a^{\frac{p-1}{2}}=-1$</p>
 <p><strong>给定a,b，如何判断ab乘积是不是二次剩余？</strong></p>
-<p>如果p为奇素数，$a,b\in {Z_p}^*$：<br>$$<br>\begin{cases}<br>a,b\in (Z_p^*)^2\Rightarrow ab\in (Z_p^*)^2\\<br>a,b\notin (Z_p^*)^2\Rightarrow ab\in (Z_p^*)^2\\<br>a\in (Z_p^*)^2,b\notin (Z_p^*)^2\Rightarrow ab\notin (Z_p^*)^2\\<br>a\notin (Z_p^*)^2,,b\in (Z_p^*)^2\Rightarrow ab\notin (Z_p^*)^2<br>\end{cases}<br>$$<br>还是可以用欧拉准则证明，但是，知道ab乘积是否为二次剩余不能反向推算a和b是不是二次剩余。</p>
+<p>如果p为奇素数，$a,b\in {Z_p}^*$：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+a,b\in (Z_p^*)^2\Rightarrow ab\in (Z_p^*)^2\\\\
+a,b\notin (Z_p^*)^2\Rightarrow ab\in (Z_p^*)^2\\\\
+a\in (Z_p^*)^2,b\notin (Z_p^*)^2\Rightarrow ab\notin (Z_p^*)^2\\\\
+a\notin (Z_p^*)^2,,b\in (Z_p^*)^2\Rightarrow ab\notin (Z_p^*)^2
+\end{cases}</script><p>还是可以用欧拉准则证明，但是，知道ab乘积是否为二次剩余不能反向推算a和b是不是二次剩余。</p>
 <blockquote>
-<p>$$<br>(ab)^{\frac{p-1}{2}}&#x3D;a^{\frac{p-1}{2}}b^{\frac{p-1}{2}}<br>$$</p>
-<p>都为二次剩余或二次非剩余，乘积都为1；否则乘积为-1。</p>
+<script type="math/tex; mode=display">
+(ab)^{\frac{p-1}{2}}=a^{\frac{p-1}{2}}b^{\frac{p-1}{2}}</script><p>都为二次剩余或二次非剩余，乘积都为1；否则乘积为-1。</p>
 </blockquote>
 <p><strong>如何判断-1是不是模p下的二次剩余？</strong></p>
-<p>性质，对其进行模4：<br>$$<br>p\equiv 1(\bmod 4)\iff -1\in(Z^*_p)^2<br>$$</p>
-<h3 id="模-p-k-二次剩余"><a href="#模-p-k-二次剩余" class="headerlink" title="模$p^k$二次剩余"></a>模$p^k$二次剩余</h3><p>由之前的学习可以得到：</p>
+<p>性质，对其进行模4：</p>
+<script type="math/tex; mode=display">
+p\equiv 1(\bmod 4)\iff -1\in(Z^*_p)^2</script><h3 id="模-p-k-二次剩余"><a href="#模-p-k-二次剩余" class="headerlink" title="模$p^k$二次剩余"></a>模$p^k$二次剩余</h3><p>由之前的学习可以得到：</p>
 <p>如果p为奇素数，k为正整数：</p>
-<p>设$b\in Z_{p^k}，b^2&#x3D;1\iff b&#x3D;±1$</p>
-<p>进而得到：$b^2&#x3D;c^2\iff b&#x3D;±c(b,c\in {Z_{p^k}}^*)$<br>$$<br>|(Z^*_{p^k})^2|&#x3D;\frac{\phi(p^k)}{2}<br>$$<br>判断是否为二次剩余与前面使用欧拉准则的方法基本相同。</p>
+<p>设$b\in Z_{p^k}，b^2=1\iff b=±1$</p>
+<p>进而得到：$b^2=c^2\iff b=±c(b,c\in {Z_{p^k}}^*)$</p>
+<script type="math/tex; mode=display">
+|(Z^*_{p^k})^2|=\frac{\phi(p^k)}{2}</script><p>判断是否为二次剩余与前面使用欧拉准则的方法基本相同。</p>
 <p>规律：a是模$p^k$下二次剩余$\iff$a是模p下二次剩余</p>
-<h3 id="模n二次剩余"><a href="#模n二次剩余" class="headerlink" title="模n二次剩余"></a>模n二次剩余</h3><p>$$<br>\begin{cases}x\equiv a_1\ (\bmod n_1)\\…\\x\equiv a_m\ (\bmod n_m)\end{cases}^{中国剩余定理\Rightarrow}_{\Leftarrow中国剩余映射} x&#x3D;a<br>$$</p>
-<p>向量$(a_1,…,a_m)$和a存在双射，称为<strong>中国剩余映射</strong>。</p>
-<p>设$n&gt;1$为奇数，且$n&#x3D;p_1^{k_1}×…×p_m^{k_m}$，根据中国剩余映射可以得到（证明暂时不考虑）：<br>$$<br>a\in(Z_n^*)^2\iff a_i\in(Z^*_{p_i^{k_i}})^2,i&#x3D;1,…,m<br>$$<br>暂且记为：大模同余，小模也同余。</p>
-<p>根据算数基本定理：<br>$$<br>|(Z_n^*)^2|&#x3D;|(Z^*_{p_1^{k_1}})^2×…×(Z^*_{p_m^{k_m}})^2|&#x3D;\sideset{}{}\prod^m_{i&#x3D;1}\frac{\phi(p_i^{k_i})}{2}&#x3D;\frac{\phi(n)}{2^m}<br>$$<br>得到：<br>$$<br>|(Z_n^*)^2|&#x3D;\frac{\phi(n)}{2^m}<br>$$</p>
-<h3 id="勒让德符号"><a href="#勒让德符号" class="headerlink" title="勒让德符号"></a>勒让德符号</h3><p>定义p为奇素数，整数a满足gcd(a,p)&#x3D;1，<strong>勒让德符号</strong>定义为：<br>$$<br>(\frac{a}{p})&#x3D;\begin{cases}1,a\in(Z_p^*)^2 \\-1,a\in Z_p^*&#x2F;(Z_p^*)^2 \end{cases}<br>$$<br>使用勒让德符号可以更快地判断一个任意整数是否为模数的二次剩余。</p>
-<p>规定：$(\frac{a}{p})&#x3D;0\ \ (p|a)$</p>
+<h3 id="模n二次剩余"><a href="#模n二次剩余" class="headerlink" title="模n二次剩余"></a>模n二次剩余</h3><script type="math/tex; mode=display">
+\begin{cases}x\equiv a_1\ (\bmod n_1)\\\\...\\\\x\equiv a_m\ (\bmod n_m)\end{cases}^{中国剩余定理\Rightarrow}_{\Leftarrow中国剩余映射} x=a</script><p>向量$(a_1,…,a_m)$和a存在双射，称为<strong>中国剩余映射</strong>。</p>
+<p>设$n&gt;1$为奇数，且$n=p_1^{k_1}×…×p_m^{k_m}$，根据中国剩余映射可以得到（证明暂时不考虑）：</p>
+<script type="math/tex; mode=display">
+a\in(Z_n^*)^2\iff a_i\in(Z^*_{p_i^{k_i}})^2,i=1,...,m</script><p>暂且记为：大模同余，小模也同余。</p>
+<p>根据算数基本定理：</p>
+<script type="math/tex; mode=display">
+|(Z_n^*)^2|=|(Z^*_{p_1^{k_1}})^2×...×(Z^*_{p_m^{k_m}})^2|=\sideset{}{}\prod^m_{i=1}\frac{\phi(p_i^{k_i})}{2}=\frac{\phi(n)}{2^m}</script><p>得到：</p>
+<script type="math/tex; mode=display">
+|(Z_n^*)^2|=\frac{\phi(n)}{2^m}</script><h3 id="勒让德符号"><a href="#勒让德符号" class="headerlink" title="勒让德符号"></a>勒让德符号</h3><p>定义p为奇素数，整数a满足gcd(a,p)=1，<strong>勒让德符号</strong>定义为：</p>
+<script type="math/tex; mode=display">
+(\frac{a}{p})=\begin{cases}1,a\in(Z_p^*)^2 \\\\-1,a\in Z_p^*/(Z_p^*)^2 \end{cases}</script><p>使用勒让德符号可以更快地判断一个任意整数是否为模数的二次剩余。</p>
+<p>规定：$(\frac{a}{p})=0  (p|a)$</p>
 <p><strong>性质</strong>：（p为奇素数，$a,b\in Z$）</p>
-<p>①$(\frac{a}{p})\equiv a^{\frac{p-1}{2}}(\bmod p)$，特别地，$(\frac{-1}{p})&#x3D;(-1)^{\frac{p-1}{2}}$</p>
-<p>②$(\frac a p)(\frac b p)&#x3D;(\frac{ab}p)$</p>
-<p>③$a\equiv b(\bmod p)\Rightarrow(\frac a p)&#x3D;(\frac b p)$</p>
-<p>④$(\frac 2 p)&#x3D;(-1)^{\frac{p^2-1} 8}$，这个式子可以转化成另一种形式：$2\in(Z_p^*)^2\iff p \equiv ±1(\bmod 8)$</p>
-<p>⑤<strong>二次互反律</strong>：设p和q为奇素数：$(\frac p q)&#x3D;(-1)^{\frac{p-1}2\cdot\frac{q-1}2}(\frac q p)$</p>
-<h3 id="雅可比符号"><a href="#雅可比符号" class="headerlink" title="雅可比符号"></a>雅可比符号</h3><p>设a为整数，n为正奇数，且$n&#x3D;p_1…p_t$，其中$p_i$都为奇素数（彼此可以相等），雅克比符号定义为（左边为雅可比符号，右边为勒让德符号）：<br>$$<br>(\frac a n)&#x3D;(\frac a {p_1})…(\frac{a}{p_t})<br>$$<br>规定$(\frac a 1)&#x3D;1$</p>
-<p>易知$gcd(a,n)&gt;1\iff (\frac a n)&#x3D;0$</p>
+<p>①$(\frac{a}{p})\equiv a^{\frac{p-1}{2}}(\bmod p)$，特别地，$(\frac{-1}{p})=(-1)^{\frac{p-1}{2}}$</p>
+<p>②$(\frac a p)(\frac b p)=(\frac{ab}p)$</p>
+<p>③$a\equiv b(\bmod p)\Rightarrow(\frac a p)=(\frac b p)$</p>
+<p>④$(\frac 2 p)=(-1)^{\frac{p^2-1} 8}$，这个式子可以转化成另一种形式：$2\in(Z_p^*)^2\iff p \equiv ±1(\bmod 8)$</p>
+<p>⑤<strong>二次互反律</strong>：设p和q为奇素数：$(\frac p q)=(-1)^{\frac{p-1}2\cdot\frac{q-1}2}(\frac q p)$</p>
+<h3 id="雅可比符号"><a href="#雅可比符号" class="headerlink" title="雅可比符号"></a>雅可比符号</h3><p>设a为整数，n为正奇数，且$n=p_1…p_t$，其中$p_i$都为奇素数（彼此可以相等），雅克比符号定义为（左边为雅可比符号，右边为勒让德符号）：</p>
+<script type="math/tex; mode=display">
+(\frac a n)=(\frac a {p_1})...(\frac{a}{p_t})</script><p>规定$(\frac a 1)=1$</p>
+<p>易知$gcd(a,n)&gt;1\iff (\frac a n)=0$</p>
 <p><strong>性质</strong>：（m和n为正奇数，$a,b\in Z$）</p>
-<p>①$(\frac {-1} n)&#x3D;(-1)^{\frac{n-1}2}$</p>
-<p>②$(\frac a n)(\frac b n)&#x3D;(\frac{ab}n)$</p>
-<p>③$a\equiv b(\bmod n)\Rightarrow(\frac a n)&#x3D;(\frac b n)$</p>
-<p>④$(\frac 2 n)&#x3D;(-1)^{\frac{n^2-1} 8}$</p>
-<p>⑤$(\frac a{mn})&#x3D;(\frac a m)(\frac a n)$</p>
-<h4 id="二次互反律的推广"><a href="#二次互反律的推广" class="headerlink" title="二次互反律的推广"></a>二次互反律的推广</h4><p>设m和n为正奇数，得到：<br>$$<br>(\frac mn)&#x3D;(-1)^{\frac{m-1}2\cdot\frac{n-1}2}(\frac nm)<br>$$<br>可以引申出以下关系：<br>$$<br>m\equiv 1 (\bmod 4)\ or \ n\equiv1(\bmod 4)\iff(\frac mn)&#x3D;(\frac nm)<br>$$</p>
-<blockquote>
+<p>①$(\frac {-1} n)=(-1)^{\frac{n-1}2}$</p>
+<p>②$(\frac a n)(\frac b n)=(\frac{ab}n)$</p>
+<p>③$a\equiv b(\bmod n)\Rightarrow(\frac a n)=(\frac b n)$</p>
+<p>④$(\frac 2 n)=(-1)^{\frac{n^2-1} 8}$</p>
+<p>⑤$(\frac a{mn})=(\frac a m)(\frac a n)$</p>
+<h4 id="二次互反律的推广"><a href="#二次互反律的推广" class="headerlink" title="二次互反律的推广"></a>二次互反律的推广</h4><p>设m和n为正奇数，得到：</p>
+<script type="math/tex; mode=display">
+(\frac mn)=(-1)^{\frac{m-1}2\cdot\frac{n-1}2}(\frac nm)</script><p>可以引申出以下关系：</p>
+<script type="math/tex; mode=display">
+m\equiv 1 (\bmod 4)\ or \ n\equiv1(\bmod 4)\iff(\frac mn)=(\frac nm)</script><blockquote>
 <p>雅克比符号并不能判断a是否是模n下的二次剩余：</p>
-<p>经过简单思考得知$(\frac a n)&#x3D;0或-1\Rightarrow a\notin({Z_n}^*)^2$，但是在等于1时：</p>
-<p>$a \in({Z_n}^*)^2\Rightarrow a\equiv b^2(\bmod n)\Rightarrow(\frac a n)&#x3D;(\frac {b^2} n)&#x3D;(\frac {b} n)^2&#x3D;1$</p>
+<p>经过简单思考得知$(\frac a n)=0或-1\Rightarrow a\notin({Z_n}^*)^2$，但是在等于1时：</p>
+<p>$a \in({Z_n}^*)^2\Rightarrow a\equiv b^2(\bmod n)\Rightarrow(\frac a n)=(\frac {b^2} n)=(\frac {b} n)^2=1$</p>
 <p>b和n互素，$({\frac {b} n})$不可能为0，无论$(\frac {b} n)$等于-1还是1，${(\frac {b} n)}^2$都为1，所以$(\frac a n)$都是1，并不能判断a是否是模n下的二次剩余。</p>
 </blockquote>
-<h3 id="总结：判断二次剩余"><a href="#总结：判断二次剩余" class="headerlink" title="总结：判断二次剩余"></a>总结：判断二次剩余</h3><p><strong>p和$p^k$<strong>：我们可以使用</strong>欧拉准则</strong>来判断，或者使用<strong>勒让德符号</strong>经过运算来判断。<br>$$<br>a^{\frac{p-1}{2}}\equiv±1(\bmod p)<br>$$<br><strong>n</strong>：①知道因式分解，可以使用<strong>中国剩余映射</strong>来判断。<br>$$<br>a\in(Z_n^*)^2\iff a_i\in(Z^*_{p_i^{k_i}})^2,i&#x3D;1,…,m<br>$$<br>②不知道因式分解，暂时没有比较高效的方法可以判断，但是可以使用<strong>雅克比符号</strong>来判断是否为二次非剩余。<br>$$<br>(\frac a n)&#x3D;0或-1\Rightarrow a\notin({Z_n}^*)^2<br>$$</p>
-<h2 id="二次剩余平方根"><a href="#二次剩余平方根" class="headerlink" title="二次剩余平方根"></a>二次剩余平方根</h2><h3 id="模p下"><a href="#模p下" class="headerlink" title="模p下"></a>模p下</h3><p>模p下二次剩余的平方根：</p>
-<p>如果$a\in (Z_p^*)^2\ ,\ p\equiv3(\bmod 4)$，得到a的一个平方根为$b&#x3D;a^{\frac{p+1}4}$</p>
+<h3 id="总结：判断二次剩余"><a href="#总结：判断二次剩余" class="headerlink" title="总结：判断二次剩余"></a>总结：判断二次剩余</h3><p><strong>p和$p^k$</strong>：我们可以使用<strong>欧拉准则</strong>来判断，或者使用<strong>勒让德符号</strong>经过运算来判断。</p>
+<script type="math/tex; mode=display">
+a^{\frac{p-1}{2}}\equiv±1(\bmod p)</script><p><strong>n</strong>：①知道因式分解，可以使用<strong>中国剩余映射</strong>来判断。</p>
+<script type="math/tex; mode=display">
+a\in(Z_n^*)^2\iff a_i\in(Z^*_{p_i^{k_i}})^2,i=1,...,m</script><p>②不知道因式分解，暂时没有比较高效的方法可以判断，但是可以使用<strong>雅克比符号</strong>来判断是否为二次非剩余。</p>
+<script type="math/tex; mode=display">
+(\frac a n)=0或-1\Rightarrow a\notin({Z_n}^*)^2</script><h2 id="二次剩余平方根"><a href="#二次剩余平方根" class="headerlink" title="二次剩余平方根"></a>二次剩余平方根</h2><h3 id="模p下"><a href="#模p下" class="headerlink" title="模p下"></a>模p下</h3><p>模p下二次剩余的平方根：</p>
+<p>如果$a\in (Z_p^*)^2 , p\equiv3(\bmod 4)$，得到a的一个平方根为$b=a^{\frac{p+1}4}$</p>
 <blockquote>
-<p>要证明b是a的平方根，也就是证明$b^2&#x3D;a$</p>
+<p>要证明b是a的平方根，也就是证明$b^2=a$</p>
 <p>$p\equiv 3(\bmod 4)\Rightarrow \frac{p+1}4$是整数</p>
-<p>设$c^2&#x3D;a,c\in Z_p^*$，得到$b^2&#x3D;a^{\frac{p+1}2}&#x3D;c^{p+1}$</p>
-<p>根据费马小定理$c^{p+1}&#x3D;c^pc&#x3D;c^2$</p>
-<p>所以$b^2&#x3D;a$得证。</p>
+<p>设$c^2=a,c\in Z_p^*$，得到$b^2=a^{\frac{p+1}2}=c^{p+1}$</p>
+<p>根据费马小定理$c^{p+1}=c^pc=c^2$</p>
+<p>所以$b^2=a$得证。</p>
 </blockquote>
 <p>当模数为奇素数时，有<strong>通用算法</strong>：</p>
-<p>p为奇数，求解$p-1&#x3D;2^tm，m&#x3D;2q+1$</p>
-<p>如果$t&#x3D;1，p&#x3D;2m+1&#x3D;4q+3\Rightarrow p\equiv 3(\bmod 4)$，可以使用上面的简便算法。得到$b&#x3D;±a^\frac{p+1}4$</p>
+<p>p为奇数，求解$p-1=2^tm，m=2q+1$</p>
+<p>如果$t=1，p=2m+1=4q+3\Rightarrow p\equiv 3(\bmod 4)$，可以使用上面的简便算法。得到$b=±a^\frac{p+1}4$</p>
 <p>如果$t≠1$，调用一下<strong>Tonelli-Shanks算法</strong>（暂时不证明）：</p>
-<p>①寻找$u\in Z_p^*&#x2F;(Z_p^*)^2$，分别计算$a^m,u^m$</p>
-<p>②计算$x$使得$(u^m)^x&#x3D;a^m$</p>
-<p>③计算$k&#x3D;u^{\frac{mx}2}$</p>
-<p>④$b&#x3D;±ka^{-q}$</p>
-<h3 id="模-p-k-下"><a href="#模-p-k-下" class="headerlink" title="模$p^k$下"></a>模$p^k$下</h3><p>已知$gcd(a,p)&#x3D;1,k&gt;1$为整数：</p>
+<p>①寻找$u\in Z_p^*/(Z_p^*)^2$，分别计算$a^m,u^m$</p>
+<p>②计算$x$使得$(u^m)^x=a^m$</p>
+<p>③计算$k=u^{\frac{mx}2}$</p>
+<p>④$b=±ka^{-q}$</p>
+<h3 id="模-p-k-下"><a href="#模-p-k-下" class="headerlink" title="模$p^k$下"></a>模$p^k$下</h3><p>已知$gcd(a,p)=1,k&gt;1$为整数：</p>
 <p>根据之前的理论：a是模$p^k$下二次剩余$\iff$a是模p下二次剩余</p>
 <p>可以使用Tonelli-Shanks算法求出a在模p下的平方根，然后使用<strong>Hensel lifting</strong>技术求出在$p^k$下的平方根。</p>
 <p><strong>Hensel lifting</strong>技术采用迭代的思想：</p>
 <p>如果$t≥1$为整数，a在模$p^t$下的平方根为b：$b^2\equiv a (\bmod p^t)$，我们的目标就是要用b求a在模$p^{t+1}$下的平方根c。</p>
-<p>$c\equiv ±b(\bmod p^t)$设$c&#x3D;b+p^tv$，得：<br>$$<br>c^2\equiv (b+p^tv)^2\equiv b^2+2bp^tv+p^{2t}v^2\equiv b^2+2bp^tv(\bmod p^{t+1})<br>$$<br>已知$a&#x3D;c^2$，替换：$a-b^2\equiv 2bp^tv(\bmod p^{t+1})$</p>
-<p>又因为$gcd(2bpt^t,p^{t+1})&#x3D;p^t$，而且$b^2\equiv a(\bmod p^t)\Rightarrow p^t|(a-b^2)$，也就是式子左边也包含$p^t$这个因子，整个式子可以同时约分掉$p^t$，得到：<br>$$<br>\frac{a-b^2}{p^t}\equiv2bv\ (\bmod p)<br>$$<br>求得$v\equiv(\frac{a-b^2}{p^t})(2b)^{-1}(\bmod p)$</p>
+<p>$c\equiv ±b(\bmod p^t)$设$c=b+p^tv$，得：</p>
+<script type="math/tex; mode=display">
+c^2\equiv (b+p^tv)^2\equiv b^2+2bp^tv+p^{2t}v^2\equiv b^2+2bp^tv(\bmod p^{t+1})</script><p>已知$a=c^2$，替换：$a-b^2\equiv 2bp^tv(\bmod p^{t+1})$</p>
+<p>又因为$gcd(2bpt^t,p^{t+1})=p^t$，而且$b^2\equiv a(\bmod p^t)\Rightarrow p^t|(a-b^2)$，也就是式子左边也包含$p^t$这个因子，整个式子可以同时约分掉$p^t$，得到：</p>
+<script type="math/tex; mode=display">
+\frac{a-b^2}{p^t}\equiv2bv\ (\bmod p)</script><p>求得$v\equiv(\frac{a-b^2}{p^t})(2b)^{-1}(\bmod p)$</p>
 <p>所以，给定模$p^t$下的平方根b，可以求出模$p^{t+1}$下的平方根c。</p>
 <p>根据这种算法，迭代$k-1$次，就能从模p下的平方根求导模$p^k$下的平方根。</p>
-<h3 id="模n下"><a href="#模n下" class="headerlink" title="模n下"></a>模n下</h3><p>n为奇合数，$n&#x3D;p^{k_1}…p_m^{k_m}$</p>
+<h3 id="模n下"><a href="#模n下" class="headerlink" title="模n下"></a>模n下</h3><p>n为奇合数，$n=p^{k_1}…p_m^{k_m}$</p>
 <p>如果已知n的因式分解，可以用<strong>中国剩余映射</strong>先求出每个小模数下的平方根，为p形式的用Tonelli-Shanks算法，为$p^k$形式的就用Hensel lifting，然后用<strong>中国剩余定理</strong>把这些平方根重新组合成模n下的整数，也就是a在模n下的平方根。</p>
 <blockquote>
 <p>模n下，每个二次剩余都有$2^m$个平方根，m是n所包含的不同的素因子的数量，平方根两两互为相反数。</p>
 </blockquote>
 <p>如果n的因式分解不知道，目前为止没有合适的算法来计算平方根。</p>
 <h2 id="二次剩余性假设"><a href="#二次剩余性假设" class="headerlink" title="二次剩余性假设"></a>二次剩余性假设</h2><p>二次剩余性假设简称为<strong>QR假设</strong>。</p>
-<p>假设$n&#x3D;pq$，其中p和q为不同的素数，在不知道p和q的情况下，给定$Z_n^*$的一个整数，很难判断它是不是二次剩余。<br>$$<br>a\in Z_n^*→(\frac a n)&#x3D;±1<br>$$</p>
-<h3 id="雅克比映射"><a href="#雅克比映射" class="headerlink" title="雅克比映射"></a>雅克比映射</h3><p>定义映射：$J_n：Z_n^* → {±1}$</p>
+<p>假设$n=pq$，其中p和q为不同的素数，在不知道p和q的情况下，给定$Z_n^*$的一个整数，很难判断它是不是二次剩余。</p>
+<script type="math/tex; mode=display">
+a\in Z_n^*→(\frac a n)=±1</script><h3 id="雅克比映射"><a href="#雅克比映射" class="headerlink" title="雅克比映射"></a>雅克比映射</h3><p>定义映射：$J_n：Z_n^* → \{±1\}$</p>
 <p>这个映射实质上就是计算雅可比符号，我们称作<strong>雅克比映射</strong>。</p>
 <p>$Z_n^*$里的二次剩余经过雅克比映射后都对应1，二次非剩余中的p和q下的勒让德符号都等于-1，那么映射后也对应1，其他二次非剩余对应-1。</p>
 <p>我们把映射到1的二次剩余和二次非剩余放到一起形成一个小的集合，这个集合是$Z_n^*$的一个子集，叫做雅克比映射的核，记作$Ker\  J_n$</p>
-<p>得知，二次剩余性假设只限于雅克比映射的核，关系如下：<br>$$<br>(Z_n^*)^2\subseteq Ker\ J_n\subseteq Z_n^*<br>$$<br>核里的二次非剩余表示为$Ker\ J_n&#x2F;(Z_n^*)^2$</p>
-<p>因此，QR假设可以重新定义：假设$n&#x3D;pq$，其中p和q为不同的素数，在不知道p和q的情况下，从$Ker\  J_n$里随机选择一个整数，将难以区分它属于$(Z_n^*)^2$还是$Ker\ J_n&#x2F;(Z_n^*)^2$。</p>
-<h2 id="Blum整数"><a href="#Blum整数" class="headerlink" title="Blum整数"></a>Blum整数</h2><p>n为Blum整数，则$n&#x3D;pq，p\equiv q\equiv 3(\bmod 4)$是两个不同的素因子。</p>
+<p>得知，二次剩余性假设只限于雅克比映射的核，关系如下：</p>
+<script type="math/tex; mode=display">
+(Z_n^*)^2\subseteq Ker\ J_n\subseteq Z_n^*</script><p>核里的二次非剩余表示为$Ker\ J_n/(Z_n^*)^2$</p>
+<p>因此，QR假设可以重新定义：假设$n=pq$，其中p和q为不同的素数，在不知道p和q的情况下，从$Ker\  J_n$里随机选择一个整数，将难以区分它属于$(Z_n^*)^2$还是$Ker\ J_n/(Z_n^*)^2$。</p>
+<h2 id="Blum整数"><a href="#Blum整数" class="headerlink" title="Blum整数"></a>Blum整数</h2><p>n为Blum整数，则$n=pq，p\equiv q\equiv 3(\bmod 4)$是两个不同的素因子。</p>
 <p><strong>性质：</strong></p>
-<p>①设n为Blum整数，有$(\frac {-1}p)&#x3D;(\frac {-1}q)&#x3D;-1$，也就有$(\frac {-1}n)&#x3D;1$</p>
-<p>②设n为Blum整数，对于任意$a\in Z_n^*$，有<br>$$<br>(\frac an)&#x3D;1\Rightarrow a\in(Z_n^*)^2或-a\in(Z_n^*)^2<br>$$<br>③设n为Blum整数，对于任意$a\in (Z_n^*)^2$，设它的四个平方根为±b和±b’，得到$(\frac bp)&#x3D;(\frac bq)&#x3D;1$，即$b \in (Z_n^*)^2$</p>
-<p>得到$(\frac {-b}p)&#x3D;(\frac {-b}q)&#x3D;-1$</p>
-<p>也能得到$(\frac {b’}p)&#x3D;1,(\frac {b’}q)&#x3D;-1$或者$(\frac {b’}p)&#x3D;-1,(\frac {b’}q)&#x3D;1$</p>
+<p>①设n为Blum整数，有$(\frac {-1}p)=(\frac {-1}q)=-1$，也就有$(\frac {-1}n)=1$</p>
+<p>②设n为Blum整数，对于任意$a\in Z_n^*$，有</p>
+<script type="math/tex; mode=display">
+(\frac an)=1\Rightarrow a\in(Z_n^*)^2或-a\in(Z_n^*)^2</script><p>③设n为Blum整数，对于任意$a\in (Z_n^*)^2$，设它的四个平方根为±b和±b’，得到$(\frac bp)=(\frac bq)=1$，即$b \in (Z_n^*)^2$</p>
+<p>得到$(\frac {-b}p)=(\frac {-b}q)=-1$</p>
+<p>也能得到$(\frac {b’}p)=1,(\frac {b’}q)=-1$或者$(\frac {b’}p)=-1,(\frac {b’}q)=1$</p>
 <p>可见，在模数是Blum整数的情况下，<strong>一个二次剩余的四个平方根中只有一个是二次剩余，另外三个是二次非剩余。</strong></p>
-<p>④设n为Blum整数，函数$f(x)&#x3D;x^2\bmod n$的定义域和值域都是二次剩余的集合。</p>
+<p>④设n为Blum整数，函数$f(x)=x^2\bmod n$的定义域和值域都是二次剩余的集合。</p>
 <p>对于任意二次剩余x，它的平方都是二次剩余；对于任意的二次剩余y，他都有唯一的为二次剩余的平方根x。</p>
-<p>⑤根据性质③，可以得到$(\frac bn)&#x3D;1,(\frac {-b}n)&#x3D;1,(\frac {b’}n)&#x3D;-1,(\frac {-b’}n)&#x3D;-1$（$-b$可以看做是$n-b$），推得：</p>
+<p>⑤根据性质③，可以得到$(\frac bn)=1,(\frac {-b}n)=1,(\frac {b’}n)=-1,(\frac {-b’}n)=-1$（$-b$可以看做是$n-b$），推得：</p>
 <p>设$a\in (Z_n^*)^2$，雅克比符号为1或者-1的两个平方根中只有一个的值小于$\frac n2$（另一个大于$\frac n2$）。</p>
 <blockquote>
 <p>这一条暗示了取值小于或者大于$\frac n2$的两个平方根的雅可比符号互为相反数。</p>
 </blockquote>
 <h3 id="半素数"><a href="#半素数" class="headerlink" title="半素数"></a>半素数</h3><p>半素数又叫二素数。名字虽带有素数，但是它的本质还是合数。</p>
-<p>n为半素数，得到$n&#x3D;pq，p,q$都是n的素因子。（p和q可以相同）</p>
+<p>n为半素数，得到$n=pq，p,q$都是n的素因子。（p和q可以相同）</p>
 <p><strong>Blum整数是一种半素数。</strong></p>
-<h1 id="连分数理论"><a href="#连分数理论" class="headerlink" title="连分数理论"></a>连分数理论</h1><h2 id="连分数"><a href="#连分数" class="headerlink" title="连分数"></a>连分数</h2><p>根据欧几里得算法，我们可以用连续的分数表示一些分数，如：<br>$$<br>\frac{43}{19}&#x3D;2+\frac{1}{3+\frac{1}{1+\frac{1}{4}}}<br>$$<br>给定任意两个正整数，都可以将他们所表示的分数，根据欧几里得算法表示成连分数的形式。</p>
-<p><strong>简单连分数</strong>：$a_0$可以是任意整数，$a_i(i&gt;0)$是正整数，我们把$a_i$称为<strong>部分商</strong>（partial quotient）。<br>$$<br>a_0+\frac{1}{a_1+\frac{1}{a2+\frac{1}{a_3+\frac{1}{…}}}} \ \ &#x3D;&#x3D;&gt;\ \ [a_0,a_1,a_2,a_3,…]<br>$$<br>简单连分数可以分为<strong>有限连分数</strong>和<strong>无限连分数</strong>。有限连分数可以表示有理数，无限连分数可以表示无理数，换句话说，<strong>任何实数都可以用连分数来表示</strong>。</p>
-<p><strong>连分数性质</strong>：从连分数任何位置开始到末尾，单独括起来作为一个新的连分数嵌套在里面，值不变。<br>$$<br>[a_1,a_2,a_3,a_4,…,a_n]&#x3D;[a_0,…,a_m,[a_{m+1},…,a_n]]<br>$$<br>连分数的倒数在最前面加0即可（真分数a0&#x3D;0，假分数a0≠0）：<br>$$<br>[0,a_1,a_2,a_3,a_4,…,a_n]<br>$$</p>
-<p>有限连分数[a_1,a_2,a_3,a_4,…,a_n]的<strong>等价表示</strong>：<br>$$<br>[a_1,a_2,a_3,a_4,…,a_n]\ \ &#x3D;&gt;\ \ [a_1,a_2,a_3,…,a_n-1,1]<br>$$</p>
-<h2 id="渐进分数"><a href="#渐进分数" class="headerlink" title="渐进分数"></a>渐进分数</h2><p>被包含于原连分数的连分数，随着包含的元素越来越多，会<strong>从数轴两边逐渐接近原来的连分数</strong>，我们把这些单独的连分数叫做原连分数的<strong>渐进分数</strong>，即称$[a_0,…,a_m] (m≤n)$为$[a0,…,an]$的第m个渐进分数。</p>
+<h1 id="连分数理论"><a href="#连分数理论" class="headerlink" title="连分数理论"></a>连分数理论</h1><h2 id="连分数"><a href="#连分数" class="headerlink" title="连分数"></a>连分数</h2><p>根据欧几里得算法，我们可以用连续的分数表示一些分数，如：</p>
+<script type="math/tex; mode=display">
+\frac{43}{19}=2+\frac{1}{3+\frac{1}{1+\frac{1}{4}}}</script><p>给定任意两个正整数，都可以将他们所表示的分数，根据欧几里得算法表示成连分数的形式。</p>
+<p><strong>简单连分数</strong>：$a_0$可以是任意整数，$a_i(i&gt;0)$是正整数，我们把$a_i$称为<strong>部分商</strong>（partial quotient）。</p>
+<script type="math/tex; mode=display">
+a_0+\frac{1}{a_1+\frac{1}{a2+\frac{1}{a_3+\frac{1}{...}}}} \ \ ==>\ \ [a_0,a_1,a_2,a_3,...]</script><p>简单连分数可以分为<strong>有限连分数</strong>和<strong>无限连分数</strong>。有限连分数可以表示有理数，无限连分数可以表示无理数，换句话说，<strong>任何实数都可以用连分数来表示</strong>。</p>
+<p><strong>连分数性质</strong>：从连分数任何位置开始到末尾，单独括起来作为一个新的连分数嵌套在里面，值不变。</p>
+<script type="math/tex; mode=display">
+[a_1,a_2,a_3,a_4,...,a_n]=[a_0,...,a_m,[a_{m+1},...,a_n]]</script><p>连分数的倒数在最前面加0即可（真分数a0=0，假分数a0≠0）：</p>
+<script type="math/tex; mode=display">
+[0,a_1,a_2,a_3,a_4,...,a_n]</script><p>有限连分数[a_1,a_2,a_3,a_4,…,a_n]的<strong>等价表示</strong>：</p>
+<script type="math/tex; mode=display">
+[a_1,a_2,a_3,a_4,...,a_n]\ \ =>\ \ [a_1,a_2,a_3,...,a_n-1,1]</script><h2 id="渐进分数"><a href="#渐进分数" class="headerlink" title="渐进分数"></a>渐进分数</h2><p>被包含于原连分数的连分数，随着包含的元素越来越多，会<strong>从数轴两边逐渐接近原来的连分数</strong>，我们把这些单独的连分数叫做原连分数的<strong>渐进分数</strong>，即称$[a_0,…,a_m] (m≤n)$为$[a0,…,an]$的第m个渐进分数。</p>
 <p>如连分数$[2,3,1,4]$，第0个渐进分数$[2]$，第一个渐进分数$[2,3]$，第二个渐进分数$[2,3,1]$，第三个渐进分数是$[2,3,1,4]$。</p>
-<p>在数轴上，偶数编号的渐进分数位于左边，奇数编号的渐进分数位于右边，所以我们可以得到以下结论：<br>$$<br>[a_0]&#x3D;\frac{p_0}{q_0}\ \ ,\ \ [a_0,a_1]&#x3D;\frac{p_1}{q_1}\ \ , …<br>$$</p>
-<p>$$<br>[a_0,a_1,…,a_n]&#x3D;\frac{p_n}{q_n}<br>$$</p>
-<p>$$<br>\frac{p_0}{q_0}&lt;\frac{p_2}{q_2}&lt;…&lt;\frac{p_n}{q_n}&lt;…&lt;\frac{p_3}{q_3}&lt;\frac{p_1}{q_1}<br>$$</p>
-<p> 同时，这些pq表示的分数形式之间，也存在某种关系，再给出某个渐进分数的分数形式之后可以直接构造出下一个渐进分数的分数形式。<br>$$<br>p_n&#x3D;a_np_{n-1}+p_{n-2}\ \ ,\ \ q_n&#x3D;a_nq_{a-1}+q_{n-2}(n≥2)<br>$$<br>此外，pq还满足以下关系式<strong>（两个相邻分数的分子分母交叉相乘求差值，结果和下标n有关）</strong>：<br>$$<br>p_nq_{n-1}-p_{n-1}q_n&#x3D;(-1)^{n-1}<br>$$</p>
-<p><strong>单调性</strong>：所有偶数编号的渐进分数都是严格递增的，所有奇数编号的渐进分数都是严格递减的。</p>
+<p>在数轴上，偶数编号的渐进分数位于左边，奇数编号的渐进分数位于右边，所以我们可以得到以下结论：</p>
+<script type="math/tex; mode=display">
+[a_0]=\frac{p_0}{q_0}\ \ ,\ \ [a_0,a_1]=\frac{p_1}{q_1}\ \ , ...</script><script type="math/tex; mode=display">
+[a_0,a_1,...,a_n]=\frac{p_n}{q_n}</script><script type="math/tex; mode=display">
+\frac{p_0}{q_0}<\frac{p_2}{q_2}<...<\frac{p_n}{q_n}<...<\frac{p_3}{q_3}<\frac{p_1}{q_1}</script><p> 同时，这些pq表示的分数形式之间，也存在某种关系，再给出某个渐进分数的分数形式之后可以直接构造出下一个渐进分数的分数形式。</p>
+<script type="math/tex; mode=display">
+p_n=a_np_{n-1}+p_{n-2}\ \ ,\ \ q_n=a_nq_{a-1}+q_{n-2}(n≥2)</script><p>此外，pq还满足以下关系式<strong>（两个相邻分数的分子分母交叉相乘求差值，结果和下标n有关）</strong>：</p>
+<script type="math/tex; mode=display">
+p_nq_{n-1}-p_{n-1}q_n=(-1)^{n-1}</script><p><strong>单调性</strong>：所有偶数编号的渐进分数都是严格递增的，所有奇数编号的渐进分数都是严格递减的。</p>
 <p>渐进分数的分母满足以下性质：</p>
-<p>$$<br>[a_0,a_1,…,a_n]&#x3D;x_n&#x3D;\frac{p_n}{q_n}\ \ ,\ \ q_n≥n<br>$$<br>特别的：<br>$$<br>[a_0,a_1,…,a_n]&#x3D;x_n&#x3D;\frac{p_n}{q_n}\ \ ,\ \ q_n&gt;n<br> \ (n&gt;3)<br>$$</p>
-<h2 id="完全商"><a href="#完全商" class="headerlink" title="完全商"></a>完全商</h2><p>从原连分数最后一个元素开始反向操作，分离出一段形成单独的连分数叫做原连分数的<strong>完全商</strong>（complete quotient），即称$[a_t,…,a_n] (t≤n)$为$[a_0,…,a_n]$的第t个完全商。</p>
+<script type="math/tex; mode=display">
+[a_0,a_1,...,a_n]=x_n=\frac{p_n}{q_n}\ \ ,\ \ q_n≥n</script><p>特别的：</p>
+<script type="math/tex; mode=display">
+[a_0,a_1,...,a_n]=x_n=\frac{p_n}{q_n}\ \ ,\ \ q_n>n\
+ \ (n>3)</script><h2 id="完全商"><a href="#完全商" class="headerlink" title="完全商"></a>完全商</h2><p>从原连分数最后一个元素开始反向操作，分离出一段形成单独的连分数叫做原连分数的<strong>完全商</strong>（complete quotient），即称$[a_t,…,a_n] (t≤n)$为$[a_0,…,a_n]$的第t个完全商。</p>
 <p>如连分数$[2,3,1,4]$，第0个完全商是$[2,3,1,4]$，第1个完全商是$[3,1,4]$，第2个完全商是$[1,4]$，第三个完全商是$[4]$。</p>
-<p>定理：给定有限连分数$[a_0,…,a_n]$，如果$a_n&#x3D;1，[a_{n-1},an]$的整数部分是$a_{n-1}+1$，否则$[a_t,…,a_n]$的整数部分是$a_t$。</p>
+<p>定理：给定有限连分数$[a_0,…,a_n]$，如果$a_n=1，[a_{n-1},an]$的整数部分是$a_{n-1}+1$，否则$[a_t,…,a_n]$的整数部分是$a_t$。</p>
 </article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E8%AE%BA/">数论</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/19/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/"><img class="prev-cover" src="https://s2.loli.net/2022/12/19/aD5ckeFVEquYM42.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">密码学的数学基础（二）</div></div></a></div><div class="next-post pull-right"><a href="/2022/12/09/misc%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90/"><img class="next-cover" src="https://s2.loli.net/2022/12/09/M52hVHKlOU7erdA.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">misc入门——图片分析</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/01/01/CryptoHack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%951/" title="CryptoHack学习记录（一）"><img class="cover" src="https://s2.loli.net/2023/01/03/GjLdbT8hv6pcoJg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-01</div><div class="title">CryptoHack学习记录（一）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/tit.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Chemtrails</div><div class="author-info__description">保持努力！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" href="https://ch3mtr4ils.cn/about/"><i class="fas fa-heart"></i><span>点这里进一步了解！</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Ch3mtr4ils" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=2775750552&amp;website=www.oicqzone.com" target="_blank" title="Email"><i class="fas fa-user"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B4%E9%99%A4%E7%90%86%E8%AE%BA"><span class="toc-text">整除理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E9%99%A4"><span class="toc-text">整除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E6%80%A7%E8%B4%A8"><span class="toc-text">一些性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E8%A7%84%E5%BE%8B"><span class="toc-text">运算规律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86"><span class="toc-text">定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E8%AF%81%E6%98%8E%E9%A2%98"><span class="toc-text">简单证明题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A0%E6%95%B0"><span class="toc-text">素数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="toc-text">算数基本定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E8%BF%90%E7%AE%97"><span class="toc-text">模运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E8%BF%90%E7%AE%97%E6%80%A7%E8%B4%A8"><span class="toc-text">模运算性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0"><span class="toc-text">最大公约数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%92%E7%B4%A0"><span class="toc-text">互素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="toc-text">欧几里得算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E8%A1%A8%E7%A4%BA%E5%AE%9A%E7%90%86"><span class="toc-text">最大公约数表示定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="toc-text">扩展欧几里得算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0"><span class="toc-text">最小公倍数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8C%E4%BD%99%E7%90%86%E8%AE%BA"><span class="toc-text">同余理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E4%BD%99"><span class="toc-text">同余</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83"><span class="toc-text">乘法逆元</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B"><span class="toc-text">一次同余方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E5%8E%BB%E5%BE%8B"><span class="toc-text">消去律</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A9%E4%BD%99%E7%B1%BB"><span class="toc-text">剩余类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="toc-text">中国剩余定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0"><span class="toc-text">欧拉函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="toc-text">欧拉定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%98%E6%B3%95%E9%98%B6"><span class="toc-text">乘法阶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86-1"><span class="toc-text">欧拉定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86"><span class="toc-text">费马小定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99"><span class="toc-text">二次剩余</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1p%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99"><span class="toc-text">模p二次剩余</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1-p-k-%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99"><span class="toc-text">模$p^k$二次剩余</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1n%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99"><span class="toc-text">模n二次剩余</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8B%92%E8%AE%A9%E5%BE%B7%E7%AC%A6%E5%8F%B7"><span class="toc-text">勒让德符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E5%8F%AF%E6%AF%94%E7%AC%A6%E5%8F%B7"><span class="toc-text">雅可比符号</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E4%BA%92%E5%8F%8D%E5%BE%8B%E7%9A%84%E6%8E%A8%E5%B9%BF"><span class="toc-text">二次互反律的推广</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A%E5%88%A4%E6%96%AD%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99"><span class="toc-text">总结：判断二次剩余</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99%E5%B9%B3%E6%96%B9%E6%A0%B9"><span class="toc-text">二次剩余平方根</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1p%E4%B8%8B"><span class="toc-text">模p下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1-p-k-%E4%B8%8B"><span class="toc-text">模$p^k$下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1n%E4%B8%8B"><span class="toc-text">模n下</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99%E6%80%A7%E5%81%87%E8%AE%BE"><span class="toc-text">二次剩余性假设</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E5%85%8B%E6%AF%94%E6%98%A0%E5%B0%84"><span class="toc-text">雅克比映射</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blum%E6%95%B4%E6%95%B0"><span class="toc-text">Blum整数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E7%B4%A0%E6%95%B0"><span class="toc-text">半素数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9E%E5%88%86%E6%95%B0%E7%90%86%E8%AE%BA"><span class="toc-text">连分数理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E5%88%86%E6%95%B0"><span class="toc-text">连分数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%90%E8%BF%9B%E5%88%86%E6%95%B0"><span class="toc-text">渐进分数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E5%95%86"><span class="toc-text">完全商</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/01/10/CSS%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="CSS学习日记（一）"><img src="https://s2.loli.net/2023/01/10/3vbQ7D5nPisRueF.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS学习日记（一）"/></a><div class="content"><a class="title" href="/2023/01/10/CSS%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="CSS学习日记（一）">CSS学习日记（一）</a><time datetime="2023-01-10T07:59:57.000Z" title="发表于 2023-01-10 15:59:57">2023-01-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/04/CryptoHack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/" title="CryptoHack学习记录（三）"><img src="https://s2.loli.net/2023/01/04/h6xEvisrJjBQdm3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CryptoHack学习记录（三）"/></a><div class="content"><a class="title" href="/2023/01/04/CryptoHack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%953/" title="CryptoHack学习记录（三）">CryptoHack学习记录（三）</a><time datetime="2023-01-04T10:37:47.000Z" title="发表于 2023-01-04 18:37:47">2023-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/03/CryptoHack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%952/" title="CryptoHack学习记录（二）"><img src="https://s2.loli.net/2023/01/03/saZ1bSM5WX6PmR4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CryptoHack学习记录（二）"/></a><div class="content"><a class="title" href="/2023/01/03/CryptoHack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%952/" title="CryptoHack学习记录（二）">CryptoHack学习记录（二）</a><time datetime="2023-01-03T07:06:14.000Z" title="发表于 2023-01-03 15:06:14">2023-01-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/01/CryptoHack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%951/" title="CryptoHack学习记录（一）"><img src="https://s2.loli.net/2023/01/03/GjLdbT8hv6pcoJg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CryptoHack学习记录（一）"/></a><div class="content"><a class="title" href="/2023/01/01/CryptoHack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%951/" title="CryptoHack学习记录（一）">CryptoHack学习记录（一）</a><time datetime="2023-01-01T06:36:29.000Z" title="发表于 2023-01-01 14:36:29">2023-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/29/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="RSA学习笔记"><img src="https://s2.loli.net/2022/12/29/3bxISilKj1aPFsc.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RSA学习笔记"/></a><div class="content"><a class="title" href="/2022/12/29/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="RSA学习笔记">RSA学习笔记</a><time datetime="2022-12-29T03:31:50.000Z" title="发表于 2022-12-29 11:31:50">2022-12-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023  <i id="heartbeat" class="fa fas fa-heartbeat"></i> Chemtrails</div><div class="footer_custom_text">欢迎来到 Chemtrails Home！</div><div class="content"> <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:var(--anzhiyu-fontcolor)" target="_blank">鲁ICP备2022041228号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:btf.scrollToDest(0, 500);"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:toRandomPost()"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a></div></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()">播放音乐</div><meting-js id="7800132795" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
@@ -644,7 +733,23 @@ document.addEventListener('pjax:error', (e) => {
   if (e.request.status === 404) {
     pjax.loadUrl('/404.html')
   }
-})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '0.5s');
+    arr[i].setAttribute('data-wow-delay', '0');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax>
   function butterfly_swiper_injector_config(){
     var parent_div_git = document.getElementById('recent-posts');
     var item_html = '<div class="recent-post-item swiper_container_card" style="height: auto;width: 100%"><div id="random"><div id="random-banner"><canvas id="peoplecanvas"></canvas></div><a id="random-hover" style="width:100%;height:auto;" href="javascript:toRandomPost()" rel="external nofollow noreferrer" one-link-mark="yes"><i class="fa fa-paper-plane" style="margin-left:10px"></i><div style="margin-left:10px">随便逛逛<i class="fa-solid fa-arrow-right" style="margin-left:10px"></i></div></a></div><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/12/26/仿射密码/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/12/26/GoxsIjByAb7aVXM.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-12-26</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/12/26/仿射密码/&quot;);" href="javascript:void(0);" alt="">仿射密码</a><div class="blog-slider__text">一种需要一些数学基础的代换密码</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/12/26/仿射密码/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/12/09/misc入门——图片分析/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/12/09/M52hVHKlOU7erdA.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-12-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/12/09/misc入门——图片分析/&quot;);" href="javascript:void(0);" alt="">misc入门——图片分析</a><div class="blog-slider__text">misc图片分析</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/12/09/misc入门——图片分析/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/12/06/hexo魔改记录/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/12/08/fcGV4dKqFC9yn3s.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-12-06</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/12/06/hexo魔改记录/&quot;);" href="javascript:void(0);" alt="">hexo魔改记录</a><div class="blog-slider__text">记录自己hexo的魔改记录</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/12/06/hexo魔改记录/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/11/28/pwn基础和栈溢出/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/12/08/mPGN6Vjf5rlynJS.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-28</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/11/28/pwn基础和栈溢出/&quot;);" href="javascript:void(0);" alt="">pwn基础和栈溢出</a><div class="blog-slider__text">pwn菜鸟的自我挣扎QAQ</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/11/28/pwn基础和栈溢出/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/12/07/外挂标签语法/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://s2.loli.net/2022/12/08/hTdCng1U95L3HpS.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-12-07</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/12/07/外挂标签语法/&quot;);" href="javascript:void(0);" alt="">外挂标签语法</a><div class="blog-slider__text">介绍有关外挂标签的引入</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/12/07/外挂标签语法/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
@@ -668,23 +773,7 @@ document.addEventListener('pjax:error', (e) => {
   else if (epage === cpage){
     butterfly_swiper_injector_config();
   }
-  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
-for(var i = 0;i<arr.length;i++){
-    arr[i].classList.add('wow');
-    arr[i].classList.add('animate__zoomIn');
-    arr[i].setAttribute('data-wow-duration', '0.5s');
-    arr[i].setAttribute('data-wow-delay', '0');
-    arr[i].setAttribute('data-wow-offset', '100');
-    arr[i].setAttribute('data-wow-iteration', '1');
-  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
-for(var i = 0;i<arr.length;i++){
-    arr[i].classList.add('wow');
-    arr[i].classList.add('animate__zoomIn');
-    arr[i].setAttribute('data-wow-duration', '');
-    arr[i].setAttribute('data-wow-delay', '');
-    arr[i].setAttribute('data-wow-offset', '');
-    arr[i].setAttribute('data-wow-iteration', '');
-  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><script data-pjax src="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><script data-pjax src="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
   function gitcalendar_injector_config(){
       var parent_div_git = document.getElementById('recent-posts');
       var item_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
