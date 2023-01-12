@@ -1,5 +1,3 @@
-
-
 document.addEventListener('pjax:complete', todis);
 document.addEventListener('DOMContentLoaded', todis);
 function todis(){
@@ -249,7 +247,5 @@ $.ajax({
         console.log(error)
       }
     }
-    }
-    document.querySelector(".rightMenu-item:has(.fa-moon)").addEventListener("click", function () { setTimeout(switchPostChart, 100) })
-    document.getElementById("con-mode").addEventListener("click", function () { setTimeout(switchPostChart, 100) })}
+    }}
     //
