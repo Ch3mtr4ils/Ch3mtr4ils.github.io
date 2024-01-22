@@ -1,17 +1,17 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>仿射密码 | Chemtrails</title><meta name="keywords" content="古典密码"><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="仿射密码"><meta name="application-name" content="仿射密码"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="bookmark" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="192x192" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="512x512" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-startup-image" media="screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1136x640.png"><link rel="apple-touch-startup-image" media="screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_640x1136.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2688x1242.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1792x828.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_1125x2436.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_828x1792.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2436x1125.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:736px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_1242x2208.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:736px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2208x1242.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1334x750.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_750x1334.png"><link rel="apple-touch-startup-image" media="screen and (device-width:1024px) and (device-height:1366px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2732x2048.png"><meta name="description" content="仿射密码基本概念仿射密码是一种单表替换密码，字母表中的每个字母对应的值使用仿射函数映射到对应的数值，再把对应数值转换为字母进行加密。 仿射函数：  f(x)&#x3D;(ax+b)\bmod 26依据仿射函数进行加密的密码体制称为仿射密码。  当$a&#x3D;1$时，不难发现其实质就成了凯撒密码。  加密函数：  e(x)&#x3D;(ax+b)\bmod m其中，$a$和$m$互质，m是字母数目，为26。 解密函数：  d">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>密码学的数学基础（四） | Chemtrails</title><meta name="keywords" content="抽象代数"><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="密码学的数学基础（四）"><meta name="application-name" content="密码学的数学基础（四）"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="bookmark" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="192x192" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="512x512" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-startup-image" media="screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1136x640.png"><link rel="apple-touch-startup-image" media="screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_640x1136.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2688x1242.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1792x828.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_1125x2436.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_828x1792.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2436x1125.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:736px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_1242x2208.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:736px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2208x1242.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1334x750.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_750x1334.png"><link rel="apple-touch-startup-image" media="screen and (device-width:1024px) and (device-height:1366px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2732x2048.png"><meta name="description" content="在这一篇中继续探讨抽象代数有关环和域的内容。 环论定义：$(R,+,\cdot)$是一个环，满足以下条件：  这里的加法和乘法是抽象概念，不是真正意义上的加法和乘法，例如说这里的乘法不一定满足交换律。  1.$(R,+)$构成阿贝尔群。 2.$(R,\cdot)$构成半群。  注意到整数和乘法不能构成群，因为除了1和-1外的其他整数都没有逆元，但是满足结合律和封闭性，我们称之为半群，为乘法半群。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="仿射密码">
-<meta property="og:url" content="http://example.com/2022/12/26/%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A0%81/index.html">
+<meta property="og:title" content="密码学的数学基础（四）">
+<meta property="og:url" content="http://example.com/2024/01/15/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89/index.html">
 <meta property="og:site_name" content="Chemtrails">
-<meta property="og:description" content="仿射密码基本概念仿射密码是一种单表替换密码，字母表中的每个字母对应的值使用仿射函数映射到对应的数值，再把对应数值转换为字母进行加密。 仿射函数：  f(x)&#x3D;(ax+b)\bmod 26依据仿射函数进行加密的密码体制称为仿射密码。  当$a&#x3D;1$时，不难发现其实质就成了凯撒密码。  加密函数：  e(x)&#x3D;(ax+b)\bmod m其中，$a$和$m$互质，m是字母数目，为26。 解密函数：  d">
+<meta property="og:description" content="在这一篇中继续探讨抽象代数有关环和域的内容。 环论定义：$(R,+,\cdot)$是一个环，满足以下条件：  这里的加法和乘法是抽象概念，不是真正意义上的加法和乘法，例如说这里的乘法不一定满足交换律。  1.$(R,+)$构成阿贝尔群。 2.$(R,\cdot)$构成半群。  注意到整数和乘法不能构成群，因为除了1和-1外的其他整数都没有逆元，但是满足结合律和封闭性，我们称之为半群，为乘法半群。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/12/26/GoxsIjByAb7aVXM.png">
-<meta property="article:published_time" content="2022-12-26T05:16:49.000Z">
-<meta property="article:modified_time" content="2023-01-29T06:05:24.000Z">
+<meta property="og:image" content="https://s2.loli.net/2024/01/15/Rg7Znf2ueahOqQJ.png">
+<meta property="article:published_time" content="2024-01-15T09:27:25.000Z">
+<meta property="article:modified_time" content="2024-01-18T15:09:14.284Z">
 <meta property="article:author" content="Chemtrails">
-<meta property="article:tag" content="古典密码">
+<meta property="article:tag" content="抽象代数">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/12/26/GoxsIjByAb7aVXM.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/12/26/%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A0%81/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://s2.loli.net/2024/01/15/Rg7Znf2ueahOqQJ.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/01/15/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   navMusic: true,
   algolia: undefined,
@@ -49,12 +49,12 @@
   islazyload: true,
   isAnchor: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '仿射密码',
+  title: '密码学的数学基础（四）',
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-01-29 14:05:24'
+  postUpdate: '2024-01-18 23:09:14'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -177,45 +177,184 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/"><div class="title">Chemtrails</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></center></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:17px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" href="javascript:void(0);" title="浅色和深色模式转换" onclick="rm.switchDarkMode()"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke" style="font-size: 1.3rem"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">仿射密码</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-26T05:16:49.000Z" title="发表于 2022-12-26 13:16:49">2022-12-26</time><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-29T06:05:24.000Z" title="更新于 2023-01-29 14:05:24">2023-01-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/Crypto/">Crypto</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">865</span><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="仿射密码"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="仿射密码"><a href="#仿射密码" class="headerlink" title="仿射密码"></a>仿射密码</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>仿射密码是一种单表替换密码，字母表中的每个字母对应的值使用仿射函数映射到对应的数值，再把对应数值转换为字母进行加密。</p>
-<p>仿射函数：</p>
-<script type="math/tex; mode=display">
-f(x)=(ax+b)\bmod 26</script><p>依据仿射函数进行加密的密码体制称为仿射密码。</p>
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/"><div class="title">Chemtrails</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></center></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:17px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" href="javascript:void(0);" title="浅色和深色模式转换" onclick="rm.switchDarkMode()"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke" style="font-size: 1.3rem"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">密码学的数学基础（四）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-15T09:27:25.000Z" title="发表于 2024-01-15 17:27:25">2024-01-15</time><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-18T15:09:14.284Z" title="更新于 2024-01-18 23:09:14">2024-01-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/Crypto/">Crypto</a><i class="anzhiyufont anzhiyu-icon-angle-right post-meta-separator"></i><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="密码学的数学基础（四）"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><em>在这一篇中继续探讨<strong>抽象代数</strong>有关环和域的内容。</em></p>
+<h1 id="环论"><a href="#环论" class="headerlink" title="环论"></a>环论</h1><p><strong>定义</strong>：$(R,+,\cdot)$是一个环，满足以下条件：</p>
 <blockquote>
-<p>当$a=1$时，不难发现其实质就成了凯撒密码。</p>
+<p>这里的加法和乘法是抽象概念，不是真正意义上的加法和乘法，例如说这里的乘法不一定满足交换律。</p>
 </blockquote>
-<p>加密函数：</p>
-<script type="math/tex; mode=display">
-e(x)=(ax+b)\bmod m</script><p>其中，$a$和$m$互质，m是字母数目，为26。</p>
-<p>解密函数：</p>
-<script type="math/tex; mode=display">
-d(x)=a^{-1}(x-b)\bmod m</script><p>$a^{-1}$是$a$在$m$上的逆元，满足$aa^{-1}\equiv 1(\bmod 26)$</p>
-<h2 id="计算原理"><a href="#计算原理" class="headerlink" title="计算原理"></a>计算原理</h2><p>加密函数的同余方程我们可以转化为$ax\equiv y-b(\bmod 26)$，由于要对密文进行解密，我们需要让仿射函数为一个单射，这个同余方程需要有唯一解，需要使$gcd(a,26)=1$</p>
-<p>这里，我们求出和26所有互素的数为<strong>1,3,5,7,9,11,15,17,19,21,23,25</strong>，总共12个，$b$的取值为$Z_{26}$的某个数，所以我们得到仿射密码的秘钥空间为$12×26=312$</p>
+<p>1.$(R,+)$构成<strong>阿贝尔群</strong>。</p>
+<p>2.$(R,\cdot)$构成<strong>半群</strong>。</p>
 <blockquote>
-<p>用欧拉函数的相关知识可以得到，仿射密码的秘钥空间为$m\phi(m)$</p>
+<p>注意到整数和乘法不能构成群，因为除了1和-1外的其他整数都没有逆元，但是满足结合律和封闭性，我们称之为<strong>半群</strong>，为<strong>乘法半群</strong>。</p>
+<p>如果一个代数结构只满足封闭性，那么这种结构叫<strong>广群</strong>。<strong>半群</strong>在广群的基础上还有结合律的特性。如果还含有单位元，这种结构叫<strong>幺半群</strong>。<strong>群</strong>还含有逆元，如果还满足交换律就叫做<strong>阿贝尔群</strong>，含有生成元的群就叫<strong>循环群</strong>，几个概念属于层层包含关系。</p>
 </blockquote>
-<p>这里提示我们可以用爆破的思想来进行解密。</p>
-<p>如某已知是仿射密码加密的密文为HIVMURCQWQIWUHEV，我们可以对其进行如下爆破：</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">cipher=<span class="string">&#x27;HIVMURCQWQIWUHEV&#x27;</span></span><br><span class="line">A=[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">11</span>,<span class="number">15</span>,<span class="number">17</span>,<span class="number">19</span>,<span class="number">21</span>,<span class="number">23</span>,<span class="number">25</span>]</span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> A:</span><br><span class="line">    <span class="keyword">for</span> b <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">26</span>):</span><br><span class="line">        flag=<span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> cipher:</span><br><span class="line">            flag+=<span class="built_in">chr</span>(gmpy2.invert(a,<span class="number">26</span>)*(<span class="built_in">ord</span>(i)-<span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>)-b)%<span class="number">26</span>+<span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>))</span><br><span class="line">        <span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
-<p>在得到的312个结果里，我们能找到一个FANGSHEMIMAISFUN看起来符合要求。</p>
-<p>但是，经过以上的研究，发现这种方法爆破得到的结果过多，简单的文本还好，如果比较长的密文再用这种方法就不大好了，既花费大量运算，看久了眼睛也难受，所以，对于比较长的密文，我们可以用一些别的方法。</p>
-<h2 id="利用单表替换求解ab"><a href="#利用单表替换求解ab" class="headerlink" title="利用单表替换求解ab"></a>利用单表替换求解ab</h2><p>如果我们截获了以下密文：</p>
-<p>FMXVEDKAPHFERBNDKRXRSREFMORUDSDKDVSHVUFEDKAPRKDLYEVLRHHRH</p>
-<p>如果我们可以认定其进行了仿射加密，我们可以采用单表替换的思想，先观察这条密文，分析一下最大频数：R（8次），D（7次），E，H，K（各5次），S，F，V（各4次）。</p>
-<p>英文字母表统计表出现频数最高的字母前三位为ETA，我们可以对其进行假设并且代入仿射函数求解方程组：</p>
-<p>先猜测R为e，D为t：$e(4)=17,e(19)=3$</p>
-<p>得到$(4a+b)\bmod 26=17,(19a+b)\bmod 26=3$，解得$a=6,b=19$，但是$a$不符合要求。</p>
-<p>再猜测R为e，E为t：$e(4)=17,e(19)=4$</p>
-<p>同理解得$a=13,b=17$，$a$不符合要求。</p>
-<p>再猜测R为e，K为t，解得$a=3,b=5$，密钥合法。</p>
-<p>然后简单计算一下，就能得到明文：</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">cipher=<span class="string">&#x27;FMXVEDKAPHFERBNDKRXRSREFMORUDSDKDVSHVUFEDKAPRKDLYEVLRHHRH&#x27;</span></span><br><span class="line">a=<span class="number">3</span>;b=<span class="number">5</span></span><br><span class="line">flag=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cipher:</span><br><span class="line">    flag+=<span class="built_in">chr</span>(gmpy2.invert(a,<span class="number">26</span>)*(<span class="built_in">ord</span>(i)-<span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>)-b)%<span class="number">26</span>+<span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(flag)</span><br><span class="line"><span class="comment">#ALGORITHMSAREQUITEGENERALDEFINITIONSOFARITHMETICPROCESSES</span></span><br></pre></td></tr></table></figure>
-<p>得到flag：algorithms are quite general definitions of arithmetic processes</p>
+<p>3.满足<strong>分配律</strong>：</p>
+<script type="math/tex; mode=display">
+\forall a,b,c\in R,a\cdot(b+c)=a\cdot b+a\cdot c</script><script type="math/tex; mode=display">
+(b+c)\cdot a=b\cdot a+ c\cdot a</script><blockquote>
+<p>整数环：$(Z,+,×)$，有理数环：$(Q,+,×)$，实数环：$(R,+,×)$</p>
+<p>$(Z_n,+,×)$也是环，其中分配律在模运算下也满足。</p>
+</blockquote>
+<p>环可以轻松<strong>表示多项式</strong>。</p>
+<p>根据集合的元素是有限的还是无限的，可以分为<strong>有限环和无限环</strong>。</p>
 <blockquote>
-<p>当然，与其这样运算，不如直接试试解<a target="_blank" rel="noopener" href="https://quipqiup.com/">单表替换</a>，如果可以直接网站暴力求解，那么这就进入单表替换的范畴了，还是具体问题具体分析比较好。</p>
+<p>如果我们要求一个环必须有乘法单位元，那么乘法部分就为幺半群，这种环叫<strong>含幺环</strong>。</p>
+<p>如果乘法满足交换律，那么这种环叫<strong>交换环</strong>。（注意不一定有乘法单位元）</p>
+<p>如果即含有乘法单位元又满足交换律，那么这种环叫做<strong>含幺交换环</strong>。</p>
 </blockquote>
-</article><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2022/12/26/%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A0%81/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=undefined&amp;url=http://example.com/2022/12/26/%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A0%81/&amp;pic=undefined" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>古典密码<span class="tagsPageCount">5</span></a></div></div></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/24/StegSolve%E4%BD%BF%E7%94%A8%E5%92%8CLSB%E9%9A%90%E5%86%99/"><img class="prev-cover" src="https://s2.loli.net/2022/12/24/O5pbX1mtWVA8vew.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">StegSolve使用和LSB隐写</div></div></a></div><div class="next-post pull-right"><a href="/2022/12/27/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/"><img class="next-cover" src="https://s2.loli.net/2022/12/27/2jLsqWdrEC9SvIQ.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">RSA学习笔记（五）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/11/27/CTFshow%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%8A%EF%BC%89/" title="CTFshow做题记录（上）"><img class="cover" src="https://s2.loli.net/2022/12/08/CbXMu7hqjTOzwpB.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-11-27</div><div class="title">CTFshow做题记录（上）</div></div></a></div><div><a href="/2022/12/09/CTFshow%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%8B%EF%BC%89/" title="CTFshow做题记录（下）"><img class="cover" src="https://s2.loli.net/2022/12/08/CbXMu7hqjTOzwpB.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-12-09</div><div class="title">CTFshow做题记录（下）</div></div></a></div><div><a href="/2023/05/14/LitCTF%E5%A4%8D%E7%8E%B0/" title="LitCTF复现"><img class="cover" src="https://s2.loli.net/2023/05/14/CtirxsS8YE7qhFA.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-05-14</div><div class="title">LitCTF复现</div></div></a></div><div><a href="/2022/11/05/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AF%86%E7%A0%81/" title="奇奇怪怪的密码"><img class="cover" src="https://s2.loli.net/2022/12/08/FLulmRDirSntHBb.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-11-05</div><div class="title">奇奇怪怪的密码</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo" style="display: none"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a></div><div class="comment-tips" id="comment-tips"><span>你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div><div class="comment-barrage"></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%BF%E5%B0%84%E5%AF%86%E7%A0%81"><span class="toc-text">仿射密码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86"><span class="toc-text">计算原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%8D%95%E8%A1%A8%E6%9B%BF%E6%8D%A2%E6%B1%82%E8%A7%A3ab"><span class="toc-text">利用单表替换求解ab</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By Chemtrails</div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:var(--anzhiyu-fontcolor)" target="_blank">鲁ICP备2022041228号</a></div></div></footer><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" src="https://ch3mtr4ils.cn/img/tit.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+<p><strong>参数表示方式</strong>：</p>
+<p>简称$R$为环，$\forall a,b\in R$：</p>
+<p>$θ$：加法单位元，称为<strong>零元</strong>。</p>
+<p>$e$：乘法单位元，称为<strong>单位元</strong>。</p>
+<p>加法的逆元为相反数，$-a$表示；乘法逆元用$a^{-1}$表示，通常写法上有：</p>
+<script type="math/tex; mode=display">
+a-b=a+(-b)</script><script type="math/tex; mode=display">
+\frac ab=a\cdot b^{-1}</script><p><strong>运算性质</strong>：($a,b\in R$)</p>
+<p>1.$(-a)b=-(ab)=a(-b)$</p>
+<p>2.$(-a)(-b)=ab$</p>
+<p>3.$(sa)(tb)=st(ab),s,t\in Z$</p>
+<h2 id="零元"><a href="#零元" class="headerlink" title="零元"></a>零元</h2><p>定义非空集合$A$上的二元运算，$\theta\in A$，对于$\forall a\in A$，有：</p>
+<script type="math/tex; mode=display">
+\theta\cdot a=a\cdot \theta=\theta</script><p>称$\theta$为零元。</p>
+<blockquote>
+<p>零元也分为左零元和右零元，因为不确定这个二元运算是否满足交换律。但是如果满足封闭性，那么左右零元相等且唯一。</p>
+</blockquote>
+<p><strong>定理1</strong>：对于代数结构$(A,\cdot),|A|&gt;1$，如果$A$中存在零元和单位元，那么$\theta ≠e$</p>
+<blockquote>
+<p>证明：假设这两个元相等，有：</p>
+<script type="math/tex; mode=display">
+a=e\cdot a=\theta\cdot a=\theta=e</script><p>那么$A$所有元素相等，$|A|=1$，矛盾。</p>
+</blockquote>
+<p><strong>定理2</strong>：群里无零元。</p>
+<blockquote>
+<p>证明：群$G$如果阶为1，唯一元素为单位元，无零元。</p>
+<p>如果阶大于1，假设有零元，对于任意$a$：</p>
+<script type="math/tex; mode=display">
+a\cdot \theta=\theta \cdot a=\theta ≠e</script><p>零元和任何元素运算都不等于单位元，零元没有逆元，不满足群的定义。</p>
+</blockquote>
+<p>对于环，乘法半群中会有零元，这与定理2不冲突。</p>
+<p>平凡环：$R=\{\theta\}$，否则为非平凡环。</p>
+<h3 id="零因子"><a href="#零因子" class="headerlink" title="零因子"></a>零因子</h3><p>在环$R$中，非零且非零元元素$a,b\in R$，有：</p>
+<script type="math/tex; mode=display">
+ab=\theta</script><p>称$a,b$为零因子。</p>
+<blockquote>
+<p>零因子也有左右之分，交换环可以不分左右。</p>
+</blockquote>
+<h2 id="整环"><a href="#整环" class="headerlink" title="整环"></a>整环</h2><p>对于含幺交换环，如果单位元和零元不是同一个东西，且无零因子的含幺交换环叫做<strong>整环</strong>。换句话说，<strong>一个非平凡的含幺交换环如果无零因子，就是整环。</strong></p>
+<p>例如$Z$就是一个整环，当$n$为素数时，$Z_n$也是整环。</p>
+<h2 id="除环"><a href="#除环" class="headerlink" title="除环"></a>除环</h2><p>零元会影响环内的乘法半群构成群，接下来我们考虑无零因子环：</p>
+<p>对于环$R$，如果$(R/\{\theta\},\cdot)$为群，那么$R$为<strong>除环</strong>。如果$(R/\{\theta\},\cdot)$为阿贝尔群，满足交换律，那么此时的除环叫做<strong>域</strong>。</p>
+<blockquote>
+<p>除环又叫斜域。</p>
+</blockquote>
+<p>总体来说，域是乘法构成阿贝尔群的含幺交换环。</p>
+<p>在本质上，域也是一种整环，且没有零因子，且非平凡。</p>
+<p>无限整环不一定是域，去掉0后构不成乘法阿贝尔群，缺少逆元，但是$Q,R$为域。</p>
+<p>有限整环一定是域。</p>
+<h2 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h2><p>$R$为环，如果存在最小正整数$m$，对于$\forall a\in R$，使得$ma=\theta$，那么$m$就是环$R$的特征，记为$Char\ R$。当$m$不存在，那么称$R$的特征是$0$。</p>
+<h3 id="加法阶"><a href="#加法阶" class="headerlink" title="加法阶"></a>加法阶</h3><p>$R$为环，对于$a\in R$，如果存在最小正整数$k$，使得$ka=\theta$，那么$k$就是$a$的加法阶，如果$k$不存在，那么称$a$是无限加法阶的元素。</p>
+<p>定理1：如果环的特征不等于$0$，环元素加法阶那么都是有限的，都是特征的因子。</p>
+<blockquote>
+<p>对于环$Z$，特征就为$0$，没有任何正整数$m$满足$mz=0$。</p>
+<p>对于环$Z_n$，特征就为$n$，对于所有元素都满足$na\equiv 0(\bmod n)$。</p>
+</blockquote>
+<p>定理2：含幺交换环的特征等于$0$或其单位元的加法阶。</p>
+<p>定理3：整环的特征等于$0$或者素数。</p>
+<blockquote>
+<p>推论：整环的单位元的加法阶是无限的或者素数。</p>
+</blockquote>
+<p>定理4：域的特征等于$0$或者素数，有限域的特征是素数。</p>
+<h2 id="子环"><a href="#子环" class="headerlink" title="子环"></a>子环</h2><p>如果$(R,+,\cdot )$是环，$S$是$R$的非空子集，如果$(S,+,\cdot )$也是环，那么$(S,+,\cdot )$就是$(R,+,\cdot )$的子环，即$S$是$R$的<strong>子环</strong>，$R$是$S$的<strong>扩环</strong>。</p>
+<blockquote>
+<p>平凡环$\{\theta\}$是任意环的子环。</p>
+</blockquote>
+<p>对于环$R$，存在非空子集$S$，判断$S$能构成子环的条件：</p>
+<p>对于$\forall a,b\in S$，能满足：</p>
+<p>①减法封闭性：$a-b\in S$；（或证明加法部分能构成子群）</p>
+<p>②乘法封闭性：$ab\in S$。</p>
+<p>含幺交换环的子环不一定是含幺交换环。（$Z$的子环只有它本身是含幺交换环）</p>
+<p>整环的子环不一定是整环。</p>
+<blockquote>
+<p>如果$F$是域，$F’$是$F$的子环，如果$F’$能构成域，那么$F’$是$F$的子域，$F$是$F’$的扩域。</p>
+<p>域的子环不一定是域。</p>
+</blockquote>
+<p>注意：子环的单位元和环的单位元没有关系。</p>
+<h3 id="理想"><a href="#理想" class="headerlink" title="理想"></a>理想</h3><p>理想就是一种特殊的子环，全称是<strong>理想子环</strong>。</p>
+<p>定义：$(R,+,\cdot )$是环，$I$是$R$的非空子集，如果$(I,+,\cdot )$满足以下条件：</p>
+<p>加法子群：$(I,+)$是$(R,+)$的子群。</p>
+<p>乘法吸收律：$\forall r\in R,\forall a \in I\Rightarrow ra\in I(ar\in I)$。</p>
+<p>我们称$I$是$R$的左（右）理想。</p>
+<p>判断是理想：</p>
+<p>①加法封闭性：$a+b\in I$</p>
+<p>②乘法吸收律：$ra\in I$</p>
+<p>注意：理想或子环一定包含环的零元，但未必包含环的单位元。</p>
+<p>定理：$R$是环，$I$是$R$的理想，$e\in R$，那么$e\in I \iff I=R$。</p>
+<blockquote>
+<p>简单证明：</p>
+<p>左推右：很明显，直接就能得到。</p>
+<p>右推左：$e\in I,\forall r\in R\Rightarrow r=re\in I\Rightarrow R\subseteq I$，$I\subseteq R$，所以$I=R$。</p>
+</blockquote>
+<p>零理想：$\{\theta\}$（其他的叫做非零理想）</p>
+<p>单位理想：$R$</p>
+<p>平凡理想：$\{\theta\}$和$R$（其他的叫做非平凡理想）</p>
+<p>真理想：$I\subset R$</p>
+<h3 id="双边理想"><a href="#双边理想" class="headerlink" title="双边理想"></a>双边理想</h3><p>$(R,+,\cdot )$是环，$I$是$R$的非空子集，如果$(I,+,\cdot )$满足以下条件：</p>
+<p>加法子群；</p>
+<p>吸收律：$\forall r\in R,\forall a\in I\Rightarrow ra,ar\in I$。</p>
+<p>那么$I$是$R$的双边理想。</p>
+<p>单边理想：左理想、右理想。</p>
+<p>对于交换环的理想都是双边理想。（$ra=ar$）</p>
+<h3 id="主理想"><a href="#主理想" class="headerlink" title="主理想"></a>主理想</h3><blockquote>
+<p>类比循环群。</p>
+</blockquote>
+<p>$R$是环，$a\in R$，称$aR$（$Ra$）为由$a$生成的$R$的左（右）主理想。</p>
+<p>当$R$是交换环时，$aR=Ra$，称之为主理想，记作$(a)$。</p>
+<p>零理想$\{\theta\}$是环的主理想，由零元生成，$\{\theta\}=(\theta)$。</p>
+<p>单位理想$R=eR=Re$如果是主理想，由单位元生成，环应该为含幺交换环。</p>
+<p>定理：$R$是交换环，$a\in R$，$(a)$是$R$的理想。</p>
+<p>性质：环的理想包含元素$a$，一定包含由$a$生成的主理想$(a)$。</p>
+<blockquote>
+<p>可用吸收律证明：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+(a) 
+& = \{ra|r\in R\}\\ 
+& = \{ra\in I|r\in R\}\\ 
+& \subseteq I\\ 
+\end{align}</script></blockquote>
+<h3 id="素理想"><a href="#素理想" class="headerlink" title="素理想"></a>素理想</h3><p>$I$是$R$的真理想，$\forall a,b\in R$，如果$ab\in I$，有$a\in I$或者$b\in I$，那么$I$是$R$的素理想。</p>
+<blockquote>
+<p>这个定义来源于素数：$p|ab$那么$p|a$或者$p|b$。</p>
+</blockquote>
+<p>例如当$m$为素数时，$mZ$为素理想。例如当$m=3$时，对于$\forall a,b\in R$如果有$ab\in 3Z$，有$3|ab$，$3|a$或$3|b$，那么$a\in 3Z$或$b\in 3Z$。</p>
+<blockquote>
+<p>$m$为合数时，$mZ$不是素理想。可用$a=2,b=3$，$ab\in 6Z$进行证明。</p>
+</blockquote>
+<p>另一个例子：零理想$\{0\}=0Z$是$Z$的素理想。同理可证，$ab$其中至少有一个为$0$。</p>
+<p>结论：当且仅当$m$为素数或者$0$时$mZ$是$Z$的素理想。（不考虑单位理想$m=1$，不是真理想）</p>
+<h3 id="极大理想"><a href="#极大理想" class="headerlink" title="极大理想"></a>极大理想</h3><p>$M$是$R$的真理想，除了$R$以外不存在任何包含$M$的理想，那么$M$是$R$的极大理想。</p>
+<p>等价定义：$M$是$R$的真理想，对于包含$M$的理想$I$，有$I=M$或者$I=R$，那么$M$是$R$的极大理想。</p>
+<p>当$m$为素数时，$mZ$是$Z$为极大理想。零理想不是$Z$的极大理想。</p>
+<h3 id="域的理想"><a href="#域的理想" class="headerlink" title="域的理想"></a>域的理想</h3><p>域只有零理想和单位理想，没有非平凡理想。</p>
+<p>证明：假设域$F$有非零理想，存在非零元素$a\in I$，$F$是域，有逆元$a^{-1}\in F$，根据吸收律，有：</p>
+<script type="math/tex; mode=display">
+e=a\cdot a^{-1}\in I</script><p>当$e\in I$时，根据前面的知识可以知道$I=F$。</p>
+<p>推论：零理想是域的极大理想。</p>
+<p>定理：零理想是含幺交换环的极大理想当且仅当这个环是域。</p>
+<blockquote>
+<p>证明：</p>
+<p>前推后：存在非零元素$a\in R$，那么零理想$\{\theta\}\subset(a)$，因为零理想为极大理想，有$(a)=R$，存在$ab=e$，所以$a$都有逆元，构成域。</p>
+</blockquote>
+<h2 id="商环"><a href="#商环" class="headerlink" title="商环"></a>商环</h2><p>我们使用双边理想构造商环，元素是环被划分后的陪集：$(R/I,+,\cdot )$</p>
+<blockquote>
+<p>为什么要使用双边理想？</p>
+<p>对于$[a]_I\cdot [b]_I=[ab]_I$：</p>
+<p>有$(a+t)\cdot(b+t’)=ab+at’+tb+tt’,t,t’\in I$</p>
+<p>第一项是属于环的，需要得到后面三项计算结果属于理想，才能满足陪集乘法。如果只是单纯的左理想或者右理想，$at’$和$tb$一定有一项不满足，所以需要满足交换律，使用双边理想。</p>
+</blockquote>
+<p>商环又叫$R$模$I$的剩余类环。</p>
+<p>陪集乘法：$[a]_I\cdot [b]_I=[ab]_I$，乘积构成的也是陪集，是以$ab$为代表元的陪集。</p>
+</article><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2024/01/15/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=undefined&amp;url=http://example.com/2024/01/15/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89/&amp;pic=undefined" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>抽象代数<span class="tagsPageCount">3</span></a></div></div></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/14/%E5%88%86%E5%9C%86%E5%A4%9A%E9%A1%B9%E5%BC%8F/"><img class="prev-cover" src="https://s2.loli.net/2024/01/14/BdOWyYnFTqPhKpZ.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">分圆多项式</div></div></a></div><div class="next-post pull-right"><a href="/2024/01/15/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/"><img class="next-cover" src="https://s2.loli.net/2024/01/15/Rg7Znf2ueahOqQJ.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">密码学的数学基础（三）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/09/06/%E3%80%8A%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80%E3%80%8B%E6%9C%AD%E8%AE%B0/" title="《近世代数基础》札记"><img class="cover" src="https://s2.loli.net/2023/09/09/oKbQs6yuaLDFUNS.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-09-06</div><div class="title">《近世代数基础》札记</div></div></a></div><div><a href="/2024/01/15/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/" title="密码学的数学基础（三）"><img class="cover" src="https://s2.loli.net/2024/01/15/Rg7Znf2ueahOqQJ.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-01-15</div><div class="title">密码学的数学基础（三）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo" style="display: none"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a></div><div class="comment-tips" id="comment-tips"><span>你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div><div class="comment-barrage"></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E8%AE%BA"><span class="toc-text">环论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E5%85%83"><span class="toc-text">零元</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%B6%E5%9B%A0%E5%AD%90"><span class="toc-text">零因子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E7%8E%AF"><span class="toc-text">整环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%A4%E7%8E%AF"><span class="toc-text">除环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%BE%81"><span class="toc-text">特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E9%98%B6"><span class="toc-text">加法阶</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E7%8E%AF"><span class="toc-text">子环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E6%83%B3"><span class="toc-text">理想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E8%BE%B9%E7%90%86%E6%83%B3"><span class="toc-text">双边理想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E7%90%86%E6%83%B3"><span class="toc-text">主理想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A0%E7%90%86%E6%83%B3"><span class="toc-text">素理想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E5%A4%A7%E7%90%86%E6%83%B3"><span class="toc-text">极大理想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%9F%E7%9A%84%E7%90%86%E6%83%B3"><span class="toc-text">域的理想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%95%86%E7%8E%AF"><span class="toc-text">商环</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By Chemtrails</div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:var(--anzhiyu-fontcolor)" target="_blank">鲁ICP备2022041228号</a></div></div></footer><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" src="https://ch3mtr4ils.cn/img/tit.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
 let loadingPercentageTimer = setInterval(function() {
   var progressBar = document.querySelector(".pace-progress");
   if (!progressBar) return
