@@ -1,0 +1,1357 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>misc入门——图片分析 | Chemtrails</title><meta name="keywords" content="图片隐写,图片分析"><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="misc入门——图片分析"><meta name="application-name" content="misc入门——图片分析"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="bookmark" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="192x192" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="512x512" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-startup-image" media="screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1136x640.png"><link rel="apple-touch-startup-image" media="screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_640x1136.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2688x1242.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1792x828.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_1125x2436.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_828x1792.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2436x1125.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:736px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_1242x2208.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:736px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2208x1242.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1334x750.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_750x1334.png"><link rel="apple-touch-startup-image" media="screen and (device-width:1024px) and (device-height:1366px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2732x2048.png"><meta name="description" content="本篇文章以CTFshow为基础，系统研究一下CTF的misc中有关图片分析的题目。 本人有一定的misc基础，不过都是看啥不会学啥，自认为缺少系统的学习，趁着提前放假，速速静下心来慢慢研究，不求多，坚持就行。 CTFshow官方网站 图片基础misc1题目图片：  好吧，flag就摆在眼前……为了节省时间，电脑QQ截图之后对图片可以转文字，避免了对着打字会打错的情况。 misc2题目给了一个txt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="misc入门——图片分析">
+<meta property="og:url" content="http://example.com/2022/12/09/misc%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90/index.html">
+<meta property="og:site_name" content="Chemtrails">
+<meta property="og:description" content="本篇文章以CTFshow为基础，系统研究一下CTF的misc中有关图片分析的题目。 本人有一定的misc基础，不过都是看啥不会学啥，自认为缺少系统的学习，趁着提前放假，速速静下心来慢慢研究，不求多，坚持就行。 CTFshow官方网站 图片基础misc1题目图片：  好吧，flag就摆在眼前……为了节省时间，电脑QQ截图之后对图片可以转文字，避免了对着打字会打错的情况。 misc2题目给了一个txt">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/12/09/M52hVHKlOU7erdA.png">
+<meta property="article:published_time" content="2022-12-09T11:02:17.000Z">
+<meta property="article:modified_time" content="2023-05-09T08:22:46.000Z">
+<meta property="article:author" content="Chemtrails">
+<meta property="article:tag" content="图片隐写">
+<meta property="article:tag" content="图片分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/12/09/M52hVHKlOU7erdA.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/12/09/misc%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  navMusic: true,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'misc入门——图片分析',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-09 16:22:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/"><div class="title">Chemtrails</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></center></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:17px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" href="javascript:void(0);" title="浅色和深色模式转换" onclick="rm.switchDarkMode()"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke" style="font-size: 1.3rem"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">misc入门——图片分析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-09T11:02:17.000Z" title="发表于 2022-12-09 19:02:17">2022-12-09</time><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-09T08:22:46.000Z" title="更新于 2023-05-09 16:22:46">2023-05-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/misc/">misc</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">9.4k</span><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>36分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="misc入门——图片分析"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><em>本篇文章以CTFshow为基础，系统研究一下CTF的misc中有关图片分析的题目。</em></p>
+<p>本人有一定的misc基础，不过都是看啥不会学啥，自认为缺少系统的学习，趁着提前放假，速速静下心来慢慢研究，不求多，坚持就行。</p>
+<p><a target="_blank" rel="noopener" href="https://ctf.show/">CTFshow官方网站</a></p>
+<h1 id="图片基础"><a href="#图片基础" class="headerlink" title="图片基础"></a>图片基础</h1><h2 id="misc1"><a href="#misc1" class="headerlink" title="misc1"></a>misc1</h2><p>题目图片：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/6NSQLJT4HYf5ebv.png" alt=""></p>
+<p>好吧，flag就摆在眼前……为了节省时间，电脑QQ截图之后对图片可以转文字，避免了对着打字会打错的情况。</p>
+<h2 id="misc2"><a href="#misc2" class="headerlink" title="misc2"></a>misc2</h2><p>题目给了一个txt文件，打开一看全是乱码……</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">塒NG</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line">IHDR  ?   ?   喐F6   sRGB ?   gAMA  睆</span><br><span class="line">黙   	pHYs  t  t辠x  鮅DATx^磔;r?防qEr0?碬 ;檋疑ばN渳?&#x27;R(e?rbi?\尨椌d?阅?$?W藕烕┵ ?$泋砿    @u?    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P┻ !|0Wo迾7蓓龒y9ソ芗肪腙狃??4m呗?&amp;鮬e挣?j@Ι馊绠z陝疳?骖疬癁&gt;泂2吊?嘴栗bn逕毥]5?O櫨U禠厄sh&#123;oF熺^n帖嗑侵僞骨?蘸t炜k|=?4雧?-e峞v曤唏槞?慜胚?XT跶16#N?V-mr?垘??cй?踀z轣o潭-~t患?黰Y献雥斁?髹薔濐锻u邮佅?Qc曡[ニ訳z??涰惮QN灟窙嗑茼?I蛂?蕌yt豞n?攕lQ%i蛀DmZ?塑Q?穗C诌Z?荬洽軒j眣艖部&#x27;囂/??</span><br><span class="line">你A癊姣邬谬e??/.?!t+?瓒aK佐	ain ??&#x27;塎蠿｛朆橿薹M\滠?踍卉C鷢n?撓N贐2&#x27;X汋?&gt;酞齵?O6)誐折Q)6/Ff,雥驋零朣v窟?Q</span><br><span class="line">?杜幜m澑;|N=oBxh€??l^&lt;?</span><br><span class="line">Z+ e渢倎+蝙鉆飉瑧&#125;K 眄/r )戌茯匎︼伟v箛??鵚黚[曝Y2?撶途犧?酞?x滯~B蒞Xv鈩鴫韛&#125;瓺l^挏82F主t翲鲒据sa?振?v嬜鹴鶅?瀯p訿uL瞬挻2仸L;岃[jejh禧u?Z弈-Y 髂???筴誶???y載呓x9?途犧?蘻廇摄骲l喵M?j矗bl^挏82F主歹)i犹钧jI?眈?n??e&#125;棸/?/檁?罴&#123;k?内紭:嵐瘮s篦g髏V3ㄌ砼??芊摔革驿e钝[#僬彭絠N6&#x27;w??殈郭踻?庚瀤y/蘭3ｉ蝴殈V箇??u]薹駳碣4&#x27;荜i蛀dmZ?薼)湛綴1ī鬁</span><br><span class="line">歡熖?囶套_t≌広?)M&#125;娳籼|赬輄26?Y笋蝮籡w帺竢无?耵痽&gt;?卽?y&#x27;磇h朓m?锋馭违?螫=??俫?篌??玮?鵾鷑~莆j?A籐砩t4囐屋贄D侈椮销?咡脋库?&gt;鮋帩8趑&lt;蓮Z;*莊攕鲅黣e効?J醍1荴貘蒜彥呬儍?bE?;r?睳?4舜=?C吔?v|櫘?3邠鵡p?*髂焊m&amp;蓮倱)D4鸜煿爽涌?昇覝8储銰詭</span><br><span class="line">屚槢?＂耒?輁尒?!膠&lt;??躇脬?e?-靫璆???&gt;q鲴/?檼W %鍨?薚蛕_c沄?7蓮ZvZO?i?苀H?o5N?~泷g?輼??#epB璁?贐</span><br><span class="line">2&gt;槴钸|鑆b屿熛;?l??媃炢?浕鲧趍琚褍Vr碋雃艟漽p6崖炤呥跰X&amp;痪剫?遀爅澚&#x27;x堀坐綰綥&#x27;汒猊麅掀焕犍遪</span><br><span class="line">n岃g…撤?疌籇很邈媱?х拈?鰳﨨籃篺?叻b谨Xc檣箍ナ崮¨KE!]抳?6缤&#123;LGf廤掀n甈R敌l?搕緒顒n?ｓ翙鸧fBx陘巛?蟆=€筄</span><br><span class="line">濻贊|翡0€u濩瓧←~?缰璱譳R潽鲖??唏肟?eWm蹳3jw鹕?檠,域幏Ba?杁\?7鯯O鍉31x&quot;Qez?艝沅&quot;7?/箵昗O骟y&amp;?h謠鼍5隴h峞啹?蛥鐘S艖吥珬洴著?/?鏣b襮~\41,yw鮴烬N71?劵KsRX贴 踌O?为糨癶杋k;Υ^v麔v悎萆8瑴?yF坶舡6紊G鬧?蜺&lt;.猋ε痙B!躬sf湩?3也?e菢6?XN\躉祿B蛕羡穎剿?c頷箇7DM?i?cs峁釺qd1癃IJ?^缗yZs?莀nL?咵b覌郭陧+#町?!那癘章闢耏k甯m俴疁諦壆?f崢??鳇祎毱</span><br><span class="line">畄rZ?ca伤伪助p~旷掦?踂鬓G画N趴胇?Y赝j鉽薥?穙i杋娿歪苺P莞鯒?椲猒DR町禅2@n檪躸烔c娤鞧醹?牽熒cR`姜螙un鑃ま#馋璚颵]?颯猞v?靡?其#I;N涊?娥8&gt;酴佝#媹Wn禌搞63檅?B&#125;-赭伩&#125;^8Op宓綗衝聖S?謖蒜?!tI0i</span><br><span class="line">??gd4荏鮡床脥佑?=?躝霡;?擴輥劫n:僜^堑藴讧]锴&#125;JO事蒁f咭,??鎫o ?wle~&lt;@X町懬衞@檪荦i竺?膕/睽 ?飠c| 鎵&gt;&#x27;VCr鳝T颵朸鎞+僤吴&#125;g阺伩碣术?a;N?sI?c?缚┾仍?饈? &gt;e侗荭秋擌霚鵎硶?L7峭慸懔缯藂胼A`l鮹脐２沩M?~?OqSV犔祠?[B?晹啕\?讖7HBA泡ⅲt髯帖?$*要骉 p蕸j?坫?&amp;埃鶹?Mr糂n邖銮铁s</span><br><span class="line"></span><br><span class="line">?鈘w??兪?帲罘租飛NH塹砥\q&amp;Y秒荲&#125;蜘??笕庛f?F禰挫柜j?q;N?忹埄馊漶*?韒`矑倨鰍瀋(?鱫EM6&amp;锇O.輖篡瞳訛9烏鞑鵣:!?0埃簙珓PX&#x27;n筩&#x27;7萪濦$&#x27;IpoYQ穕裷賰%斩v9阴?擞g%歉遺趈T?[嶹&quot;???剀c5V噹Ｌ&gt;恊湄稌Hs縪?脽悿鈬X褄wh顊GWQ骜?荄v?uf+Sr谘冶y愿?幪疪輗鸁贿?譃c◢?黠舥T桠?杛蜵~濅]竪髾魒;?笊勑-|蝸&#x27;崹P??ぷ C;羴?q`昡Up\见#蒨湛祧彖C?;?+^=鷣w垮\!賝删栒??疡鲴鲎簖趽┸rwe鮼c?漩憸壧0?&quot;T鐚睙?蛚wH闿l5e.涌蒹i叨咕房w鋦?*描皰蹘时刽笣*嶭?2斌景锘&#125;&quot;倨犹14茻[?]?O墭?圮瞘?2莙铟%?昃蕏崑.簨獨纥M狗鬑w鮛?饩-l纊?oxr枱/4踼+賟賵</span><br><span class="line">箸?盟O貗?枦8糬讂嬛孚&lt;x嵵妪矩殪搚lFo子鏾猳2?哟躯`疁7_鮺?鯴浥€r玔b檮幆胣6?s喩^缦]`&#123;蛕Wn犹z梇c櫱垢輾fRt磃bk?9&#x27;躻oG縴??柾葑?薈hG遑\z?UYV?3?蹧4掀畈S紒ye?4茻輋c?按U悻棆嶾&#123;p?羨莙蟍X?=诒g?A&lt;I$剼濸觼	t然??巖^</span><br><span class="line">=ㄎ%ku籉h鶋顁漞#?;%捴`,7qy?狼?vn捜/扏喈?$i杋钽m&amp;螝&gt;m癡y鮱噞r?O褂朮泮[铈L&lt;?\?F侈</span><br><span class="line">罨H終蘣磽㈨611郊啐飶粰皗.汊说=懰\荦d瀤拵庭鐘S艖%奴?1魮炉E牄n嶲vmvX薘笉絇e唣h?r&#125;溶</span><br><span class="line">C桇h擈沓&quot;	`淐?駩1k/?堚B?vFh堀?藈飩Zw\轿h/t*箋篕踢鏮-暞欍$縼c-E矻?o粻?嶝 隠Ｖ鹗=9,w1K,搈穾STn樘uQ侈遂[忿]k,sy菈┓u?wm禦沦G髼3?憓-篳?浀鐘S艖%蒴h捖霫|鳬畆寸e七測蓩軯 G軡溛肬硡脘</span><br><span class="line">盈鼙3簭n滌|?掰泀躖gb?肽鏈袁E?憙??絵?驨m螘曨]椭??=歟氭x?嚦狆褰|?fA阪粐_eYnK,摥=QX弉&#123;.蛚缒彎GK笀╕飁鯹巨S諼?=蹤8朁橪驸顬戫8[lb?拆?頔勑揬-bN??x尶?噫謂某51媳&#x27;</span><br><span class="line">狪弙稯蹞V魧辙俕容铝彆H8彇摭8%螺奈&#123;F?眜蓷頨ｇ賘锂m鼷? ?歟氥x	噓醍椾q?玟渜w||顾[b?W捭3磔嗐剘枯f烉$繐芝Y顴霏R飍k,鬁瑂X崮gLL邘竽鎍#笄?覗8шn涃Ⅱ都逴w煔k蛇R恠 5=?殏槕H??父=t</span><br><span class="line">鱕碇擓?飵U%贶疥;檹皱вwu e?雚幼D晤|捛??鎶T鰏?歟汑x? 迺れ壌&#123;藊\?t聴9?wYK,擁跑X繉o媥?GI藶溲2麨髦X鎦?úw 嘅F篖;j苀砉釺qd趚5峰桐唽恳&#125;-掐9攽??j#5Oz鵬礻?p&quot;!?H璀掚wx硴&#123;前鐜晭A</span><br><span class="line">迚Ae&#x27;d泅?嗜-&#123;雚鱼€?⒙[c,)?甇c焾</span><br><span class="line">\矻?醜傒惙径爝κO2迯?莲d筀Yb?螇Bvrs</span><br><span class="line">?6i.X锱霏V锞5杫v?ae? 竨&quot;;曥讂惫鬨q?2_紥Q~Twis*养+0G噱鎘珑P??o櫀泟? 捒q稈G亠搹尯D鸊壶廛)滉蕛铜筌譙gM瑵g詗碹? D^&lt;唁c?鰰鹏鄍~葇鱑鳻痵eP??请=c轓8z啁氞瀌D薧8W莲x?Xb橠$wc菽 聖)霚峋襕H侈U鄞`絯腆s顒6uV?€梄鳠#嫹l.=W?幪?S鶴?桐溷蠜#缈??数?o?榦謘?勘?箣]x骮?℡媜婀,8?xQL锽粇潒棵[4?酠鹸.纷?N|滨雇貊篬w?[u役??方挓曳4摔|嫁?\ㄕe彛黺睇&#123;璻??猠</span><br><span class="line">眕穥寕欧?嵟擎/ ?;骓</span><br><span class="line">坯璟飡k,s貓?€[fi煏?煫_磺Y.6棡+NGW9槽ji髼y鉶?y?10?昨&gt;沲肪rXm+?=	釄h</span><br><span class="line">m?溬轱/?#窊?协yG?凉兇羸縢?本k齿t蕵?煶d&amp;刕鰘偏菫?$牚朓q咿?減辊?F俑&#123;钪?燷寈馍?@狹龎R细k?W頄走</span><br><span class="line">只示u雧昬?涌髕&#125;O0孥萧煰Z~?蛜?汯?#搢O[?骪?案鶍寃瑐r圍氳p幌J羔~W艷=狲乜Os倆汾JCz耉阁G</span><br><span class="line">蚤旕凈O2v5濘22x2;&#125;缝褞顄蝤??y&#x27;竝潎?靌鈧赽孵u牎熾搽$垘?Z?mz?(??S粛莘鎰??津芣彩&#x27;(wv槩LAy衲%?蒿?OH懾?9踅儇齠?o祕_c檽契镏1E嚢Wg?湸w?諫冪寰簶 灗逆働_?sg靽?A贆鄘%鶣∣J菑S豆?氥?嶽|糥鍡謲?茘莗L8l羉魍t&gt;瓣WVnQB?趑柂骴糯[琧dv?錘uJ奋鈤鍀帼T鰒?j&#x27;?倉塢&#x27;?汪&amp;邝衻谝*S?&#x27;快$</span><br><span class="line">伛-]??钘?NJ禤&lt;</span><br><span class="line">M[[</span><br><span class="line">鰔犀G啥??汋?蹙?铹躏F鍝洁汞w嬜棉D1畑l?h楿?谶3d画?;茱圴j€曼Es鬻阕MZ7n戒詉€?8咥e椪瓁螺鷠虷患?~?O`箛?n锃R鱥:官.銭賣辢鶭?┹槎抩/:掩%C灟嵈u歵?-駒&#123;磉?砭?sE?橤a焜?嗧蜇粙?邽?邗產峞未?k)^軉柅Jh_摴顧葚\t?U瑶瀸1鬸?3?#w艴鉝硕璇=??柎醍y炋[橚竩_磿蔺Mo??雌綧藃anwwBS暰1紫磉,pR*&amp;??铒?珥cm&#125;堔^tS&amp;叿澎x猑Nm?~l歟Z怦</span><br><span class="line">? 壉?p</span><br><span class="line">+s5&#125;??麚魳?妻鳧滕U]P痺+,筚]橰芻?圌Kr^q獥d頡嵧E鐘S?屣9灻&#123;腺鶯?嗩?禀鉿l?昡淧筼慚践t渃,夨嫨鍵o?io)3x17锵_诪iaUC   牑?箧u輾靓Q丶;?    €?產IB?潤凤l&lt;|?   €\/?耦馽B淌z1洼髉?   €/骁髅o?覘釔b^_:?j?捱4]   @巼?r^喢Ke? 骊蛧&amp;?Y   圜魀跗季GfG???b瘂N舰   @襼嫉笴    曗!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ?	!    T妱    *EB    ?!   €J?   @   燫$?    P)B    ⊕1?霌?氝    IEND瓸`?</span><br></pre></td></tr></table></figure>
+<p>这时我们可以使用16进制编辑器——<strong>winhex</strong>进行查看，注意到这里开头的<strong>89504E47</strong>代表着png图片格式开头，意思是这其实是一张图片。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/3HAXaxgrqtYuOb2.png" alt=""></p>
+<p>我们<strong>将文件拓展名txt改成png</strong>，恢复图片，获得flag：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/oOMwUKLz3S1FrgI.png" alt=""></p>
+<h2 id="misc3"><a href="#misc3" class="headerlink" title="misc3"></a>misc3</h2><p>题目给了一个bpg格式的文件，我们使用软件<strong>honeyview</strong>可以浏览图片，获得flag。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/UKeoHNWz7GZO9XT.png" class="" title=", width&#x3D;500px">
+<h2 id="misc4"><a href="#misc4" class="headerlink" title="misc4"></a>misc4</h2><p>本题给了6个txt文件，目测是6个组成flag，统统拖进winhex先看看。</p>
+<p>第一个文件以89504E47开头，改成png文件，获得第一节flag。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/XBxmhtkWTKSwaQi.png" class="" title=", width&#x3D;400px">
+<p>第二个文件打开看到Adobe和Photoshop之类的字样，先改成png格式试试，结果成功了，获得了第二节flag。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/6g9rMeUPbIOh5Ty.jpg" class="" title=", width&#x3D;400px">
+<p>第三个文件打开之后16进制上几乎全是F，看不到啥有用信息，先改成png，也成功了。（这个文件图床加载不出）</p>
+<p>第四个文件打开后在右侧的ASCII区看到了GIF字样，就把这个图片改成gif。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/CUTKmGAEplLWhMf.gif" class="" title=", width&#x3D;400px">
+<p>第五个文件打开后又看到了Adobe Photoshop之类的，直接改png。（这个文件图床也加载不出）</p>
+<p>第六个打开看不到熟悉的东西，那就直接改png吧。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/eKXvih4adQoWk7D.webp" class="" title=", width&#x3D;400px">
+<p>获得了最终的flag。</p>
+<h1 id="信息附加"><a href="#信息附加" class="headerlink" title="信息附加"></a>信息附加</h1><h2 id="misc5"><a href="#misc5" class="headerlink" title="misc5"></a>misc5</h2><p>题目图片：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/LVgxA7N9YfUap2K.png" alt="misc5.png"></p>
+<p>这肯定不是真正的flag，我们需要寻找隐藏在图片里的flag，拉进winhex：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/iyJxWrO8LVDzbGP.png" alt=""></p>
+<p>我们在ASCII区的最后发现了隐藏的flag。</p>
+<h2 id="misc6"><a href="#misc6" class="headerlink" title="misc6"></a>misc6</h2><p>题目图片：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/LVgxA7N9YfUap2K.png" alt="misc6.jpg"></p>
+<p>继续winhex：</p>
+<p>我们借助搜索工具，搜索ctf得到了flag的位置。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/ymBf356QOhGSdcZ.png" alt=""></p>
+<h2 id="misc7"><a href="#misc7" class="headerlink" title="misc7"></a>misc7</h2><p>题目：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/LVgxA7N9YfUap2K.png" alt="misc7.jpg"></p>
+<p>依旧在winhex里直接搜索flag就能找到。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/10/2Cg6XOE73RpwQeY.png" alt=""></p>
+<h2 id="misc8"><a href="#misc8" class="headerlink" title="misc8"></a>misc8</h2><p>题目：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/LVgxA7N9YfUap2K.png" alt="misc8.png"></p>
+<p>这次，我们直接用winhex搜索并没有找到，然而，当我们搜索png文件头89504E47时，惊人的发现居然存在两个文件头：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/10/R8B5pvWkPfmKwdn.png" class="" title=", width&#x3D;500px">
+<p>这么看是在<strong>这个图片里面还隐藏着一个图片</strong>，我们可以进行手动分离，下面是两种不同的操作：</p>
+<p>一种是把第二个的文件头以后全部复制，新建一格空白的文件，全部复制进去，保存可以得到图片。</p>
+<p>另一种是直接去掉第二个文件头之前的所有信息，保留后面的信息。</p>
+<p>最终，我们得到了隐藏的图片，获得flag。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/10/4KTNseV6qZvcDM1.png" alt=""></p>
+<h2 id="misc9"><a href="#misc9" class="headerlink" title="misc9"></a>misc9</h2><p>题目：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/LVgxA7N9YfUap2K.png" alt="misc9.png"></p>
+<p>在winhex里搜索flag就直接搜索到，非常简单。</p>
+<h2 id="misc10"><a href="#misc10" class="headerlink" title="misc10"></a>misc10</h2><p>题目：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/LVgxA7N9YfUap2K.png" alt="misc10.png"></p>
+<p>这题在winhex里并没有看到什么有用的信息，直接搜索png也搜索不到，猜测可能是其他类型的隐藏图片，这里我们可以尝试使用kali虚拟机将图片拉进去使用<strong>binwalk</strong>提取出隐藏文件：</p>
+<p><strong>分析文件</strong>：<code>binwalk 文件名 --run-as=root</code></p>
+<p><strong>分离文件</strong>：<code>binwalk -e 文件名 --run-as=root</code></p>
+<p>如果分离成功会在目标文件的目录中生成一个新的文件夹，文件夹中会有分离后的文件。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/10/rA5LbYtKQcBlSi2.png" alt=""></p>
+<p>可见确实存在隐藏文件，打开桌面新生成的文件夹，获取flag。</p>
+<h2 id="misc11"><a href="#misc11" class="headerlink" title="misc11"></a>misc11</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/LVgxA7N9YfUap2K.png" alt=""></p>
+<p>简单在winhex查看了一下，确认没有什么可用信息后继续binwalk，binwalk出来有隐藏文件但是打不开，改了改文件发现也是不行。</p>
+<p>最后从大佬那里学来了一个程序叫<strong>tweakPNG</strong>：使用在文件头正常却无法打开文件的情况，在tweakPNG中，按<kbd>F7</kbd>可以预览图片。</p>
+<p>打开给的misc11文件，可以看到出现了一些信息：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/dFkhcQtPD79rX84.png" class="" title=", width&#x3D;500px">
+<p>在继续接下来的操作之前，为了进一步学习，我们需要粗略了解一下<strong>png文件结构</strong>：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/rB1YxiQlzAfc7KW.png" class="" title=", width&#x3D;500px">
+<p>先按<kbd>F7</kbd>测试一下，现在还是原来的图片。但是发现这个图片有两个<strong>图像数据块</strong>，我们可以先右键<kbd>Delete</kbd>删掉第一个，然后<kbd>F7</kbd>预览一下。或者将上面的IDAT数据块下移，让下面的数据块显示出来，还是<kbd>F7</kbd>预览。果然，flag出现了：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/lBFsyk9rtC4pfnd.png" class="" title=", width&#x3D;500px">
+<h2 id="misc12"><a href="#misc12" class="headerlink" title="misc12"></a>misc12</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/LVgxA7N9YfUap2K.png" alt=""></p>
+<p>winhex找不到，使用刚刚学的tweakpng试试：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/JfLQaoAhm4CK5qk.png" class="" title=", width&#x3D;400px">
+<p>居然有这么多的IDAT块，删掉最开始的IDAT，居然还不能预览，算了，继续删。</p>
+<p>删了几个之后突然能预览了，flag出现。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/pMaAkVSrCdn1zvc.png" class="" title=", width&#x3D;400px">
+<h2 id="misc13"><a href="#misc13" class="headerlink" title="misc13"></a>misc13</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/09/LVgxA7N9YfUap2K.png" alt=""></p>
+<p>在winhex里找了老半天也没找到，结果说隐藏在这里：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/rAfmJSFH4cixtPG.png" alt=""></p>
+<p>这flag是隔着一个字符分布的，可以把这段字符复制出来写个python程序：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t=<span class="string">&#x27;ct¹f…s†hªoKw°&#123;!aeS6¥eT446xc%4Ý8ïf«73•9b‚7ºeEb|2Td~1:däeñ6úeõ412fT8ñ329éal&#125;&#x27;</span></span><br><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(t[i],end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    i+=<span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> i&gt;<span class="built_in">len</span>(t)-<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="comment">#ctfshow&#123;ae6e46c48f739b7eb2d1de6e412f839a&#125;</span></span><br></pre></td></tr></table></figure>
+<p>提交了几次都没过……</p>
+<p>网上都直接用的十六进制源码转化的：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t=<span class="string">&#x27;631A74B96685738668AA6F4B77B07B216114655336A5655434343678632534DD38EF66AB37103395391F628237BA6545627C3254647E313A64E465F136FA65F5341E3107321D665438F1333239E9616C7D&#x27;</span></span><br><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">chr</span>(<span class="built_in">int</span>(t[i:i+<span class="number">2</span>],<span class="number">16</span>)),end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    i+=<span class="number">4</span></span><br><span class="line">    <span class="keyword">if</span> i&gt;<span class="built_in">len</span>(t)-<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="comment">#ctfshow&#123;ae6e46c48f739b7eb2d1de6e412f839a&#125;</span></span><br></pre></td></tr></table></figure>
+<p>最后看了一下不知道为什么很多wp上的16进制数都和现在这个不一样，他们的16进制有一个65成了66，他们的提交能通过，现在的不能通过，其他的没什么问题，算了，估计是题目bug了。</p>
+<h2 id="misc14"><a href="#misc14" class="headerlink" title="misc14"></a>misc14</h2><p>（还是那张图片）</p>
+<p>winhex老操作，没有。binwalk一下，发现了有隐藏文件，-e 居然提取不出来。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/t8rJfTlCHagzANV.png" alt=""></p>
+<p>临时学习了个<strong>dd</strong>指令，用来分离文件：</p>
+<p><code>dd if=misc14.jpg of=1.png skip=2103 bs=1</code></p>
+<p>if代表输入文件，of代表输出文件，skip代表跳过到多少个块后开始，bs是代表字节为单位的块的大小，参数还有很多，目前先记住这几个就能分出图片了。</p>
+<p>这里由于binwalk查看到在2103个块开始还有一个JPEG文件，那就直接shkip到2103开始分离。</p>
+<p>成功得到flag。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/McQ5b49xdntPGRK.png" alt=""></p>
+<p>ctfshow{ce520f767fc465b0787cdb936363e694}</p>
+<h2 id="misc15"><a href="#misc15" class="headerlink" title="misc15"></a>misc15</h2><p>（还是那张图片）</p>
+<p>打开winhex一下子就看到了，很快啊（</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/McmO4BDfQSv1R3w.png" alt=""></p>
+<h2 id="misc16"><a href="#misc16" class="headerlink" title="misc16"></a>misc16</h2><p>（还是那张图片）</p>
+<p>winhex找不到，虚拟机binwalk一下，这次分离出来了flag，提交。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/O4n6FpJduc5gzKf.png" alt=""></p>
+<h2 id="misc17"><a href="#misc17" class="headerlink" title="misc17"></a>misc17</h2><p>（还是那张图片）</p>
+<p>winhex找不到，虚拟机binwalk一下，分离出了一个压缩包，但是里面的东西是坏的，尝试复原一下也不知道怎么搞，这个压缩包拓展名是bz2。</p>
+<p>查了一下wp发现这里用了lsb隐写，但是这一个压缩包也不好弄，学了个zsteg，在kali里用下面这个指令下载zsteg：</p>
+<p><code>gem install zsteg</code></p>
+<p>我们可以使用：<code>zsteg 文件名 --all</code> 查看隐藏在文件里的隐藏信息，如果有flag藏在里面就直接会看到，但是这里并没有，但是我们看到了有隐藏数据：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/UndzEATl4f9SHrZ.png" class="" title=", width&#x3D;500px">
+<p>使用这个指令可以提取出隐藏数据到txt：</p>
+<p><code>steg -E “extradata:0” misc17.png &gt; 1.txt</code></p>
+<p>我们得到了txt文件，打开全是乱码，也找不到flag，这个时候再binwalk一次，得到了flag图片。</p>
+<h2 id="misc18"><a href="#misc18" class="headerlink" title="misc18"></a>misc18</h2><p>（还是那张图片）</p>
+<p>这次作者提示很特别：<strong>flag在标题、作者、照相机和镜头型号里。</strong></p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/W54TJsFthyoULKk.png" class="" title=", width&#x3D;450px">
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/hQOl8fx4BqsMw1F.png" class="" title=", width&#x3D;450px">
+<p>查看文件的属性，找到flag。</p>
+<p>ctfshow{325d60c208f728ac17e5f02d4cf5a839}</p>
+<h2 id="misc19"><a href="#misc19" class="headerlink" title="misc19"></a>misc19</h2><p>（还是那张图片，拓展名为tif）</p>
+<p>提示：<strong>flag在主机上的文档名里。</strong></p>
+<p>用kali的exiftool来查看图片的信息：发现两段flag。</p>
+<p><code>exiftool 文件名</code></p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/WjfHYNEvSCG56Xk.png" class="" title=", width&#x3D;500px">
+<blockquote>
+<p><code>exiftool 文件名 -g</code>可以让文件信息显示得更整齐一些。</p>
+</blockquote>
+<h2 id="misc20"><a href="#misc20" class="headerlink" title="misc20"></a>misc20</h2><p>（还是那张图片）</p>
+<p>提示：<strong>flag在评论里。</strong></p>
+<p>还是exiftool查看一下，看到了所谓的评论：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/y1pea2wEx7nSWYC.png" class="" title=", width&#x3D;500px">
+<p>手动转化一下中文，一开始脑子抽了忘了 易 是啥了……ctfshow{c97964b1aecf06e1d79c21ddad593e42}</p>
+<h2 id="misc21"><a href="#misc21" class="headerlink" title="misc21"></a>misc21</h2><p>（还是那张图片）</p>
+<p>提示：<strong>flag在序号里。</strong></p>
+<p>用exiftool查看，发现有以下信息，其中序号serial number有一串数字，但是形式不像是flag。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/JT2fG9Mv7NZbKw8.png" class="" title=", width&#x3D;500px">
+<p>查了一下是用了16进制转字符串。转出来后得到hex(X&amp;Ys)，也就是上面的图中的两个x和y分别转16进制然后组合一下就能得到真正的flag了。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">k=[<span class="number">3902939465</span>,<span class="number">2371618619</span>,<span class="number">1082452817</span>,<span class="number">2980145261</span>]</span><br><span class="line">key=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> k:</span><br><span class="line">    key+=<span class="built_in">hex</span>(i)[<span class="number">2</span>:]</span><br><span class="line">flag=<span class="string">&#x27;ctfshow&#123;&#x27;</span>+ key + <span class="string">&#x27;&#125;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(flag)<span class="comment">#ctfshow&#123;e8a221498d5c073b4084eb51b1a1686d&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="misc22"><a href="#misc22" class="headerlink" title="misc22"></a>misc22</h2><p>（还是那张图片）</p>
+<p>提示：<strong>flag在图片中。</strong></p>
+<p>winhex找不到，用exiftool查看，发现了以下信息：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/VOulTSm6ePpNLqf.png" alt=""></p>
+<p>thumbnail在这里是缩略图的意思，这里使用了<strong>缩略图隐写</strong>。看到这张图片里面存在缩略图，我们可以前面加入 -b 来预览这张图片的源码，但是我们还是需要提取出这张图片。</p>
+<p>网上查到提取缩略图的命令：</p>
+<p><code>exiftool -b -ThumbnailImage image.jpg &gt; thumbnail.jpg</code></p>
+<p>对这张图片用一下，能看到新生成的图片隐隐约约能看到flag了：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/eLjMVwgGPnpU5BS.png" alt=""></p>
+<h2 id="misc23"><a href="#misc23" class="headerlink" title="misc23"></a>misc23</h2><p>（还是那张图片）</p>
+<p>提示：<strong>flag在时间里。</strong></p>
+<p>直接exiftool吧：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/yOpXj78aQVv4rnM.png" alt=""></p>
+<p>可以看到在第一行已经给了提示了，UnixTimestamp百度了一下叫<strong>unix时间戳</strong>，Unix 时间戳是从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数，不考虑闰秒。</p>
+<p>下面给了好几个时间，有来自最近的，有来自未来的，也有来自过去的，这道题应该就是求出这几个时间的时间戳然后转16进制就能得到最终的flag。</p>
+<p>计算什么的，交给网站就行了：</p>
+<p><a target="_blank" rel="noopener" href="https://tool.lu/timestamp/">时间戳(Unix timestamp)转换工具</a></p>
+<p>经过转换，我们得到了 874865822  2699237688  2156662245  460377706 四个数，接下来转16进制组合就得到flag了：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">k=[<span class="number">874865822</span>,<span class="number">2699237688</span>,<span class="number">2156662245</span>,<span class="number">460377706</span>]</span><br><span class="line">key=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> k:</span><br><span class="line">    key+=<span class="built_in">hex</span>(i)[<span class="number">2</span>:]</span><br><span class="line">flag=<span class="string">&#x27;ctfshow&#123;&#x27;</span>+ key + <span class="string">&#x27;&#125;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(flag)<span class="comment">#ctfshow&#123;3425649ea0e31938808c0de51b70ce6a&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="misc41"><a href="#misc41" class="headerlink" title="misc41"></a>misc41</h2><p>提示：<strong>H4ppy Apr1l F001’s D4y！<br>愚人节到了，一群笨蛋往南飞，一会儿排成S字，一会儿排成B字。</strong></p>
+<p>题目附带的图片显示不出来，用010查看一下，发现图片的内容不像是平时看到的图片所应该有的内容，看了一会倒是发现了一些有意思的东西：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2023/01/24/drIZqaJLBwcP8lR.png" alt=""></p>
+<h1 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h1><h2 id="misc24"><a href="#misc24" class="headerlink" title="misc24"></a>misc24</h2><p>提示：<strong>flag在图片上面。</strong></p>
+<p>考虑到修改图片的长宽，给的是bmp文件，我们可以先打开详细信息查看现在的长度和宽度：</p>
+<p>现在的分辨率是900*150。</p>
+<p>为了更简单的找到图片的长宽在16进制编辑器中的位置，我们可以将长宽的十进制转化为16进制然后直接搜索：</p>
+<blockquote>
+<p>在winhex里，按F8会有一个小工具便于10进制和16进制的转换。</p>
+</blockquote>
+<p>这里我们把150转化成16进制是96，然后就在第一行看到了96的数值，我们增大96，比如说增大到F0，保存，看到图片变高，出现flag。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/xLE5plbMXw17SG2.png" class="" title=", width&#x3D;500px">
+<p>此外，使用软件<strong>010editor</strong>（另一个常用的十六进制编译器）使用PNG.bt脚本可以直接利用脚本修改一些基本信息（包括长宽等等）。</p>
+<h2 id="misc25"><a href="#misc25" class="headerlink" title="misc25"></a>misc25</h2><p>提示：<strong>flag在图片下面。</strong></p>
+<p>依旧是修改长宽，这次给的是png文件，也是一模一样的操作。还是把高位修改成F0就能得到flag。</p>
+<h2 id="misc26"><a href="#misc26" class="headerlink" title="misc26"></a>misc26</h2><p>提示：<strong>flag还是在图片下面，但到底有多下面？</strong></p>
+<p>这次我用了010editor用PNGtemplete脚本直接修改长宽，拉到1000，就不信1000不够：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/WbyLIHRgtj7mKe5.png" class="" title=", width&#x3D;550px">
+<p>结果我懵逼了，这原来需要求一下真正的高度：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/KFRjD8kro1SOJnC.png" class="" title=", width&#x3D;500px">
+<p>这就得动用网上的脚本了，下面是一个通用的分别爆破长和宽的脚本：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4096</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4096</span>):<span class="comment">#i是宽，j是高，顺序不能颠倒</span></span><br><span class="line">        c = <span class="built_in">bytes</span>.fromhex(<span class="string">&#x27;4948445200000384000000960806000000&#x27;</span>)</span><br><span class="line">        ihdr = c[:<span class="number">4</span>]+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,i)+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,j)+c[<span class="number">12</span>:]</span><br><span class="line">        crc = <span class="number">0xEC9CCBC6</span></span><br><span class="line">        <span class="keyword">if</span> zlib.crc32(ihdr) == crc:</span><br><span class="line">            <span class="built_in">print</span>(i,j)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p><strong>如何理解这个脚本？</strong></p>
+<p>在png图片中，存在png的CRC检验码，由四位字节<strong>49 48 44 52</strong>（转字节为b’IHDR’，代表数据块为IHDR，在第一行很好看到）和后面的13位数据块（前四字节是宽，后四字节为高，后五个字节为五个变量值，我们一般用不到）计算得到。</p>
+<p>生成图片时，电脑会根据图片原始的长宽生成一个CRC，但是图片的长宽被篡改，现在的CRC和IHDR计算值转化得到的CRC不匹配，我们需要根据题目的CRC求出真正的长和宽复原图片。</p>
+<p>我们可以先获得题目中的IHDR和前面的四位字节IHDR，然后转字符串（注意16进制，转字符串后’\x00’代表一个长度），之后遍历爆破<strong>组成一个随机的IHDR</strong>，然后与题目中的CRC比较，在python里面，我们可以使用<strong>zlib</strong>库的crc32()函数计算CRC，当我们新生成的IHDR和题目给的CRC相等时，就代表着我们求出了真正的长和宽。</p>
+<blockquote>
+<p>struct.pack(‘&gt;i’,i)：&gt; 表示这里用的是网络序（数据是倒着念的），i 表示四字节无符号整数。</p>
+<p>打个比方，struct.pack(‘&gt;i’,150)和struct.pack(‘&lt;i’,150)的输出分别是b’\x00\x00\x00\x96’ 和b’\x96\x00\x00\x00’。</p>
+</blockquote>
+<p>当然，由于本题目中我们已知了准确的宽900求高，所以我们可以不用遍历i，减少运算量：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4096</span>):</span><br><span class="line">    i=<span class="number">900</span></span><br><span class="line">    c = <span class="built_in">bytes</span>.fromhex(<span class="string">&#x27;4948445200000384000000960806000000&#x27;</span>)</span><br><span class="line">    ihdr = c[:<span class="number">4</span>]+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,i)+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,j)+c[<span class="number">12</span>:]</span><br><span class="line">    crc = <span class="number">0xEC9CCBC6</span></span><br><span class="line">    <span class="keyword">if</span> zlib.crc32(ihdr) == crc:</span><br><span class="line">      <span class="built_in">print</span>(i,j)</span><br><span class="line">      <span class="keyword">break</span><span class="comment">#900 606</span></span><br></pre></td></tr></table></figure>
+<p>得到了606，十六进制25e，和之前的flag拼起来得到真正的flag。</p>
+<h2 id="misc27"><a href="#misc27" class="headerlink" title="misc27"></a>misc27</h2><p>提示：<strong>flag在图片下面</strong></p>
+<p>给的尽管是jpg图片，但都是一样的900*150，这次我先搜索150的96进制找到图片的高给改到FF，保存后看到flag。</p>
+<h2 id="misc28"><a href="#misc28" class="headerlink" title="misc28"></a>misc28</h2><p>提示：<strong>flag在图片下面</strong></p>
+<p>这次给的是gif图片，但都是一样的900<em>150，用010直接改高度，但是一开始没有flag，查了一下是忘了考虑<em>*gif</em></em>带多帧的情况，应该每个都改大点，flag可能藏在某个帧里。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/1tqhj5SxuWeVTYv.png" class="" title=", width&#x3D;500px">
+<h2 id="misc29"><a href="#misc29" class="headerlink" title="misc29"></a>misc29</h2><p>提示：<strong>flag在图片下面</strong></p>
+<p>还是gif图片，这次有意思的是这个图真的是个动图：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/kYZiDom1avUHAh8.gif" alt=""></p>
+<p>不过也试试同样的方法，我们改每个帧的高度：</p>
+<p>发现除了<strong>struct LOGICALSCREENDESCRIPTOR</strong>里存在一个长宽以外，下面的data数据里的<strong>struct IMAGEDESCRIPTOR</strong>也都存在一个长宽：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/7mzPaV2fD8elgE5.png" class="" title=", width&#x3D;400px">
+<p>改好之后确实出现了flag，还好这个gif运动比较慢，帧率低到可以截图到flag，如果比较快就得用<strong>stegsolve</strong>的 frame browser 查看每一帧了：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/hy6NogTF38pwjBx.png" class="" title=", width&#x3D;400px">
+<h2 id="misc30"><a href="#misc30" class="headerlink" title="misc30"></a>misc30</h2><p>提示：<strong>正确的宽度是950。</strong></p>
+<p>打开文件，看到一张抽风的图片（这种图我之前瞎改图片长宽的时候也出现过……）：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/ptRxfJVDznTSwGs.png" class="" title=", width&#x3D;460px">
+<p>按照提示用010直接改就能看到flag。</p>
+<h2 id="misc31"><a href="#misc31" class="headerlink" title="misc31"></a>misc31</h2><p>提示：<strong>高度是正确的，但正确的宽度是多少呢。</strong></p>
+<p>依旧是那张抽风的图片，bmp格式。</p>
+<p>拿本题来学习一下bmp文件的格式分析：</p>
+<p>计算机能以<strong>位图</strong>(Bitmap，所谓的bmp)和<strong>矢量图</strong>(vector)来显示图像。</p>
+<p><strong>位图</strong>又称为<strong>点阵图</strong>和<strong>光栅</strong>(shān)<strong>图</strong>，使用像素(pixel)来描述图像，用Photoshop处理位图。</p>
+<p><strong>矢量图</strong>用直线和曲线等来描绘图形，通过数学公式计算得到。</p>
+<p><strong>区分两种图片</strong>的方法：矢量图可以无限放大不失真，位图不能。</p>
+<p>BMP文件由4部分组成：</p>
+<ol>
+<li><p>位图文件头(bitmap-file header)</p>
+</li>
+<li><p>位图信息头(bitmap-informationheader)</p>
+</li>
+<li><p>颜色表(color table)</p>
+</li>
+<li><p>颜色点阵数据(bits data)</p>
+</li>
+</ol>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/QYBLO5DwZ7m8veu.png" class="" title=", width&#x3D;400px">
+<p>由于<strong>24位真彩色位图没有颜色表</strong>，查看本题图片的属性，所以只有1,2,4三个部分。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/hfUvrwgxG5WaFQz.png" class="" title=", width&#x3D;450px">
+<p>下面我们来着重看看<strong>位图文件头</strong>：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/RmQEphqy4CoMlwO.png" class="" title=", width&#x3D;500px">
+<p>红色区为bfType：为bmp文件的标识，像png的89504E47一样，一定是 BM 二字。</p>
+<p>橙色区为bfsize：表示整个bmp文件的大小。（注意Windows的数据是倒着念的，橙色框的数据为0x0070F685）</p>
+<p>绿色区应该是八个0，没什么用。</p>
+<p>粉色区为bfOffBits：位图文件头+位图信息头+调色板的大小。</p>
+<p><strong>位图信息头</strong>共四十个字节，我们主要关心宽度和高度就行。</p>
+<p>颜色点阵的像素按照<strong>自下而上，自左向右</strong>排序，RGB也是倒着排的，排成B,G,R。</p>
+<p>粗略知道这些信息之后，我们就能解出这道题真正的宽度：</p>
+<p>我们只要<strong>算出bmp像素数，再算下宽度</strong>即可。</p>
+<p>用010editor查看bitmapinforheader的位置，发现到53字节结束，整个文件最后一个字节是487255，用487255减去不表示像素的前面的文件头和信息头，得到487202，RGB三个字节表示一个像素，用487202除以三得到像素数，由于高度是正确的，我们只要再除以高度就能得到真正的宽度了。（有余数直接约去就可以，后面看样子是多加入了几个字节）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/SaD5ofMlPxVCrbT.png" alt=""></p>
+<p>稍微计算一下，得到真正的宽度是1082，修改，得到flag。</p>
+<h2 id="misc32"><a href="#misc32" class="headerlink" title="misc32"></a>misc32</h2><p>还是一张图片。</p>
+<p>提示：<strong>高度是正确的，但正确的宽度是多少呢。</strong></p>
+<p>这次给的是png图片，还是用之前那个脚本：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4096</span>):</span><br><span class="line">        j=<span class="number">150</span></span><br><span class="line">        c = <span class="built_in">bytes</span>.fromhex(<span class="string">&#x27;4948445200000384000000960802000000&#x27;</span>)</span><br><span class="line">        ihdr = c[:<span class="number">4</span>]+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,i)+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,j)+c[<span class="number">12</span>:]</span><br><span class="line">        crc = <span class="number">0xE14A4C0B</span></span><br><span class="line">        <span class="keyword">if</span> zlib.crc32(ihdr) == crc:</span><br><span class="line">            <span class="built_in">print</span>(i,j)</span><br><span class="line">            <span class="keyword">break</span><span class="comment">#1044 150</span></span><br></pre></td></tr></table></figure>
+<p>得到的长宽修改好之后就得到了flag。</p>
+<h2 id="misc33"><a href="#misc33" class="headerlink" title="misc33"></a>misc33</h2><p>提示：<strong>出题人丧心病狂，把高度也改了</strong></p>
+<p>给的是png图片，还是得用脚本，这次同时爆破高和宽：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4096</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4096</span>):</span><br><span class="line">        c = <span class="built_in">bytes</span>.fromhex(<span class="string">&#x27;4948445200000384000000960802000000&#x27;</span>)</span><br><span class="line">        ihdr = c[:<span class="number">4</span>]+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,i)+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,j)+c[<span class="number">12</span>:]</span><br><span class="line">        crc = <span class="number">0x5255A798</span></span><br><span class="line">        <span class="keyword">if</span> zlib.crc32(ihdr) == crc:</span><br><span class="line">            <span class="built_in">print</span>(i,j)</span><br><span class="line">            <span class="keyword">break</span><span class="comment">#978 142</span></span><br></pre></td></tr></table></figure>
+<p>得到正确的高和宽，修改得到flag。</p>
+<h2 id="misc34"><a href="#misc34" class="headerlink" title="misc34"></a>misc34</h2><p>提示：<strong>出题人狗急跳墙，把IHDR块的CRC也改了，但我们知道正确宽度肯定大于900</strong></p>
+<p>给了一个乱码图片，我们需要修复这张图片，这里需要知道一点：即使crc不对，长宽对了也能正确显示图片。</p>
+<p>所以我们可以根据题目的提示，直接试比900大的宽，从中找到一个合适的：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;misc34.png&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    img = f.read()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">901</span>,<span class="number">1200</span>):</span><br><span class="line">        title = <span class="built_in">str</span>(i) + <span class="string">&quot;.png&quot;</span></span><br><span class="line">        f1 = <span class="built_in">open</span>(title,<span class="string">&quot;wb&quot;</span>)</span><br><span class="line">        img1 = img[:<span class="number">16</span>]+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,i)+img[<span class="number">20</span>:]</span><br><span class="line">        f1.write(img1)</span><br><span class="line">        f1.close()</span><br></pre></td></tr></table></figure>
+<p>这里写了个脚本，把高大于900的一部分图片每个都生成出来，我们能从一堆黑色照片里面找到一个含有flag的图片。</p>
+<h2 id="misc35"><a href="#misc35" class="headerlink" title="misc35"></a>misc35</h2><p>提示：<strong>出题人负隅顽抗，但我们知道正确宽度肯定大于900</strong></p>
+<p>题目给的是jpg图片，这题我先按照上次的方法爆破了一次，发现都是空白图片，并没有成功，难道是高度的问题？</p>
+<p>我把图片的高度调到600，发现图片上出现了乱码，看来是高度上也做了手脚，现在调整完之后再爆破一遍，在宽度为993开始的几张图片上都出现了flag：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;misc35.jpg&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    img = f.read()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">901</span>,<span class="number">1200</span>):</span><br><span class="line">        title = <span class="built_in">str</span>(i) + <span class="string">&quot;.jpg&quot;</span></span><br><span class="line">        f1 = <span class="built_in">open</span>(title,<span class="string">&quot;wb&quot;</span>)</span><br><span class="line">        img1 = img[:<span class="number">159</span>]+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,i)[<span class="number">2</span>:<span class="number">4</span>]+img[<span class="number">161</span>:]</span><br><span class="line">        f1.write(img1)</span><br><span class="line">        f1.close()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意jpg图片宽高的位置和长度和png的有所不同，可以使用010找好位置之后再改脚本。</p>
+</blockquote>
+<h2 id="misc36"><a href="#misc36" class="headerlink" title="misc36"></a>misc36</h2><p>提示：<strong>出题人坦白从宽，正确的宽度在920-950之间</strong></p>
+<p>这题给的是gif格式的图片，用010的时候注意动图的大小和帧图片的大小的位置不一样，这个图片只有一帧，所以我们先改这一帧的高，发现乱码，接着爆破：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;misc36.gif&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    img = f.read()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">920</span>,<span class="number">950</span>):</span><br><span class="line">        title = <span class="built_in">str</span>(i) + <span class="string">&quot;.gif&quot;</span></span><br><span class="line">        f1 = <span class="built_in">open</span>(title,<span class="string">&quot;wb&quot;</span>)</span><br><span class="line">        img1 = img[:<span class="number">37</span>]+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>,i)[<span class="number">2</span>:<span class="number">4</span>]+img[<span class="number">39</span>:]</span><br><span class="line">        f1.write(img1)</span><br><span class="line">        f1.close()</span><br></pre></td></tr></table></figure>
+<h2 id="misc37"><a href="#misc37" class="headerlink" title="misc37"></a>misc37</h2><p>提示：<strong>flag在图片里</strong></p>
+<p>打开提供的gif图片，发现文字一直在闪看不清，使用stegsolve的Frame Browser功能进行逐帧查看，发现在第9,14,21,31,34帧有flag的几部分，拼接一下就能得到flag。</p>
+<h2 id="misc38"><a href="#misc38" class="headerlink" title="misc38"></a>misc38</h2><p>提示：<strong>flag在图片里</strong></p>
+<p>不过，这次给的是png图片，用stegsolve看不到东西，但是我在010里发现这个图片居然有好多帧，这次用honeyview打开，能看到图片动起来了，继续逐帧查看，获得flag。</p>
+<h2 id="misc39"><a href="#misc39" class="headerlink" title="misc39"></a>misc39</h2><p>提示：<strong>flag就像水，忽快忽慢地流</strong></p>
+<p>这次给了gif图片，但是居然有287帧……算了，先找一遍，看完了所有的帧，居然没有。看了看大佬的方法才知道这题是利用不同帧之间的间隔时间来隐写，有点逆天。</p>
+<p>这题我们可以用kali的identity进行读取间隔，首先先下载：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install imagemagick</span><br></pre></td></tr></table></figure>
+<p>然后进行提取：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">identify -format &quot;%T &quot; misc39.gif &gt; 1.txt</span><br></pre></td></tr></table></figure>
+<p>我们得到了以下文本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">37 37 36 36 36 37 37 37 37 37 36 37 36 36 37 37 36 36 37 37 36 37 37 37 36 36 37 37 37 37 36 37 36 36 36 37 37 36 37 37 37 37 37 37 37 36 37 37 37 37 37 37 37 36 37 37 36 37 37 36 37 36 37 36 37 37 36 36 37 36 36 37 37 37 36 36 36 36 37 37 36 36 36 37 36 37 37 36 36 37 36 37 37 36 36 37 37 36 37 37 36 36 37 37 36 36 37 37 37 36 36 37 36 37 37 37 36 36 37 36 37 37 36 37 36 37 37 37 36 36 37 37 36 37 37 36 36 36 37 36 36 37 37 36 37 37 37 37 37 36 36 36 37 36 37 37 36 36 37 36 37 36 37 37 36 36 37 36 36 37 37 36 37 37 36 36 37 37 37 36 36 36 37 37 36 36 37 36 36 36 37 37 37 36 36 37 36 37 37 36 37 37 36 36 37 37 36 36 37 37 37 37 36 36 36 36 37 36 37 37 37 36 36 37 37 37 36 36 37 36 37 37 37 36 36 36 37 36 37 37 36 36 36 37 37 37 37 36 36 36 36 37 36 37 37 36 36 36 36 36 37 37 36 37 36 36 36 37 37 36 37 36 37 36 37 37 37 36 36 37 37 37 37 37 37 36 37 </span><br></pre></td></tr></table></figure>
+<p>猜测为二进制，先转为二进制后转字符串：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">t=<span class="string">&#x27;37 37 36 36 36 37 37 37 37 37 36 37 36 36 37 37 36 36 37 37 36 37 37 37 36 36 37 37 37 37 36 37 36 36 36 37 37 36 37 37 37 37 37 37 37 36 37 37 37 37 37 37 37 36 37 37 36 37 37 36 37 36 37 36 37 37 36 36 37 36 36 37 37 37 36 36 36 36 37 37 36 36 36 37 36 37 37 36 36 37 36 37 37 36 36 37 37 36 37 37 36 36 37 37 36 36 37 37 37 36 36 37 36 37 37 37 36 36 37 36 37 37 36 37 36 37 37 37 36 36 37 37 36 37 37 36 36 36 37 36 36 37 37 36 37 37 37 37 37 36 36 36 37 36 37 37 36 36 37 36 37 36 37 37 36 36 37 36 36 37 37 36 37 37 36 36 37 37 37 36 36 36 37 37 36 36 37 36 36 36 37 37 37 36 36 37 36 37 37 36 37 37 36 36 37 37 36 36 37 37 37 37 36 36 36 36 37 36 37 37 37 36 36 37 37 37 36 36 37 36 37 37 37 36 36 36 37 36 37 37 36 36 36 37 37 37 37 36 36 36 36 37 36 37 37 36 36 36 36 36 37 37 36 37 36 36 36 37 37 36 37 36 37 36 37 37 37 36 36 37 37 37 37 37 37 36 37&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">list</span>=t.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">a=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">list</span>:</span><br><span class="line">    <span class="keyword">if</span> i==<span class="string">&#x27;37&#x27;</span>:</span><br><span class="line">        a+=<span class="string">&#x27;1&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        a+=<span class="string">&#x27;0&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(a),<span class="number">7</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">chr</span>(<span class="built_in">int</span>(a[i:i+<span class="number">7</span>],<span class="number">2</span>)),end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>观察代码可以发现每个字母对应7位2进制，约去了第一位0，转化的时候需要注意。</p>
+<h2 id="misc40"><a href="#misc40" class="headerlink" title="misc40"></a>misc40</h2><p>提示：<strong>flag就像歌，有长有短仿佛岁月悠悠</strong></p>
+<p>题目给了一个png图片，用honeyview查看发现是个动图，但是identify无法分解png格式的图片，从网上找了一个APNG分离器用来分解。</p>
+<p>总共68张图片，分解完后给了每一个图片的帧间隔，图片里没有flag，看来就跟这个帧间隔有关了，好多图片的帧间隔所给的第一个数值都不一样，跟ASCII码很相近，那就转化一下试试：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">69</span>):</span><br><span class="line">    <span class="keyword">if</span> i&lt;<span class="number">10</span>:</span><br><span class="line">        name=<span class="string">&#x27;apngframe0&#x27;</span>+<span class="built_in">str</span>(i)+<span class="string">&#x27;.txt&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        name=<span class="string">&#x27;apngframe&#x27;</span>+<span class="built_in">str</span>(i)+<span class="string">&#x27;.txt&#x27;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(name) <span class="keyword">as</span> f:</span><br><span class="line">        s=f.read()</span><br><span class="line">        num=s.split(<span class="string">&#x27;/&#x27;</span>)[<span class="number">0</span>][<span class="number">6</span>:]</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">chr</span>(<span class="built_in">int</span>(num)),end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>得到的输出里前面有一些乱码可以忽略，flag在后面。</p>
+<h2 id="misc42"><a href="#misc42" class="headerlink" title="misc42"></a>misc42</h2><p>提示：<strong>flag有多长？2cm……不好意思打错了，41位</strong></p>
+<p>在010里查看图片，发现有很多的IDAT块，没啥思路的时候我又用了用tweakpng，发现这个IDAT块很像和ASCII码对应：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2023/01/24/i2KFxnNlh3PHCUu.png" class="" title=", width&#x3D;400px">
+<p>把这些length值转化成ASCII码：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">num=[<span class="number">229</span>,<span class="number">152</span>,<span class="number">191</span>,<span class="number">229</span>,<span class="number">152</span>,<span class="number">191</span>,<span class="number">49</span>,<span class="number">99</span>,<span class="number">116</span>,<span class="number">102</span>,<span class="number">115</span>,<span class="number">104</span>,<span class="number">111</span>,<span class="number">119</span>,<span class="number">123</span>,<span class="number">48</span>,<span class="number">55</span>,<span class="number">56</span>,<span class="number">99</span>,<span class="number">98</span>,<span class="number">100</span>,<span class="number">48</span>,<span class="number">102</span>,<span class="number">57</span>,<span class="number">99</span>,<span class="number">56</span>,<span class="number">100</span>,<span class="number">51</span>,<span class="number">102</span>,<span class="number">50</span>,<span class="number">49</span>,<span class="number">53</span>,<span class="number">56</span>,<span class="number">101</span>,<span class="number">55</span>,<span class="number">48</span>,<span class="number">53</span>,<span class="number">50</span>,<span class="number">57</span>,<span class="number">102</span>,<span class="number">56</span>,<span class="number">57</span>,<span class="number">49</span>,<span class="number">51</span>,<span class="number">99</span>,<span class="number">54</span>,<span class="number">53</span>,<span class="number">125</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> num:</span><br><span class="line">    <span class="keyword">if</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">33</span>,<span class="number">127</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">chr</span>(i),end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>有一些多余的数字，忽略即可。</p>
+<h2 id="misc43"><a href="#misc43" class="headerlink" title="misc43"></a>misc43</h2><p>提示：<strong>错误中隐藏着通往正确答案的道路</strong></p>
+<p>我们先寻找寻找有什么问题，用tweakpng打开发现好多crc码报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">is e59387e5, should be 8385f691</span><br><span class="line">is 93a62e63, should be 42434298</span><br><span class="line">is 74667368, should be 4462c3a1</span><br><span class="line">is 6f777b36, should be 397611e1</span><br><span class="line">is 65623235, should be 4f02afa2</span><br><span class="line">is 38396666, should be defed27f</span><br><span class="line">is 66663565, should be 04f13ec2</span><br><span class="line">is 33393066, should be 665b7bef</span><br><span class="line">is 65366238, should be 66671da0</span><br><span class="line">is 37353034, should be 9922f98f</span><br><span class="line">is 64626330, should be 26bc187a</span><br><span class="line">is 3839327d, should be ee9d6cb4</span><br></pre></td></tr></table></figure>
+<p>我猜测flag就藏在这些数字里，我先用我们的flag头来引一下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">b=<span class="string">b&#x27;ctfshow&#123;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">hex</span>(bytes_to_long(b)))</span><br><span class="line"><span class="comment">#63746673686f777b</span></span><br></pre></td></tr></table></figure>
+<p>通过一些查找等方法，我们发现错误的crc码组合起来就含有flag，我们来转化一下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num=<span class="string">&#x27;e59387e593a62e63746673686f777b36656232353839666666663565333930666536623837353034646263303839327d&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(<span class="built_in">int</span>(num,<span class="number">16</span>)))</span><br><span class="line"><span class="comment">#b&#x27;\xe5\x93\x87\xe5\x93\xa6.ctfshow&#123;6eb2589ffff5e390fe6b87504dbc0892&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="misc44"><a href="#misc44" class="headerlink" title="misc44"></a>misc44</h2><p>提示：<strong>错误中还隐藏着坑</strong></p>
+<p>估计还是上一题的方法，尝试提取一下crc信息，结果一下子来了100多个报错，试了一下也发现找不到flag，看来不是这种方法。</p>
+<p>看了一下大佬wp，上面使用了一个叫pngdebugger的程序来分析，源码地址：<a target="_blank" rel="noopener" href="https://gitcode.net/mirrors/rvong/png-debugger/-/tree/master">文件png-debugger · GitCode</a></p>
+<p>我们在debug文件夹下使用cmd使用程序，使用指令<code>pngdebugger img.png &gt; 1.txt</code>来得到文本式的crc反馈信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">......</span><br><span class="line">0x00004455	chunk-length=0x00000480	(1152)</span><br><span class="line">0x00004459	chunk-type=&#x27;IDAT&#x27;</span><br><span class="line">0x000048DD	crc-code=0x238597F3</span><br><span class="line">&gt;&gt; (CRC CHECK)  crc-computed=0x238597F3 	=&gt;	CRC OK!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x000048E1	chunk-length=0x00000480	(1152)</span><br><span class="line">0x000048E5	chunk-type=&#x27;IDAT&#x27;</span><br><span class="line">0x00004D69	crc-code=0x1255BA67</span><br><span class="line">&gt;&gt; (CRC CHECK)  crc-computed=0x25BE9607 	=&gt;	CRC FAILED</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x00004D6D	chunk-length=0x00000480	(1152)</span><br><span class="line">0x00004D71	chunk-type=&#x27;IDAT&#x27;</span><br><span class="line">0x000051F5	crc-code=0xF8D4A203</span><br><span class="line">&gt;&gt; (CRC CHECK)  crc-computed=0xF8D4A203 	=&gt;	CRC OK!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x000051F9	chunk-length=0x00000480	(1152)</span><br><span class="line">0x000051FD	chunk-type=&#x27;IDAT&#x27;</span><br><span class="line">0x00005681	crc-code=0x27598826</span><br><span class="line">&gt;&gt; (CRC CHECK)  crc-computed=0x27598826 	=&gt;	CRC OK!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x00005685	chunk-length=0x00000480	(1152)</span><br><span class="line">0x00005689	chunk-type=&#x27;IDAT&#x27;</span><br><span class="line">0x00005B0D	crc-code=0x0C58EA18</span><br><span class="line">&gt;&gt; (CRC CHECK)  crc-computed=0xC5AD69A8 	=&gt;	CRC FAILED</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">0x00005B11	chunk-length=0x00000480	(1152)</span><br><span class="line">0x00005B15	chunk-type=&#x27;IDAT&#x27;</span><br><span class="line">0x00005F99	crc-code=0xEEA59158</span><br><span class="line">&gt;&gt; (CRC CHECK)  crc-computed=0x0B8AC976 	=&gt;	CRC FAILED</span><br><span class="line">.......</span><br></pre></td></tr></table></figure>
+<p>总共有两千多行，其中我们能发现这里面有一些crc是ok的，有一些crc是failed的，可以联想到二进制，对其进行转换（去掉我们不需要的除了IDAT的其他模块）：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;1.txt&quot;</span>,<span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    s=f.read()</span><br><span class="line"><span class="built_in">list</span>=s.split()</span><br><span class="line">flag=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">list</span>:</span><br><span class="line">    <span class="keyword">if</span> i==<span class="string">&#x27;OK!&#x27;</span>:</span><br><span class="line">        flag+=<span class="string">&#x27;1&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> i==<span class="string">&#x27;FAILED&#x27;</span>:</span><br><span class="line">        flag+=<span class="string">&#x27;0&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(flag),<span class="number">8</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">chr</span>(<span class="built_in">int</span>(flag[i:i+<span class="number">8</span>],<span class="number">2</span>)),end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="comment">#ÿÿctfshow&#123;cc1af32bf96308fc1263231be783f69e&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="misc45"><a href="#misc45" class="headerlink" title="misc45"></a>misc45</h2><p>提示：<strong>有时候也需要换一换思维格式</strong></p>
+<h2 id="颜色通道"><a href="#颜色通道" class="headerlink" title="颜色通道"></a>颜色通道</h2><h2 id="misc50"><a href="#misc50" class="headerlink" title="misc50"></a>misc50</h2><p>提示：<strong>有时候视线也要放低一点</strong></p>
+<p>图片上全是各种颜色的色块。</p>
+<p>既然是颜色通道有关，先打开stegsolve：</p>
+<p>大致用法是：先切换不同的颜色通道，查看图片，可能会直接显示在颜色通道的图片上，或者暴露出隐写痕迹。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/13/O3uCU82WKG6Txdo.png" class="" title=", width&#x3D;500px">
+<p>打开后下面的两个键可以<strong>切换色彩通道</strong>，随便点点发现在Blue plane 2发现了一个图像：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/13/GsUQAnzq4yDkbCY.png" class="" title=", width&#x3D;500px">
+<p>但是flag并不全，这像是最后一节，继续又在Green Plane 0和Red Plane 1发现了flag：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/13/62mWZRdxs5MXpyP.png" class="" title=", width&#x3D;500px">
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/13/HpVgrtLmRb4lX7K.png" class="" title=", width&#x3D;500px">
+</article><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2022/12/09/misc%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=undefined&amp;url=http://example.com/2022/12/09/misc%E5%85%A5%E9%97%A8%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90/&amp;pic=undefined" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>图片隐写<span class="tagsPageCount">5</span></a><a class="post-meta__box__tags" href="/tags/%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>图片分析<span class="tagsPageCount">5</span></a></div></div></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/09/CTFshow%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%8B%EF%BC%89/"><img class="prev-cover" src="https://s2.loli.net/2022/12/08/CbXMu7hqjTOzwpB.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CTFshow做题记录（下）</div></div></a></div><div class="next-post pull-right"><a href="/2022/12/12/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/"><img class="next-cover" src="https://s2.loli.net/2022/12/14/h8LT9OjIGekn64f.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">密码学的数学基础（一）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/05/14/LitCTF%E5%A4%8D%E7%8E%B0/" title="LitCTF复现"><img class="cover" src="https://s2.loli.net/2023/05/14/CtirxsS8YE7qhFA.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-05-14</div><div class="title">LitCTF复现</div></div></a></div><div><a href="/2022/12/24/StegSolve%E4%BD%BF%E7%94%A8%E5%92%8CLSB%E9%9A%90%E5%86%99/" title="StegSolve使用和LSB隐写"><img class="cover" src="https://s2.loli.net/2022/12/24/O5pbX1mtWVA8vew.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-12-24</div><div class="title">StegSolve使用和LSB隐写</div></div></a></div><div><a href="/2023/09/23/misc%E9%80%9F%E6%88%90%EF%BC%88%E4%B8%80%EF%BC%89/" title="misc速成（一）"><img class="cover" src="https://s2.loli.net/2023/09/23/2srvKlGeNFEagSy.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-09-23</div><div class="title">misc速成（一）</div></div></a></div><div><a href="/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/" title="一道抽象的misc（测试）"><img class="cover" src="https://s2.loli.net/2022/12/08/k1WoXpytdqelwZm.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-11-04</div><div class="title">一道抽象的misc（测试）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo" style="display: none"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a></div><div class="comment-tips" id="comment-tips"><span>你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div><div class="comment-barrage"></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E5%9F%BA%E7%A1%80"><span class="toc-text">图片基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#misc1"><span class="toc-text">misc1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc2"><span class="toc-text">misc2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc3"><span class="toc-text">misc3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc4"><span class="toc-text">misc4</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E9%99%84%E5%8A%A0"><span class="toc-text">信息附加</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#misc5"><span class="toc-text">misc5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc6"><span class="toc-text">misc6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc7"><span class="toc-text">misc7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc8"><span class="toc-text">misc8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc9"><span class="toc-text">misc9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc10"><span class="toc-text">misc10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc11"><span class="toc-text">misc11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc12"><span class="toc-text">misc12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc13"><span class="toc-text">misc13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc14"><span class="toc-text">misc14</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc15"><span class="toc-text">misc15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc16"><span class="toc-text">misc16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc17"><span class="toc-text">misc17</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc18"><span class="toc-text">misc18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc19"><span class="toc-text">misc19</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc20"><span class="toc-text">misc20</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc21"><span class="toc-text">misc21</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc22"><span class="toc-text">misc22</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc23"><span class="toc-text">misc23</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc41"><span class="toc-text">misc41</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="toc-text">文件结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#misc24"><span class="toc-text">misc24</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc25"><span class="toc-text">misc25</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc26"><span class="toc-text">misc26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc27"><span class="toc-text">misc27</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc28"><span class="toc-text">misc28</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc29"><span class="toc-text">misc29</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc30"><span class="toc-text">misc30</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc31"><span class="toc-text">misc31</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc32"><span class="toc-text">misc32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc33"><span class="toc-text">misc33</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc34"><span class="toc-text">misc34</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc35"><span class="toc-text">misc35</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc36"><span class="toc-text">misc36</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc37"><span class="toc-text">misc37</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc38"><span class="toc-text">misc38</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc39"><span class="toc-text">misc39</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc40"><span class="toc-text">misc40</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc42"><span class="toc-text">misc42</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc43"><span class="toc-text">misc43</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc44"><span class="toc-text">misc44</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc45"><span class="toc-text">misc45</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9C%E8%89%B2%E9%80%9A%E9%81%93"><span class="toc-text">颜色通道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc50"><span class="toc-text">misc50</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By Chemtrails</div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:var(--anzhiyu-fontcolor)" target="_blank">鲁ICP备2022041228号</a></div></div></footer><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" src="https://ch3mtr4ils.cn/img/tit.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+let loadingPercentageTimer = setInterval(function() {
+  var progressBar = document.querySelector(".pace-progress");
+  if (!progressBar) return
+  var currentValue = progressBar.getAttribute("data-progress-text");
+  if (currentValue !== loadingPercentage.textContent) {
+    loadingPercentage.textContent = currentValue;
+    if (currentValue === "100%") {
+      clearInterval(loadingPercentageTimer);
+    }
+  }
+}, 100);
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ch3mtr4ils.cn/img/tit.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:17px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch_commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="center-console" type="button" title="中控台"><i class="anzhiyufont anzhiyu-icon-fish"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()">播放音乐</div><div id="console-music-bg"></div><meting-js id="2987103132" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="console"><div class="close-btn" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-xmark" style="font-size: 35px;"></i></div><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/AES/" style="font-size: 1.25em; color: rgb(101, 63, 116)">AES<sup>3</sup></a><a href="/tags/DES/" style="font-size: 1.15em; color: rgb(165, 184, 60)">DES<sup>1</sup></a><a href="/tags/Diffie-Hellman/" style="font-size: 1.15em; color: rgb(143, 165, 130)">Diffie-Hellman<sup>1</sup></a><a href="/tags/ECC/" style="font-size: 1.3em; color: rgb(109, 23, 70)">ECC<sup>5</sup></a><a href="/tags/ElGamal/" style="font-size: 1.15em; color: rgb(182, 37, 23)">ElGamal<sup>1</sup></a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(44, 164, 75)">HTML<sup>1</sup></a><a href="/tags/JS/" style="font-size: 1.15em; color: rgb(44, 121, 158)">JS<sup>1</sup></a><a href="/tags/JWT/" style="font-size: 1.15em; color: rgb(38, 182, 51)">JWT<sup>1</sup></a><a href="/tags/Java/" style="font-size: 1.2em; color: rgb(154, 36, 34)">Java<sup>2</sup></a><a href="/tags/RSA/" style="font-size: 1.45em; color: rgb(77, 7, 62)">RSA<sup>20</sup></a><a href="/tags/css/" style="font-size: 1.2em; color: rgb(166, 78, 22)">css<sup>2</sup></a><a href="/tags/linux/" style="font-size: 1.15em; color: rgb(179, 158, 108)">linux<sup>1</sup></a><a href="/tags/python/" style="font-size: 1.25em; color: rgb(179, 31, 25)">python<sup>3</sup></a><a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" style="font-size: 1.15em; color: rgb(148, 5, 134)">区块链<sup>1</sup></a><a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 1.3em; color: rgb(182, 70, 81)">古典密码<sup>5</sup></a><a href="/tags/%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0/" style="font-size: 1.15em; color: rgb(41, 71, 91)">哈希函数<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90/" style="font-size: 1.3em; color: rgb(57, 180, 20)">图片分析<sup>5</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" style="font-size: 1.3em; color: rgb(156, 93, 162)">图片隐写<sup>5</sup></a><a href="/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" style="font-size: 1.25em; color: rgb(17, 97, 98)">抽象代数<sup>3</sup></a><a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 1.3em; color: rgb(21, 79, 164)">数论<sup>5</sup></a><a href="/tags/%E6%A0%88%E6%BA%A2%E5%87%BA/" style="font-size: 1.15em; color: rgb(164, 169, 107)">栈溢出<sup>1</sup></a><a href="/tags/%E6%A0%BC/" style="font-size: 1.4em; color: rgb(118, 3, 156)">格<sup>7</sup></a><a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 1.2em; color: rgb(72, 109, 158)">汇编<sup>2</sup></a><a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 1.35em; color: rgb(157, 180, 82)">流密码<sup>6</sup></a><a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" style="font-size: 1.2em; color: rgb(91, 134, 191)">流量分析<sup>2</sup></a><a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.2em; color: rgb(19, 34, 154)">线性代数<sup>2</sup></a><a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 1.35em; color: rgb(140, 148, 72)">编码<sup>6</sup></a><a href="/tags/%E8%83%8C%E5%8C%85%E5%AF%86%E7%A0%81/" style="font-size: 1.15em; color: rgb(108, 179, 164)">背包密码<sup>1</sup></a><a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 1.25em; color: rgb(186, 94, 70)">逆向<sup>3</sup></a><a href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/" style="font-size: 1.25em; color: rgb(92, 90, 165)">随机数<sup>3</sup></a></div></div><hr/></div></div><div class="console-card history" onclick="anzhiyu.hideConsole()"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="rm.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/my/m/music/playlist?id=2987103132&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script><div><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/main.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/tw_cn.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page@5.1.1/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload@17.3.1/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  console.log(1)
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("11/4/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `正在看网站的你!`,
+    `我的网站`,
+    "已上线",
+    dnum,
+    "天",
+    "©2022 By Chemtrails",
+  ];
+  const ascll2 = [`HELLO`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `照片捕获: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋，你已打开控制台。", "color:white; background-color:#4f90d9", ""));
+  setTimeout(Log.bind(console, "%c ⚡ Powered by Chemtrails %c 你正在访问 Chemtrails 的博客。", "color:white; background-color:#f0ad4e", ""));
+
+});</script><script async src="/anzhiyu/random.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://npm.elemecdn.com/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.ch3mtr4ils.cn/',
+      region: '',
+      onCommentLoaded: function () {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.ch3mtr4ils.cn/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://npm.elemecdn.com/twikoo@1.6.11/dist/twikoo.all.min.js').then(runFn)
+  }
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.ch3mtr4ils.cn/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://npm.elemecdn.com/twikoo@1.6.11/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick}</span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/catalog-bar/catalog-bar.js"></script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/categoryBar/categoryBar.js"></script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片拖拽
+let imgElements = document.getElementsByTagName("img");
+for (let i = 0; i < imgElements.length; i++) {
+  imgElements[i].addEventListener("dragstart", function (event) {
+    event.preventDefault();
+  });
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+// 监听右键初始化
+window.oncontextmenu = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.switchDarkMode = function () {
+  // Switch Between Light And Dark Mode
+  const nowMode = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  if (nowMode === "light") {
+    activateDarkMode();
+    saveToLocal.set("theme", "dark", 2);
+    GLOBAL_CONFIG.Snackbar !== undefined && anzhiyu.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night);
+    document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
+  } else {
+    activateLightMode();
+    saveToLocal.set("theme", "light", 2);
+    GLOBAL_CONFIG.Snackbar !== undefined && anzhiyu.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day);
+    document.querySelector(".menu-darkmode-text").textContent = "深色模式";
+  }
+  // handle some cases
+  typeof runMermaid === "function" && window.runMermaid();
+  rm.hideRightMenu();
+  anzhiyu.darkModeStatus();
+};
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      false
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      false
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function () {
+  var url = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", rm.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref);
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc);
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | 安知鱼")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.6/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+  window.anzhiyuScrollFnToDo && window.removeEventListener('scroll', anzhiyuScrollFnToDo)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,1184 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>RSA学习笔记（三） | Chemtrails</title><meta name="keywords" content="RSA"><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="RSA学习笔记（三）"><meta name="application-name" content="RSA学习笔记（三）"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="bookmark" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="192x192" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="512x512" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-startup-image" media="screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1136x640.png"><link rel="apple-touch-startup-image" media="screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_640x1136.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2688x1242.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1792x828.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_1125x2436.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_828x1792.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2436x1125.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:736px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_1242x2208.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:736px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2208x1242.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1334x750.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_750x1334.png"><link rel="apple-touch-startup-image" media="screen and (device-width:1024px) and (device-height:1366px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2732x2048.png"><meta name="description" content="中国剩余定理(CRT)我们设正整数$m_1,m_2,…,m_k$两两互素，得到同余方程组：  x\equiv a_1\ (\bmod m_1) \ \ \ \ \ \ \ x\equiv a_2\ (\bmod m_2)\ \ ... x\equiv a_k\ (\bmod m_k)有整数解，在模$M&#x3D;m_1m_2…m_k$下的解唯一，解为：  x\equiv (a_1M_1{M_1}^{-1}+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RSA学习笔记（三）">
+<meta property="og:url" content="http://example.com/2022/11/22/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/index.html">
+<meta property="og:site_name" content="Chemtrails">
+<meta property="og:description" content="中国剩余定理(CRT)我们设正整数$m_1,m_2,…,m_k$两两互素，得到同余方程组：  x\equiv a_1\ (\bmod m_1) \ \ \ \ \ \ \ x\equiv a_2\ (\bmod m_2)\ \ ... x\equiv a_k\ (\bmod m_k)有整数解，在模$M&#x3D;m_1m_2…m_k$下的解唯一，解为：  x\equiv (a_1M_1{M_1}^{-1}+">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/12/08/Xm2biZR1vudk7PI.png">
+<meta property="article:published_time" content="2022-11-22T12:46:00.000Z">
+<meta property="article:modified_time" content="2023-09-17T08:46:58.151Z">
+<meta property="article:author" content="Chemtrails">
+<meta property="article:tag" content="RSA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/12/08/Xm2biZR1vudk7PI.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/11/22/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  navMusic: true,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'RSA学习笔记（三）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-17 16:46:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/"><div class="title">Chemtrails</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></center></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:17px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" href="javascript:void(0);" title="浅色和深色模式转换" onclick="rm.switchDarkMode()"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke" style="font-size: 1.3rem"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">RSA学习笔记（三）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-22T12:46:00.000Z" title="发表于 2022-11-22 20:46:00">2022-11-22</time><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-17T08:46:58.151Z" title="更新于 2023-09-17 16:46:58">2023-09-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/Crypto/">Crypto</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.5k</span><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>19分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="RSA学习笔记（三）"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="中国剩余定理-CRT"><a href="#中国剩余定理-CRT" class="headerlink" title="中国剩余定理(CRT)"></a>中国剩余定理(CRT)</h1><p>我们设正整数$m_1,m_2,…,m_k$两两互素，得到同余方程组：</p>
+<script type="math/tex; mode=display">
+x\equiv a_1\ (\bmod m_1)</script><script type="math/tex; mode=display">
+\ \ \ \ \ \ \ x\equiv a_2\ (\bmod m_2)\ \ ...</script><script type="math/tex; mode=display">
+x\equiv a_k\ (\bmod m_k)</script><p>有整数解，在模$M=m_1m_2…m_k$下的解唯一，解为：</p>
+<script type="math/tex; mode=display">
+x\equiv (a_1M_1{M_1}^{-1}+a_2M_2{M_2}^{-1}+...+a_kM_k{M_k}^{-1})\bmod M</script><p>$Mi=\frac{M}{m_i}，M_i^{-1}$是$M_i$模$m_i$的逆元。</p>
+<p>$∏$是<strong>求积运算符号</strong>，类似于$Σ$，求多个数的积。</p>
+<h2 id="历史背景"><a href="#历史背景" class="headerlink" title="历史背景"></a>历史背景</h2><p><strong>“今有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二，问物几何？”</strong></p>
+<p>韩信点兵，士兵站成三人一列，多出来两人；站成五人一列，多出来三人；站成七人一列，多两人。问共有多少人；</p>
+<p>　　满足第一条：2,5,8,11,14,17,20,23,26,29….</p>
+<p>　　满足第二条：8,13,18,23,28……</p>
+<p>　　满足第三条：9,16,23,30……</p>
+<p>23同时满足，但是如何去求后面重复的数值？</p>
+<p>相当于加上一个数n，n为3,5,7的倍数，在这里，n最小为105，得所有解为：23+105i，i取某个整数就可以得到所有解。</p>
+<p>那么，如何让这个结论推广到所有的情况上呢？</p>
+<p>当然，几个数求<strong>最小公倍数</strong>很好求，那么这个23该怎么处理呢？</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>我们的祖先想出了一首诗用来求解：</p>
+<p><strong>三人同行七十稀，五树梅花廿一支，七子团圆正半月，除百零五使得知。</strong></p>
+<blockquote>
+<p>三人同行七十稀，把除以3所得的余数用70乘。<br>五树梅花廿一枝，把除以5所得的余数用21乘。<br>七子团圆正半月，把除以7所得的余数用15乘。<br>除百零五便得知，把上述三个积加起来，减去105的倍数，所得的差即为所求。</p>
+</blockquote>
+<p>2×70＋3×21＋2×15=233</p>
+<p>233 % 105 =23</p>
+<p>在上面的理论中：70是5，7的倍数，21是3,7的倍数，15是3,5的倍数</p>
+<p>所找的三个数中，拿70来说，70在作为5,7倍数的同时，还需要<strong>满足模3余1</strong>，同样，3,7的倍数需要<strong>模5余1</strong>，3,5的倍数需要<strong>模7余1</strong>。</p>
+<h2 id="原理推广"><a href="#原理推广" class="headerlink" title="原理推广"></a>原理推广</h2><p>对于两两互质的一组数$a_1,a_2,a_3……a_n$（数组$A$）；让一个解$x$对于所有在$[1,n]$的整数同时满足$x\bmod a_i = m_i$（$m_i$数组每个元素也为两两互质），这里就可以应用<strong>中国剩余定理</strong>。</p>
+<blockquote>
+<p>在这里，A就相当于刚才每列站的3, 5, 7人。</p>
+<p>$m_i$就相当于余下的2, 3, 2人。</p>
+<p>x就是我们求的总人数。</p>
+</blockquote>
+<p>我们可以设$M$为$A$数组所有元素的乘积，找出一个$B$数组使得$b_i$是 $\frac M{a_i}$ 的倍数，而且$b_i\bmod a_i=1$，n直接求最小公倍数可以求出。</p>
+<blockquote>
+<p>这里的B数组中的每一个数就相当于刚才的70, 21, 15。</p>
+</blockquote>
+<h3 id="怎么求B？"><a href="#怎么求B？" class="headerlink" title="怎么求B？"></a>怎么求B？</h3><p>由B的意思，我们可以知道bi为M/ai的倍数，$b_i\bmod a_i=1$，就有：$b_i=\frac{M}{a_i}  k$，$\frac{M}{a_i} k ≡ 1(\bmod a_i)$。</p>
+<p>转换一下：$\frac{M}{a_i}  k + a_i  j = 1$</p>
+<p>A两两互质，M为A中所有数的乘积，$\frac M{a_i}$和$a_i$互质，我们这里可以使用拓展欧几里得解出。</p>
+<p>经过上面的推导：我们就可以找到一个解：$x_0 = m_1b_1 + m_2b_2 + m_3b_3+ ….. + m_nb_n$，也就相当于$233=70×2+21×3+152$</p>
+<p>要找到其他的解，就增加或减少$nt$ ，$t$为随意的一个整数。</p>
+<h2 id="RSA引入CRT"><a href="#RSA引入CRT" class="headerlink" title="RSA引入CRT"></a>RSA引入CRT</h2><p>题目给出三组n和c（这里的nc只出现01234，为五进制）：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">N = <span class="number">331310324212000030020214312244232222400142410423413104441140203003243002104333214202031202212403400220031202142322434104143104244241214204444443323000244130122022422310201104411044030113302323014101331214303223312402430402404413033243132101010422240133122211400434023222214231402403403200012221023341333340042343122302113410210110221233241303024431330001303404020104442443120130000334110042432010203401440404010003442001223042211442001413004</span> </span><br><span class="line">c = <span class="number">310020004234033304244200421414413320341301002123030311202340222410301423440312412440240244110200112141140201224032402232131204213012303204422003300004011434102141321223311243242010014140422411342304322201241112402132203101131221223004022003120002110230023341143201404311340311134230140231412201333333142402423134333211302102413111111424430032440123340034044314223400401224111323000242234420441240411021023100222003123214343030122032301042243</span></span><br><span class="line"></span><br><span class="line">N = <span class="number">302240000040421410144422133334143140011011044322223144412002220243001141141114123223331331304421113021231204322233120121444434210041232214144413244434424302311222143224402302432102242132244032010020113224011121043232143221203424243134044314022212024343100042342002432331144300214212414033414120004344211330224020301223033334324244031204240122301242232011303211220044222411134403012132420311110302442344021122101224411230002203344140143044114</span> </span><br><span class="line">c = <span class="number">112200203404013430330214124004404423210041321043000303233141423344144222343401042200334033203124030011440014210112103234440312134032123400444344144233020130110134042102220302002413321102022414130443041144240310121020100310104334204234412411424420321211112232031121330310333414423433343322024400121200333330432223421433344122023012440013041401423202210124024431040013414313121123433424113113414422043330422002314144111134142044333404112240344</span></span><br><span class="line"></span><br><span class="line">N = <span class="number">332200324410041111434222123043121331442103233332422341041340412034230003314420311333101344231212130200312041044324431141033004333110021013020140020011222012300020041342040004002220210223122111314112124333211132230332124022423141214031303144444134403024420111423244424030030003340213032121303213343020401304243330001314023030121034113334404440421242240113103203013341231330004332040302440011324004130324034323430143102401440130242321424020323</span> </span><br><span class="line">c = <span class="number">10013444120141130322433204124002242224332334011124210012440241402342100410331131441303242011002101323040403311120421304422222200324402244243322422444414043342130111111330022213203030324422101133032212042042243101434342203204121042113212104212423330331134311311114143200011240002111312122234340003403312040401043021433112031334324322123304112340014030132021432101130211241134422413442312013042141212003102211300321404043012124332013240431242</span></span><br></pre></td></tr></table></figure>
+<p>根据上面给的三组数，我们可以得到：</p>
+<p>$m^e ≡ c_1 (\bmod n_1)$</p>
+<p>$m^e ≡ c_2 (\bmod n_2)$</p>
+<p>$m^e ≡ c_3 (\bmod n_3)$</p>
+<p><strong>求整数的乘积</strong>：$N=n_1n_2n_3$</p>
+<p><strong>求除ni以外的整数乘积</strong>：$N_1=\frac N{n_1},N_2=\frac N{n_2},N_3=\frac N{n_3}$</p>
+<p>此时，我们可以使用中国剩余定理求解出其中的$m^e$，进而求出$m$。</p>
+<blockquote>
+<p>由于这里模$n$，当$m^e&lt;N$时，才可以用这个方法。因为最终求得的是将同余式转换为了等式，等式两边都不超过$N$：</p>
+<script type="math/tex; mode=display">
+c=m^e(\bmod N)</script></blockquote>
+<p><strong>在模$N$的意义下</strong>，方程组只有唯一解：</p>
+<script type="math/tex; mode=display">
+m^e=(\sum c_iN_iN_i')\bmod N</script><p>所以可以求得$m^e$，并且对$m$开$e$次方可得到最终的$m$。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">n1 = <span class="built_in">int</span>(<span class="string">&#x27;331310324212000030020214312244232222400142410423413104441140203003243002104333214202031202212403400220031202142322434104143104244241214204444443323000244130122022422310201104411044030113302323014101331214303223312402430402404413033243132101010422240133122211400434023222214231402403403200012221023341333340042343122302113410210110221233241303024431330001303404020104442443120130000334110042432010203401440404010003442001223042211442001413004&#x27;</span>,<span class="number">5</span>)</span><br><span class="line">c1 = <span class="built_in">int</span>(<span class="string">&#x27;310020004234033304244200421414413320341301002123030311202340222410301423440312412440240244110200112141140201224032402232131204213012303204422003300004011434102141321223311243242010014140422411342304322201241112402132203101131221223004022003120002110230023341143201404311340311134230140231412201333333142402423134333211302102413111111424430032440123340034044314223400401224111323000242234420441240411021023100222003123214343030122032301042243&#x27;</span>,<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">n2 = <span class="built_in">int</span>(<span class="string">&#x27;302240000040421410144422133334143140011011044322223144412002220243001141141114123223331331304421113021231204322233120121444434210041232214144413244434424302311222143224402302432102242132244032010020113224011121043232143221203424243134044314022212024343100042342002432331144300214212414033414120004344211330224020301223033334324244031204240122301242232011303211220044222411134403012132420311110302442344021122101224411230002203344140143044114&#x27;</span>,<span class="number">5</span>)</span><br><span class="line">c2 = <span class="built_in">int</span>(<span class="string">&#x27;112200203404013430330214124004404423210041321043000303233141423344144222343401042200334033203124030011440014210112103234440312134032123400444344144233020130110134042102220302002413321102022414130443041144240310121020100310104334204234412411424420321211112232031121330310333414423433343322024400121200333330432223421433344122023012440013041401423202210124024431040013414313121123433424113113414422043330422002314144111134142044333404112240344&#x27;</span>,<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">n3 = <span class="built_in">int</span>(<span class="string">&#x27;332200324410041111434222123043121331442103233332422341041340412034230003314420311333101344231212130200312041044324431141033004333110021013020140020011222012300020041342040004002220210223122111314112124333211132230332124022423141214031303144444134403024420111423244424030030003340213032121303213343020401304243330001314023030121034113334404440421242240113103203013341231330004332040302440011324004130324034323430143102401440130242321424020323&#x27;</span>,<span class="number">5</span>)</span><br><span class="line">c3 = <span class="built_in">int</span>(<span class="string">&#x27;10013444120141130322433204124002242224332334011124210012440241402342100410331131441303242011002101323040403311120421304422222200324402244243322422444414043342130111111330022213203030324422101133032212042042243101434342203204121042113212104212423330331134311311114143200011240002111312122234340003403312040401043021433112031334324322123304112340014030132021432101130211241134422413442312013042141212003102211300321404043012124332013240431242&#x27;</span>,<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">N=n1*n2*n3</span><br><span class="line">N1=N//n1;N2=N//n2;N3=N//n3</span><br><span class="line">m_e=(c1*N1*gmpy2.invert(N1,n1)+c2*N2*gmpy2.invert(N2,n2)+c3*N3*gmpy2.invert(N3,n3))%N</span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">100</span>):<span class="comment">#e未知，低位爆破一下</span></span><br><span class="line">  flag=long_to_bytes(gmpy2.iroot(m_e,e)[<span class="number">0</span>])</span><br><span class="line">  <span class="keyword">if</span> flag[-<span class="number">1</span>]==<span class="number">125</span>:</span><br><span class="line">        <span class="built_in">print</span>(flag)<span class="comment">#b&#x27;noxCTF&#123;D4mn_y0u_h4s74d_wh47_4_b100dy_b4s74rd!&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>long_to_bytes转换的本质还是ASCII码，”}”ASCII为125，可以用这个筛选出符合条件的flag。</p>
+<p>实际上，long_to_bytes是在函数内部自行做了先把数字转16进制再将16进制数两两一组转换成ASCII码对应字符。</p>
+</blockquote>
+<p>在libnum库里，有<code>solve_crt</code>函数帮助我们计算中国剩余定理：以上代码可以简化如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">from</span> libnum <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">n1 = <span class="built_in">int</span>(<span class="string">&#x27;331310324212000030020214312244232222400142410423413104441140203003243002104333214202031202212403400220031202142322434104143104244241214204444443323000244130122022422310201104411044030113302323014101331214303223312402430402404413033243132101010422240133122211400434023222214231402403403200012221023341333340042343122302113410210110221233241303024431330001303404020104442443120130000334110042432010203401440404010003442001223042211442001413004&#x27;</span>,<span class="number">5</span>)</span><br><span class="line">c1 = <span class="built_in">int</span>(<span class="string">&#x27;310020004234033304244200421414413320341301002123030311202340222410301423440312412440240244110200112141140201224032402232131204213012303204422003300004011434102141321223311243242010014140422411342304322201241112402132203101131221223004022003120002110230023341143201404311340311134230140231412201333333142402423134333211302102413111111424430032440123340034044314223400401224111323000242234420441240411021023100222003123214343030122032301042243&#x27;</span>,<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">n2 = <span class="built_in">int</span>(<span class="string">&#x27;302240000040421410144422133334143140011011044322223144412002220243001141141114123223331331304421113021231204322233120121444434210041232214144413244434424302311222143224402302432102242132244032010020113224011121043232143221203424243134044314022212024343100042342002432331144300214212414033414120004344211330224020301223033334324244031204240122301242232011303211220044222411134403012132420311110302442344021122101224411230002203344140143044114&#x27;</span>,<span class="number">5</span>)</span><br><span class="line">c2 = <span class="built_in">int</span>(<span class="string">&#x27;112200203404013430330214124004404423210041321043000303233141423344144222343401042200334033203124030011440014210112103234440312134032123400444344144233020130110134042102220302002413321102022414130443041144240310121020100310104334204234412411424420321211112232031121330310333414423433343322024400121200333330432223421433344122023012440013041401423202210124024431040013414313121123433424113113414422043330422002314144111134142044333404112240344&#x27;</span>,<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">n3 = <span class="built_in">int</span>(<span class="string">&#x27;332200324410041111434222123043121331442103233332422341041340412034230003314420311333101344231212130200312041044324431141033004333110021013020140020011222012300020041342040004002220210223122111314112124333211132230332124022423141214031303144444134403024420111423244424030030003340213032121303213343020401304243330001314023030121034113334404440421242240113103203013341231330004332040302440011324004130324034323430143102401440130242321424020323&#x27;</span>,<span class="number">5</span>)</span><br><span class="line">c3 = <span class="built_in">int</span>(<span class="string">&#x27;10013444120141130322433204124002242224332334011124210012440241402342100410331131441303242011002101323040403311120421304422222200324402244243322422444414043342130111111330022213203030324422101133032212042042243101434342203204121042113212104212423330331134311311114143200011240002111312122234340003403312040401043021433112031334324322123304112340014030132021432101130211241134422413442312013042141212003102211300321404043012124332013240431242&#x27;</span>,<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">m_e=solve_crt([c1,c2,c3],[n1,n2,n3])<span class="comment">#理论上只要两组数据就能求解中国剩余定理，solve_crt([c1,c2],[n1,n2])也能求解</span></span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">100</span>):</span><br><span class="line">    flag=long_to_bytes(gmpy2.iroot(m_e,e)[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">if</span> flag[-<span class="number">1</span>]==<span class="number">125</span>:</span><br><span class="line">        <span class="built_in">print</span>(flag)<span class="comment">#b&#x27;noxCTF&#123;D4mn_y0u_h4s74d_wh47_4_b100dy_b4s74rd!&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h1 id="低加密指数广播攻击"><a href="#低加密指数广播攻击" class="headerlink" title="低加密指数广播攻击"></a>低加密指数广播攻击</h1><p><strong>广播</strong>就是发送方将一份明文进行多份加密，每份使用不同的n，但是指数e相同且很小，因此我们只要得到多份密文和对应的n就可以利用<strong>中国剩余定理</strong>进行解密。</p>
+<p><strong>例题</strong></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="string">&quot;c&quot;</span>: <span class="number">7366067574741171461722065133242916080495505913663250330082747465383676893970411476550748394841437418105312353971095003424322679616940371123028982189502042</span>, <span class="string">&quot;e&quot;</span>: <span class="number">10</span>, <span class="string">&quot;n&quot;</span>: <span class="number">25162507052339714421839688873734596177751124036723831003300959761137811490715205742941738406548150240861779301784133652165908227917415483137585388986274803</span>&#125;,</span><br><span class="line">&#123;<span class="string">&quot;c&quot;</span>: <span class="number">21962825323300469151795920289886886562790942771546858500842179806566435767103803978885148772139305484319688249368999503784441507383476095946258011317951461</span>, <span class="string">&quot;e&quot;</span>: <span class="number">10</span>, <span class="string">&quot;n&quot;</span>: <span class="number">23976859589904419798320812097681858652325473791891232710431997202897819580634937070900625213218095330766877190212418023297341732808839488308551126409983193</span>&#125;,</span><br><span class="line">&#123;<span class="string">&quot;c&quot;</span>: <span class="number">6569689420274066957835983390583585286570087619048110141187700584193792695235405077811544355169290382357149374107076406086154103351897890793598997687053983</span>, <span class="string">&quot;e&quot;</span>: <span class="number">10</span>, <span class="string">&quot;n&quot;</span>: <span class="number">18503782836858540043974558035601654610948915505645219820150251062305120148745545906567548650191832090823482852604346478335353784501076761922605361848703623</span>&#125;,</span><br><span class="line">&#123;<span class="string">&quot;c&quot;</span>: <span class="number">4508246168044513518452493882713536390636741541551805821790338973797615971271867248584379813114125478195284692695928668946553625483179633266057122967547052</span>, <span class="string">&quot;e&quot;</span>: <span class="number">10</span>, <span class="string">&quot;n&quot;</span>: <span class="number">23383087478545512218713157932934746110721706819077423418060220083657713428503582801909807142802647367994289775015595100541168367083097506193809451365010723</span>&#125;,</span><br><span class="line">&#123;<span class="string">&quot;c&quot;</span>: <span class="number">22966105670291282335588843018244161552764486373117942865966904076191122337435542553276743938817686729554714315494818922753880198945897222422137268427611672</span>, <span class="string">&quot;e&quot;</span>: <span class="number">10</span>, <span class="string">&quot;n&quot;</span>: <span class="number">31775649089861428671057909076144152870796722528112580479442073365053916012507273433028451755436987054722496057749731758475958301164082755003195632005308493</span>&#125;,</span><br><span class="line">&#123;<span class="string">&quot;c&quot;</span>: <span class="number">17963313063405045742968136916219838352135561785389534381262979264585397896844470879023686508540355160998533122970239261072020689217153126649390825646712087</span>, <span class="string">&quot;e&quot;</span>: <span class="number">10</span>, <span class="string">&quot;n&quot;</span>: <span class="number">22246342022943432820696190444155665289928378653841172632283227888174495402248633061010615572642126584591103750338919213945646074833823905521643025879053949</span>&#125;,</span><br><span class="line">&#123;<span class="string">&quot;c&quot;</span>: <span class="number">1652417534709029450380570653973705320986117679597563873022683140800507482560482948310131540948227797045505390333146191586749269249548168247316404074014639</span>, <span class="string">&quot;e&quot;</span>: <span class="number">10</span>, <span class="string">&quot;n&quot;</span>: <span class="number">25395461142670631268156106136028325744393358436617528677967249347353524924655001151849544022201772500033280822372661344352607434738696051779095736547813043</span>&#125;,</span><br><span class="line">&#123;<span class="string">&quot;c&quot;</span>: <span class="number">15585771734488351039456631394040497759568679429510619219766191780807675361741859290490732451112648776648126779759368428205194684721516497026290981786239352</span>, <span class="string">&quot;e&quot;</span>: <span class="number">10</span>, <span class="string">&quot;n&quot;</span>: <span class="number">32056508892744184901289413287728039891303832311548608141088227876326753674154124775132776928481935378184756756785107540781632570295330486738268173167809047</span>&#125;,</span><br><span class="line">&#123;<span class="string">&quot;c&quot;</span>: <span class="number">8965123421637694050044216844523379163347478029124815032832813225050732558524239660648746284884140746788823681886010577342254841014594570067467905682359797</span>, <span class="string">&quot;e&quot;</span>: <span class="number">10</span>, <span class="string">&quot;n&quot;</span>: <span class="number">52849766269541827474228189428820648574162539595985395992261649809907435742263020551050064268890333392877173572811691599841253150460219986817964461970736553</span>&#125;,</span><br><span class="line">&#123;<span class="string">&quot;c&quot;</span>: <span class="number">13560945756543023008529388108446940847137853038437095244573035888531288577370829065666320069397898394848484847030321018915638381833935580958342719988978247</span>, <span class="string">&quot;e&quot;</span>: <span class="number">10</span>, <span class="string">&quot;n&quot;</span>: <span class="number">30415984800307578932946399987559088968355638354344823359397204419191241802721772499486615661699080998502439901585573950889047918537906687840725005496238621</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>题目给出了多组n和c，以及相同的e，我们可以使用中国剩余定理对其进行攻击：</p>
+<p>在这里，由于组数过多，如果不用库函数的话不方便像上面那样挨个计算，可以<strong>建立数组</strong>遍历进行计算：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">e = <span class="number">10</span></span><br><span class="line">c = [<span class="number">7366067574741171461722065133242916080495505913663250330082747465383676893970411476550748394841437418105312353971095003424322679616940371123028982189502042</span>,</span><br><span class="line"><span class="number">21962825323300469151795920289886886562790942771546858500842179806566435767103803978885148772139305484319688249368999503784441507383476095946258011317951461</span>,</span><br><span class="line"><span class="number">6569689420274066957835983390583585286570087619048110141187700584193792695235405077811544355169290382357149374107076406086154103351897890793598997687053983</span>,</span><br><span class="line"><span class="number">4508246168044513518452493882713536390636741541551805821790338973797615971271867248584379813114125478195284692695928668946553625483179633266057122967547052</span>,</span><br><span class="line"><span class="number">22966105670291282335588843018244161552764486373117942865966904076191122337435542553276743938817686729554714315494818922753880198945897222422137268427611672</span>,</span><br><span class="line"><span class="number">17963313063405045742968136916219838352135561785389534381262979264585397896844470879023686508540355160998533122970239261072020689217153126649390825646712087</span>,</span><br><span class="line"><span class="number">1652417534709029450380570653973705320986117679597563873022683140800507482560482948310131540948227797045505390333146191586749269249548168247316404074014639</span>,</span><br><span class="line"><span class="number">15585771734488351039456631394040497759568679429510619219766191780807675361741859290490732451112648776648126779759368428205194684721516497026290981786239352</span>,</span><br><span class="line"><span class="number">8965123421637694050044216844523379163347478029124815032832813225050732558524239660648746284884140746788823681886010577342254841014594570067467905682359797</span>,</span><br><span class="line"><span class="number">13560945756543023008529388108446940847137853038437095244573035888531288577370829065666320069397898394848484847030321018915638381833935580958342719988978247</span>]</span><br><span class="line"></span><br><span class="line">n = [<span class="number">25162507052339714421839688873734596177751124036723831003300959761137811490715205742941738406548150240861779301784133652165908227917415483137585388986274803</span>,</span><br><span class="line"><span class="number">23976859589904419798320812097681858652325473791891232710431997202897819580634937070900625213218095330766877190212418023297341732808839488308551126409983193</span>,</span><br><span class="line"><span class="number">18503782836858540043974558035601654610948915505645219820150251062305120148745545906567548650191832090823482852604346478335353784501076761922605361848703623</span>,</span><br><span class="line"><span class="number">23383087478545512218713157932934746110721706819077423418060220083657713428503582801909807142802647367994289775015595100541168367083097506193809451365010723</span>,</span><br><span class="line"><span class="number">31775649089861428671057909076144152870796722528112580479442073365053916012507273433028451755436987054722496057749731758475958301164082755003195632005308493</span>,</span><br><span class="line"><span class="number">22246342022943432820696190444155665289928378653841172632283227888174495402248633061010615572642126584591103750338919213945646074833823905521643025879053949</span>,</span><br><span class="line"><span class="number">25395461142670631268156106136028325744393358436617528677967249347353524924655001151849544022201772500033280822372661344352607434738696051779095736547813043</span>,</span><br><span class="line"><span class="number">32056508892744184901289413287728039891303832311548608141088227876326753674154124775132776928481935378184756756785107540781632570295330486738268173167809047</span>,</span><br><span class="line"><span class="number">52849766269541827474228189428820648574162539595985395992261649809907435742263020551050064268890333392877173572811691599841253150460219986817964461970736553</span>,</span><br><span class="line"><span class="number">30415984800307578932946399987559088968355638354344823359397204419191241802721772499486615661699080998502439901585573950889047918537906687840725005496238621</span>]</span><br><span class="line"></span><br><span class="line">N=<span class="number">1</span></span><br><span class="line">m_e=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(n)):<span class="comment">#计算n数组所有数的乘积</span></span><br><span class="line">  N*=n[i]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(n)):<span class="comment">#计算m^e,采用中国剩余定理</span></span><br><span class="line">  m_e=m_e+c[i]*N//n[i]*gmpy2.invert(N//n[i],n[i])</span><br><span class="line">m_e=m_e%N</span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(gmpy2.iroot(m_e,e)[<span class="number">0</span>]))</span><br></pre></td></tr></table></figure>
+<h1 id="扩展中国剩余定理"><a href="#扩展中国剩余定理" class="headerlink" title="扩展中国剩余定理"></a>扩展中国剩余定理</h1><p>在学习CRT中我们了解到构成求解CRT的方程组模数需要两两互质，如果模数是不互质的，可以通过合并相邻两组方程的方式进行逐步求解，这就是扩展中国剩余定理。</p>
+<blockquote>
+<p>扩展中国剩余定理跟中国剩余定理几乎没有关系，扩展CRT是用扩展欧几里得，CRT是用构造的思想。</p>
+</blockquote>
+<p>根据同样的同余方程组，但是模数不互素：</p>
+<script type="math/tex; mode=display">
+\begin{cases}x\equiv a_1(\bmod m_1)\\x\equiv a_2(\bmod m_2)\\x\equiv a_3(\bmod m_3)\\...\\x\equiv a_n(\bmod m_n)\end{cases}</script><p>选择前两个式子，转换成等式：</p>
+<script type="math/tex; mode=display">
+\begin{cases}x=k_1m_1+a_1\\x=k_2m_2+a_2\end{cases}</script><p>两式子相减得到$k_1m_1-k_2m_2=a_2-a_1$，把$k_1,-k_2$看做$x_k,y_k$，式子就能转化为：</p>
+<script type="math/tex; mode=display">
+x_km_1+y_km_2=a_2-a_1</script><p>根据裴蜀定理，当$\gcd(m_1,m_2)|(a_2-a_1)$时，就可以使用扩展欧几里得算法求出系数$x_k,y_k$，这里计算得到的式子为：</p>
+<script type="math/tex; mode=display">
+x_0m_1+y_0m_2=\gcd(m_1,m_2)</script><p>为了求得$x_k,y_k$，可以对式子两边同时乘$\frac {a_2-a_1}{\gcd(m_1,m_2)}$，得到特解：</p>
+<script type="math/tex; mode=display">
+\begin{cases}x_{k_1}=x_0\frac {a_2-a_1}{\gcd(m_1,m_2)}\\y_{k_1}=y_0\frac {a_2-a_1}{\gcd(m_1,m_2)}\end{cases}</script><p>我们需要用过特殊解来构造一般解，一般式子为：</p>
+<script type="math/tex; mode=display">
+x_0m_1+y_0m_2=n\gcd(m_1,m_2)</script><p>特殊解变形为：</p>
+<script type="math/tex; mode=display">
+\begin{cases}x_{k}=x_{k_1}+n\frac {m_2}{\gcd(m_1,m_2)}\\y_{k}=y_{k_1}-n\frac {m_1}{\gcd(m_1,m_2)}\end{cases}</script><p>代入$x_0m_1+y_0m_2=\gcd(m_1,m_2)$仍成立，此时构造的$x_k,y_k$就是通解。</p>
+<p>现在将得到的通解代入到最开始的式子$x=k_1m_1+a_1$：</p>
+<script type="math/tex; mode=display">
+x=n\frac {m_1m_2}{\gcd(m_1,m_2)}+x_{k_1}m_1+a_1</script><p>根据数论的有关知识可以知道$\mathrm{lcm}(m_1,m_2)=\frac{m_1m_2}{\gcd(m_1,m_2)}$，原式可以进一步化为：</p>
+<script type="math/tex; mode=display">
+x=n\mathrm{lcm}(m_1,m_2)+x_{k_1}m_1+a_1</script><p>化为同余式子：</p>
+<script type="math/tex; mode=display">
+x\equiv k_1m_1+a_1(\bmod \mathrm{lcm}(m_1,m_2))</script><script type="math/tex; mode=display">
+\begin{cases}r=k_1m_1+a_1\\m=\mathrm{lcm}(m_1,m_2)\end{cases}</script><p>现在，我们就把两个同余式合并为了一个同余方程：</p>
+<script type="math/tex; mode=display">
+x\equiv r(\bmod m)</script><p>那么，如果我们不断的合并，进行$n-1$次合并，就能将$n$个同余方程合并为一个同余方程，如果只有一个同余方程，就可以使用扩展欧几里得算法进行计算。</p>
+<h2 id="求-d"><a href="#求-d" class="headerlink" title="求$d$"></a>求$d$</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">p = getPrime(<span class="number">512</span>)</span><br><span class="line">q = getPrime(<span class="number">512</span>)</span><br><span class="line">r = getPrime(<span class="number">512</span>)</span><br><span class="line">e = getPrime(<span class="number">32</span>)</span><br><span class="line"><span class="built_in">print</span>(e)</span><br><span class="line">n = p*q*r</span><br><span class="line">phi = (p-<span class="number">1</span>)*(q-<span class="number">1</span>)*(r-<span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e,phi)</span><br><span class="line">dp = d%((q-<span class="number">1</span>)*(r-<span class="number">1</span>))</span><br><span class="line">dq = d%((p-<span class="number">1</span>)*(r-<span class="number">1</span>))</span><br><span class="line">dr = d%((p-<span class="number">1</span>)*(q-<span class="number">1</span>))</span><br><span class="line">flag = <span class="string">&#x27;flag&#123;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&#125;&#x27;</span></span><br><span class="line">m = bytes_to_long(flag.encode())</span><br><span class="line">c = <span class="built_in">pow</span>(m,e,n)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(p)</span><br><span class="line"><span class="built_in">print</span>(q)</span><br><span class="line"><span class="built_in">print</span>(r)</span><br><span class="line"><span class="built_in">print</span>(dp)</span><br><span class="line"><span class="built_in">print</span>(dq)</span><br><span class="line"><span class="built_in">print</span>(dr)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br><span class="line"></span><br><span class="line">p=<span class="number">12922128058767029848676385650461975663483632970994721128398090402671357430399910236576943902580268365115559040908171487273491136108931171215963673857907721</span></span><br><span class="line">q=<span class="number">10395910293559541454979782434227114401257890224810826672485874938639616819909368963527556812339196570118998080877100587760101646884011742783881592586607483</span></span><br><span class="line">r=<span class="number">8104533688439480164488403019957173637520526666352540480766865791142556044817828133446063428255474375204188144310967625626318466189746446739697284656837499</span></span><br><span class="line">dp=<span class="number">73360412924315743410612858109886169233122608813546859531995431159702281180116580962235297605024326120716590757069707814371806343766956894408106019058184354279568525768909190843389534908163730972765221403797428735591146943727032277163147380538250142612444372315262195455266292156566943804557623319253942627829</span></span><br><span class="line">dq=<span class="number">40011003982913118920477233564329052389422276107266243287367766124357736739027781899850422097218506350119257015460291153483339485727984512959771805645640899525080850525273304988145509506962755664208407488807873672040970416096459662677968243781070751482234692575943914243633982505045357475070019527351586080273</span></span><br><span class="line">dr=<span class="number">21504040939112983125383942214187695383459556831904800061168077060846983552476434854825475457749096404504088696171780970907072305495623953811379179449789142049817703543458498244186699984858401903729236362439659600561895931051597248170420055792553353578915848063216831827095100173180270649367917678965552672673</span></span><br><span class="line">c=<span class="number">220428832901130282093087304800127910055992783874826238869471313726515822196746908777026147887315019800546695346099376727742597231512404648514329911088048902389321230640565683145565701498095660019604419213310866468276943241155853029934366950674139215056682438149221374543291202295130547776549069333898123270448986380025937093195496539532193583979030254746589985556996040224572481200667498253900563663950531345601763949337787268884688982469744380006435119997310653</span></span><br></pre></td></tr></table></figure>
+<p>这个题目中我们并不知道$e,d$，直接进行求解肯定是解不出来的，但是给了$dp,dq,dr$，先观察一下三个式子，尝试使用扩展中国剩余定理：</p>
+<script type="math/tex; mode=display">
+\begin{cases}dp\equiv d(\bmod (q-1)(r-1))\\dq\equiv d(\bmod (p-1)(r-1))\\dr\equiv d(\bmod (p-1)(q-1))\end{cases}</script><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p=<span class="number">12922128058767029848676385650461975663483632970994721128398090402671357430399910236576943902580268365115559040908171487273491136108931171215963673857907721</span></span><br><span class="line">q=<span class="number">10395910293559541454979782434227114401257890224810826672485874938639616819909368963527556812339196570118998080877100587760101646884011742783881592586607483</span></span><br><span class="line">r=<span class="number">8104533688439480164488403019957173637520526666352540480766865791142556044817828133446063428255474375204188144310967625626318466189746446739697284656837499</span></span><br><span class="line">dp=<span class="number">73360412924315743410612858109886169233122608813546859531995431159702281180116580962235297605024326120716590757069707814371806343766956894408106019058184354279568525768909190843389534908163730972765221403797428735591146943727032277163147380538250142612444372315262195455266292156566943804557623319253942627829</span></span><br><span class="line">dq=<span class="number">40011003982913118920477233564329052389422276107266243287367766124357736739027781899850422097218506350119257015460291153483339485727984512959771805645640899525080850525273304988145509506962755664208407488807873672040970416096459662677968243781070751482234692575943914243633982505045357475070019527351586080273</span></span><br><span class="line">dr=<span class="number">21504040939112983125383942214187695383459556831904800061168077060846983552476434854825475457749096404504088696171780970907072305495623953811379179449789142049817703543458498244186699984858401903729236362439659600561895931051597248170420055792553353578915848063216831827095100173180270649367917678965552672673</span></span><br><span class="line">c=<span class="number">220428832901130282093087304800127910055992783874826238869471313726515822196746908777026147887315019800546695346099376727742597231512404648514329911088048902389321230640565683145565701498095660019604419213310866468276943241155853029934366950674139215056682438149221374543291202295130547776549069333898123270448986380025937093195496539532193583979030254746589985556996040224572481200667498253900563663950531345601763949337787268884688982469744380006435119997310653</span></span><br><span class="line"></span><br><span class="line">n = <span class="number">3</span></span><br><span class="line">a = [dp,dq,dr]</span><br><span class="line">m=[(q-<span class="number">1</span>)*(r-<span class="number">1</span>),(p-<span class="number">1</span>)*(r-<span class="number">1</span>),(p-<span class="number">1</span>)*(q-<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">CRText</span>():</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        gcd ,x ,y = gmpy2.gcdext(m[<span class="number">0</span>], m[i])</span><br><span class="line"></span><br><span class="line">        lcm = m[i] // gcd</span><br><span class="line">        x = (a[i] - a[<span class="number">0</span>]) // gcd * x % lcm</span><br><span class="line">        a[<span class="number">0</span>] = x * m[<span class="number">0</span>] + a[<span class="number">0</span>]</span><br><span class="line">        m[<span class="number">0</span>] = m[<span class="number">0</span>] * m[i] // gcd</span><br><span class="line">        a[<span class="number">0</span>] = (a[<span class="number">0</span>] % m[<span class="number">0</span>] + m[<span class="number">0</span>]) % m[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">d = CRText()</span><br><span class="line">m=<span class="built_in">pow</span>(c,d,p*q*r)</span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(m))</span><br></pre></td></tr></table></figure>
+<h2 id="求-c"><a href="#求-c" class="headerlink" title="求$c$"></a>求$c$</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="comment"># from secret import flag</span></span><br><span class="line">flag=<span class="string">&#x27;&#x27;</span></span><br><span class="line">table=<span class="string">&#x27;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#x27;</span></span><br><span class="line">pad=<span class="number">100</span>-<span class="built_in">len</span>(flag)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(pad):</span><br><span class="line">    flag+=random.choice(table).encode()</span><br><span class="line">e=<span class="number">343284449</span></span><br><span class="line">m=bytes_to_long(flag)</span><br><span class="line"><span class="keyword">assert</span> m&gt;(<span class="number">1</span>&lt;&lt;<span class="number">512</span>)</span><br><span class="line"><span class="keyword">assert</span> m&lt;(<span class="number">1</span>&lt;&lt;<span class="number">1024</span>)</span><br><span class="line">p=getPrime(<span class="number">512</span>)</span><br><span class="line">q=getPrime(<span class="number">512</span>)</span><br><span class="line">r=getPrime(<span class="number">512</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;p=&#x27;</span>,p)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;q=&#x27;</span>,q)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;r=&#x27;</span>,r)</span><br><span class="line">n1=p*q</span><br><span class="line">n2=q*r</span><br><span class="line">c1=<span class="built_in">pow</span>(m,e,n1)</span><br><span class="line">c2=<span class="built_in">pow</span>(m,e,n2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;c1=&#x27;</span>,c1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;c2=&#x27;</span>,c2)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p= <span class="number">11820891196647569262137841192985418014377132106496147254821784946481523526822939129065042819464351666077658751406165276121125571355594004514547517855730743</span></span><br><span class="line">q= <span class="number">10450390015864176713581330969519712299844487112687677452105216477861582967322473997670559995588440097951786576039009337782247912476227937589298529580432797</span></span><br><span class="line">r= <span class="number">9484954066160968219229920429258150817546418633451929876581842443665029377287119340232501682142185708534413073877473741393278935479791561681402673403009771</span></span><br><span class="line"></span><br><span class="line">c1= <span class="number">69574855207460025252857869494766338442370688922127811393280455950372371842144946699073877876005649281006116543528211809466226185922844601714337317797534664683681334132261584497953105754257846471069875622054326463757746293958069752489458646460121725019594141157667480846709081917530190233900184428943585065316</span></span><br><span class="line">c2= <span class="number">66183492015178047844987766781469734325646160179923242098082430373061510938987908656007752256556018402101435698352339429316390909525615464024332856855411414576031970267795270882896721069952171988506477519737923165566896609181813523905810373359029413963666924039857159685161563252396502381297700252749204993228</span></span><br></pre></td></tr></table></figure>
+<p>这个题可以发现$e$是$q$的因子，而且还对flag做了填充处理，直接解密是肯定不行的，思想是通过扩展中国剩余定理求出$n=pr$的对应的密文进行解密：</p>
+<script type="math/tex; mode=display">
+\begin{cases}c_1\equiv m^e(\bmod n_1)\\c_2\equiv m^e(\bmod n_2)\end{cases}</script><p>最后求得的$m^e$可以放在模$pr$域中，进行求解：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p = <span class="number">11820891196647569262137841192985418014377132106496147254821784946481523526822939129065042819464351666077658751406165276121125571355594004514547517855730743</span></span><br><span class="line">q = <span class="number">10450390015864176713581330969519712299844487112687677452105216477861582967322473997670559995588440097951786576039009337782247912476227937589298529580432797</span></span><br><span class="line">r = <span class="number">9484954066160968219229920429258150817546418633451929876581842443665029377287119340232501682142185708534413073877473741393278935479791561681402673403009771</span></span><br><span class="line">e = <span class="number">343284449</span></span><br><span class="line">c1 = <span class="number">69574855207460025252857869494766338442370688922127811393280455950372371842144946699073877876005649281006116543528211809466226185922844601714337317797534664683681334132261584497953105754257846471069875622054326463757746293958069752489458646460121725019594141157667480846709081917530190233900184428943585065316</span></span><br><span class="line">c2 = <span class="number">66183492015178047844987766781469734325646160179923242098082430373061510938987908656007752256556018402101435698352339429316390909525615464024332856855411414576031970267795270882896721069952171988506477519737923165566896609181813523905810373359029413963666924039857159685161563252396502381297700252749204993228</span></span><br><span class="line">n = <span class="number">2</span></span><br><span class="line">a = [c1, c2]</span><br><span class="line">m = [p * q, q * r]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">CRText</span>():</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        gcd, x, y = gmpy2.gcdext(m[<span class="number">0</span>], m[i])</span><br><span class="line"></span><br><span class="line">        lcm = m[i] // gcd</span><br><span class="line">        x = (a[i] - a[<span class="number">0</span>]) // gcd * x % lcm</span><br><span class="line">        a[<span class="number">0</span>] = x * m[<span class="number">0</span>] + a[<span class="number">0</span>]</span><br><span class="line">        m[<span class="number">0</span>] = m[<span class="number">0</span>] * m[i] // gcd</span><br><span class="line">        a[<span class="number">0</span>] = (a[<span class="number">0</span>] % m[<span class="number">0</span>] + m[<span class="number">0</span>]) % m[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> a[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">c = CRText()</span><br><span class="line">n = p * r</span><br><span class="line">phi = (p - <span class="number">1</span>) * (r - <span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phi)</span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(<span class="built_in">pow</span>(c, d, n)))</span><br></pre></td></tr></table></figure>
+<h1 id="公钥解析和加密协议"><a href="#公钥解析和加密协议" class="headerlink" title="公钥解析和加密协议"></a>公钥解析和加密协议</h1><p><strong>SSH和SSL都是加密协议，用于保护网络通信的安全性和完整性。</strong></p>
+<p>SSH（Secure Shell）是一种网络协议，<strong>用于远程访问和管理服务器</strong>。它提供了加密的连接和认证机制，使得数据传输更加安全。SSH通常用于<strong>远程登录、文件传输和远程执行命令</strong>等操作。SSH通常基于TCP/IP，使用公钥加密和私钥解密的方式来保护通信的安全性。</p>
+<p>SSL（Secure Sockets Layer）是一种协议，用于在互联网上建立安全的通信通道。它可以在客户端和服务器之间建立加密的连接，保护数据的隐私和完整性。SSL最初是由网景公司开发的，后来被标准化为TLS（Transport Layer Security）。SSL/TLS通常用于保护Web浏览器和Web服务器之间的通信，以及其他类型的网络应用程序。</p>
+<p>虽然SSH和SSL/TLS都提供了加密和认证机制，但它们的应用场景和安全需求有所不同。SSH通常用于远程管理和维护服务器，需要保护管理者的身份和服务器的机密信息；而SSL/TLS通常用于保护Web应用程序和电子商务等网络应用，需要保护用户的身份和敏感信息。</p>
+<blockquote>
+<p>PEM（Privacy-Enhanced Mail）是一种常见的文件格式，通常用于存储加密证书、私钥和其他与网络安全相关的敏感信息。</p>
+</blockquote>
+<p>对于SSL的公钥解析，这种题目会提供两个文件，一个key文件，一个enc文件，我们需要利用key文件提取n和e，进而破解enc文件。</p>
+<p>用记事本打开key文件，可以得到如下加密信息：</p>
+<p>——-BEGIN PUBLIC KEY——-<br>MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAMAzLFxkrkcYL2wch21CM2kQVFpY9+7+<br>/AvKr1rzQczdAgMBAAE=<br>——-END PUBLIC KEY——-</p>
+<p>如何破解这段加密后的文本，一种方式是可以使用公钥解析网站来解析：</p>
+<p><a target="_blank" rel="noopener" href="http://www.hiencode.com/pub_asys.html">SSL在线工具-公钥解析 (hiencode.com)</a></p>
+<p>或者导入Crypto库直接获得n和e（注意函数末尾添加的内容区别决定输出对象）：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line">key = RSA.import_key(<span class="built_in">open</span>(<span class="string">&quot;pub.key&quot;</span>).read()).export_key<span class="comment">#先补全key路径信息</span></span><br><span class="line"><span class="built_in">print</span>(key)</span><br><span class="line"><span class="comment">#&lt;bound method RsaKey.export_key of RsaKey(n=86934482296048119190666062003494800588905656017203025617216654058378322103517, e=65537)&gt;</span></span><br><span class="line">key = RSA.import_key(<span class="built_in">open</span>(<span class="string">&quot;pub.key&quot;</span>).read()).n</span><br><span class="line"><span class="built_in">print</span>(key)</span><br><span class="line"><span class="comment">#86934482296048119190666062003494800588905656017203025617216654058378322103517</span></span><br><span class="line">key = RSA.import_key(<span class="built_in">open</span>(<span class="string">&quot;pub.key&quot;</span>).read()).e</span><br><span class="line"><span class="built_in">print</span>(key)</span><br><span class="line"><span class="comment">#65537</span></span><br></pre></td></tr></table></figure>
+<p>获得了n和e之后，我们想办法分解模数后，使用rsa库直接解密，用法如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> rsa</span><br><span class="line"></span><br><span class="line">e=<span class="number">65537</span></span><br><span class="line">p = <span class="number">285960468890451637935629440372639283459</span></span><br><span class="line">q = <span class="number">304008741604601924494328155975272418463</span></span><br><span class="line">n=p*q</span><br><span class="line">phi = (p-<span class="number">1</span>)*(q-<span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e,phi)</span><br><span class="line">key = rsa.PrivateKey(n,e,d,q,p)         </span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;flag.enc&quot;</span>,<span class="string">&quot;rb+&quot;</span>) <span class="keyword">as</span> f:      </span><br><span class="line">    f = f.read()</span><br><span class="line">    <span class="built_in">print</span>(rsa.decrypt(f,key))</span><br><span class="line"><span class="comment">#b&#x27;flag&#123;decrypt_256&#125;\n&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>了解了上面的大致理论之后，下面介绍几种和密钥相关的题目。</p>
+<h2 id="私钥泄露问题"><a href="#私钥泄露问题" class="headerlink" title="私钥泄露问题"></a>私钥泄露问题</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line"></span><br><span class="line">flag = <span class="string">&quot;flag&#123;&quot;</span> + <span class="built_in">str</span>(uuid.uuid4()) + <span class="string">&quot;&#125;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(flag)</span><br><span class="line">m = libnum.s2n(flag)</span><br><span class="line"></span><br><span class="line">p = libnum.generate_prime(<span class="number">1024</span>)</span><br><span class="line">q = gmpy2.next_prime(p)</span><br><span class="line">n = p * q</span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phi)</span><br><span class="line">m = libnum.s2n(flag)</span><br><span class="line">c = <span class="built_in">pow</span>(m, e, n)</span><br><span class="line">c1 = libnum.n2s(<span class="built_in">int</span>(c))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;flag.pem&quot;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(c1)</span><br><span class="line">rsa_components = (<span class="built_in">int</span>(n), <span class="built_in">int</span>(e), <span class="built_in">int</span>(d), <span class="built_in">int</span>(p), <span class="built_in">int</span>(q))</span><br><span class="line">keypair = RSA.construct(rsa_components)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;pubckey.pem&quot;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(keypair.exportKey())</span><br></pre></td></tr></table></figure>
+<p>得到两个文件，一个flag.pem，一个pubckey.pem，使用RSA库进行的加密，直接用RSA库的<code>importKey</code>就可以进行解密：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;flag.pem&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    c = <span class="built_in">int</span>(f.read().<span class="built_in">hex</span>(),<span class="number">16</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;pubckey.pem&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    key = f.read()</span><br><span class="line"></span><br><span class="line">rsakey = RSA.importKey(key)</span><br><span class="line"><span class="comment"># print(rsakey)</span></span><br><span class="line"></span><br><span class="line">d = rsakey.d</span><br><span class="line">n = rsakey.n</span><br><span class="line">m = <span class="built_in">pow</span>(c,d,n)</span><br><span class="line"><span class="built_in">print</span>(libnum.n2s(m))</span><br></pre></td></tr></table></figure>
+<h2 id="模数分解问题"><a href="#模数分解问题" class="headerlink" title="模数分解问题"></a>模数分解问题</h2><p>实际上题目才不会傻到连私钥都提供给我们，通常是提供模数和$e$，如果针对特定情况生成的$n$，可以进行分解并破解：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line"></span><br><span class="line">flag = <span class="string">&quot;flag&#123;&quot;</span> + <span class="built_in">str</span>(uuid.uuid4()) + <span class="string">&quot;&#125;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(flag)</span><br><span class="line">m = libnum.s2n(flag)</span><br><span class="line"></span><br><span class="line">p = libnum.generate_prime(<span class="number">1024</span>)</span><br><span class="line">q = gmpy2.next_prime(p)</span><br><span class="line">n = p * q</span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phi)</span><br><span class="line">m = libnum.s2n(flag)</span><br><span class="line">c = <span class="built_in">pow</span>(m, e, n)</span><br><span class="line">c1 = libnum.n2s(<span class="built_in">int</span>(c))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;flag1.pem&quot;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(c1)</span><br><span class="line">rsa_components = (<span class="built_in">int</span>(n), <span class="built_in">int</span>(e))</span><br><span class="line">keypair = RSA.construct(rsa_components)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pubckey1.pem&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(keypair.exportKey())</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> PKCS1_OAEP</span><br><span class="line"><span class="keyword">import</span> libnum, sympy, gmpy2</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;flag1.pem&quot;</span>, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    c = f.read()</span><br><span class="line">c = libnum.s2n(c)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;pubckey1.pem&quot;</span>, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    key = f.read()</span><br><span class="line">rsakey = RSA.importKey(key)</span><br><span class="line">n = rsakey.n</span><br><span class="line">e = rsakey.e</span><br><span class="line">phi = <span class="built_in">int</span>(sympy.totient(n))</span><br><span class="line">d = gmpy2.invert(e, phi)</span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n)</span><br><span class="line"><span class="built_in">print</span>(libnum.n2s(<span class="built_in">int</span>(m)))</span><br></pre></td></tr></table></figure>
+<h2 id="OAEP"><a href="#OAEP" class="headerlink" title="OAEP"></a>OAEP</h2><blockquote>
+<p>OAEP（Optimal Asymmetric Encryption Padding）在加密过程中，使用RSA等非对称加密算法加密数据。为了增加安全性，需要对待加密的数据进行填充。OAEP利用随机数和哈希函数的特性来增加加密数据的复杂性和随机性。</p>
+<p>使用OAEP填充时，待加密的数据会先经过一个哈希函数，生成一个哈希值（通常用SHA-1或SHA-256等）。然后，将该哈希值与随机生成的填充数据进行异或运算。最后，将结果与原始数据进行拼接，形成一个新的数据块，再使用非对称加密算法进行加密。</p>
+<p>在解密过程中，同样使用OAEP填充方案。解密时，首先对密文进行解密得到一个新的数据块，然后对该数据块进行逆操作，还原填充前的数据。最后，从还原后的数据中提取出原始数据。</p>
+<p>OAEP填充方案提供了比传统的非对称加密更高的安全性，并且能够防范对抗选择明文攻击等攻击方式。它被广泛应用于各种加密协议和算法中。</p>
+</blockquote>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> PKCS1_OAEP</span><br><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line"></span><br><span class="line">flag = <span class="string">&quot;flag&#123;&quot;</span> + <span class="built_in">str</span>(uuid.uuid4()) + <span class="string">&quot;&#125;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(flag)</span><br><span class="line">flag = flag.encode()</span><br><span class="line"></span><br><span class="line">p = libnum.generate_prime(<span class="number">1024</span>)</span><br><span class="line">q = gmpy2.next_prime(p)</span><br><span class="line">n = p * q</span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phi)</span><br><span class="line"></span><br><span class="line">rsa_components = (<span class="built_in">int</span>(n), <span class="built_in">int</span>(e), <span class="built_in">int</span>(d))</span><br><span class="line">keypair = RSA.construct(rsa_components)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;prikey2.pem&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(keypair.exportKey())</span><br><span class="line"></span><br><span class="line">rsa_components = (<span class="built_in">int</span>(n), e)</span><br><span class="line">arsa = RSA.construct(rsa_components)</span><br><span class="line">rsakey = RSA.importKey(arsa.exportKey())</span><br><span class="line">rsakey = PKCS1_OAEP.new(rsakey)</span><br><span class="line">c = rsakey.encrypt(flag)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;flag2.pem&quot;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(c)</span><br></pre></td></tr></table></figure>
+<p>pycryptodome库提供了进行OAEP加密的操作，当然也提供了解密的操作，需要提供公私钥：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> PKCS1_OAEP</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;flag2.pem&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    ciphertext = f.read()</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;prikey2.pem&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    key = f.read()</span><br><span class="line"></span><br><span class="line">rsakey = RSA.importKey(key)</span><br><span class="line">cipher = PKCS1_OAEP.new(rsakey)</span><br><span class="line">message = cipher.decrypt(ciphertext)</span><br><span class="line"><span class="built_in">print</span>(message)</span><br></pre></td></tr></table></figure>
+</article><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2022/11/22/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=undefined&amp;url=http://example.com/2022/11/22/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/&amp;pic=undefined" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/RSA/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>RSA<span class="tagsPageCount">20</span></a></div></div></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/21/web%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/"><img class="prev-cover" src="https://s2.loli.net/2022/12/08/6fNP3bgQVkyMuW1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">web基础学习（一）</div></div></a></div><div class="next-post pull-right"><a href="/2022/11/27/CTFshow%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%8A%EF%BC%89/"><img class="next-cover" src="https://s2.loli.net/2022/12/08/CbXMu7hqjTOzwpB.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CTFshow做题记录（上）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/11/27/CTFshow%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%8A%EF%BC%89/" title="CTFshow做题记录（上）"><img class="cover" src="https://s2.loli.net/2022/12/08/CbXMu7hqjTOzwpB.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-11-27</div><div class="title">CTFshow做题记录（上）</div></div></a></div><div><a href="/2022/12/09/CTFshow%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%8B%EF%BC%89/" title="CTFshow做题记录（下）"><img class="cover" src="https://s2.loli.net/2022/12/08/CbXMu7hqjTOzwpB.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-12-09</div><div class="title">CTFshow做题记录（下）</div></div></a></div><div><a href="/2023/01/03/CryptoHack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%952/" title="CryptoHack学习记录（二）"><img class="cover" src="https://s2.loli.net/2023/01/03/saZ1bSM5WX6PmR4.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-01-03</div><div class="title">CryptoHack学习记录（二）</div></div></a></div><div><a href="/2023/05/14/LitCTF%E5%A4%8D%E7%8E%B0/" title="LitCTF复现"><img class="cover" src="https://s2.loli.net/2023/05/14/CtirxsS8YE7qhFA.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-05-14</div><div class="title">LitCTF复现</div></div></a></div><div><a href="/2023/03/13/NSSCTF%E9%A2%98%E8%A7%A3%EF%BC%88%E4%B8%80%EF%BC%89/" title="NSSCTF题解（一）"><img class="cover" src="https://s2.loli.net/2023/03/17/1hDecotwCpH3rT7.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-03-13</div><div class="title">NSSCTF题解（一）</div></div></a></div><div><a href="/2022/12/29/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="RSA学习笔记"><img class="cover" src="https://s2.loli.net/2022/12/29/3bxISilKj1aPFsc.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-12-29</div><div class="title">RSA学习笔记</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo" style="display: none"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a></div><div class="comment-tips" id="comment-tips"><span>你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div><div class="comment-barrage"></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86-CRT"><span class="toc-text">中国剩余定理(CRT)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E8%83%8C%E6%99%AF"><span class="toc-text">历史背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-text">基本原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E6%8E%A8%E5%B9%BF"><span class="toc-text">原理推广</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E6%B1%82B%EF%BC%9F"><span class="toc-text">怎么求B？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA%E5%BC%95%E5%85%A5CRT"><span class="toc-text">RSA引入CRT</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%8E%E5%8A%A0%E5%AF%86%E6%8C%87%E6%95%B0%E5%B9%BF%E6%92%AD%E6%94%BB%E5%87%BB"><span class="toc-text">低加密指数广播攻击</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="toc-text">扩展中国剩余定理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82-d"><span class="toc-text">求$d$</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82-c"><span class="toc-text">求$c$</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E8%A7%A3%E6%9E%90%E5%92%8C%E5%8A%A0%E5%AF%86%E5%8D%8F%E8%AE%AE"><span class="toc-text">公钥解析和加密协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%81%E9%92%A5%E6%B3%84%E9%9C%B2%E9%97%AE%E9%A2%98"><span class="toc-text">私钥泄露问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%95%B0%E5%88%86%E8%A7%A3%E9%97%AE%E9%A2%98"><span class="toc-text">模数分解问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OAEP"><span class="toc-text">OAEP</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By Chemtrails</div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:var(--anzhiyu-fontcolor)" target="_blank">鲁ICP备2022041228号</a></div></div></footer><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" src="https://ch3mtr4ils.cn/img/tit.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+let loadingPercentageTimer = setInterval(function() {
+  var progressBar = document.querySelector(".pace-progress");
+  if (!progressBar) return
+  var currentValue = progressBar.getAttribute("data-progress-text");
+  if (currentValue !== loadingPercentage.textContent) {
+    loadingPercentage.textContent = currentValue;
+    if (currentValue === "100%") {
+      clearInterval(loadingPercentageTimer);
+    }
+  }
+}, 100);
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ch3mtr4ils.cn/img/tit.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:17px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch_commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="center-console" type="button" title="中控台"><i class="anzhiyufont anzhiyu-icon-fish"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()">播放音乐</div><div id="console-music-bg"></div><meting-js id="2987103132" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="console"><div class="close-btn" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-xmark" style="font-size: 35px;"></i></div><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/AES/" style="font-size: 1.25em; color: rgb(101, 63, 116)">AES<sup>3</sup></a><a href="/tags/DES/" style="font-size: 1.15em; color: rgb(165, 184, 60)">DES<sup>1</sup></a><a href="/tags/Diffie-Hellman/" style="font-size: 1.15em; color: rgb(143, 165, 130)">Diffie-Hellman<sup>1</sup></a><a href="/tags/ECC/" style="font-size: 1.3em; color: rgb(109, 23, 70)">ECC<sup>5</sup></a><a href="/tags/ElGamal/" style="font-size: 1.15em; color: rgb(182, 37, 23)">ElGamal<sup>1</sup></a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(44, 164, 75)">HTML<sup>1</sup></a><a href="/tags/JS/" style="font-size: 1.15em; color: rgb(44, 121, 158)">JS<sup>1</sup></a><a href="/tags/JWT/" style="font-size: 1.15em; color: rgb(38, 182, 51)">JWT<sup>1</sup></a><a href="/tags/Java/" style="font-size: 1.2em; color: rgb(154, 36, 34)">Java<sup>2</sup></a><a href="/tags/RSA/" style="font-size: 1.45em; color: rgb(77, 7, 62)">RSA<sup>20</sup></a><a href="/tags/css/" style="font-size: 1.2em; color: rgb(166, 78, 22)">css<sup>2</sup></a><a href="/tags/linux/" style="font-size: 1.15em; color: rgb(179, 158, 108)">linux<sup>1</sup></a><a href="/tags/python/" style="font-size: 1.25em; color: rgb(179, 31, 25)">python<sup>3</sup></a><a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" style="font-size: 1.15em; color: rgb(148, 5, 134)">区块链<sup>1</sup></a><a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 1.3em; color: rgb(182, 70, 81)">古典密码<sup>5</sup></a><a href="/tags/%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0/" style="font-size: 1.15em; color: rgb(41, 71, 91)">哈希函数<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90/" style="font-size: 1.3em; color: rgb(57, 180, 20)">图片分析<sup>5</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" style="font-size: 1.3em; color: rgb(156, 93, 162)">图片隐写<sup>5</sup></a><a href="/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" style="font-size: 1.25em; color: rgb(17, 97, 98)">抽象代数<sup>3</sup></a><a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 1.3em; color: rgb(21, 79, 164)">数论<sup>5</sup></a><a href="/tags/%E6%A0%88%E6%BA%A2%E5%87%BA/" style="font-size: 1.15em; color: rgb(164, 169, 107)">栈溢出<sup>1</sup></a><a href="/tags/%E6%A0%BC/" style="font-size: 1.4em; color: rgb(118, 3, 156)">格<sup>7</sup></a><a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 1.2em; color: rgb(72, 109, 158)">汇编<sup>2</sup></a><a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 1.35em; color: rgb(157, 180, 82)">流密码<sup>6</sup></a><a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" style="font-size: 1.2em; color: rgb(91, 134, 191)">流量分析<sup>2</sup></a><a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.2em; color: rgb(19, 34, 154)">线性代数<sup>2</sup></a><a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 1.35em; color: rgb(140, 148, 72)">编码<sup>6</sup></a><a href="/tags/%E8%83%8C%E5%8C%85%E5%AF%86%E7%A0%81/" style="font-size: 1.15em; color: rgb(108, 179, 164)">背包密码<sup>1</sup></a><a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 1.25em; color: rgb(186, 94, 70)">逆向<sup>3</sup></a><a href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/" style="font-size: 1.25em; color: rgb(92, 90, 165)">随机数<sup>3</sup></a></div></div><hr/></div></div><div class="console-card history" onclick="anzhiyu.hideConsole()"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="rm.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/my/m/music/playlist?id=2987103132&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script><div><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/main.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/tw_cn.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page@5.1.1/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload@17.3.1/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  console.log(1)
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("11/4/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `正在看网站的你!`,
+    `我的网站`,
+    "已上线",
+    dnum,
+    "天",
+    "©2022 By Chemtrails",
+  ];
+  const ascll2 = [`HELLO`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `照片捕获: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋，你已打开控制台。", "color:white; background-color:#4f90d9", ""));
+  setTimeout(Log.bind(console, "%c ⚡ Powered by Chemtrails %c 你正在访问 Chemtrails 的博客。", "color:white; background-color:#f0ad4e", ""));
+
+});</script><script async src="/anzhiyu/random.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://npm.elemecdn.com/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.ch3mtr4ils.cn/',
+      region: '',
+      onCommentLoaded: function () {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.ch3mtr4ils.cn/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://npm.elemecdn.com/twikoo@1.6.11/dist/twikoo.all.min.js').then(runFn)
+  }
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.ch3mtr4ils.cn/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://npm.elemecdn.com/twikoo@1.6.11/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick}</span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/catalog-bar/catalog-bar.js"></script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/categoryBar/categoryBar.js"></script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片拖拽
+let imgElements = document.getElementsByTagName("img");
+for (let i = 0; i < imgElements.length; i++) {
+  imgElements[i].addEventListener("dragstart", function (event) {
+    event.preventDefault();
+  });
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+// 监听右键初始化
+window.oncontextmenu = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.switchDarkMode = function () {
+  // Switch Between Light And Dark Mode
+  const nowMode = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  if (nowMode === "light") {
+    activateDarkMode();
+    saveToLocal.set("theme", "dark", 2);
+    GLOBAL_CONFIG.Snackbar !== undefined && anzhiyu.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night);
+    document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
+  } else {
+    activateLightMode();
+    saveToLocal.set("theme", "light", 2);
+    GLOBAL_CONFIG.Snackbar !== undefined && anzhiyu.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day);
+    document.querySelector(".menu-darkmode-text").textContent = "深色模式";
+  }
+  // handle some cases
+  typeof runMermaid === "function" && window.runMermaid();
+  rm.hideRightMenu();
+  anzhiyu.darkModeStatus();
+};
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      false
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      false
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function () {
+  var url = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", rm.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref);
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc);
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | 安知鱼")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.6/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+  window.anzhiyuScrollFnToDo && window.removeEventListener('scroll', anzhiyuScrollFnToDo)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

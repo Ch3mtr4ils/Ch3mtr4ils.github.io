@@ -1,0 +1,2373 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>奇奇怪怪的密码 | Chemtrails</title><meta name="keywords" content="编码,古典密码"><meta name="author" content="Chemtrails"><meta name="copyright" content="Chemtrails"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="奇奇怪怪的密码"><meta name="application-name" content="奇奇怪怪的密码"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="bookmark" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="192x192" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="512x512" href="/img/siteicon/apple-touch-icon.png"><link rel="apple-touch-startup-image" media="screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1136x640.png"><link rel="apple-touch-startup-image" media="screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_640x1136.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2688x1242.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1792x828.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_1125x2436.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:896px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_828x1792.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2436x1125.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:736px) and (-webkit-device-pixel-ratio:3) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_1242x2208.png"><link rel="apple-touch-startup-image" media="screen and (device-width:414px) and (device-height:736px) and (-webkit-device-pixel-ratio:3) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2208x1242.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_1334x750.png"><link rel="apple-touch-startup-image" media="screen and (device-width:375px) and (device-height:667px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="/img/siteicon/splashIcons/icon_750x1334.png"><link rel="apple-touch-startup-image" media="screen and (device-width:1024px) and (device-height:1366px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="/img/siteicon/splashIcons/icon_2732x2048.png"><meta name="description" content="本文偏向于科普丰富知识面，带有一定的misc成分，比较基础 更新记录 2022-11-05 将之前学过的一些密码和编码进行整理 2022-12-25 又经过了一段时间学习，准备再进行一次整合更新 2023-01-09 学习了CTFwiki上几种没见过的密码，整理一下  编码类（常见的ASCII码之类的就不介绍了） base编码Base编码系列有 Base64 Base32 Base16等等。我们可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="奇奇怪怪的密码">
+<meta property="og:url" content="http://example.com/2022/11/05/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AF%86%E7%A0%81/index.html">
+<meta property="og:site_name" content="Chemtrails">
+<meta property="og:description" content="本文偏向于科普丰富知识面，带有一定的misc成分，比较基础 更新记录 2022-11-05 将之前学过的一些密码和编码进行整理 2022-12-25 又经过了一段时间学习，准备再进行一次整合更新 2023-01-09 学习了CTFwiki上几种没见过的密码，整理一下  编码类（常见的ASCII码之类的就不介绍了） base编码Base编码系列有 Base64 Base32 Base16等等。我们可">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/12/08/FLulmRDirSntHBb.png">
+<meta property="article:published_time" content="2022-11-05T07:10:41.000Z">
+<meta property="article:modified_time" content="2023-05-30T08:09:28.000Z">
+<meta property="article:author" content="Chemtrails">
+<meta property="article:tag" content="编码">
+<meta property="article:tag" content="古典密码">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/12/08/FLulmRDirSntHBb.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/11/05/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AF%86%E7%A0%81/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  navMusic: true,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '奇奇怪怪的密码',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-30 16:09:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/"><div class="title">Chemtrails</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></center></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:17px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" href="javascript:void(0);" title="浅色和深色模式转换" onclick="rm.switchDarkMode()"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke" style="font-size: 1.3rem"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">奇奇怪怪的密码</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-05T07:10:41.000Z" title="发表于 2022-11-05 15:10:41">2022-11-05</time><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-30T08:09:28.000Z" title="更新于 2023-05-30 16:09:28">2023-05-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/Crypto/">Crypto</a><i class="anzhiyufont anzhiyu-icon-angle-right post-meta-separator"></i><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/misc/">misc</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.9k</span><span class="post-meta-separator">|</span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>30分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="奇奇怪怪的密码"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p><em>本文偏向于科普丰富知识面，带有一定的misc成分，比较基础</em></p>
+<div class="timeline blue"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>更新记录</p>
+</div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2022-11-05</p>
+</div></div><div class='timeline-item-content'><p>将之前学过的一些密码和编码进行整理</p>
+</div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2022-12-25</p>
+</div></div><div class='timeline-item-content'><p>又经过了一段时间学习，准备再进行一次整合更新</p>
+</div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2023-01-09</p>
+</div></div><div class='timeline-item-content'><p>学习了CTFwiki上几种没见过的密码，整理一下</p>
+</div></div></div>
+<h1 id="编码类"><a href="#编码类" class="headerlink" title="编码类"></a>编码类</h1><p><em>（常见的ASCII码之类的就不介绍了）</em></p>
+<h2 id="base编码"><a href="#base编码" class="headerlink" title="base编码"></a>base编码</h2><p>Base编码系列有 Base64 Base32 Base16等等。<br>我们可以根据其中出现的一些特征来区分不同的base编码：</p>
+<p>①所谓的<strong>Base16其实就是16进制</strong>，我们可以借助print(int(s16,16))将base16转换为10进制以进行其他运算：<strong>0-9 A-F</strong></p>
+<p>②Base32的特征比较明显：<strong>A-Z 2-7 =</strong></p>
+<p>​    比如 cryptoisinteresting 的Base32编码就是MNZHS4DUN5UXG2LOORSXEZLTORUW4ZY=</p>
+<p>③Base64算是最为常见，开始出现斜线和加号，同时包括所有大小写字母和数字组合：<strong>A-Z a-z 0-9 +/=</strong></p>
+<p>​    如果某题的flag为flag{Is_Crypt0gr4phy_1nterEst!ng?}，用base64编码就可以得到ZmxhZ3tJc19DcnlwdDBncjRwaHlfMW50ZXJFc3Qhbmc/fQ==</p>
+<p>④除了上述三种常见的base编码，还存在：</p>
+<p>base45（0-9A-Z $%*+-./:）</p>
+<p>base58（没有0O大写i小写l和+/，后面没有等于号）</p>
+<p>base85（!-u奇怪字符多，但是很少等号）</p>
+<p>base91（除了 <strong>-\‘</strong> 的其他91种字符）</p>
+<p>等其他种类编码，做题时如果实在无法确定可以都试一试。</p>
+<p>⑤base100编码：指对<strong>Emoji表情符号</strong>进行编码和解码。</p>
+<p>​    如新生平台web题目组合拳😈中，三层waf破解后的👜👤👘👥👦👥🐥👧👟👧用base100解码可以得到emanon.php。</p>
+<h2 id="Quoted-printable编码"><a href="#Quoted-printable编码" class="headerlink" title="Quoted-printable编码"></a>Quoted-printable编码</h2><p>Quoted-printable编码又叫可打印字符引用编码，由<strong>等号后跟两个十六进制数字</strong>表示字节数值组成。</p>
+<p>如密文：=E9=82=A3=E4=BD=A0=E4=B9=9F=E5=BE=88=E6=A3=92=E5=93=A6</p>
+<p>在线解码：<a target="_blank" rel="noopener" href="http://web.chacuo.net/charsetquotedprintable">Quoted-printable编码|Quoted-printable解码|Quoted-printable编码原理介绍</a></p>
+<p>解码：那你也很棒哦</p>
+<h2 id="Url编码"><a href="#Url编码" class="headerlink" title="Url编码"></a>Url编码</h2><p>URL编码使用 “%” 其后跟随两位的十六进制数来替换非 ASCII 字符，所以如果看到出现大量的百分号形式不妨尝试用url解码。</p>
+<h2 id="Unicode编码"><a href="#Unicode编码" class="headerlink" title="Unicode编码"></a>Unicode编码</h2><p>Unicode编码有多种种类：</p>
+<p>原文本：hello</p>
+<p>四种编码方式：</p>
+<p>\&amp;#x 十六进制：\&amp;#x0068;\&amp;#x0065;\&amp;#x006C;\&amp;#x006C;\&amp;#x006F;</p>
+<p>\&amp;# 十进制：\&amp;#00104;\&amp;#00101;\&amp;#00108;\&amp;#00108;\&amp;#00111;</p>
+<p>\U 十六进制：\U0068\U0065\U006C\U006C\U006F</p>
+<p>\U+ 十六进制：\U+0068\U+0065\U+006C\U+006C\U+006F </p>
+<h2 id="Uuencode"><a href="#Uuencode" class="headerlink" title="Uuencode"></a>Uuencode</h2><p>Uuencode是二进制信息和文字信息之间的转换编码，也就是机器和人眼识读的转换。Uuencode编码方案常见于电子邮件信息的传输，目前已被多用途互联网邮件扩展（MIME）大量取代。</p>
+<p>Uuencode加密后的数据结果都为可打印字符，例如：73E-30U1&amp;&gt;V-H965S95]I&lt;U]P;W=E&lt;GT`</p>
+<p>解密得到：NSSCTF{cheese_is_power}</p>
+<h1 id="密码类"><a href="#密码类" class="headerlink" title="密码类"></a>密码类</h1><p><em>这部分的密码包含部分的常见密码和古典密码</em></p>
+<h2 id="摩斯密码"><a href="#摩斯密码" class="headerlink" title="摩斯密码"></a>摩斯密码</h2><p>摩斯密码（摩尔斯电码）只有01或.-，会有空格或/做分隔符。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img-blog.csdnimg.cn/img_convert/8b8edb58c4125cb75cd4124f7917c153.png" alt=""></p>
+<p>为了方便，可以直接使用cyberchef的摩斯密码加解密，好处是可以任意切换密码表现形式和分隔符种类。</p>
+<h2 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h2><p>过于简单，不多说了，这里提供一个之前写的通用的爆破脚本：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">book=<span class="string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;</span></span><br><span class="line">book1=<span class="string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span></span><br><span class="line">book2=<span class="string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span></span><br><span class="line"></span><br><span class="line">cipher=<span class="built_in">input</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(book1)):<span class="comment">#选取26个key逐个爆破</span></span><br><span class="line">    flag=<span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> cipher:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">in</span> book:</span><br><span class="line">            <span class="keyword">if</span> i.isupper():<span class="comment">#对大写字母操作</span></span><br><span class="line">                I=book1.find(i)</span><br><span class="line">                I=I+key</span><br><span class="line">                <span class="keyword">if</span> I&gt;<span class="number">25</span>:<span class="comment">#溢出调整</span></span><br><span class="line">                    flag=flag+book1[I-<span class="number">26</span>]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    flag=flag+book1[I]</span><br><span class="line">            <span class="keyword">if</span> i.islower():<span class="comment">#对小写字母操作</span></span><br><span class="line">                I=book2.find(i)</span><br><span class="line">                I=I+key</span><br><span class="line">                <span class="keyword">if</span> I&gt;<span class="number">25</span>:<span class="comment">#溢出调整</span></span><br><span class="line">                    flag=flag+book2[I-<span class="number">26</span>]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    flag=flag+book2[I]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            flag=flag+i<span class="comment">#把不是字母的忽略</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%d:%s&quot;</span> %(key,flag))</span><br></pre></td></tr></table></figure>
+<p>不同的题目的凯撒加密方式可能会有所不同，可以根据实际情况做适当的调整。例如下面这道来自ctfshow的题：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> ascii_lowercase</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> shuffle,randint</span><br><span class="line"></span><br><span class="line">table=<span class="built_in">list</span>(ascii_lowercase)</span><br><span class="line">shuffle(table)<span class="comment">#打乱列表顺序</span></span><br><span class="line">flag=<span class="string">&#x27;ctfshow&#123;xxx&#125;&#x27;</span></span><br><span class="line">key=randint(<span class="number">0</span>,<span class="number">25</span>)</span><br><span class="line">text=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> flag:</span><br><span class="line">    <span class="keyword">if</span> i <span class="keyword">in</span> table:</span><br><span class="line">        text.append(table[(table.index(i)+key)%<span class="number">26</span>])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        text.append(i)</span><br><span class="line"><span class="built_in">print</span>(table)</span><br><span class="line"><span class="built_in">print</span>(text)</span><br><span class="line"><span class="comment"># [&#x27;h&#x27;, &#x27;g&#x27;, &#x27;u&#x27;, &#x27;p&#x27;, &#x27;o&#x27;, &#x27;v&#x27;, &#x27;n&#x27;, &#x27;b&#x27;, &#x27;i&#x27;, &#x27;j&#x27;, &#x27;y&#x27;, &#x27;k&#x27;, &#x27;a&#x27;, &#x27;z&#x27;, &#x27;w&#x27;, &#x27;q&#x27;, &#x27;t&#x27;, &#x27;l&#x27;, &#x27;r&#x27;, &#x27;d&#x27;, &#x27;x&#x27;, &#x27;e&#x27;, &#x27;s&#x27;, &#x27;m&#x27;, &#x27;c&#x27;, &#x27;f&#x27;]</span></span><br><span class="line"><span class="comment"># [&#x27;r&#x27;, &#x27;y&#x27;, &#x27;d&#x27;, &#x27;t&#x27;, &#x27;x&#x27;, &#x27;c&#x27;, &#x27;i&#x27;, &#x27;&#123;&#x27;, &#x27;y&#x27;, &#x27;x&#x27;, &#x27;1&#x27;, &#x27;t&#x27;, &#x27;_&#x27;, &#x27;u&#x27;, &#x27;t&#x27;, &#x27;_&#x27;, &#x27;z&#x27;, &#x27;1&#x27;, &#x27;d&#x27;, &#x27;d&#x27;, &#x27;a&#x27;, &#x27;q&#x27;, &#x27;h&#x27;, &#x27;y&#x27;, &#x27;_&#x27;, &#x27;r&#x27;, &#x27;4&#x27;, &#x27;q&#x27;, &#x27;t&#x27;, &#x27;n&#x27;, &#x27;a&#x27;, &#x27;!&#x27;, &#x27;!&#x27;, &#x27;&#125;&#x27;]</span></span><br></pre></td></tr></table></figure>
+<p>看完代码，大概就能知道怎么一回事了。</p>
+<p>我们平常的凯撒密码都是按照字母表进行的排序，这里他将加密字母表进行打乱，我们需要利用他给的打乱的字母表来爆破出明文。</p>
+<p>其实还是一样的，稍微改改之前的脚本就行，而且也没有大写字母，操作起来也比较方便：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">book=[<span class="string">&#x27;h&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;u&#x27;</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;v&#x27;</span>, <span class="string">&#x27;n&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;j&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;k&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;z&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, <span class="string">&#x27;q&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;m&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;f&#x27;</span>]</span><br><span class="line"><span class="built_in">list</span>=[<span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;&#123;&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;_&#x27;</span>, <span class="string">&#x27;u&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;_&#x27;</span>, <span class="string">&#x27;z&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;q&#x27;</span>, <span class="string">&#x27;h&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;_&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;4&#x27;</span>, <span class="string">&#x27;q&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;n&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;!&#x27;</span>, <span class="string">&#x27;!&#x27;</span>, <span class="string">&#x27;&#125;&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(book)):<span class="comment">#选取26个key逐个爆破</span></span><br><span class="line">    flag=<span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">list</span>:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">in</span> book:</span><br><span class="line">            <span class="keyword">if</span> i.islower():<span class="comment">#对小写字母操作</span></span><br><span class="line">                I=book.index(i)</span><br><span class="line">                I=I+key</span><br><span class="line">                <span class="keyword">if</span> I&gt;<span class="number">25</span>:<span class="comment">#溢出调整</span></span><br><span class="line">                    flag=flag+book[I-<span class="number">26</span>]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    flag=flag+book[I]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            flag=flag+i<span class="comment">#把不是字母的忽略</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%d:%s&quot;</span> %(key,flag))</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">0:rydtxci&#123;yx1t_ut_z1ddaqhy_r4qtna!!&#125;</span></span><br><span class="line"><span class="string">1:dkxlefj&#123;ke1l_pl_w1xxztgk_d4tlbz!!&#125;</span></span><br><span class="line"><span class="string">2:xaershy&#123;as1r_or_q1eewlua_x4lriw!!&#125;</span></span><br><span class="line"><span class="string">3:ezsdmgk&#123;zm1d_vd_t1ssqrpz_e4rdjq!!&#125;</span></span><br><span class="line"><span class="string">4:swmxcua&#123;wc1x_nx_l1mmtdow_s4dxyt!!&#125;</span></span><br><span class="line"><span class="string">5:mqcefpz&#123;qf1e_be_r1cclxvq_m4xekl!!&#125;</span></span><br><span class="line"><span class="string">6:ctfshow&#123;th1s_is_d1ffrent_c4esar!!&#125;flag在这呢</span></span><br><span class="line"><span class="string">7:flhmgvq&#123;lg1m_jm_x1hhdsbl_f4smzd!!&#125;</span></span><br><span class="line"><span class="string">8:hrgcunt&#123;ru1c_yc_e1ggxmir_h4mcwx!!&#125;</span></span><br><span class="line"><span class="string">9:gdufpbl&#123;dp1f_kf_s1uuecjd_g4cfqe!!&#125;</span></span><br><span class="line"><span class="string">10:uxphoir&#123;xo1h_ah_m1ppsfyx_u4fhts!!&#125;</span></span><br><span class="line"><span class="string">11:peogvjd&#123;ev1g_zg_c1oomhke_p4hglm!!&#125;</span></span><br><span class="line"><span class="string">12:osvunyx&#123;sn1u_wu_f1vvcgas_o4gurc!!&#125;</span></span><br><span class="line"><span class="string">13:vmnpbke&#123;mb1p_qp_h1nnfuzm_v4updf!!&#125;</span></span><br><span class="line"><span class="string">14:ncboias&#123;ci1o_to_g1bbhpwc_n4poxh!!&#125;</span></span><br><span class="line"><span class="string">15:bfivjzm&#123;fj1v_lv_u1iigoqf_b4oveg!!&#125;</span></span><br><span class="line"><span class="string">16:ihjnywc&#123;hy1n_rn_p1jjuvth_i4vnsu!!&#125;</span></span><br><span class="line"><span class="string">17:jgybkqf&#123;gk1b_db_o1yypnlg_j4nbmp!!&#125;</span></span><br><span class="line"><span class="string">18:yukiath&#123;ua1i_xi_v1kkobru_y4bico!!&#125;</span></span><br><span class="line"><span class="string">19:kpajzlg&#123;pz1j_ej_n1aavidp_k4ijfv!!&#125;</span></span><br><span class="line"><span class="string">20:aozywru&#123;ow1y_sy_b1zznjxo_a4jyhn!!&#125;</span></span><br><span class="line"><span class="string">21:zvwkqdp&#123;vq1k_mk_i1wwbyev_z4ykgb!!&#125;</span></span><br><span class="line"><span class="string">22:wnqatxo&#123;nt1a_ca_j1qqiksn_w4kaui!!&#125;</span></span><br><span class="line"><span class="string">23:qbtzlev&#123;bl1z_fz_y1ttjamb_q4azpj!!&#125;</span></span><br><span class="line"><span class="string">24:tilwrsn&#123;ir1w_hw_k1llyzci_t4zwoy!!&#125;</span></span><br><span class="line"><span class="string">25:ljrqdmb&#123;jd1q_gq_a1rrkwfj_l4wqvk!!&#125;</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="变异凯撒密码"><a href="#变异凯撒密码" class="headerlink" title="变异凯撒密码"></a>变异凯撒密码</h3><p>这种比起正常的凯撒密码来讲，进行的是ASCII码的偏移，如：</p>
+<p><code>str=&quot;afZ_r9VYfScOeO_UL^RWUc&quot;</code></p>
+<p>根据和flag的ASCII值比较，可以发现第一个字符偏移量为5，第二个偏移量为6，第三个为7……每个向后位移的位数是前一个加1。</p>
+<p>根据这一点我们也可以写出脚本解密：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>=<span class="string">&quot;afZ_r9VYfScOeO_UL^RWUc&quot;</span></span><br><span class="line">flag=<span class="string">&#x27;&#x27;</span></span><br><span class="line">i=<span class="number">5</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">str</span>:</span><br><span class="line">   flag+=<span class="built_in">chr</span>(<span class="built_in">ord</span>(j)+i)</span><br><span class="line">   i+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(flag)<span class="comment">#flag&#123;Caesar_variation&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="移位密码"><a href="#移位密码" class="headerlink" title="移位密码"></a>移位密码</h3><p>与凯撒密码类似，区别在于移位密码不仅会处理字母，还会处理数字和特殊字符，常用 ASCII 码表进行移位。</p>
+<h3 id="ROT偏移密码"><a href="#ROT偏移密码" class="headerlink" title="ROT偏移密码"></a>ROT偏移密码</h3><p>这可以看作是凯撒密码的一种变式。</p>
+<p><strong>rot5只加密数字，rot13只对字母进行加密，rot18就是将上述两种加密方式结合，分别对数字字母都进行加密，rot47能对ASCII码（33-126）进行加密。</strong></p>
+<h2 id="反转加密"><a href="#反转加密" class="headerlink" title="反转加密"></a>反转加密</h2><p>顾名思义，就是把一段内容完全颠倒进行加密。</p>
+<p>又是一道来自ctfshow的题目：=0XezFWZfNXafRjNlNXYit3dvh2cmR3Y</p>
+<p>这行编码一看就是base64，但是试了一下并不行。注意到等于号放在了最前面，考虑是发生了反转加密，先反转回来然后base64解密就可以了：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line"><span class="built_in">str</span>=<span class="string">&#x27;=0XezFWZfNXafRjNlNXYit3dvh2cmR3Y&#x27;</span></span><br><span class="line">b=<span class="built_in">str</span>[::-<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(base64.b64decode(b))<span class="comment">#b&#x27;ctfshow&#123;base64_is_easy&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h2><p>加密时，明文中的<strong>每个字母都会转换成一组五个英文字母</strong>，转换格式如下表：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/RDr3imX61lUHFQY.png" alt=""></p>
+<p><strong>例题</strong>：</p>
+<p>ABBABAABBAAAAABABABAABABBAAAAABAABBAAABAABBBABBAABABBABABAAABABBBAABAABABABBBAABBABAA（字符串大写提交）</p>
+<p>培根密码解密网站：<a target="_blank" rel="noopener" href="http://www.hiencode.com/baconian.html">在线培根密码解密</a></p>
+<p>这里我写了一个python程序解密培根密码：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">book1=[<span class="string">&#x27;aaaaa&#x27;</span>,<span class="string">&#x27;aaaab&#x27;</span>,<span class="string">&#x27;aaaba&#x27;</span>,<span class="string">&#x27;aaabb&#x27;</span>,<span class="string">&#x27;aabaa&#x27;</span>,<span class="string">&#x27;aabab&#x27;</span>,<span class="string">&#x27;aabba&#x27;</span>,<span class="string">&#x27;aabbb&#x27;</span>,<span class="string">&#x27;abaaa&#x27;</span>,<span class="string">&#x27;abaab&#x27;</span>,<span class="string">&#x27;ababa&#x27;</span>,<span class="string">&#x27;ababb&#x27;</span>,<span class="string">&#x27;abbaa&#x27;</span>,<span class="string">&#x27;abbab&#x27;</span>,<span class="string">&#x27;abbba&#x27;</span>,<span class="string">&#x27;abbbb&#x27;</span>,<span class="string">&#x27;baaaa&#x27;</span>,<span class="string">&#x27;baaab&#x27;</span>,<span class="string">&#x27;baaba&#x27;</span>,<span class="string">&#x27;baabb&#x27;</span>,<span class="string">&#x27;babaa&#x27;</span>,<span class="string">&#x27;babab&#x27;</span>,<span class="string">&#x27;babba&#x27;</span>,<span class="string">&#x27;babbb&#x27;</span>,<span class="string">&#x27;bbaaa&#x27;</span>,<span class="string">&#x27;bbaab&#x27;</span>]</span><br><span class="line">book2=<span class="string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">str</span>=<span class="built_in">input</span>(<span class="string">&quot;&quot;</span>).lower()</span><br><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">    t=<span class="built_in">str</span>[<span class="number">0</span>+<span class="number">5</span>*i:<span class="number">5</span>+<span class="number">5</span>*i]</span><br><span class="line">    <span class="keyword">if</span> t==<span class="string">&#x27;&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="built_in">print</span>(book2[book1.index(t)],end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    i+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>解密得到：ngbklatcoznixevzu</p>
+<p>根据题目提示，本题还存在凯撒密码加密，最终得到key=20时，得到：havefunwithcrypto，用大写提交flag。</p>
+<h2 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h2><p>这是<strong>移动字符位置</strong>来实现加密的方法，加密方法大致如下：</p>
+<p>​    我们让一串字符串为 cryptoisgood，以key=2的方式进行加密：</p>
+<p>​    按照key分组，分成crypto和isgood两组。</p>
+<p>​    竖着列开每组分别取字重新组合，加密得到cirsygpotood</p>
+<p>​    如果key=3时，分成cryp  tois  good三组。</p>
+<p>​    竖着列开每组分别取字重新组合，加密得到ctgrooyiopsd</p>
+<p>当题目中出现<strong>乱序的字母和{}甚至是 _ 和数字</strong>时都可以尝试栅栏密码。</p>
+<p><strong>例题</strong>：</p>
+<p>felhaagv{ewtehtehfilnakgw}</p>
+<p>一眼栅栏密码，栅栏密码解密网站：<a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/zhalanmima.php">栅栏密码在线加密</a></p>
+<p>放进去key=2时直接得到flag。</p>
+<h2 id="单表替换密码"><a href="#单表替换密码" class="headerlink" title="单表替换密码"></a>单表替换密码</h2><p>单表替换中的密文和明文的字母之间的转换关系一一对应，但是我们不能立马知道哪个字母对应哪个字母，通过考虑词频分析（每个字母出现的频率）和单词检测（检测一串字母连起来是否是一个单词）可以还原密钥进而还原明文。</p>
+<blockquote>
+<p>据统计，占比最高的英文字母前三位为ETA，但是这不一定和词频能一一对应，不过这个结论会随着篇幅的增长变得明显</p>
+</blockquote>
+<p>为了节省时间，我们可以使用quipquip词频分析来进行解密：<a target="_blank" rel="noopener" href="https://quipqiup.com/">quipqiup词频分析</a></p>
+<h2 id="键盘密码"><a href="#键盘密码" class="headerlink" title="键盘密码"></a>键盘密码</h2><p>这种密码和键盘上字母所在的位置一一对应，用一个围起来的圈指代圈中间的那个键，每个围起来的圈之间通常会有明显的间隔，比如空格。</p>
+<p>如：r5yG lp9I BjM tFhB T6uh y7iJ QsZ bhM</p>
+<p>我们可以在键盘上找到每组字母数字代表的位置，很容易发现他们围起了一个圈，中间的键就是得到的密文：tongyuan</p>
+<h2 id="曲路密码"><a href="#曲路密码" class="headerlink" title="曲路密码"></a>曲路密码</h2><p>曲路密码为一种换位密码，双方需要事先约定密钥（路径），如果明文为：</p>
+<p>The quick brown fox jumps over the lazy dog</p>
+<p>三十五个字母，我们填入五行七列的表格：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ctf-wiki.org/crypto/classical/figure/qulu-table.png" alt=""></p>
+<p>按照约定好的加密路线进行加密：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ctf-wiki.org/crypto/classical/figure/qulu-road.png" alt=""></p>
+<p>得到密文：gesfc inpho dtmwu qoury zejre hbxva lookT</p>
+<h2 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h2><p>维吉尼亚密码（Vigenere）是使用一系列凯撒密码组成密码字母表的加密算法。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ctf-wiki.org/crypto/classical/figure/vigenere1.jpg" class="" title=", width&#x3D;400px">
+<p>维吉尼亚密码含有密钥，加密或者解密首先填充密钥长度使其和明文长度一样，一一对应查表，得到相应的密文和明文：（<strong>横轴为明文，纵轴为密钥，棋盘内为得到的密文。</strong>）</p>
+<p>明文：come greatwall </p>
+<p>密钥：crypto（cryptocryptocrypto……） </p>
+<p>密文：efkt zferrltzn</p>
+<h3 id="自动密钥密码"><a href="#自动密钥密码" class="headerlink" title="自动密钥密码"></a>自动密钥密码</h3><p>与维吉尼亚密码密码类似，但使用不同的方法生成密钥。</p>
+<p>明文：THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG </p>
+<p>关键词：CULTURE</p>
+<p>得到密钥：CULTURE THE QUICK BROWN FOX JUMPS OVER THE，以这个为密钥按照维吉尼亚的方式进行加解密。</p>
+<h2 id="列移位加密"><a href="#列移位加密" class="headerlink" title="列移位加密"></a>列移位加密</h2><p>列移位密码是一种换位密码，通过密钥字母对应关系进行加密：</p>
+<p>例如明文为：The quick brown fox jumps over the lazy dog，密钥为：how are u</p>
+<p>明文35个字母，先填入五行七列表格，如果明文不能填充完表格可以约定使用某个字母进行填充：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ctf-wiki.org/crypto/classical/figure/columnar-transposition-plaintext.png" alt=""></p>
+<p>将密钥字母对应列数，按照字母表先后顺序编号，字母在前的先写出列：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ctf-wiki.org/crypto/classical/figure/columnar-transposition-key.png" alt=""></p>
+<p>这里我们先写出a列，后写e列，以此类推得到密文：qoury inpho Tkool hbxva uwmtd cfseg erjez</p>
+<h2 id="转轮机加密"><a href="#转轮机加密" class="headerlink" title="转轮机加密"></a>转轮机加密</h2><blockquote>
+<p>托马斯·杰斐逊：美国第三任总统，提出了一种叫“<strong>转轮机加密</strong>”的加密方式，这种加密方式在二战时期被广泛运用。</p>
+</blockquote>
+<p>由三串字符串组成，第一部分为加密表，第二部分为密钥，第三部分为密文：</p>
+<p>1: &lt; ZWAXJGDLUBVIQHKYPNTCRMOSFE &lt;<br>2: &lt; KPBELNACZDTRXMJQOYHGVSFUWI &lt;<br>3: &lt; BDMAIZVRNSJUWFHTEQGYXPLOCK &lt;<br>4: &lt; RPLNDVHGFCUKTEBSXQYIZMJWAO &lt;<br>5: &lt; IHFRLABEUOTSGJVDKCPMNZQWXY &lt;<br>6: &lt; AMKGHIWPNYCJBFZDRUSLOQXVET &lt;<br>7: &lt; GWTHSPYBXIZULVKMRAFDCEONJQ &lt;<br>8: &lt; NOZUTWDCVRJLXKISEFAPMYGHBQ &lt;<br>9: &lt; XPLTDSRFHENYVUBMCQWAOIKZGJ &lt;<br>10: &lt; UDNAJFBOWTGVRSCZQKELMXYIHP &lt;<br>11： &lt; MNBVCXZQWERTPOIUYALSKDJFHG &lt;<br>12： &lt; LVNCMXZPQOWEIURYTASBKJDFHG &lt;<br>13： &lt; JZQAWSXCDERFVBGTYHNUMKILOP &lt;</p>
+<p>密钥为：2,3,7,5,13,12,9,1,8,10,4,11,6<br>密文为：NFQKSEVOQOFNP</p>
+<p>这种加密的含义是，我们先查看密钥和密文，总共<strong>13个秘钥和13位密文对应着行数13</strong>，比如第一个密钥为2，密文为N，我们需要找到第二行，作为解密出来的第一行：</p>
+<p>2: &lt; KPBELNACZDTRXMJQOYHGVSFUWI &lt;</p>
+<p>然后需要找到密文对应的N，从N开始，将这串字符串<strong>重新排序</strong>：</p>
+<p>2: &lt; NACZDTRXMJQOYHGVSFUWIKPBEL &lt;</p>
+<p>根据这种做法，我们可以将以上所有的字符串都进行重组，得到一个新的表：</p>
+<p> &lt; NACZDTRXMJQOYHGVSFUWIKPBEL &lt;<br> &lt; FHTEQGYXPLOCKBDMAIZVRNSJUW &lt;<br> &lt; QGWTHSPYBXIZULVKMRAFDCEONJ &lt;<br> &lt; KCPMNZQWXYIHFRLABEUOTSGJVD &lt;<br> &lt; SXCDERFVBGTYHNUMKILOPJZQAW &lt;<br> &lt; EIURYTASBKJDFHGLVNCMXZPQOW &lt;<br> &lt; VUBMCQWAOIKZGJXPLTDSRFHENY &lt;<br> &lt; OSFEZWAXJGDLUBVIQHKYPNTCRM &lt;<br> &lt; QNOZUTWDCVRJLXKISEFAPMYGHB &lt;<br> &lt; OWTGVRSCZQKELMXYIHPUDNAJFB &lt;<br> &lt; FCUKTEBSXQYIZMJWAORPLNDVHG &lt;<br> &lt; NBVCXZQWERTPOIUYALSKDJFHGM &lt;<br> &lt; PNYCJBFZDRUSLOQXVETAMKGHIW &lt;</p>
+<p>接下来，我们需要竖着得到每一列的文本，然后观察哪一列有有用信息，最后找到某一列为fireinthehole。</p>
+<p>这种做法，比较费眼睛，而且比较耗时间，于是我决定写一个脚本用来破译这种加密：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">text=[<span class="string">&#x27;NACZDTRXMJQOYHGVSFUWIKPBEL&#x27;</span>,<span class="string">&#x27;FHTEQGYXPLOCKBDMAIZVRNSJUW&#x27;</span>,<span class="string">&#x27;QGWTHSPYBXIZULVKMRAFDCEONJ&#x27;</span>,<span class="string">&#x27;KCPMNZQWXYIHFRLABEUOTSGJVD&#x27;</span>,<span class="string">&#x27;SXCDERFVBGTYHNUMKILOPJZQAW&#x27;</span>,<span class="string">&#x27;EIURYTASBKJDFHGLVNCMXZPQOW&#x27;</span>,<span class="string">&#x27;VUBMCQWAOIKZGJXPLTDSRFHENY&#x27;</span>,<span class="string">&#x27;OSFEZWAXJGDLUBVIQHKYPNTCRM&#x27;</span>,<span class="string">&#x27;QNOZUTWDCVRJLXKISEFAPMYGHB&#x27;</span>,<span class="string">&#x27;OWTGVRSCZQKELMXYIHPUDNAJFB&#x27;</span>,<span class="string">&#x27;FCUKTEBSXQYIZMJWAORPLNDVHG&#x27;</span>,<span class="string">&#x27;NBVCXZQWERTPOIUYALSKDJFHGM&#x27;</span>,<span class="string">&#x27;PNYCJBFZDRUSLOQXVETAMKGHIW&#x27;</span>]</span><br><span class="line">key=[<span class="number">2</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">13</span>,<span class="number">12</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">4</span>,<span class="number">11</span>,<span class="number">6</span>]</span><br><span class="line">ciphertext=<span class="string">&#x27;NFQKSEVOQOFNP&#x27;</span></span><br><span class="line">output=[];flag=[]</span><br><span class="line">j=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> key:</span><br><span class="line">    t=text[i-<span class="number">1</span>]</span><br><span class="line">    res=t.index(ciphertext[j])</span><br><span class="line">    output.append(t[res:]+t[:res])</span><br><span class="line">    j+=<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(output[<span class="number">1</span>])):</span><br><span class="line">    txt=<span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(ciphertext)):</span><br><span class="line">        txt+=text[j][i]</span><br><span class="line">    <span class="built_in">print</span>(txt)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">NFQKSEVOQOFNP</span></span><br><span class="line"><span class="string">AHGCXIUSNWCBN</span></span><br><span class="line"><span class="string">CTWPCUBFOTUVY</span></span><br><span class="line"><span class="string">ZETMDRMEZGKCC</span></span><br><span class="line"><span class="string">DQHNEYCZUVTXJ</span></span><br><span class="line"><span class="string">TGSZRTQWTREZB</span></span><br><span class="line"><span class="string">RYPQFAWAWSBQF</span></span><br><span class="line"><span class="string">XXYWVSAXDCSWZ</span></span><br><span class="line"><span class="string">MPBXBBOJCZXED</span></span><br><span class="line"><span class="string">JLXYGKIGVQQRR</span></span><br><span class="line"><span class="string">QOIITJKDRKYTU</span></span><br><span class="line"><span class="string">OCZHYDZLJEIPS</span></span><br><span class="line"><span class="string">YKUFHFGULLZOL</span></span><br><span class="line"><span class="string">HBLRNHJBXMMIO</span></span><br><span class="line"><span class="string">GDVLUGXVKXJUQ</span></span><br><span class="line"><span class="string">VMKAMLPIIYWYX</span></span><br><span class="line"><span class="string">SAMBKVLQSIAAV</span></span><br><span class="line"><span class="string">FIREINTHEHOLE(有用信息)</span></span><br><span class="line"><span class="string">UZAULCDKFPRST</span></span><br><span class="line"><span class="string">WVFOOMSYAUPKA</span></span><br><span class="line"><span class="string">IRDTPXRPPDLDM</span></span><br><span class="line"><span class="string">KNCSJZFNMNNJK</span></span><br><span class="line"><span class="string">PSEGZPHTYADFG</span></span><br><span class="line"><span class="string">BJOJQQECGJVHH</span></span><br><span class="line"><span class="string">EUNVAONRHFHGI</span></span><br><span class="line"><span class="string">LWJDWWYMBBGMW</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h2><p>这种密码会给一些汉字，像  田口由中人工大土士王夫井羊壮  之类。</p>
+<p>加密方式也很简单，看这个汉字<strong>有多少笔画出头</strong>（比较抽象，意会一下），就是加密成于数字几，比如：</p>
+<p>工 的两横左右两边都出头，就是代表4</p>
+<p>由 的一竖上部出头，代表1</p>
+<p>口 没有笔画出头，代表0</p>
+<p>例题：由田中 由田井 羊夫 由田人 由中人 羊羊 由由王 由田中 由由大 由田工 由由由 由由羊 由中大</p>
+<p>写个简单的python脚本：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">text=<span class="string">&quot;由田中 由田井 羊夫 由田人 由中人 羊羊 由由王 由田中 由由大 由田工 由由由 由由羊 由中大&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#这里利用book1映射到book2所对应的数字进行解密：</span></span><br><span class="line">book1=<span class="string">&quot;由田中井羊夫人王大工土士壮口&quot;</span></span><br><span class="line">book2=<span class="string">&quot;10289736545590&quot;</span></span><br><span class="line">plaintext=<span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> text:</span><br><span class="line">  <span class="keyword">if</span> i <span class="keyword">in</span> book1:</span><br><span class="line">    plaintext+=book2[book1.index(i)]</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    plaintext+=i</span><br><span class="line"><span class="built_in">print</span>(plaintext)</span><br><span class="line">m=[<span class="number">102</span>,<span class="number">108</span>,<span class="number">97</span>,<span class="number">103</span>,<span class="number">123</span>,<span class="number">99</span>,<span class="number">116</span>,<span class="number">102</span>,<span class="number">115</span>,<span class="number">104</span>,<span class="number">111</span>,<span class="number">119</span>,<span class="number">125</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> m:</span><br><span class="line">  <span class="built_in">print</span>(<span class="built_in">chr</span>(i),end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="云影密码"><a href="#云影密码" class="headerlink" title="云影密码"></a>云影密码</h2><p>这种密码只有01248五个数字，又叫01248密码，其中0用来做间隔。</p>
+<p>如某题目：8842101220480224404014224202480122</p>
+<p>用0作为分隔：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">数字</th>
+<th style="text-align:left">字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">88421</td>
+<td style="text-align:left">8+8+4+2+1=23</td>
+<td style="text-align:left">W</td>
+</tr>
+<tr>
+<td style="text-align:left">122</td>
+<td style="text-align:left">1+2+2=5</td>
+<td style="text-align:left">E</td>
+</tr>
+<tr>
+<td style="text-align:left">48</td>
+<td style="text-align:left">4+8=12</td>
+<td style="text-align:left">L</td>
+</tr>
+<tr>
+<td style="text-align:left">2244</td>
+<td style="text-align:left">2+2+4+4=12</td>
+<td style="text-align:left">L</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">D</td>
+</tr>
+<tr>
+<td style="text-align:left">142242</td>
+<td style="text-align:left">1+4+2+2+4+2=15</td>
+<td style="text-align:left">O</td>
+</tr>
+<tr>
+<td style="text-align:left">248</td>
+<td style="text-align:left">2+4+8=14</td>
+<td style="text-align:left">N</td>
+</tr>
+<tr>
+<td style="text-align:left">122</td>
+<td style="text-align:left">1+2+2=5</td>
+<td style="text-align:left">E</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>得到flag：WELLDONE</p>
+<h2 id="希尔密码"><a href="#希尔密码" class="headerlink" title="希尔密码"></a>希尔密码</h2><p>原理：先让每个字母转化为字母表对应的数字，将明文转化为 n 维向量，跟一个 n × n 的矩阵相乘，再将得出的结果模 26，得到密文。</p>
+<blockquote>
+<p>注意用作加密的矩阵需要在$Z^n_{26}$可逆，否则无法解码。</p>
+</blockquote>
+<p>如我们有明文：ACT</p>
+<p>转化为矩阵：$\begin{bmatrix}0\\2\\19\end{bmatrix}$，我们设置一个密钥：$\begin{bmatrix}6&amp;24&amp;1\\13&amp;16&amp;10\\20&amp;17&amp;15\end{bmatrix}$，加密过程如下：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}6&24&1\\\\13&16&10\\\\20&17&15\end{bmatrix}\begin{bmatrix}0\\\\2\\\\19\end{bmatrix}\equiv\begin{bmatrix}67\\\\222\\\\319\end{bmatrix}\equiv\begin{bmatrix}15\\\\14\\\\7\end{bmatrix}\bmod 26</script><p>得到密文：POH</p>
+<p>提供一个解码的网站：<a target="_blank" rel="noopener" href="http://www.practicalcryptography.com/ciphers/hill-cipher/">Practical Cryptography</a></p>
+<h2 id="埃特巴什码"><a href="#埃特巴什码" class="headerlink" title="埃特巴什码"></a>埃特巴什码</h2><p>一种代换密码，代换规则为：</p>
+<p>密文：abcdefghijklmnopqrstuvwxyz</p>
+<p>对应：zyxwvutsrqponmlkjihgfedcba</p>
+<p>加密方式比较简单，给出一个解密脚本：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">text=<span class="string">&quot;uozt&#123;Zgyzhv_xlwv&#125;&quot;</span></span><br><span class="line">book1=<span class="string">&#x27;abcdefghijklmnopqrstuvwxyz&#x27;</span></span><br><span class="line">book2=<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#x27;</span></span><br><span class="line"></span><br><span class="line">flag=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> text:</span><br><span class="line">  <span class="keyword">if</span> i <span class="keyword">in</span> book1:</span><br><span class="line">    t=<span class="built_in">ord</span>(i)-<span class="number">96</span></span><br><span class="line">    flag+=book1[<span class="number">26</span>-t]</span><br><span class="line">  <span class="keyword">elif</span> i <span class="keyword">in</span> book2:</span><br><span class="line">    t=<span class="built_in">ord</span>(i)-<span class="number">64</span></span><br><span class="line">    flag+=book2[<span class="number">26</span>-t]</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    flag+=i</span><br><span class="line"><span class="built_in">print</span>(flag)<span class="comment">#flag&#123;Atbase_code&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Playfair密码"><a href="#Playfair密码" class="headerlink" title="Playfair密码"></a>Playfair密码</h2><p>playfair密码是一种替换密码。</p>
+<p>加密/解密表制作：选取一串英文字母，除去重复出现的字母，将剩下的字母逐个逐个加入 5 × 5 的矩阵内，剩下的空间由未加入的英文字母依 a-z 的顺序加入。</p>
+<p>我们如果以playfair example为密钥，生成加密表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">P</th>
+<th style="text-align:center">L</th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">Y</th>
+<th style="text-align:center">F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">I</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">M</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">H</td>
+</tr>
+<tr>
+<td style="text-align:center">K</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">Q</td>
+<td style="text-align:center">S</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">U</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">W</td>
+<td style="text-align:center">Z</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>为了能填满25格，将 q 去除，或将 i 和 j 视作同一字。</p>
+</blockquote>
+<p>将要加密的明文分成两个一组。若组内的字母相同，将 X（或 Q）加到该组的第一个字母后，重新分组。若剩下一个字，也加入 X 。</p>
+<p>如果要加密文字为：Hide the gold in the tree stump</p>
+<p>我们可以分组为：HI DE TH EG OL DI NT HE TR EX ES TU MP</p>
+<p>下面在每组字母里，找出两个字母在加密表中的位置。</p>
+<p>若两个字母不同行也不同列，在矩阵中找出另外两个字母使这四个字母成为一个的四个角，优先取第一个字母的行字母。</p>
+<p>若两个字母同行，取这两个字母右方的字母（若字母在最右方则取最左方的字母）。</p>
+<p>若两个字母同列，取这两个字母下方的字母（若字母在最下方则取最上方的字母）。</p>
+<p>新找到的两个字母就是原本的两个字母加密的结果，我们加密为：BM OD ZB XD NA BE KU DM UI XM MO UV IF</p>
+<h2 id="波利比奥斯方阵"><a href="#波利比奥斯方阵" class="headerlink" title="波利比奥斯方阵"></a>波利比奥斯方阵</h2><blockquote>
+<p>公元前2世纪，一个叫Polybius的希腊人设计了一种将字母编码成符号对的方法，他使用了一个称为Polybius的校验表。</p>
+</blockquote>
+<p>Polybius校验表由一个<strong>5行5列的表格</strong>组成，网格中包含26个英文字母，其中i和j在同一格中，相应字母用数对表示。</p>
+<p>Polybius校验表如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">E</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>2</strong></td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">I/J</td>
+<td style="text-align:center">K</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>3</strong></td>
+<td style="text-align:center">L</td>
+<td style="text-align:center">M</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">P</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>4</strong></td>
+<td style="text-align:center">Q</td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">T</td>
+<td style="text-align:center">U</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>5</strong></td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">W</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Z</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例如如果我们要表示字母R，我们可以表示成（4,2），密文就转化成了42。</p>
+<p>但是，实际上我们可以任意改变横标和纵标，或者也可以改变图表里面的内容，任意打乱字母。</p>
+<p>比如某题题目信息为：</p>
+<p>密文：ouauuuoooeeaaiaeauieuooeeiea</p>
+<p>hint: VGhlIGxlbmd0aCBvZiB0aGlzIHBsYWludGV4dDogMTQ=</p>
+<p>我们把提示进行base64解密，得到The length of this plaintext: 14，可知密文转换后的长度为14，能看到密文长度为28，两个密文对应一个明文。同时，密文只有aeiou五个字母，得知这里使用了Polybius密码。</p>
+<p>但是，我们并不知道aeiou的先后顺序，这就导致了这题需要把每一种转化都列出来，由于并没有提供确切的转换表，我们先默认用上面的图表转化方式进行，要不然再打乱图表的结果就太多了，理论上也不可能。</p>
+<p>所以，想要破解这道题，我们需要先知道<strong>所有aeiou的排列</strong>，然后根据每一种排列写出密文对应的明文，这里给一个我根据wp仿写优化的脚本：</p>
+<blockquote>
+<p>使用itertools库的permutations()函数可以产生全排列，可以测试一下</p>
+</blockquote>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"></span><br><span class="line">ciphertext=<span class="string">&#x27;ouauuuoooeeaaiaeauieuooeeiea&#x27;</span></span><br><span class="line">key=<span class="string">&#x27;aeiou&#x27;</span></span><br><span class="line"><span class="built_in">list</span>=[]</span><br><span class="line">number=[]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> itertools.permutations(key,<span class="number">5</span>):<span class="comment">#产生key的全排列</span></span><br><span class="line">    <span class="built_in">list</span>.append(<span class="string">&#x27;&#x27;</span>.join(i))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">list</span>:<span class="comment">#将密文转化成每组排列对应的数字</span></span><br><span class="line">    res=<span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> ciphertext:</span><br><span class="line">        res+=<span class="built_in">str</span>(i.index(j)+<span class="number">1</span>)</span><br><span class="line">    number.append(res)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> number:<span class="comment">#数字转化字母</span></span><br><span class="line">    flag=<span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(ciphertext),<span class="number">2</span>):</span><br><span class="line">        num=<span class="number">91</span>+<span class="number">5</span>*<span class="built_in">int</span>(j[i])+<span class="built_in">int</span>(j[i+<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">if</span> num&gt;<span class="built_in">ord</span>(<span class="string">&#x27;i&#x27;</span>):<span class="comment">#对ij共同位置进行处理</span></span><br><span class="line">            num+=<span class="number">1</span></span><br><span class="line">        flag+=<span class="built_in">chr</span>(num)</span><br><span class="line">    <span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
+<p>从生成的flag里面找，能找到其中一个为flagispolybius，这就是我们要的结果。</p>
+<h3 id="Nihilist"><a href="#Nihilist" class="headerlink" title="Nihilist"></a>Nihilist</h3><p>对于Polybius密码，引申出一种nihilist密码，引入关键字，以关键词helloworld为例，构建棋盘矩阵：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>h</td>
+<td>e</td>
+<td>l</td>
+<td>o</td>
+<td>w</td>
+</tr>
+<tr>
+<td>2</td>
+<td>r</td>
+<td>d</td>
+<td>a</td>
+<td>b</td>
+<td>c</td>
+</tr>
+<tr>
+<td>3</td>
+<td>f</td>
+<td>g</td>
+<td>i/j</td>
+<td>k</td>
+<td>m</td>
+</tr>
+<tr>
+<td>4</td>
+<td>n</td>
+<td>p</td>
+<td>q</td>
+<td>s</td>
+<td>t</td>
+</tr>
+<tr>
+<td>5</td>
+<td>u</td>
+<td>v</td>
+<td>x</td>
+<td>y</td>
+<td>z</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>加密解密还是参照棋盘：</p>
+<p>a -&gt; M[2,3] -&gt; 23</p>
+<p>45 -&gt; M[4,5] -&gt; t</p>
+<h2 id="拓展ASCII码"><a href="#拓展ASCII码" class="headerlink" title="拓展ASCII码"></a>拓展ASCII码</h2><blockquote>
+<p>ASCII码表之后的128个为<strong>拓展ASCII码</strong>，在这篇文章的结尾整理了拓展ASCII码表,<a target="_blank" rel="noopener" href="https://ch3mtr4ils.cn/2022/11/05/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AF%86%E7%A0%81/#%E6%8B%93%E5%B1%95ASCII%E8%A1%A8">点这里传送</a>。</p>
+</blockquote>
+<p>有的时候我们看到密码中有<strong>奇怪的符号</strong>，就可以考虑是否是出现了<strong>ASCII码偏移</strong>导致出现了拓展ASCII码。</p>
+<p><strong>例题：沈阳大战</strong></p>
+<p>题目所给文件，视频极为抽象，本身无法得到任何信息，提示中提示了<em>本题为ASCII码128偏移</em>。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/HetkgT4fWG3RNs9.png" class="" title=", width&#x3D;450px">
+<p>打开winhex查看，发现隐藏信息：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/Wdeg9nZPGsfpJyu.png" class="" title=", width&#x3D;450px">
+<p>在我看到这部分 <strong>æìáç éó° æìáç</strong> 时，第一反应就是flag is flag……，后面的部分应该就是flag的内容，把 <strong>æìáçûøéáîçßçåéôáßúèåîççåßèõïß¡¡ßçòáóóßèõå¡¡ý</strong> 写入python程序，得到flag：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b=<span class="string">&#x27;æìáçûøéáîçßçåéôáßúèåîççåßèõïß¡¡ßçòáóóßèõå¡¡ý&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join(<span class="built_in">chr</span>(<span class="built_in">ord</span>(m)-<span class="number">128</span>)<span class="keyword">for</span> m <span class="keyword">in</span> b))</span><br></pre></td></tr></table></figure>
+<p>了解了这种原理后，其实没有提示也一样做。</p>
+<h1 id="特殊密码"><a href="#特殊密码" class="headerlink" title="特殊密码"></a>特殊密码</h1><p><em>这一类密码比较杂，使用频率也较少，多出现在misc</em></p>
+<h2 id="核心价值观密码"><a href="#核心价值观密码" class="headerlink" title="核心价值观密码"></a>核心价值观密码</h2><p>富强民主文明和谐自由平等公正法治爱国敬业诚信友善</p>
+<p><a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=850">社会主义核心价值观加密/解密</a></p>
+<h2 id="Rabbit密码"><a href="#Rabbit密码" class="headerlink" title="Rabbit密码"></a>Rabbit密码</h2><p>Rabbit加密开头部分通常为<strong>U2FsdGVkX1</strong>，和des加密相似，而且都可以加入密钥。</p>
+<p><a target="_blank" rel="noopener" href="https://www.sojson.com/encrypt_rabbit.html">在线Rabbit加密 | Rabbit解密- 在线工具 </a></p>
+<h2 id="Ook-Brainfuck密码"><a href="#Ook-Brainfuck密码" class="headerlink" title="Ook/Brainfuck密码"></a>Ook/Brainfuck密码</h2><p>Ook密码中有大量ook，加上一些符号：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/QwHkbuRT9cYWM1m.png" class="" title=", width&#x3D;300px">
+<p>Brainfuck密码则为一堆符号：</p>
+<p>+++++ +++++ [-&gt;++ +++++ +++&lt;] &gt;++.+ +++++ .&lt;+++ [-&gt;— -&lt;]&gt;- -.+++ +++.&lt; ++++[ -&gt;+++ +&lt;]&gt;+ +++.&lt; +++++ +++[- &gt;—— ——&lt; ]&gt;—- ——- —-.&lt; +++++ ++[-&gt; +++++ ++&lt;]&gt; +++.&lt; +++++ +[-&gt;- ——- &lt;]&gt;— ——- -.—. ——. —.++ +++++ +.&lt;++ ++++[ -&gt;+++ +++&lt;] &gt;++++ +.++. &lt;++++ ++[-&gt; ——- -&lt;]&gt;- ——- ——. -.&lt;++ +++++ [-&gt;++ +++++ &lt;]&gt;+. ——. ++++. &lt;++++ +++[- &gt;—— —-&lt;] &gt;—— .+.&lt;+ +++++ ++[-&gt; +++++ +++&lt;] &gt;++++ +++++ ++.&lt;</p>
+<p>直接上网站：<a target="_blank" rel="noopener" href="https://tool.bugku.com/brainfuck/">Brainfuck/Text/Ook! obfuscator - deobfuscator. Decode and encode online. (bugku.com)</a>（能同时解Ook和Brainfuck密码）</p>
+<h2 id="jsfuck密码"><a href="#jsfuck密码" class="headerlink" title="jsfuck密码"></a>jsfuck密码</h2><p>JSFuck是基于JavaScript原子部分的深奥和教育性编程风格。它仅仅使用六个不同的字符来编写和执行代码。</p>
+<p>分别是：<code>&#123;</code> <code>&#125;</code> <code>[</code> <code>]</code> <code>+</code> <code>!</code>，例如：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+([][[]]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+!+[]]+(+[![]]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+!+[]]]+(!![]+[])[!+[]+!+[]+!+[]]+(+(!+[]+!+[]+!+[]+[+!+[]]))[(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+([]+[])[([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]][([][[]]+[])[+!+[]]+(![]+[])[+!+[]]+((+[])[([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]+[])[+!+[]+[+!+[]]]+(!![]+[])[!+[]+!+[]+!+[]]]](!+[]+!+[]+!+[]+[!+[]+!+[]])+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]])()(([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(+(+!+[]+[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+[!+[]+!+[]]+[+[]])+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(![]+[+[]]+([]+[])[([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+([][[]]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[!+[]+!+[]+[!+[]+!+[]]]+([]+[])[(![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(!![]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]()[+!+[]+[!+[]+!+[]]]+(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(![]+[+[]]+([]+[])[([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[!+[]+!+[]+[+[]]]+[!+[]+!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+([][[]]+[])[!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+[!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]]+[+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+(![]+[])[+[]]+[+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]]+(![]+[])[+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+[+!+[]]+([][(!![]+[])[!+[]+!+[]+!+[]]+([][[]]+[])[+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[!+[]+!+[]+!+[]]]()+[])[!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]]+[!+[]+!+[]+!+[]+!+[]+!+[]]+([][[]]+[])[!+[]+!+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[(![]+[])[!+[]+!+[]+!+[]]+(![]+[])[!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]]((+((+(+!+[]+[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+[!+[]+!+[]]+[+[]])+[])[+!+[]]+[+[]+[+[]]+[+[]]+[+[]]+[+[]]+[+[]]+[+[]]+[+[]]+[+[]]+[+!+[]]])+[])[!+[]+!+[]]+[+!+[]])+([]+[])[(![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(!![]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]()[+!+[]+[!+[]+!+[]]]+([+[]]+![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[!+[]+!+[]+[+[]]])</span><br></pre></td></tr></table></figure>
+<p>解密这种密码可以在浏览器使用f12打开控制台，将加密内容粘贴回去即可解密。</p>
+<blockquote>
+<p>此外，还存在一种类似的用颜文字构成的密码，也可以使用f12控制台进行解密。</p>
+</blockquote>
+<h2 id="与佛论禅密码"><a href="#与佛论禅密码" class="headerlink" title="与佛论禅密码"></a>与佛论禅密码</h2><p>这种密码会出现以下这种抽象语言：</p>
+<p>夜哆悉諳多苦奢陀奢諦冥神哆盧穆皤三侄三即諸諳即冥迦冥隸數顛耶迦奢若吉怯陀諳怖奢智侄諸若奢數菩奢集遠俱老竟寫明奢若梵等盧皤豆蒙密離怯婆皤礙他哆提哆多缽以南哆心曰姪罰蒙呐神。舍切真怯勝呐得俱沙罰娑是怯遠得呐數罰輸哆遠薩得槃漫夢盧皤亦醯呐娑皤瑟輸諳尼摩罰薩冥大倒參夢侄阿心罰等奢大度地冥殿皤沙蘇輸奢恐豆侄得罰提哆伽諳沙楞缽三死怯摩大蘇者數一遮</p>
+<p>解密网站：<a target="_blank" rel="noopener" href="http://hi.pcmoe.net/Buddha.html">与佛论禅解密</a></p>
+<h2 id="舞动的小人"><a href="#舞动的小人" class="headerlink" title="舞动的小人"></a>舞动的小人</h2><p>出自福尔摩斯探案集，跳舞的小人对应英文二十六个字母，小人手中的旗子表明该字母是单词的最后一个字母。如果是一个单词而不是句子，或者是句子中最后的一个单词，则单词中最后一个字母不必举旗。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ctf-wiki.org/crypto/classical/figure/dancingman.jpg" alt=""></p>
+<h2 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码"></a>猪圈密码</h2><p>猪圈密码是一种<strong>以格子为基础</strong>的简单替代式密码（亦称<strong>朱高密码</strong>、<strong>共济会暗号</strong>、<strong>共济会密码</strong>或<strong>共济会员密码</strong>），对照表如下：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/gjZwBUcyLQrRzVl.png" class="" title=", width&#x3D;400px">
+<p>解密网站：<a target="_blank" rel="noopener" href="http://www.metools.info/code/c90.html">猪圈密码解密-ME2在线工具 </a></p>
+<h2 id="标准银河字母"><a href="#标准银河字母" class="headerlink" title="标准银河字母"></a>标准银河字母</h2><p>在Minecraft中的附魔台显示的奇怪的字符就是标准银河字母，直接上对照表：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/o8yIbmwuhit3X5P.png" class="" title=", width&#x3D;250px">
+<h2 id="无线电字母代号"><a href="#无线电字母代号" class="headerlink" title="无线电字母代号"></a>无线电字母代号</h2><p>下面是国际航空无线电字母代号表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字母</th>
+<th>代号</th>
+<th>字母</th>
+<th>代号</th>
+<th>字母</th>
+<th>代号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Alpha</td>
+<td>J</td>
+<td>Juliet</td>
+<td>S</td>
+<td>Sierra</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Bravo</td>
+<td>K</td>
+<td>Kilo</td>
+<td>T</td>
+<td>Tango</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Charlie</td>
+<td>L</td>
+<td>Lima</td>
+<td>U</td>
+<td>Uniform</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Delta</td>
+<td>M</td>
+<td>Mike</td>
+<td>V</td>
+<td>Victor</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Echo</td>
+<td>N</td>
+<td>November</td>
+<td>W</td>
+<td>Whiskey</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Foxtrot</td>
+<td>O</td>
+<td>Oscar</td>
+<td>X</td>
+<td>X-ray</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Golf</td>
+<td>P</td>
+<td>Papa</td>
+<td>Y</td>
+<td>Yankee</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Hotel</td>
+<td>Q</td>
+<td>Quebec</td>
+<td>Z</td>
+<td>Zulu</td>
+</tr>
+<tr>
+<td>I</td>
+<td>India</td>
+<td>R</td>
+<td>Romeo</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>例题alphabet</strong>：</p>
+<p>题目如下，提示为消除波段：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/IEuT3yKJ2UsliHN.png" class="" title=", width&#x3D;450px">
+<p>所给附件是一段音频，内容极其嘈杂，打开audacity：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/1FIcNdvYHP5fXu2.png" class="" title=", width&#x3D;450px">
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/KbUtzRG81gjHZ7J.png" class="" title=", width&#x3D;450px">
+<p>我们可以看到在频谱图中1000hz的频段被拉满，需要消除这个频段，全选音频<strong>使用滤波器，将1000hz附近直接消除，</strong>生成音频。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/JWsD3VOXLncxvzM.png" class="" title=", width&#x3D;450px">
+<p>现在可以听清音频中疑似有讲话声，同时能听出来这是一段<strong>被倒放的音频</strong>，再将它倒回去即可。</p>
+<p>现在可以听清音频中的人正在一个一个念字母代号，根据上表逐个破译即可得到flag。</p>
+<h2 id="八卦"><a href="#八卦" class="headerlink" title="八卦"></a>八卦</h2><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.ctfer.vip/files/2023/3/13/fcdbf0b798.jpg" class="" title=", width&#x3D;400px">
+<h2 id="提瓦特文字"><a href="#提瓦特文字" class="headerlink" title="提瓦特文字"></a>提瓦特文字</h2><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2022/12/12/dMHyBtW9jxcGCOL.png" class="" title=", width&#x3D;400px">
+<p><em>暂时更新到这里，后续会不断完善这篇文章。</em></p>
+<h1 id="拓展ASCII表"><a href="#拓展ASCII表" class="headerlink" title="拓展ASCII表"></a>拓展ASCII表</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>控制字符</strong></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">128</td>
+<td style="text-align:center">80</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留]</td>
+</tr>
+<tr>
+<td style="text-align:center">129</td>
+<td style="text-align:center">81</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留]</td>
+</tr>
+<tr>
+<td style="text-align:center">130</td>
+<td style="text-align:center">82</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留]</td>
+</tr>
+<tr>
+<td style="text-align:center">131</td>
+<td style="text-align:center">83</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留]</td>
+</tr>
+<tr>
+<td style="text-align:center">132</td>
+<td style="text-align:center">84</td>
+<td style="text-align:center">IND</td>
+<td style="text-align:center">索引</td>
+</tr>
+<tr>
+<td style="text-align:center">133</td>
+<td style="text-align:center">85</td>
+<td style="text-align:center">NEL</td>
+<td style="text-align:center">下一行</td>
+</tr>
+<tr>
+<td style="text-align:center">134</td>
+<td style="text-align:center">86</td>
+<td style="text-align:center">SSA</td>
+<td style="text-align:center">被选区域起始</td>
+</tr>
+<tr>
+<td style="text-align:center">135</td>
+<td style="text-align:center">87</td>
+<td style="text-align:center">ESA</td>
+<td style="text-align:center">被选区域结束</td>
+</tr>
+<tr>
+<td style="text-align:center">136</td>
+<td style="text-align:center">88</td>
+<td style="text-align:center">HTS</td>
+<td style="text-align:center">水平制表符集</td>
+</tr>
+<tr>
+<td style="text-align:center">137</td>
+<td style="text-align:center">89</td>
+<td style="text-align:center">HTJ</td>
+<td style="text-align:center">对齐的水平制表符集</td>
+</tr>
+<tr>
+<td style="text-align:center">138</td>
+<td style="text-align:center">8A</td>
+<td style="text-align:center">VTS</td>
+<td style="text-align:center">垂直制表符集</td>
+</tr>
+<tr>
+<td style="text-align:center">139</td>
+<td style="text-align:center">8B</td>
+<td style="text-align:center">PLD</td>
+<td style="text-align:center">部分行向下</td>
+</tr>
+<tr>
+<td style="text-align:center">140</td>
+<td style="text-align:center">8C</td>
+<td style="text-align:center">PLU</td>
+<td style="text-align:center">部分行向上</td>
+</tr>
+<tr>
+<td style="text-align:center">141</td>
+<td style="text-align:center">8D</td>
+<td style="text-align:center">RI</td>
+<td style="text-align:center">反向索引</td>
+</tr>
+<tr>
+<td style="text-align:center">142</td>
+<td style="text-align:center">8E</td>
+<td style="text-align:center">SS2</td>
+<td style="text-align:center">单移 2</td>
+</tr>
+<tr>
+<td style="text-align:center">143</td>
+<td style="text-align:center">8F</td>
+<td style="text-align:center">SS3</td>
+<td style="text-align:center">单移 3</td>
+</tr>
+<tr>
+<td style="text-align:center">144</td>
+<td style="text-align:center">90</td>
+<td style="text-align:center">DCS</td>
+<td style="text-align:center">设备控制字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">145</td>
+<td style="text-align:center">91</td>
+<td style="text-align:center">PU1</td>
+<td style="text-align:center">专用 1</td>
+</tr>
+<tr>
+<td style="text-align:center">146</td>
+<td style="text-align:center">92</td>
+<td style="text-align:center">PU2</td>
+<td style="text-align:center">专用 2</td>
+</tr>
+<tr>
+<td style="text-align:center">147</td>
+<td style="text-align:center">93</td>
+<td style="text-align:center">STS</td>
+<td style="text-align:center">设置传输状态</td>
+</tr>
+<tr>
+<td style="text-align:center">148</td>
+<td style="text-align:center">94</td>
+<td style="text-align:center">CCH</td>
+<td style="text-align:center">取消字符</td>
+</tr>
+<tr>
+<td style="text-align:center">149</td>
+<td style="text-align:center">95</td>
+<td style="text-align:center">MW</td>
+<td style="text-align:center">消息等待</td>
+</tr>
+<tr>
+<td style="text-align:center">150</td>
+<td style="text-align:center">96</td>
+<td style="text-align:center">SPA</td>
+<td style="text-align:center">保护区起始</td>
+</tr>
+<tr>
+<td style="text-align:center">151</td>
+<td style="text-align:center">97</td>
+<td style="text-align:center">EPA</td>
+<td style="text-align:center">保护区结束</td>
+</tr>
+<tr>
+<td style="text-align:center">152</td>
+<td style="text-align:center">98</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留]</td>
+</tr>
+<tr>
+<td style="text-align:center">153</td>
+<td style="text-align:center">99</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留]</td>
+</tr>
+<tr>
+<td style="text-align:center">154</td>
+<td style="text-align:center">9A</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留]</td>
+</tr>
+<tr>
+<td style="text-align:center">155</td>
+<td style="text-align:center">9B</td>
+<td style="text-align:center">CSI</td>
+<td style="text-align:center">控制序列引导符</td>
+</tr>
+<tr>
+<td style="text-align:center">156</td>
+<td style="text-align:center">9C</td>
+<td style="text-align:center">ST</td>
+<td style="text-align:center">字符串终止符</td>
+</tr>
+<tr>
+<td style="text-align:center">157</td>
+<td style="text-align:center">9D</td>
+<td style="text-align:center">OSC</td>
+<td style="text-align:center">操作系统命令</td>
+</tr>
+<tr>
+<td style="text-align:center">158</td>
+<td style="text-align:center">9E</td>
+<td style="text-align:center">PM</td>
+<td style="text-align:center">秘密消息</td>
+</tr>
+<tr>
+<td style="text-align:center">159</td>
+<td style="text-align:center">9F</td>
+<td style="text-align:center">APC</td>
+<td style="text-align:center">应用程序</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>其他字符</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">160</td>
+<td style="text-align:center">A0</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">161</td>
+<td style="text-align:center">A1</td>
+<td style="text-align:center">¡</td>
+<td style="text-align:center">反向感叹号</td>
+</tr>
+<tr>
+<td style="text-align:center">162</td>
+<td style="text-align:center">A2</td>
+<td style="text-align:center">¢</td>
+<td style="text-align:center">分币符</td>
+</tr>
+<tr>
+<td style="text-align:center">163</td>
+<td style="text-align:center">A3</td>
+<td style="text-align:center">£</td>
+<td style="text-align:center">英磅符</td>
+</tr>
+<tr>
+<td style="text-align:center">164</td>
+<td style="text-align:center">A4</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">165</td>
+<td style="text-align:center">A5</td>
+<td style="text-align:center">¥</td>
+<td style="text-align:center">人民币符</td>
+</tr>
+<tr>
+<td style="text-align:center">166</td>
+<td style="text-align:center">A6</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">167</td>
+<td style="text-align:center">A7</td>
+<td style="text-align:center">§</td>
+<td style="text-align:center">章节符</td>
+</tr>
+<tr>
+<td style="text-align:center">168</td>
+<td style="text-align:center">A8</td>
+<td style="text-align:center">¤</td>
+<td style="text-align:center">通用货币符号 2</td>
+</tr>
+<tr>
+<td style="text-align:center">169</td>
+<td style="text-align:center">A9</td>
+<td style="text-align:center">©</td>
+<td style="text-align:center">版权符号</td>
+</tr>
+<tr>
+<td style="text-align:center">170</td>
+<td style="text-align:center">AA</td>
+<td style="text-align:center">ª</td>
+<td style="text-align:center">阴性顺序指示符</td>
+</tr>
+<tr>
+<td style="text-align:center">171</td>
+<td style="text-align:center">AB</td>
+<td style="text-align:center">«</td>
+<td style="text-align:center">左角引号</td>
+</tr>
+<tr>
+<td style="text-align:center">172</td>
+<td style="text-align:center">AC</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">173</td>
+<td style="text-align:center">AD</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">174</td>
+<td style="text-align:center">AE</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">175</td>
+<td style="text-align:center">AF</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">176</td>
+<td style="text-align:center">B0</td>
+<td style="text-align:center">°</td>
+<td style="text-align:center">温度符</td>
+</tr>
+<tr>
+<td style="text-align:center">177</td>
+<td style="text-align:center">B1</td>
+<td style="text-align:center">±</td>
+<td style="text-align:center">加/减号</td>
+</tr>
+<tr>
+<td style="text-align:center">178</td>
+<td style="text-align:center">B2</td>
+<td style="text-align:center">²</td>
+<td style="text-align:center">上标 2</td>
+</tr>
+<tr>
+<td style="text-align:center">179</td>
+<td style="text-align:center">B3</td>
+<td style="text-align:center">³</td>
+<td style="text-align:center">上标 3</td>
+</tr>
+<tr>
+<td style="text-align:center">180</td>
+<td style="text-align:center">B4</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">181</td>
+<td style="text-align:center">B5</td>
+<td style="text-align:center">µ</td>
+<td style="text-align:center">微符</td>
+</tr>
+<tr>
+<td style="text-align:center">182</td>
+<td style="text-align:center">B6</td>
+<td style="text-align:center">¶</td>
+<td style="text-align:center">段落符，pilcrow</td>
+</tr>
+<tr>
+<td style="text-align:center">183</td>
+<td style="text-align:center">B7</td>
+<td style="text-align:center">·</td>
+<td style="text-align:center">中点</td>
+</tr>
+<tr>
+<td style="text-align:center">184</td>
+<td style="text-align:center">B8</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">185</td>
+<td style="text-align:center">B9</td>
+<td style="text-align:center">¹</td>
+<td style="text-align:center">上标 1</td>
+</tr>
+<tr>
+<td style="text-align:center">186</td>
+<td style="text-align:center">BA</td>
+<td style="text-align:center">º</td>
+<td style="text-align:center">阳性顺序指示符</td>
+</tr>
+<tr>
+<td style="text-align:center">187</td>
+<td style="text-align:center">BB</td>
+<td style="text-align:center">»</td>
+<td style="text-align:center">右角引号</td>
+</tr>
+<tr>
+<td style="text-align:center">188</td>
+<td style="text-align:center">BC</td>
+<td style="text-align:center">¼</td>
+<td style="text-align:center">分数四分之一</td>
+</tr>
+<tr>
+<td style="text-align:center">189</td>
+<td style="text-align:center">BD</td>
+<td style="text-align:center">½</td>
+<td style="text-align:center">分数二分之一</td>
+</tr>
+<tr>
+<td style="text-align:center">190</td>
+<td style="text-align:center">BE</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">191</td>
+<td style="text-align:center">BF</td>
+<td style="text-align:center">¿</td>
+<td style="text-align:center">反向问号</td>
+</tr>
+<tr>
+<td style="text-align:center">192</td>
+<td style="text-align:center">C0</td>
+<td style="text-align:center">À</td>
+<td style="text-align:center">带重音符的大写字母 A</td>
+</tr>
+<tr>
+<td style="text-align:center">193</td>
+<td style="text-align:center">C1</td>
+<td style="text-align:center">Á</td>
+<td style="text-align:center">带尖锐重音的大写字母 A</td>
+</tr>
+<tr>
+<td style="text-align:center">194</td>
+<td style="text-align:center">C2</td>
+<td style="text-align:center">Â</td>
+<td style="text-align:center">带音调符号的大写字母 A</td>
+</tr>
+<tr>
+<td style="text-align:center">195</td>
+<td style="text-align:center">C3</td>
+<td style="text-align:center">Ã</td>
+<td style="text-align:center">带代字号的大写字母 A</td>
+</tr>
+<tr>
+<td style="text-align:center">196</td>
+<td style="text-align:center">C4</td>
+<td style="text-align:center">Ä</td>
+<td style="text-align:center">带元音变音 (分音符号) 的大写字母 A</td>
+</tr>
+<tr>
+<td style="text-align:center">197</td>
+<td style="text-align:center">C5</td>
+<td style="text-align:center">Å</td>
+<td style="text-align:center">带铃声的大写字母 A</td>
+</tr>
+<tr>
+<td style="text-align:center">198</td>
+<td style="text-align:center">C6</td>
+<td style="text-align:center">Æ</td>
+<td style="text-align:center">大写字母 AE 双重元音</td>
+</tr>
+<tr>
+<td style="text-align:center">199</td>
+<td style="text-align:center">C7</td>
+<td style="text-align:center">Ç</td>
+<td style="text-align:center">带变音符号的大写字母 C</td>
+</tr>
+<tr>
+<td style="text-align:center">200</td>
+<td style="text-align:center">C8</td>
+<td style="text-align:center">È</td>
+<td style="text-align:center">带重音符的大写字母 E</td>
+</tr>
+<tr>
+<td style="text-align:center">201</td>
+<td style="text-align:center">C9</td>
+<td style="text-align:center">É</td>
+<td style="text-align:center">带尖锐重音的大写字母 E</td>
+</tr>
+<tr>
+<td style="text-align:center">202</td>
+<td style="text-align:center">CA</td>
+<td style="text-align:center">Ê</td>
+<td style="text-align:center">带音调符号的大写字母 E</td>
+</tr>
+<tr>
+<td style="text-align:center">203</td>
+<td style="text-align:center">CB</td>
+<td style="text-align:center">Ë</td>
+<td style="text-align:center">带元音变音 (分音符号) 的大写字母 E</td>
+</tr>
+<tr>
+<td style="text-align:center">204</td>
+<td style="text-align:center">CC</td>
+<td style="text-align:center">Ì</td>
+<td style="text-align:center">带重音符的大写字母 I</td>
+</tr>
+<tr>
+<td style="text-align:center">205</td>
+<td style="text-align:center">CD</td>
+<td style="text-align:center">Í</td>
+<td style="text-align:center">带尖锐重音的大写字母 I</td>
+</tr>
+<tr>
+<td style="text-align:center">206</td>
+<td style="text-align:center">CE</td>
+<td style="text-align:center">Î</td>
+<td style="text-align:center">带音调符号的大写字母 I</td>
+</tr>
+<tr>
+<td style="text-align:center">207</td>
+<td style="text-align:center">CF</td>
+<td style="text-align:center">Ï</td>
+<td style="text-align:center">带元音变音 (分音符号) 的大写字母 I</td>
+</tr>
+<tr>
+<td style="text-align:center">208</td>
+<td style="text-align:center">D0</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">209</td>
+<td style="text-align:center">D1</td>
+<td style="text-align:center">Ñ</td>
+<td style="text-align:center">带代字号的大写字母 N</td>
+</tr>
+<tr>
+<td style="text-align:center">210</td>
+<td style="text-align:center">D2</td>
+<td style="text-align:center">Ò</td>
+<td style="text-align:center">带重音符的大写字母 O</td>
+</tr>
+<tr>
+<td style="text-align:center">211</td>
+<td style="text-align:center">D3</td>
+<td style="text-align:center">Ó</td>
+<td style="text-align:center">带尖锐重音的大写字母 O</td>
+</tr>
+<tr>
+<td style="text-align:center">212</td>
+<td style="text-align:center">D4</td>
+<td style="text-align:center">Ô</td>
+<td style="text-align:center">带音调符号的大写字母 O</td>
+</tr>
+<tr>
+<td style="text-align:center">213</td>
+<td style="text-align:center">D5</td>
+<td style="text-align:center">Õ</td>
+<td style="text-align:center">带代字号的大写字母 O</td>
+</tr>
+<tr>
+<td style="text-align:center">214</td>
+<td style="text-align:center">D6</td>
+<td style="text-align:center">Ö</td>
+<td style="text-align:center">带元音变音 (分音符号) 的大写字母 O</td>
+</tr>
+<tr>
+<td style="text-align:center">215</td>
+<td style="text-align:center">D7</td>
+<td style="text-align:center">OE</td>
+<td style="text-align:center">大写字母 OE 连字 2</td>
+</tr>
+<tr>
+<td style="text-align:center">216</td>
+<td style="text-align:center">D8</td>
+<td style="text-align:center">Ø</td>
+<td style="text-align:center">带斜杠的大写字母 O</td>
+</tr>
+<tr>
+<td style="text-align:center">217</td>
+<td style="text-align:center">D9</td>
+<td style="text-align:center">Ù</td>
+<td style="text-align:center">带重音符的大写字母 U</td>
+</tr>
+<tr>
+<td style="text-align:center">218</td>
+<td style="text-align:center">DA</td>
+<td style="text-align:center">Ú</td>
+<td style="text-align:center">带尖锐重音的大写字母 U</td>
+</tr>
+<tr>
+<td style="text-align:center">219</td>
+<td style="text-align:center">DB</td>
+<td style="text-align:center">Û</td>
+<td style="text-align:center">带音调符号的大写字母 U</td>
+</tr>
+<tr>
+<td style="text-align:center">220</td>
+<td style="text-align:center">DC</td>
+<td style="text-align:center">Ü</td>
+<td style="text-align:center">带元音变音 (分音符号) 的大写字母 U</td>
+</tr>
+<tr>
+<td style="text-align:center">221</td>
+<td style="text-align:center">DD</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">带元音变音 (分音符号) 的大写字母 Y</td>
+</tr>
+<tr>
+<td style="text-align:center">222</td>
+<td style="text-align:center">DE</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">223</td>
+<td style="text-align:center">DF</td>
+<td style="text-align:center">ß</td>
+<td style="text-align:center">德语高调小写字母 s</td>
+</tr>
+<tr>
+<td style="text-align:center">224</td>
+<td style="text-align:center">E0</td>
+<td style="text-align:center">à</td>
+<td style="text-align:center">带重音符的小写字母 a</td>
+</tr>
+<tr>
+<td style="text-align:center">225</td>
+<td style="text-align:center">E1</td>
+<td style="text-align:center">á</td>
+<td style="text-align:center">带尖锐重音的小写字母 a</td>
+</tr>
+<tr>
+<td style="text-align:center">226</td>
+<td style="text-align:center">E2</td>
+<td style="text-align:center">â</td>
+<td style="text-align:center">带音调符号的小写字母 a</td>
+</tr>
+<tr>
+<td style="text-align:center">227</td>
+<td style="text-align:center">E3</td>
+<td style="text-align:center">ã</td>
+<td style="text-align:center">带代字号的小写字母 a</td>
+</tr>
+<tr>
+<td style="text-align:center">228</td>
+<td style="text-align:center">E4</td>
+<td style="text-align:center">ä</td>
+<td style="text-align:center">带元音变音 (分音符号) 的小写字母 a</td>
+</tr>
+<tr>
+<td style="text-align:center">229</td>
+<td style="text-align:center">E5</td>
+<td style="text-align:center">å</td>
+<td style="text-align:center">带铃声的小写字母 a</td>
+</tr>
+<tr>
+<td style="text-align:center">230</td>
+<td style="text-align:center">E6</td>
+<td style="text-align:center">æ</td>
+<td style="text-align:center">小写字母 ae 双重元音</td>
+</tr>
+<tr>
+<td style="text-align:center">231</td>
+<td style="text-align:center">E7</td>
+<td style="text-align:center">ç</td>
+<td style="text-align:center">带变音符号的小写字母 c</td>
+</tr>
+<tr>
+<td style="text-align:center">232</td>
+<td style="text-align:center">E8</td>
+<td style="text-align:center">è</td>
+<td style="text-align:center">带重音符的小写字母 e</td>
+</tr>
+<tr>
+<td style="text-align:center">233</td>
+<td style="text-align:center">E9</td>
+<td style="text-align:center">é</td>
+<td style="text-align:center">带尖锐重音的小写字母 e</td>
+</tr>
+<tr>
+<td style="text-align:center">234</td>
+<td style="text-align:center">EA</td>
+<td style="text-align:center">ê</td>
+<td style="text-align:center">带音调符号的小写字母 e</td>
+</tr>
+<tr>
+<td style="text-align:center">235</td>
+<td style="text-align:center">EB</td>
+<td style="text-align:center">ë</td>
+<td style="text-align:center">带元音变音 (分音符号) 的小写字母 e</td>
+</tr>
+<tr>
+<td style="text-align:center">236</td>
+<td style="text-align:center">EC</td>
+<td style="text-align:center">ì</td>
+<td style="text-align:center">带重音符的小写字母 i</td>
+</tr>
+<tr>
+<td style="text-align:center">237</td>
+<td style="text-align:center">ED</td>
+<td style="text-align:center">í</td>
+<td style="text-align:center">带尖锐重音的小写字母 i</td>
+</tr>
+<tr>
+<td style="text-align:center">238</td>
+<td style="text-align:center">EE</td>
+<td style="text-align:center">î</td>
+<td style="text-align:center">带音调符号的小写字母 i</td>
+</tr>
+<tr>
+<td style="text-align:center">239</td>
+<td style="text-align:center">EF</td>
+<td style="text-align:center">ï</td>
+<td style="text-align:center">带元音变音 (分音符号) 的小写字母 i</td>
+</tr>
+<tr>
+<td style="text-align:center">240</td>
+<td style="text-align:center">F0</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">241</td>
+<td style="text-align:center">F1</td>
+<td style="text-align:center">ñ</td>
+<td style="text-align:center">带代字号的小写字母 n</td>
+</tr>
+<tr>
+<td style="text-align:center">242</td>
+<td style="text-align:center">F2</td>
+<td style="text-align:center">ò</td>
+<td style="text-align:center">带重音符的小写字母 o</td>
+</tr>
+<tr>
+<td style="text-align:center">243</td>
+<td style="text-align:center">F3</td>
+<td style="text-align:center">ó</td>
+<td style="text-align:center">带尖锐重音的小写字母 o</td>
+</tr>
+<tr>
+<td style="text-align:center">244</td>
+<td style="text-align:center">F4</td>
+<td style="text-align:center">ô</td>
+<td style="text-align:center">带音调符号的小写字母 o</td>
+</tr>
+<tr>
+<td style="text-align:center">245</td>
+<td style="text-align:center">F5</td>
+<td style="text-align:center">õ</td>
+<td style="text-align:center">带代字号的小写字母 o</td>
+</tr>
+<tr>
+<td style="text-align:center">246</td>
+<td style="text-align:center">F6</td>
+<td style="text-align:center">ö</td>
+<td style="text-align:center">带元音变音 (分音符号) 的小写字母 o</td>
+</tr>
+<tr>
+<td style="text-align:center">247</td>
+<td style="text-align:center">F7</td>
+<td style="text-align:center">oe</td>
+<td style="text-align:center">小写字母 oe 连字 2</td>
+</tr>
+<tr>
+<td style="text-align:center">248</td>
+<td style="text-align:center">F8</td>
+<td style="text-align:center">ø</td>
+<td style="text-align:center">带斜杠的小写字母 o</td>
+</tr>
+<tr>
+<td style="text-align:center">249</td>
+<td style="text-align:center">F9</td>
+<td style="text-align:center">ù</td>
+<td style="text-align:center">带重音符的小写字母 u</td>
+</tr>
+<tr>
+<td style="text-align:center">250</td>
+<td style="text-align:center">FA</td>
+<td style="text-align:center">ú</td>
+<td style="text-align:center">带尖锐重音的小写字母 u</td>
+</tr>
+<tr>
+<td style="text-align:center">251</td>
+<td style="text-align:center">FB</td>
+<td style="text-align:center">û</td>
+<td style="text-align:center">带音调符号的小写字母 u</td>
+</tr>
+<tr>
+<td style="text-align:center">252</td>
+<td style="text-align:center">FC</td>
+<td style="text-align:center">ü</td>
+<td style="text-align:center">带元音变音 (分音符号) 的小写字母 u</td>
+</tr>
+<tr>
+<td style="text-align:center">253</td>
+<td style="text-align:center">FD</td>
+<td style="text-align:center">ÿ</td>
+<td style="text-align:center">带元音变音 (分音符号) 的小写字母 y 2</td>
+</tr>
+<tr>
+<td style="text-align:center">254</td>
+<td style="text-align:center">FE</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+<tr>
+<td style="text-align:center">255</td>
+<td style="text-align:center">FF</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">[保留] 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2022/11/05/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AF%86%E7%A0%81/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=undefined&amp;url=http://example.com/2022/11/05/%E5%A5%87%E6%80%AA%E7%9A%84%E5%AF%86%E7%A0%81/&amp;pic=undefined" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E7%BC%96%E7%A0%81/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>编码<span class="tagsPageCount">6</span></a><a class="post-meta__box__tags" href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>古典密码<span class="tagsPageCount">5</span></a></div></div></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/04/%E4%B8%80%E9%81%93%E6%8A%BD%E8%B1%A1%E7%9A%84misc%E9%A2%98/"><img class="prev-cover" src="https://s2.loli.net/2022/12/08/k1WoXpytdqelwZm.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">一道抽象的misc（测试）</div></div></a></div><div class="next-post pull-right"><a href="/2022/11/07/RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"><img class="next-cover" src="https://s2.loli.net/2022/12/08/IXHGk7Q3efjPnad.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">RSA学习笔记（一）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/11/27/CTFshow%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%8A%EF%BC%89/" title="CTFshow做题记录（上）"><img class="cover" src="https://s2.loli.net/2022/12/08/CbXMu7hqjTOzwpB.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-11-27</div><div class="title">CTFshow做题记录（上）</div></div></a></div><div><a href="/2022/12/09/CTFshow%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%8B%EF%BC%89/" title="CTFshow做题记录（下）"><img class="cover" src="https://s2.loli.net/2022/12/08/CbXMu7hqjTOzwpB.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-12-09</div><div class="title">CTFshow做题记录（下）</div></div></a></div><div><a href="/2023/05/28/CISCN2023%E5%A4%8D%E7%8E%B0/" title="CISCN2023复现"><img class="cover" src="https://s2.loli.net/2023/05/28/UAELr2yp7GRbdOM.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-05-28</div><div class="title">CISCN2023复现</div></div></a></div><div><a href="/2023/01/01/CryptoHack%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%951/" title="CryptoHack学习记录（一）"><img class="cover" src="https://s2.loli.net/2023/01/03/GjLdbT8hv6pcoJg.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-01-01</div><div class="title">CryptoHack学习记录（一）</div></div></a></div><div><a href="/2023/09/23/misc%E9%80%9F%E6%88%90%EF%BC%88%E4%B8%80%EF%BC%89/" title="misc速成（一）"><img class="cover" src="https://s2.loli.net/2023/09/23/2srvKlGeNFEagSy.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-09-23</div><div class="title">misc速成（一）</div></div></a></div><div><a href="/2023/05/14/LitCTF%E5%A4%8D%E7%8E%B0/" title="LitCTF复现"><img class="cover" src="https://s2.loli.net/2023/05/14/CtirxsS8YE7qhFA.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-05-14</div><div class="title">LitCTF复现</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo" style="display: none"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a></div><div class="comment-tips" id="comment-tips"><span>你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div><div class="comment-barrage"></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E7%B1%BB"><span class="toc-text">编码类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#base%E7%BC%96%E7%A0%81"><span class="toc-text">base编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quoted-printable%E7%BC%96%E7%A0%81"><span class="toc-text">Quoted-printable编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Url%E7%BC%96%E7%A0%81"><span class="toc-text">Url编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unicode%E7%BC%96%E7%A0%81"><span class="toc-text">Unicode编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Uuencode"><span class="toc-text">Uuencode</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%B1%BB"><span class="toc-text">密码类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%A9%E6%96%AF%E5%AF%86%E7%A0%81"><span class="toc-text">摩斯密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81"><span class="toc-text">凯撒密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E5%BC%82%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81"><span class="toc-text">变异凯撒密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E4%BD%8D%E5%AF%86%E7%A0%81"><span class="toc-text">移位密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ROT%E5%81%8F%E7%A7%BB%E5%AF%86%E7%A0%81"><span class="toc-text">ROT偏移密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E8%BD%AC%E5%8A%A0%E5%AF%86"><span class="toc-text">反转加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%B9%E6%A0%B9%E5%AF%86%E7%A0%81"><span class="toc-text">培根密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81"><span class="toc-text">栅栏密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%A1%A8%E6%9B%BF%E6%8D%A2%E5%AF%86%E7%A0%81"><span class="toc-text">单表替换密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%AE%E7%9B%98%E5%AF%86%E7%A0%81"><span class="toc-text">键盘密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B2%E8%B7%AF%E5%AF%86%E7%A0%81"><span class="toc-text">曲路密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81"><span class="toc-text">维吉尼亚密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%AF%86%E9%92%A5%E5%AF%86%E7%A0%81"><span class="toc-text">自动密钥密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E7%A7%BB%E4%BD%8D%E5%8A%A0%E5%AF%86"><span class="toc-text">列移位加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E8%BD%AE%E6%9C%BA%E5%8A%A0%E5%AF%86"><span class="toc-text">转轮机加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%93%E9%93%BA%E5%AF%86%E7%A0%81"><span class="toc-text">当铺密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E5%BD%B1%E5%AF%86%E7%A0%81"><span class="toc-text">云影密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%8C%E5%B0%94%E5%AF%86%E7%A0%81"><span class="toc-text">希尔密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%83%E7%89%B9%E5%B7%B4%E4%BB%80%E7%A0%81"><span class="toc-text">埃特巴什码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Playfair%E5%AF%86%E7%A0%81"><span class="toc-text">Playfair密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E5%88%A9%E6%AF%94%E5%A5%A5%E6%96%AF%E6%96%B9%E9%98%B5"><span class="toc-text">波利比奥斯方阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nihilist"><span class="toc-text">Nihilist</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%93%E5%B1%95ASCII%E7%A0%81"><span class="toc-text">拓展ASCII码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%AF%86%E7%A0%81"><span class="toc-text">特殊密码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%B7%E5%80%BC%E8%A7%82%E5%AF%86%E7%A0%81"><span class="toc-text">核心价值观密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rabbit%E5%AF%86%E7%A0%81"><span class="toc-text">Rabbit密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ook-Brainfuck%E5%AF%86%E7%A0%81"><span class="toc-text">Ook&#x2F;Brainfuck密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jsfuck%E5%AF%86%E7%A0%81"><span class="toc-text">jsfuck密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E4%BD%9B%E8%AE%BA%E7%A6%85%E5%AF%86%E7%A0%81"><span class="toc-text">与佛论禅密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%88%9E%E5%8A%A8%E7%9A%84%E5%B0%8F%E4%BA%BA"><span class="toc-text">舞动的小人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8C%AA%E5%9C%88%E5%AF%86%E7%A0%81"><span class="toc-text">猪圈密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E9%93%B6%E6%B2%B3%E5%AD%97%E6%AF%8D"><span class="toc-text">标准银河字母</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E7%94%B5%E5%AD%97%E6%AF%8D%E4%BB%A3%E5%8F%B7"><span class="toc-text">无线电字母代号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E5%8D%A6"><span class="toc-text">八卦</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E7%93%A6%E7%89%B9%E6%96%87%E5%AD%97"><span class="toc-text">提瓦特文字</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8B%93%E5%B1%95ASCII%E8%A1%A8"><span class="toc-text">拓展ASCII表</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By Chemtrails</div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/#/Integrated/index" style="color:var(--anzhiyu-fontcolor)" target="_blank">鲁ICP备2022041228号</a></div></div></footer><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" src="https://ch3mtr4ils.cn/img/tit.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+let loadingPercentageTimer = setInterval(function() {
+  var progressBar = document.querySelector(".pace-progress");
+  if (!progressBar) return
+  var currentValue = progressBar.getAttribute("data-progress-text");
+  if (currentValue !== loadingPercentage.textContent) {
+    loadingPercentage.textContent = currentValue;
+    if (currentValue === "100%") {
+      clearInterval(loadingPercentageTimer);
+    }
+  }
+}, 100);
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ch3mtr4ils.cn/img/tit.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:17px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch_commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="center-console" type="button" title="中控台"><i class="anzhiyufont anzhiyu-icon-fish"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()">播放音乐</div><div id="console-music-bg"></div><meting-js id="2987103132" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="console"><div class="close-btn" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-xmark" style="font-size: 35px;"></i></div><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/AES/" style="font-size: 1.25em; color: rgb(101, 63, 116)">AES<sup>3</sup></a><a href="/tags/DES/" style="font-size: 1.15em; color: rgb(165, 184, 60)">DES<sup>1</sup></a><a href="/tags/Diffie-Hellman/" style="font-size: 1.15em; color: rgb(143, 165, 130)">Diffie-Hellman<sup>1</sup></a><a href="/tags/ECC/" style="font-size: 1.3em; color: rgb(109, 23, 70)">ECC<sup>5</sup></a><a href="/tags/ElGamal/" style="font-size: 1.15em; color: rgb(182, 37, 23)">ElGamal<sup>1</sup></a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(44, 164, 75)">HTML<sup>1</sup></a><a href="/tags/JS/" style="font-size: 1.15em; color: rgb(44, 121, 158)">JS<sup>1</sup></a><a href="/tags/JWT/" style="font-size: 1.15em; color: rgb(38, 182, 51)">JWT<sup>1</sup></a><a href="/tags/Java/" style="font-size: 1.2em; color: rgb(154, 36, 34)">Java<sup>2</sup></a><a href="/tags/RSA/" style="font-size: 1.45em; color: rgb(77, 7, 62)">RSA<sup>20</sup></a><a href="/tags/css/" style="font-size: 1.2em; color: rgb(166, 78, 22)">css<sup>2</sup></a><a href="/tags/linux/" style="font-size: 1.15em; color: rgb(179, 158, 108)">linux<sup>1</sup></a><a href="/tags/python/" style="font-size: 1.25em; color: rgb(179, 31, 25)">python<sup>3</sup></a><a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" style="font-size: 1.15em; color: rgb(148, 5, 134)">区块链<sup>1</sup></a><a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" style="font-size: 1.3em; color: rgb(182, 70, 81)">古典密码<sup>5</sup></a><a href="/tags/%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0/" style="font-size: 1.15em; color: rgb(41, 71, 91)">哈希函数<sup>1</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E5%88%86%E6%9E%90/" style="font-size: 1.3em; color: rgb(57, 180, 20)">图片分析<sup>5</sup></a><a href="/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" style="font-size: 1.3em; color: rgb(156, 93, 162)">图片隐写<sup>5</sup></a><a href="/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" style="font-size: 1.25em; color: rgb(17, 97, 98)">抽象代数<sup>3</sup></a><a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 1.3em; color: rgb(21, 79, 164)">数论<sup>5</sup></a><a href="/tags/%E6%A0%88%E6%BA%A2%E5%87%BA/" style="font-size: 1.15em; color: rgb(164, 169, 107)">栈溢出<sup>1</sup></a><a href="/tags/%E6%A0%BC/" style="font-size: 1.4em; color: rgb(118, 3, 156)">格<sup>7</sup></a><a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 1.2em; color: rgb(72, 109, 158)">汇编<sup>2</sup></a><a href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" style="font-size: 1.35em; color: rgb(157, 180, 82)">流密码<sup>6</sup></a><a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" style="font-size: 1.2em; color: rgb(91, 134, 191)">流量分析<sup>2</sup></a><a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 1.2em; color: rgb(19, 34, 154)">线性代数<sup>2</sup></a><a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 1.35em; color: rgb(140, 148, 72)">编码<sup>6</sup></a><a href="/tags/%E8%83%8C%E5%8C%85%E5%AF%86%E7%A0%81/" style="font-size: 1.15em; color: rgb(108, 179, 164)">背包密码<sup>1</sup></a><a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 1.25em; color: rgb(186, 94, 70)">逆向<sup>3</sup></a><a href="/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/" style="font-size: 1.25em; color: rgb(92, 90, 165)">随机数<sup>3</sup></a></div></div><hr/></div></div><div class="console-card history" onclick="anzhiyu.hideConsole()"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="rm.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/my/m/music/playlist?id=2987103132&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script><div><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/main.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/tw_cn.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page@5.1.1/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload@17.3.1/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  console.log(1)
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("11/4/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `正在看网站的你!`,
+    `我的网站`,
+    "已上线",
+    dnum,
+    "天",
+    "©2022 By Chemtrails",
+  ];
+  const ascll2 = [`HELLO`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `照片捕获: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋，你已打开控制台。", "color:white; background-color:#4f90d9", ""));
+  setTimeout(Log.bind(console, "%c ⚡ Powered by Chemtrails %c 你正在访问 Chemtrails 的博客。", "color:white; background-color:#f0ad4e", ""));
+
+});</script><script async src="/anzhiyu/random.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.1.7/source/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://npm.elemecdn.com/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.ch3mtr4ils.cn/',
+      region: '',
+      onCommentLoaded: function () {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.ch3mtr4ils.cn/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://npm.elemecdn.com/twikoo@1.6.11/dist/twikoo.all.min.js').then(runFn)
+  }
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.ch3mtr4ils.cn/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://npm.elemecdn.com/twikoo@1.6.11/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick}</span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/catalog-bar/catalog-bar.js"></script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/categoryBar/categoryBar.js"></script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片拖拽
+let imgElements = document.getElementsByTagName("img");
+for (let i = 0; i < imgElements.length; i++) {
+  imgElements[i].addEventListener("dragstart", function (event) {
+    event.preventDefault();
+  });
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+// 监听右键初始化
+window.oncontextmenu = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.switchDarkMode = function () {
+  // Switch Between Light And Dark Mode
+  const nowMode = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  if (nowMode === "light") {
+    activateDarkMode();
+    saveToLocal.set("theme", "dark", 2);
+    GLOBAL_CONFIG.Snackbar !== undefined && anzhiyu.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night);
+    document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
+  } else {
+    activateLightMode();
+    saveToLocal.set("theme", "light", 2);
+    GLOBAL_CONFIG.Snackbar !== undefined && anzhiyu.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day);
+    document.querySelector(".menu-darkmode-text").textContent = "深色模式";
+  }
+  // handle some cases
+  typeof runMermaid === "function" && window.runMermaid();
+  rm.hideRightMenu();
+  anzhiyu.darkModeStatus();
+};
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      false
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      false
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function () {
+  var url = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", rm.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref);
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc);
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | 安知鱼")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.6/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+  window.anzhiyuScrollFnToDo && window.removeEventListener('scroll', anzhiyuScrollFnToDo)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
