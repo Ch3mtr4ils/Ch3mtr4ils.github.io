@@ -1,0 +1,5 @@
+img[alt='人格'] {
+    transform: scale(1.5) !important;
+    width: 300px;
+    height: 230px;
+  }
